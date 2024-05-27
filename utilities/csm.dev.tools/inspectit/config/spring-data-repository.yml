@@ -1,0 +1,62 @@
+#
+# Instruments Spring Data Repository classes to create a span on every
+# invocation of a Repository method.
+#
+inspectit:
+  instrumentation:
+  
+    scopes:
+      spring_qemi:
+        type:
+          name: org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor
+        methods:
+          - name: invoke
+    
+    actions:
+      spring_qemi_method_name:
+        imports:
+          - org.aopalliance.intercept
+          - java.lang.reflect
+        input:
+          _arg0: MethodInvocation        
+        value-body: |
+          Method method = _arg0.getMethod();  
+          return method.getName(); 
+      
+      spring_qemi_method_clazz:
+        imports:
+          - org.aopalliance.intercept
+          - java.lang.reflect
+        input:
+          _arg0: MethodInvocation        
+        value-body: |
+          Method method = _arg0.getMethod();  
+          return method.getDeclaringClass(); 
+          
+      spring_qemi_nice_method_clazz:
+        imports:
+          - org.aopalliance.intercept
+          - java.lang.reflect
+        input:
+          _arg0: MethodInvocation        
+        value-body: |
+          Method method = _arg0.getMethod();  
+          return method.getDeclaringClass().getSimpleName() + "." + method.getName(); 
+    
+    rules:
+      spring_data_tracing:
+        scopes:
+          spring_qemi: true
+        tracing:
+          start-span: true
+          name: nicename
+          attributes:
+            target_class: tclass
+            target_method: tmethod
+        entry:
+          tclass:
+            action: spring_qemi_method_clazz
+          tmethod:
+            action: spring_qemi_method_name
+          nicename:
+            action: spring_qemi_nice_method_clazz

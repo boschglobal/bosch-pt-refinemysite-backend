@@ -1,0 +1,205 @@
+trigger: none
+
+name: $(Build.SourceBranchName)
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+parameters:
+  - name: action
+    displayName: ACTION - The action to call on the announcement.
+    type: string
+    values:
+      - add
+      - list
+      - delete
+    default: list
+  - name: environment
+    displayName: ENV - The environment on which the announcement should be applied.
+    type: string
+    values:
+      - dev
+      - prod
+      - review
+      - sandbox1
+      - sandbox2
+      - sandbox3
+      - test1
+    default: sandbox1
+  - name: ttl
+    displayName: ADD - TTL - The time to life in minutes of the announcement. Defaults to 0, which means no end of life.
+    type: number
+    default: 0
+  - name: msg_type
+    displayName: ADD - MSG_TYPE - The message type (colored in red, blue, green or yellow).
+    type: string
+    values:
+      - ERROR
+      - NEUTRAL
+      - SUCCESS
+      - WARN
+    default: NEUTRAL
+  - name: msg_de
+    displayName: ADD - MSG_DE - The german translation of the message.
+    type: string
+    default: "-"
+  - name: msg_en
+    displayName: ADD - MSG_EN - The english translation of the message.
+    type: string
+    default: "-"
+  - name: id
+    displayName: DELETE - ID - The ID of the announcement to delete.
+    type: string
+    default: "-"
+
+variables:
+  - name: subscription
+    ${{ if eq(parameters.environment, 'prod') }}:
+      value: prod
+    ${{ elseif in(parameters.environment, 'test1', 'review') }}:
+      value: qa
+    ${{ elseif eq(parameters.environment, 'dev') }}:
+      value: dev
+    ${{ else }}:
+      value: sandbox
+  - name: ciam
+    ${{ if eq(parameters.environment, 'prod') }}:
+      value: PROD
+    ${{ else }}:
+      value: DEV
+  - name: oauthUtilitiesVersion
+    value: 5.1.0
+  - template: /templates/variables/pipelines.yaml@csm_templates
+
+stages:
+  - stage: ${{ parameters.environment }}
+    displayName: ${{ upper(parameters.environment) }}
+    pool:
+      vmImage: ${{ variables.ubuntuImage }}
+    jobs:
+      - job: announcement_${{ parameters.action }}
+        displayName: Announcement ${{ parameters.action }}
+        steps:
+          - task: DownloadPackage@1
+            displayName: "Download package com.bosch.pt:csm.dev.oauth-utilities"
+            inputs:
+              packageType: maven
+              feed: c3912218-f7dc-4641-9cfd-6c9681a292b6
+              # definition: com.bosch.pt:csm.dev.oauth-utilities
+              definition: e276eed9-b24b-4ac5-b377-a4debb9694af
+              version: ${{ variables.oauthUtilitiesVersion }}
+              downloadPath: $(System.DefaultWorkingDirectory)
+              files: csm.dev.oauth-utilities-${{ variables.oauthUtilitiesVersion }}-all.jar
+
+          - template: /templates/keyvault/load-secrets-from-key-vault.yaml@csm_templates
+            parameters:
+              azureSubscription: ${{ variables.subscription }}
+              keyVaultName: ptcsm${{ variables.subscription }}subakskv
+              secretsFilter:
+                - csm-app-announcement-user
+                - csm-app-announcement-password
+
+          - bash: |
+              /usr/lib/jvm/temurin-17-jdk-amd64/bin/java -jar \
+                csm.dev.oauth-utilities-${{ variables.oauthUtilitiesVersion }}-all.jar \
+                $(csm-app-announcement-user) \
+                $(csm-app-announcement-password) \
+                ${{ variables.ciam }} > token.log
+              # Retrieves the token based on the non-contracted assumption that it is logged and logged last
+              TOKEN=`cat token.log | tail -n1 | sed -r 's/.* -- //'`
+              echo "##vso[task.setvariable variable=RMS_TOKEN;issecret=true]$TOKEN"
+            displayName: Create RefinemySite Token
+
+          - ${{ if notIn(parameters.environment, 'review', 'prod') }}:
+              - template: /templates/openvpn/open-tunnel-extern.yaml@csm_templates
+
+          - ${{ if eq(parameters.action, 'add') }}:
+              - bash: |
+                  RESPONSE=$(./announcement-token.sh add \
+                    "${{ parameters.environment }}" \
+                    "$(RMS_TOKEN)" \
+                    "${{ parameters.msg_type }}" \
+                    "${{ parameters.msg_de }}" \
+                    "${{ parameters.msg_en }}")
+                  if [ $? -eq 0 ]; then
+                    echo "Successfully added announcement."
+                  else
+                    echo "Adding announcement failed: $?. Error response: $RESPONSE"
+                    exit 1
+                  fi
+                  # Remove last line with sed, which is the http code from curl, then use jq to query for id
+                  ANNOUNCEMENT_ID=`echo "$RESPONSE" | sed -e '$ d' | jq -r .id`
+                  echo "##vso[task.setvariable variable=announcement_id;isoutput=true]$ANNOUNCEMENT_ID"
+                displayName: Add announcement
+                name: add_announcement
+                workingDirectory: announcement
+
+          - ${{ if eq(parameters.action, 'list') }}:
+              - bash: |
+                  ./announcement-token.sh list \
+                    "${{ parameters.environment }}" \
+                    "$(RMS_TOKEN)"
+                displayName: List announcement
+                workingDirectory: announcement
+
+          - ${{ if eq(parameters.action, 'delete') }}:
+              - bash: |
+                  RESPONSE=$(./announcement-token.sh delete \
+                    "${{ parameters.environment }}" \
+                    "$(RMS_TOKEN)" \
+                    "${{ parameters.id }}"
+                  )
+                  if [ $? -eq 0 ]; then
+                    echo "Successfully deleted announcement."
+                  else
+                    echo "Deleting announcement failed: $?. Error response: $RESPONSE"
+                    exit 1
+                  fi
+                displayName: Delete announcement
+                workingDirectory: announcement
+
+          - ${{ if notIn(parameters.environment, 'review', 'prod') }}:
+              - template: /templates/openvpn/close-tunnel.yaml@csm_templates
+
+      - ${{ if and(eq(parameters.action, 'add'), gt(parameters.ttl, 0)) }}:
+          - job: wait_for_end_of_life
+            displayName: Wait for end of life
+            dependsOn: announcement_add
+            pool: server
+            steps:
+              - task: ManualValidation@0
+                timeoutInMinutes: ${{ parameters.ttl }}
+                inputs:
+                  onTimeout: "resume"
+
+          - job: announcement_delete
+            displayName: Announcement delete
+            dependsOn:
+              - announcement_add
+              - wait_for_end_of_life
+            variables:
+              announcementId: $[dependencies.announcement_add.outputs['add_announcement.announcement_id']]
+            steps:
+              - checkout: none
+
+              - task: AzureCLI@2
+                displayName: Run pipeline Announcement with action 'delete'
+                env:
+                  AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
+                inputs:
+                  azureSubscription: REPLACE_ME-RefineMySite-Dev
+                  scriptType: bash
+                  scriptLocation: inlineScript
+                  inlineScript: |
+                    #!/bin/bash
+                    set -xe
+                    az pipelines run  --org https://dev.azure.com/pt-iot \
+                                      --project smartsite \
+                                      --id 1545 \
+                                      --name Announcement \
+                                      --branch $(Build.SourceBranchName) \
+                                      --parameters "action=delete" "environment=${{ parameters.environment }}" "id=$(announcementId)"

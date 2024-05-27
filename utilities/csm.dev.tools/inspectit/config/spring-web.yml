@@ -1,0 +1,18 @@
+inspectit:
+  instrumentation:
+
+    scopes:
+      result_serialization_scope:
+        type: 
+          name: "org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite"
+          matcher-mode: "EQUALS_FULLY"
+        methods:
+          - name: "handleReturnValue"
+            matcher-mode: "EQUALS_FULLY"
+
+    rules:    
+      spring_web_rule:
+        scopes:
+          result_serialization_scope: true
+        tracing:
+          start-span: true

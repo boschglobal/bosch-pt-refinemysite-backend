@@ -1,0 +1,112 @@
+trigger:
+  branches:
+    include:
+      - master
+      - SMAR-*
+  paths:
+    include:
+      - kafka/iac
+    exclude:
+      - kafka/iac/.gitignore
+      - kafka/iac/README.md
+      - kafka/iac/tf-apply.sh
+      - kafka/iac/tf-import.sh
+      - kafka/iac/tf-init.sh
+      - kafka/iac/tf-output.sh
+      - kafka/iac/tf-plan.sh
+
+name: "1.0.0-$(Date:yyyyMMdd)-$(Build.SourceBranchName)$(Rev:.r)"
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+variables:
+  - group: Azure DevOps Repo SSH Key
+  - name: isMaster
+    value: $[eq(variables['Build.SourceBranchName'], 'master')]
+  - name: terraformVersion
+    value: 1.6.2
+  - template: /templates/variables/pipelines.yaml@csm_templates
+
+stages:
+  - stage: build
+    displayName: BUILD
+    pool:
+      vmImage: ${{ variables.ubuntuImage }}
+    variables:
+      - group: Build Pipelines
+      - name: terraform-version
+        value: $(terraformVersion)
+    jobs:
+      - job: tf_validate
+        steps:
+          - template: /templates/terraform/terraform-init.yaml@csm_templates
+            parameters:
+              useBackend: false
+              workingDirectory: kafka/iac
+
+  - template: /templates/terraform/terraform-plan-apply.yaml@csm_templates
+    parameters:
+      dependsOn: build
+      environment: DEV
+      stageApproval: false
+      condition: and(succeeded(), eq(variables.isMaster, true))
+      pool:
+        name: Azure-selfhosted Ubuntu
+        demands:
+          - SMARTSITE_ENV -equals dev
+      validationTimeoutInMinutes: 5
+      variables:
+        - group: Key vault - ptcsmdevpipeline
+        - group: Dev
+        - name: terraform-version
+          value: $(terraformVersion)
+      backendAzureRmSubscription: dev
+      backendAzureRmKey: dev-confluent.tfstate
+      tfConfig: config/dev.tfvars
+      commandOptions: -var=confluent_cloud_api_key=$(confluent-cloud-api-key) -var=confluent_cloud_api_secret=$(confluent-cloud-api-secret)
+      workingDirectory: kafka/iac
+
+  - template: /templates/terraform/terraform-plan-apply.yaml@csm_templates
+    parameters:
+      dependsOn: dev_plan_apply
+      environment: PROD-BLUE
+      condition: and(not(failed()), not(canceled()), eq(variables.isMaster, true))
+      pool:
+        name: Azure-selfhosted Ubuntu
+        demands:
+          - SMARTSITE_ENV -equals prod
+      variables:
+        - group: Key vault - ptcsmprodpipeline
+        - group: Prod
+        - name: terraform-version
+          value: $(terraformVersion)
+      backendAzureRmSubscription: prod
+      backendAzureRmKey: prod-blue-confluent.tfstate
+      tfConfig: config/prod-blue.tfvars
+      commandOptions: -var=confluent_cloud_api_key=$(confluent-cloud-api-key) -var=confluent_cloud_api_secret=$(confluent-cloud-api-secret)
+      workingDirectory: kafka/iac
+
+  - template: /templates/terraform/terraform-plan-apply.yaml@csm_templates
+    parameters:
+      dependsOn: dev_plan_apply
+      environment: PROD-GREEN
+      condition: and(not(failed()), not(canceled()), eq(variables.isMaster, true))
+      pool:
+        name: Azure-selfhosted Ubuntu
+        demands:
+          - SMARTSITE_ENV -equals prod
+      variables:
+        - group: Key vault - ptcsmprodpipeline
+        - group: Prod
+        - name: terraform-version
+          value: $(terraformVersion)
+      backendAzureRmSubscription: prod
+      backendAzureRmKey: prod-green-confluent.tfstate
+      tfConfig: config/prod-green.tfvars
+      commandOptions: -var=confluent_cloud_api_key=$(confluent-cloud-api-key) -var=confluent_cloud_api_secret=$(confluent-cloud-api-secret)
+      workingDirectory: kafka/iac

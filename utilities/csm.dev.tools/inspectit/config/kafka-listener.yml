@@ -1,0 +1,25 @@
+#
+# Instruments Kafka message listeners to start a trace before a Kafka message
+# is dispatched to the @KafkaListener handlers. This is necessary because 
+# transactional Kafka listeners commit only after the handler returned. 
+# Without this instrumentation, all interactions in the commit phase, 
+# especially database queries, will not be part of the trace.
+#
+inspectit:
+  instrumentation:
+
+    scopes:
+      kafka_listener_scope:
+        interfaces: 
+          - name: "org.springframework.kafka.listener.GenericMessageListener"
+            matcher-mode: "EQUALS_FULLY"
+        methods:
+          - name: "onMessage"
+            matcher-mode: "EQUALS_FULLY"
+            
+    rules:    
+      kafka_listener_rule:
+        scopes:
+          kafka_listener_scope: true
+        tracing:
+          start-span: true

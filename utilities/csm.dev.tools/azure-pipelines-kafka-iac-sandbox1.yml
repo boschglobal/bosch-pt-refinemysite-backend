@@ -1,0 +1,37 @@
+trigger: none
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+variables:
+  - group: Azure DevOps Repo SSH Key
+
+parameters:
+  - name: terraformVersion
+    type: string
+    default: 1.6.2
+
+stages:
+  - template: /templates/terraform/terraform-plan-apply.yaml@csm_templates
+    parameters:
+      environment: SANDBOX1
+      stageApproval: false
+      pool:
+        name: Azure-selfhosted Ubuntu
+        demands:
+          - SMARTSITE_ENV -equals sandbox1
+      validationTimeoutInMinutes: 5
+      variables:
+        - group: Key vault - ptcsmsandboxpipeline
+        - group: Sandbox1
+        - name: terraform-version
+          value: ${{ parameters.terraformVersion }}
+      backendAzureRmSubscription: sandbox
+      backendAzureRmKey: sandbox1-confluent.tfstate
+      tfConfig: config/sandbox1.tfvars
+      commandOptions: -var=confluent_cloud_api_key=$(confluent-cloud-api-key) -var=confluent_cloud_api_secret=$(confluent-cloud-api-secret)
+      workingDirectory: kafka/iac

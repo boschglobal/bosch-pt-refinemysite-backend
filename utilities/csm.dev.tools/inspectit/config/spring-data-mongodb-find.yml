@@ -1,0 +1,77 @@
+inspectit:
+  instrumentation:
+  
+    scopes:
+      's_spring_data_mongodb_find':
+        type:
+          name: org.springframework.data.mongodb.core.CursorPreparer
+        methods:
+          - name: initiateFind
+
+    actions:
+      'a_collection_name_find':
+        imports:
+          - java.lang.reflect
+          - com.mongodb.MongoNamespace
+        input:
+          _arg0: com.mongodb.client.MongoCollection
+        value-body: |
+          Field namespaceField = _arg0.getClass().getDeclaredField("namespace");
+          namespaceField.setAccessible(true);
+          MongoNamespace mongoName = namespaceField.get(_arg0);
+
+          return mongoName.toString();
+
+      'a_filter_find':
+        imports:
+          - java.lang.reflect
+          - org.bson.conversions.Bson
+        input:
+          _returnValue: com.mongodb.client.FindIterable
+        value-body: |
+          Field filterField = _returnValue.getClass().getDeclaredField("filter");
+          filterField.setAccessible(true);
+          Bson filter = filterField.get(_returnValue);
+
+          return filter.toString();
+
+      'a_options_find':
+        imports:
+          - java.lang.reflect
+          - com.mongodb.internal.client.model.FindOptions
+        input:
+          _returnValue: com.mongodb.client.FindIterable
+        value-body: |
+          Field optionsField = _returnValue.getClass().getDeclaredField("findOptions");
+          optionsField.setAccessible(true);
+          FindOptions options = optionsField.get(_returnValue);
+
+          return options.toString();
+
+      'a_explain_find':
+        input:
+          _returnValue: com.mongodb.client.FindIterable
+        value-body: |
+          return _returnValue.explain().toString();
+    
+    rules:
+      'r_spring_data_mongodb_find':
+        scopes:
+          's_spring_data_mongodb_find': true
+        tracing:
+          start-span: true
+          attributes:
+            'collection': 'e_collection_name'
+            'explain': 'e_explain'
+            'filter': 'e_filter'
+            'options': 'e_options'
+        entry:
+          'e_collection_name':
+            action: 'a_collection_name_find'
+        exit:
+          'e_explain':
+            action: 'a_explain_find'
+          'e_filter':
+            action: 'a_filter_find'
+          'e_options':
+            action: 'a_options_find'

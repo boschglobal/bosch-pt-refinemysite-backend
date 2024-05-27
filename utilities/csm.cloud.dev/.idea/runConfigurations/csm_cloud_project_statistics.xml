@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.project.statistics" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="development - optional">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <envs>
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+    </envs>
+    <module name="csm.cloud.project.statistics.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.csm.cloud.projectmanagement.ProjectStatisticsApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Xmx128m" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

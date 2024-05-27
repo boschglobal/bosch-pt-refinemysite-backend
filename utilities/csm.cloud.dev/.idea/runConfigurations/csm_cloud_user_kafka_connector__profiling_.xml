@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.user.kafka.connector (profiling)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="profiling">
+    <option name="ACTIVE_PROFILES" value="local-user" />
+    <option name="ENABLE_JMX_AGENT" value="false" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <envs>
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+    </envs>
+    <module name="csm.cloud.kafka.connector.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.csm.cloud.common.kafkaconnector.KafkaConnectorApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Xmx64m -javaagent:${INSPECTIT_AGENT} -Dinspectit.config.file-based.path=${INSPECTIT_CONFIG} -Dinspectit.service-name=csm-cloud-user-kafka-connector" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

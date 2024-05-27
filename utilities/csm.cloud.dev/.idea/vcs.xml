@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.common.avro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.common.blob" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.common.core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.common.event-consumer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.common.kafka" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.common.mongodb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.common.mysql" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.common.streamable" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.common.web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.company.avro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.company.company" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.dependency-management" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.event" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.featuretoggle.avro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.featuretoggle.core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.featuretoggle.lib" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.i18n-plugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.image.avro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.job.avro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.job.job" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.kafka.backup" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.kafka.connector" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.kafka.migrator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.kafka.validator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.pdf.converter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.project.activity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.project.api.timeseries" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.project.avro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.project.news" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.project.notifications" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.project.project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.project.statistics" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.reset" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.storage.event.avro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.user.avro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.cloud.user.user" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.dev.loadtest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.dev.oauth-utilities" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.dev.tools.kafka-reader" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.dev.tools.schema-client" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../csm.monitoring.metrics.influxdb-importer" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,9 @@
+{
+	"directory": "/home/developer/Projects",
+	"username": "<<bosch-azure-email-address>>",
+	"token": "<<azure-dev-ops-access-token-with-code-read-permission>>",
+	"organization": "pt-iot",
+	"project": "smartsite",
+	"blacklist": [
+	]
+}

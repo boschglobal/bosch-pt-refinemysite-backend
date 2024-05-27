@@ -1,0 +1,23 @@
+#A copy of this configuration is located in csm.cloud.dev/config/detekt-config.yml
+build:
+  maxIssues: 0
+
+complexity:
+  active: false
+formatting:
+  FinalNewline:
+    active: false
+  MultiLineIfElse:
+    active: false
+performance:
+  SpreadOperator:
+    active: false
+style:
+  ForbiddenComment:
+    active: false
+  MagicNumber:
+    active: false
+  NewLineAtEndOfFile:
+    active: false
+  ReturnCount:
+    active: false

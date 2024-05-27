@@ -1,0 +1,222 @@
+version: '2.1'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:8.2.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: smartsite
+      MYSQL_USER: smartsite
+      MYSQL_PASSWORD: smartsite
+    entrypoint:
+      - "/bin/sh"
+      - -c
+      - |
+        echo ' \
+        CREATE DATABASE IF NOT EXISTS `csm-company`; \
+        CREATE DATABASE IF NOT EXISTS `csm-company-restore`; \
+        CREATE DATABASE IF NOT EXISTS `csm-featuretoggle`; \
+        CREATE DATABASE IF NOT EXISTS `csm-user`; \
+        CREATE DATABASE IF NOT EXISTS `csm-user-restore`; \
+        CREATE DATABASE IF NOT EXISTS `csm-project-news`; \
+        CREATE DATABASE IF NOT EXISTS `csm-project-statistics`; \
+        CREATE DATABASE IF NOT EXISTS `csm-project`; \
+        CREATE DATABASE IF NOT EXISTS `csm-project-restore`; \
+        GRANT ALL PRIVILEGES ON *.* TO `smartsite`; \
+        FLUSH PRIVILEGES;
+        '> /docker-entrypoint-initdb.d/init.sql;
+        /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    mem_limit: ${MYSQL_MEMORY_LIMIT}
+    restart: on-failure
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:7.0.5-jammy
+    ports:
+      - "27017:27017"
+    command: ["--bind_ip_all", "--replSet", "rs0"]
+    mem_limit: ${MONGODB_MEMORY_LIMIT}
+    restart: on-failure
+
+  # Initiates a MongoDB single node replica-set on mongodb and terminates logging a "1" if successful
+  mongodb-init:
+    container_name: mongodb-init
+    image: mongo:7.0.5-jammy
+    depends_on:
+      - mongodb
+    entrypoint: [ "bash", "-c", "sleep 10 && mongosh --host mongodb:27017 --quiet --eval \"try { rs.initiate({ _id: 'rs0', members: [{ _id: 0, host: 'mongodb' }] }).ok } catch (_) { rs.status().ok }\""]
+    restart: "no"
+
+  broker:
+    container_name: broker
+    hostname: broker
+    image: confluentinc/cp-kafka:7.5.3
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT'
+      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://broker:29092,PLAINTEXT_HOST://localhost:9092'
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_JMX_PORT: 9101
+      KAFKA_JMX_HOSTNAME: localhost
+      KAFKA_PROCESS_ROLES: 'broker,controller'
+      KAFKA_NODE_ID: 1
+      KAFKA_CONTROLLER_QUORUM_VOTERS: '1@broker:29093'
+      KAFKA_LISTENERS: 'PLAINTEXT://broker:29092,CONTROLLER://broker:29093,PLAINTEXT_HOST://0.0.0.0:9092'
+      KAFKA_INTER_BROKER_LISTENER_NAME: 'PLAINTEXT'
+      KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
+      KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+      CONFLUENT_METRICS_ENABLE: 'false'
+      CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
+      # Custom properties
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+      CONFLUENT_SUPPORT_METRICS_ENABLED: 0
+      CONFLUENT_TELEMETRY_ENABLED: 'false'
+      KAFKA_HEAP_OPTS: "-Xmx${KAFKA_BROKER_HEAP_MAX} -Xms${KAFKA_BROKER_HEAP_INIT}"
+      KAFKA_JVM_PERFORMANCE_OPTS: '-client -XX:+UseG1GC -XX:+CMSClassUnloadingEnabled -XX:+CMSScavengeBeforeRemark -XX:+DisableExplicitGC -Djava.awt.headless=true'
+    volumes:
+      - ./update_run.sh:/tmp/update_run.sh
+    command: "bash -c 'if [ ! -f /tmp/update_run.sh ]; then echo \"ERROR: Did you forget the update_run.sh file that came with this docker-compose.yml file?\" && exit 1 ; else /tmp/update_run.sh && /etc/confluent/docker/run ; fi'"
+    mem_limit: ${KAFKA_BROKER_MEMORY_LIMIT}
+    restart: on-failure
+
+  schema-registry:
+    container_name: schema-registry
+    hostname: schema-registry
+    image: confluentinc/cp-schema-registry:7.5.3
+    depends_on:
+      - broker
+    ports:
+      - "8081:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'broker:29092'
+      SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+      # Custom properties
+      SCHEMA_REGISTRY_ACCESS_CONTROL_ALLOW_ORIGIN: '*'
+      SCHEMA_REGISTRY_URL_ACCESS_CONTROL_ALLOW_METHODS: 'GET,POST,PUT,DELETE,OPTIONS,HEAD'
+      EXTRA_ARGS: "-Xmx${KAFKA_SCHEMA_REGISTRY_HEAP_MAX} -Xms${KAFKA_SCHEMA_REGISTRY_HEAP_INIT}"
+    mem_limit: ${KAFKA_SCHEMA_REGISTRY_MEMORY_LIMIT}
+    restart: on-failure
+
+
+  storage-emulator:
+    container_name: storage-emulator
+    hostname: storage-emulator
+    image: mcr.microsoft.com/azure-storage/azurite:3.29.0
+    command: sh -c "azurite -l /data -d //workspace/debug.log --blobHost 0.0.0.0 --queueHost 0.0.0.0 --blobPort 10000 --queuePort 10001 --loose --disableProductStyleUrl"
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+    environment:
+      AZURITE_ACCOUNTS: 'bimmodelsaccount:YmltbW9kZWxza2V5Cg==;userimagesaccount:dXNlcmltYWdlc2tleQ==;projectimagesaccount:cHJvamVjdGltYWdlc2tleQ==;projectdownloadsaccount:cHJvamVjdGRvd25sb2Fkc2tleQ==;devstoreaccount1:Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=='
+      # base64 encoded keys:
+      # bimmodelskey: YmltbW9kZWxza2V5Cg==
+      # userimageskey: dXNlcmltYWdlc2tleQ==
+      # projectimageskey: cHJvamVjdGltYWdlc2tleQ==
+      # projectdownloadskey: cHJvamVjdGRvd25sb2Fkc2tleQ==
+    mem_limit: ${STORAGE_EMULATOR_MEMORY_LIMIT}
+    restart: on-failure
+
+  storage-queue-event-trigger:
+    container_name: storage-queue-blob-event-trigger
+    image: ptcsmacr.azurecr.io/com.bosch.pt/csm.dev.tools.local-storage-queue-blob-event-trigger:1.0.0-20240125-integration.1 
+    depends_on:
+      - storage-emulator
+    environment:
+      GO_PROFILES_ACTIVE: docker
+      SERVICE_LOG_LEVEL: info
+    mem_limit: ${STORAGE_EVENT_TRIGGER_MEMORY_LIMIT}
+    restart: on-failure
+
+  storage-event-core:
+    container_name: storage-event-core
+    image: ptcsmacr.azurecr.io/com.bosch.pt/csm.cloud.storage.event.core:1.0.0-20240125-integration.1
+    depends_on:
+      - schema-registry
+      - storage-emulator
+      - storage-queue-event-trigger
+    environment:
+      GO_PROFILES_ACTIVE: docker
+      SERVICE_LOG_LEVEL: info
+    mem_limit: ${STORAGE_EVENT_CORE_MEMORY_LIMIT}
+    restart: on-failure
+
+  image-scale:
+    container_name: image-scale
+    image: ptcsmacr.azurecr.io/com.bosch.pt/csm.cloud.image.scale:1.0.0-20240125-integration.1
+    depends_on:
+      - schema-registry
+      - storage-emulator
+      - storage-event-core
+    environment:
+      GO_PROFILES_ACTIVE: docker
+      SERVICE_LOG_LEVEL: info
+    mem_limit: ${IMAGE_SCALE_MEMORY_LIMIT}
+    restart: on-failure
+
+  timescaledb:
+    image: timescale/timescaledb:2.13.1-pg15
+    container_name: timescaledb
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: smartsite
+      POSTGRES_DB: bam
+    mem_limit: ${TIMESCALEDB_MEMORY_LIMIT}
+    restart: on-failure
+
+  grafana:
+    image: grafana/grafana:10.0.10
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: smartsite
+    links:
+      - timescaledb
+    depends_on:
+      - timescaledb
+    volumes:
+      - ./provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./dashboards:/var/lib/grafana/dashboards
+    mem_limit: ${GRAFANA_MEMORY_LIMIT}
+    restart: on-failure
+
+  jaeger:
+    container_name: jaeger
+    image: jaegertracing/all-in-one:1.53.0
+    command: ["--memory.max-traces=10000"]
+    ports:
+      - "5775:5775/udp"
+      - "6831:6831/udp"
+      - "6832:6832/udp"
+      - "5778:5778"
+      - "16686:16686"
+      - "14268:14268"
+      - "9411:9411"
+    environment:
+      COLLECTOR_ZIPKIN_HOST_PORT: 9411
+    mem_limit: ${JAEGER_MEMORY_LIMIT}
+    restart: on-failure
+
+  kafdrop:
+    container_name: kafdrop
+    image: obsidiandynamics/kafdrop:4.0.1
+    ports:
+      - "9001:9000"
+    environment:
+      KAFKA_BROKERCONNECT: "broker:29092"
+      SERVER_SERVLET_CONTEXTPATH: "/"
+      SCHEMAREGISTRY_CONNECT: "http://schema-registry:8081"
+      JVM_OPTS: "-Xmx${KAFDROP_HEAP_MAX} -Xms${KAFDROP_HEAP_INIT}"
+    mem_limit: ${KAFDROP_MEMORY_LIMIT}
+    restart: on-failure

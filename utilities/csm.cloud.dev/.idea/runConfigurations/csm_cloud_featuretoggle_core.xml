@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.featuretoggle.core" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="development - main">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <envs>
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+    </envs>
+    <module name="csm.cloud.featuretoggle.core.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.csm.cloud.FeatureToggleApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Xmx128m --add-opens java.base/java.time=ALL-UNNAMED" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

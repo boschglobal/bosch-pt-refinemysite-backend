@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.project.project (local azure storage)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="others">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <envs>
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+    </envs>
+    <module name="csm.cloud.project.project.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.iot.smartsite.ProjectApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Dspring.cloud.database=mysql://localhost:3306/smartsite?user=smartsite&amp;amp;password=smartsite&amp;amp;useSSL=false -Dazure.storage.connection-string=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,34 @@
+#
+# Instruments all classes in the csm.bosch.pt namespace that carry one these 
+# Spring annotations:
+#
+#  - @Component 
+#  - @Controller
+#  - @RestController
+#  - @Service
+# 
+# For these classes, a span/trace will be created on each invocation of a 
+# public method.
+#
+inspectit:
+  instrumentation:
+
+    scopes:
+      spring_annotations_scope:
+        type: 
+          name: "com.bosch.pt"
+          matcher-mode: "STARTS_WITH"
+          annotations:
+            - name: "org\\.springframework\\.stereotype\\.(Component|Controller|RestController|Service)"
+              matcher-mode: "MATCHES"
+        methods:
+          - name: ".*"
+            matcher-mode: "MATCHES"
+            visibility: [PUBLIC]
+
+    rules:    
+      spring_annotations_rule:
+        scopes:
+          spring_annotations_scope: true
+        tracing:
+          start-span: true
