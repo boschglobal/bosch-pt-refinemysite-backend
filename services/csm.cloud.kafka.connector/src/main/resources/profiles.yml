@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    group:
+      kubernetes-user:
+        - app-user
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes
+      kubernetes-company:
+        - app-company
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes
+      kubernetes-featuretoggle:
+        - app-featuretoggle
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes
+      kubernetes-project:
+        - app-project
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes
+      local-user:
+        - app-user
+        - local
+      local-company:
+        - app-company
+        - local
+      local-project:
+        - app-project
+        - local
+      local-featuretoggle:
+        - app-featuretoggle
+        - local

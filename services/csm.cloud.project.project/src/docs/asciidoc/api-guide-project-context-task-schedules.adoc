@@ -1,0 +1,284 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[task-schedule]]
+== Task Schedule
+A schedule that can be defined for a task.
+
+
+[[create-task-schedule]]
+=== Create Schedule
+Create a schedule for a task with a start-date, an end-date or start- and end-date.
+
+[[create-task-schedule-latest]]
+==== Latest API Version
+
+[[create-task-schedule-request-latest]]
+===== Request
+A `POST` request is used to create a new schedule.
+
+====== Request fields
+include::{snippets}/task-schedule/document-create-task-schedule/request-fields.adoc[]
+
+====== Example request
+operation::task-schedule/document-create-task-schedule[snippets='http-request,curl-request']
+
+[[create-task-schedule-response-latest]]
+===== Response
+The created task schedule is returned.
+
+====== Response fields
+include::{snippets}/task-schedule/document-create-task-schedule/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-schedule/document-create-task-schedule/links.adoc[]
+
+====== Example response
+include::{snippets}/task-schedule/document-create-task-schedule/http-response.adoc[]
+
+
+
+[[create-multiple-task-schedules]]
+=== Create Multiple Task Schedules (Batch)
+Create multiple task schedules at once. This operation is executed as a batch in a single,
+atomic transaction, i.e. either all creates succeed or none at all.
+
+
+[[create-multiple-task-schedules-latest]]
+==== Latest API Version
+
+[[create-multiple-task-schedules-request-latest]]
+===== Request
+A `POST` request is used to create the new schedules for the tasks.
+
+====== Request fields
+include::{snippets}/task-schedule/document-create-task-schedules/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/task-schedule/document-create-task-schedules/http-request.adoc[]
+include::{snippets}/task-schedule/document-create-task-schedules/curl-request.adoc[]
+
+[[create-multiple-task-schedules-response-latest]]
+===== Response
+A list with the updated schedules is returned.
+
+====== Response fields
+include::{snippets}/task-schedule/document-create-task-schedules/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-schedule/document-create-task-schedules/links.adoc[]
+
+====== Example response
+include::{snippets}/task-schedule/document-create-task-schedules/http-response.adoc[]
+
+
+
+[[update-task-schedule]]
+=== Update schedule
+Updates a schedule of a task with a given id.
+Either a start-date or an end-date or a start-date and end-date are required.
+
+
+[[update-task-schedule-latest]]
+==== Latest API Version
+
+[[update-task-schedule-request-latest]]
+===== Request
+A `PUT` request is used to update a schedule of a task.
+
+====== Path parameters
+include::{snippets}/task-schedule/document-update-task-schedule/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/task-schedule/document-update-task-schedule/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/task-schedule/document-update-task-schedule/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/task-schedule/document-update-task-schedule/http-request.adoc[]
+include::{snippets}/task-schedule/document-update-task-schedule/curl-request.adoc[]
+
+[[update-task-schedule-response-latest]]
+===== Response
+The updated task schedule is returned.
+
+====== Example response
+include::{snippets}/task-schedule/document-update-task-schedule/http-response.adoc[]
+
+====== Response fields
+include::{snippets}/task-schedule/document-update-task-schedule/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-schedule/document-update-task-schedule/links.adoc[]
+
+====== Example response
+include::{snippets}/task-schedule/document-update-task-schedule/http-response.adoc[]
+
+
+
+[[update-multiple-task-schedules]]
+=== Update Multiple Task Schedules (Batch)
+Update multiple task schedules at once. This operation is executed as a batch in a single,
+atomic transaction, i.e. either all updates succeed or none at all.
+
+
+[[update-multiple-task-schedules-latest]]
+==== Latest API Version
+
+[[update-multiple-task-schedules-request-latest]]
+===== Request
+A `PUT` request is used to update the schedule's information.
+
+====== Request fields
+include::{snippets}/task-schedule/document-update-task-schedules/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/task-schedule/document-update-task-schedules/http-request.adoc[]
+include::{snippets}/task-schedule/document-update-task-schedules/curl-request.adoc[]
+
+[[update-multiple-task-schedules-response-latest]]
+===== Response
+A list with the updated task schedules is returned.
+
+====== Response fields
+include::{snippets}/task-schedule/document-update-task-schedules/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-schedule/document-update-task-schedules/links.adoc[]
+
+====== Example response
+include::{snippets}/task-schedule/document-update-task-schedules/http-response.adoc[]
+
+
+
+[[get-task-schedule]]
+=== Get Schedule
+This endpoint can be used to retrieve the schedule of a task with a given id.
+
+
+[[get-task-schedule-latest]]
+==== Latest API Version
+
+[[get-task-schedule-request-latest]]
+===== Request
+A `GET` request is used to get the schedule of a task.
+
+====== Path parameters
+include::{snippets}/task-schedule/document-get-task-schedule/path-parameters.adoc[]
+
+====== Example request
+operation::task-schedule/document-get-task-schedule[snippets='http-request,curl-request']
+
+[[get-task-schedule-reponse-latest]]
+===== Response
+The task schedule is returned.
+
+====== Response fields
+include::{snippets}/task-schedule/document-get-task-schedule/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-schedule/document-get-task-schedule/links.adoc[]
+
+====== Example response
+include::{snippets}/task-schedule/document-get-task-schedule/http-response.adoc[]
+
+
+
+[[get-task-schedule-by-identifier-and-project-identifier]]
+=== Get Schedule
+This endpoint can be used to retrieve the schedule of a task with a given id and project id.
+
+
+[[get-task-schedule-by-identifier-and-project-identifier-latest]]
+==== Latest API Version
+
+[[get-task-schedule-by-identifier-and-project-identifier-request-latest]]
+===== Request
+A `GET` request is used to get the schedule of a task.
+
+====== Path parameters
+include::{snippets}/task-schedule/document-get-task-schedule-by-identifier-and-project-identifier/path-parameters.adoc[]
+
+====== Example request
+operation::task-schedule/document-get-task-schedule-by-identifier-and-project-identifier[snippets='http-request,curl-request']
+
+[[get-task-schedule-by-identifier-and-project-identifier-reponse-latest]]
+===== Response
+The task schedule is returned.
+
+====== Response fields
+include::{snippets}/task-schedule/document-get-task-schedule-by-identifier-and-project-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-schedule/document-get-task-schedule-by-identifier-and-project-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/task-schedule/document-get-task-schedule-by-identifier-and-project-identifier/http-response.adoc[]
+
+
+
+[[search-task-schedule]]
+=== Search Schedules
+Retrieves the schedules of selected tasks.
+
+
+[[search-task-schedule-latest]]
+==== Latest API Version
+
+[[search-task-schedule-request-latest]]
+===== Request
+A `POST` request is used to search for schedules.
+
+====== Request parameters
+include::{snippets}/task-schedule/document-search-task-schedules/query-parameters.adoc[]
+
+====== Example request
+operation::task-schedule/document-search-task-schedules[snippets='http-request,curl-request']
+
+[[search-task-schedule-response-latest]]
+===== Response
+A list with the found schedules is returned.
+
+====== Response fields
+include::{snippets}/task-schedule/document-search-task-schedules/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-schedule/document-search-task-schedules/links.adoc[]
+
+====== Example response
+include::{snippets}/task-schedule/document-search-task-schedules/http-response.adoc[]
+
+
+
+[[delete-task-schedule]]
+=== Delete Schedule
+Deletes the schedule of the task with the given id.
+
+
+[[delete-task-schedule-latest]]
+==== Latest API Version
+
+[[delete-task-schedule-request-latest]]
+===== Request
+A `DELETE` request is used to delete the schedule of the task.
+
+====== Path parameters
+include::{snippets}/task-schedule/document-delete-task-schedule/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/task-schedule/document-delete-task-schedule/request-headers.adoc[]
+
+====== Example request
+operation::task-schedule/document-delete-task-schedule[snippets='http-request,curl-request']
+
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/task-schedule/document-delete-task-schedule/http-response.adoc[]

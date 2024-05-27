@@ -1,0 +1,11 @@
+# Default values for csm-cloud-project-notifications.
+# Declare variables to be passed into your templates.
+
+maxStartUpTime: 400
+replicas: 2
+processStateOnly:
+  enabled: false
+
+  # when the date of a Kafka event is larger than the untilDate, Notifications and Events will be generated
+  # regardless of processStateOnly enabled or not.
+  untilDate: "2010-01-01"

@@ -1,0 +1,14 @@
+# Environment specific values for csm-cloud-api.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+domainName: dev.bosch-refinemysite.com
+domainNameAdmin: dev-admin.bosch-refinemysite.com
+domainNameApi: dev-api.bosch-refinemysite.com
+profiles: staging-open
+
+# configuration for KV Flex volumes
+env: dev
+subscription: dev
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

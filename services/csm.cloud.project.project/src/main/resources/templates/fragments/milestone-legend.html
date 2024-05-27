@@ -1,0 +1,22 @@
+<!--
+  ~ *************************************************************************
+  ~
+  ~  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+  ~
+  ~ *************************************************************************
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<!--/*@thymesVar id="milestone" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.legend.MilestoneLegendCell"*/-->
+<div class="legend-item" th:fragment="milestone-legend (milestone)">
+    <div class="legend-item__color"
+         th:classappend="'legend-item__color--milestone-' + ${milestone.typeName}"></div>
+    <span class="legend-item__name ellipsis"
+          th:text="${milestone.name}"></span>
+</div>
+
+</body>

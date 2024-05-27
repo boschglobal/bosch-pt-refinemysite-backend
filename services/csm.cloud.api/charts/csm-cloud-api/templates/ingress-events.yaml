@@ -1,0 +1,41 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "{{ .Chart.Name }}-events-ingress"
+  labels:
+    custom/ingressClass: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "5m"
+    # To enable the instrumentation OpenTracing must be enabled in the ConfigMap of the ingress-controller.
+    # Additionally, OpenTracing MUST be disabled or enabled for a single Ingress:
+    # https://kubernetes.github.io/ingress-nginx/user-guide/third-party-addons/opentracing/
+    nginx.ingress.kubernetes.io/enable-opentracing: "false"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "X-Accel-Buffering: no";
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: {{ quote .Values.domainName }}
+    http:
+      paths:
+      - path: /api/v1/events
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: {{ .Chart.Name }}
+            port:
+              number: 8090
+  - host: {{ quote .Values.domainNameApi }}
+    http:
+      paths:
+      - path: /internal/v1/events
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: {{ .Chart.Name }}
+            port:
+              number: 8090
+  tls:
+  - hosts:
+    - {{ quote .Values.domainName }}
+    secretName: tls-secret

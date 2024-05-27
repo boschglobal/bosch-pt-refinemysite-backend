@@ -1,0 +1,30 @@
+de.flapdoodle.mongodb.embedded.version: 5.0.6
+logging:
+  level:
+    com.bosch.pt.iot.smartsite.api: INFO
+    org.springframework.cloud.gateway.handler.RoutePredicateHandlerMapping: DEBUG
+    # set to debug to see security matcher information
+    org.springframework.security: INFO
+    # set to debug to see request data of gateway
+    reactor.netty: INFO
+# Add Security Registration so the ApplicationContext can load, values don't matter as there is no call to KeyCloak
+spring:
+  cloud.gateway.httpserver.wiretap: true
+  cloud.gateway.httpclient.wiretap: true
+  security.oauth2:
+    client:
+      registration:
+        keycloak1:
+          client-id: CLIENT_ID
+          client-secret: CLIENT_SECRET
+          client-authentication-method: client_secret_post
+          authorization-grant-type: authorization_code
+          scope:
+            - openid
+            - profile
+            - email
+            - offline_access
+          redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+      provider:
+        keycloak1:
+          issuer-uri: https://stage.key-cloak-one.com/auth/realms/central_profile

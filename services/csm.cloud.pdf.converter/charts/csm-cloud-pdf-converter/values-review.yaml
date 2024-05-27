@@ -1,0 +1,13 @@
+# Environment specific values for csm-cloud-pdf-converter.
+# Declare variables to be passed into your templates.
+
+stage: review
+profiles: production
+limits:
+  memory: 4Gi
+
+# configuration for KV Flex volumes
+env: review
+subscription: qa
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

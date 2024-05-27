@@ -1,0 +1,90 @@
+[
+  {
+    "id": "project_craft_1",
+    "projectId": "project1",
+    "name": "Project Craft 1",
+    "color": "#d9c200",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_1",
+    "projectId": "project1",
+    "name": "Project Craft 1.1",
+    "color": "#f5a100",
+    "etag": 1,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_2",
+    "projectId": "project1",
+    "name": "Project Craft 1.2",
+    "color": "#f87f0a",
+    "etag": 2,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_3",
+    "projectId": "project1",
+    "name": "Project Craft 1.3",
+    "color": "#c96819",
+    "etag": 3,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_2",
+    "projectId": "project2",
+    "name": "Project Craft 2",
+    "color": "#ff998e",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_2_2",
+    "projectId": "project2",
+    "name": "Project Craft 2.2",
+    "color": "#ff5e45",
+    "etag": 1,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_3",
+    "projectId": "project3",
+    "name": "Project Craft 3",
+    "color": "#b93516",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_4",
+    "projectId": "project4",
+    "name": "Project Craft 4",
+    "color": "#ea0016",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_4_1",
+    "projectId": "project4",
+    "name": "Project Craft 4.1",
+    "color": "#c384a1",
+    "etag": 1,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_4_2",
+    "projectId": "project4",
+    "name": "Project Craft 4.2",
+    "color": "#9d4461",
+    "etag": 2,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_4_3",
+    "projectId": "project4",
+    "name": "Project Craft 4.3",
+    "color": "#ca3fa1",
+    "etag": 3,
+    "createWithUserId": "daniel"
+  }
+]

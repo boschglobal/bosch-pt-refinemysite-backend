@@ -1,0 +1,30 @@
+custom:
+  blob-storage:
+    container-name: csm
+    image:
+      folder:
+        fullhd: image/fullhd
+        medium: image/medium
+        original: image/original
+        small: image/small
+    shared-access-expiry-time: 60
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  blob-storage:
+    connection-string: ${csm-cloud-project-storage-account-connection-string}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+custom:
+  blob-storage:
+    connection-string: "DefaultEndpointsProtocol=http;AccountName=projectimagesaccount;AccountKey=cHJvamVjdGltYWdlc2tleQ==;BlobEndpoint=http://127.0.0.1:10000/projectimagesaccount;QueueEndpoint=http://127.0.0.1:10001/projectimagesaccount;"

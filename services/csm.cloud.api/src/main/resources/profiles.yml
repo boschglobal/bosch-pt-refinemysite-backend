@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    group:
+      test:
+        - cors-origin-restricted
+        - idp-stage
+        - swagger
+      local:
+        - cors-origin-restricted
+        - idp-stage
+        - keycloak1
+        - swagger
+      staging-restricted:
+        - kubernetes
+        - cors-origin-restricted
+        - docs
+        - log-json
+        - idp-stage
+        - keycloak1
+        - swagger
+      staging-open:
+        - kubernetes
+        - cors-origin-all
+        - docs
+        - log-json
+        - idp-stage
+        - keycloak1
+        - swagger
+      production:
+        - kubernetes
+        - cors-origin-restricted
+        - log-json
+        - idp-prod
+        - keycloak1
+        - swagger

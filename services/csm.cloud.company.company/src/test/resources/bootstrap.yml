@@ -1,0 +1,11 @@
+kubernetes:
+  informer:
+    enabled: false
+  manifests:
+    enabled: false
+spring:
+  application:
+    name: csm-cloud-company
+  cloud:
+    kubernetes:
+      enabled: false

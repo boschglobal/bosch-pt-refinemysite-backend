@@ -1,0 +1,202 @@
+//////////////////////////////////////////
+ *****************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2022
+ * *****************************************************************
+//////////////////////////////////////////
+
+= SmartSite Consents API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+
+== Documents Administration
+
+Those endpoints can only be used by admins.
+
+[[get-all-documents]]
+=== Get all documents
+
+[[get-all-documents-latest]]
+==== Latest API version
+
+[[get-all-documents-request-latest]]
+===== Request
+
+A `GET` request is used to retrieve all legal documents and its versions.
+
+====== Example request
+
+include::{snippets}/documents/document-get-all-documents/http-request.adoc[]
+include::{snippets}/documents/document-get-all-documents/curl-request.adoc[]
+
+[[get-all-documents-response-latest]]
+===== Response
+
+A list of all legal documents and its versions.
+
+====== Response fields
+
+include::{snippets}/documents/document-get-all-documents/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/documents/document-get-all-documents/http-response.adoc[]
+
+
+
+[[get-document-by-id]]
+=== Get a document by id
+
+[[get-document-by-id-latest]]
+==== Latest API version
+
+[[get-document-by-id-request-latest]]
+===== Request
+
+A `GET` request is used retrieve a document by its identifier.
+
+====== Path parameters
+
+include::{snippets}/documents/document-get-document-by-id/path-parameters.adoc[]
+
+====== Example request
+
+include::{snippets}/documents/document-get-document-by-id/http-request.adoc[]
+include::{snippets}/documents/document-get-document-by-id/curl-request.adoc[]
+
+[[get-document-by-id-response-latest]]
+===== Response
+
+The requested document and its versions.
+
+====== Response fields
+
+include::{snippets}/documents/document-get-document-by-id/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/documents/document-get-document-by-id/http-response.adoc[]
+
+
+
+[[create-document]]
+=== Create a document
+
+[[create-document-latest]]
+==== Latest API version
+
+[[create-document-request-latest]]
+===== Request
+
+A `POST` request is used to create a new document and its initial version.
+
+====== Request fields
+
+include::{snippets}/documents/document-create-document/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/documents/document-create-document/http-request.adoc[]
+include::{snippets}/documents/document-create-document/curl-request.adoc[]
+
+[[create-document-response-latest]]
+===== Response
+
+The created document and its initial version.
+
+====== Response fields
+
+include::{snippets}/documents/document-create-document/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/documents/document-create-document/http-response.adoc[]
+
+
+
+[[update-document]]
+=== Update a document
+
+[[udate-document-latest]]
+==== Latest API version
+
+[[update-document-request-latest]]
+===== Request
+
+A `PUT` request is used to update name and/or url of a legal document.
+
+====== Path parameters
+
+include::{snippets}/documents/document-update-document/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/documents/document-update-document/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/documents/document-update-document/http-request.adoc[]
+include::{snippets}/documents/document-update-document/curl-request.adoc[]
+
+[[update-document-response-latest]]
+===== Response
+
+The updated document and its versions.
+
+====== Response fields
+
+include::{snippets}/documents/document-update-document/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/documents/document-update-document/http-response.adoc[]
+
+
+
+
+[[increment-document-version]]
+=== Increment version of a document
+
+[[increment-document-version-latest]]
+==== Latest API version
+
+[[increment-document-version-request-latest]]
+===== Request
+
+A `POST` request is used increment the version of a document.
+
+====== Path parameters
+
+include::{snippets}/documents/document-increment-document-version/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/documents/document-increment-document-version/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/documents/document-increment-document-version/http-request.adoc[]
+include::{snippets}/documents/document-increment-document-version/curl-request.adoc[]
+
+[[increment-document-version-response-latest]]
+===== Response
+
+The document and its versions, including the new one.
+
+====== Response fields
+
+include::{snippets}/documents/document-increment-document-version/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/documents/document-increment-document-version/http-response.adoc[]

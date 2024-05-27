@@ -1,0 +1,81 @@
+spring:
+  kafka:
+    producer:
+      keySerializer: com.bosch.pt.csm.cloud.common.kafkaconnector.kafka.serializer.NoOpSerializer
+      valueSerializer: com.bosch.pt.csm.cloud.common.kafkaconnector.kafka.serializer.NoOpSerializer
+      batch-size: 64000
+      acks: all
+      properties:
+        max.in.flight.requests.per.connection: 1
+        enable.idempotence: true
+        transaction.timeout.ms: 20000
+        delivery.timeout.ms: 20000
+        request.timeout.ms: 10000
+        # Azure closes idle tcp connections after 4 minutes by default
+        connections.max.idle.ms: 180000
+    properties:
+      reconnect.backoff.ms: 2000
+      reconnect.backoff.max.ms: 15000
+      retry.backoff.ms: 5000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: app-user
+  kafka:
+    producer:
+      transactionIdPrefix: "csm-um-kafka-connector-${stage}"
+      client-id: "csm-cloud-user-kafka-connector-${stage}"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: app-company
+  kafka:
+    producer:
+      transactionIdPrefix: "csm-cm-kafka-connector-${stage}"
+      client-id: "csm-cloud-company-kafka-connector-${stage}"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: app-project
+  kafka:
+    producer:
+      transactionIdPrefix: "csm-pm-kafka-connector-${stage}"
+      client-id: "csm-cloud-project-kafka-connector-${stage}"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: app-featuretoggle
+  kafka:
+    producer:
+      transactionIdPrefix: "csm-fm-kafka-connector-${stage}"
+      client-id: "csm-cloud-feature-kafka-connector-${stage}"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  kafka:
+    bootstrap-servers: ${kafka-broker-urls}
+    properties:
+      request.timeout.ms: 20000
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${kafka-broker-api-key}" password="${kafka-broker-api-secret}";
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_SSL
+      ssl.endpoint.identification.algorithm: https
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  kafka:
+    bootstrap-servers: localhost:9092

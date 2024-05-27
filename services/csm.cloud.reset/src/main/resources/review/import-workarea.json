@@ -1,0 +1,72 @@
+[
+  {
+    "id": "work_area_1_1",
+    "projectId": "project1",
+    "name": "Bürobereich 1.OG",
+    "etag": 0,
+    "createWithUserId": "leonardo"
+  },
+  {
+    "id": "work_area_1_2",
+    "projectId": "project1",
+    "name": "Bürobereich EG",
+    "etag": 1,
+    "createWithUserId": "leonardo"
+  },
+  {
+    "id": "work_area_1_3",
+    "projectId": "project1",
+    "name": "Tiefgarage UG",
+    "etag": 2,
+    "createWithUserId": "leonardo"
+  },
+  {
+    "id": "work_area_2_1",
+    "projectId": "project2",
+    "name": "office area 02",
+    "etag": 0,
+    "createWithUserId": "pinto"
+  },
+  {
+    "id": "work_area_2_2",
+    "projectId": "project2",
+    "name": "office area 01",
+    "etag": 1,
+    "createWithUserId": "pinto"
+  },
+  {
+    "id": "work_area_2_3",
+    "projectId": "project2",
+    "name": "basement -01",
+    "etag": 2,
+    "createWithUserId": "pinto"
+  },
+  {
+    "id": "work_area_3_1",
+    "projectId": "project3",
+    "name": "Sprinklerzentrale West",
+    "etag": 0,
+    "createWithUserId": "roberto"
+  },
+  {
+    "id": "work_area_3_2",
+    "projectId": "project3",
+    "name": "Sprinklerzentrale Ost",
+    "etag": 1,
+    "createWithUserId": "roberto"
+  },
+  {
+    "id": "work_area_4_1",
+    "projectId": "project4",
+    "name": "sprinkler control centre west",
+    "etag": 0,
+    "createWithUserId": "frank"
+  },
+  {
+    "id": "work_area_4_2",
+    "projectId": "project4",
+    "name": "sprinkler control centre east",
+    "etag": 1,
+    "createWithUserId": "frank"
+  }
+]

@@ -1,0 +1,11 @@
+spring:
+  cache:
+    type: NONE
+logging:
+  level:
+    org:
+      springframework:
+        test:
+          context:
+            # change to debug to get infos about testcontext caching and reusing
+            cache: info

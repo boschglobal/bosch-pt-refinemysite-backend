@@ -1,0 +1,40 @@
+info:
+  app:
+    name: ${spring.application.name}
+
+spring:
+  config:
+    import:
+      - classpath:actuator-common.yml
+      - classpath:apiversion.yml
+      - classpath:kafka.yml
+      - classpath:logging.yml
+      - classpath:metrics-common.yml
+      - classpath:profiles.yml
+      - classpath:server.yml
+      - classpath:topics.yml
+  application:
+    name: csm-cloud-event
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+  cache:
+    type: simple
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+  jackson:
+    default-property-inclusion: non_null
+  threads:
+    virtual:
+      enabled: true
+      
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+stage: local
+
+csm.user.url: http://localhost:8010

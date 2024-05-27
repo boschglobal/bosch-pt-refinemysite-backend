@@ -1,0 +1,22 @@
+custom:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uris:
+            - https://example.com
+
+bim.model.service.url: http://localhost:${mock-server-port}
+company.company.service.url: http://localhost:${mock-server-port}
+event.service.url: http://localhost:${mock-server-port}
+event-mobile.service.url: http://localhost:${mock-server-port}
+featuretoggle.service.url: http://localhost:${mock-server-port}
+job.service.url: http://localhost:${mock-server-port}
+project:
+  activity.service.url: http://localhost:${mock-server-port}
+  api.timeseries.service.url: http://localhost:${mock-server-port}
+  news.service.url: http://localhost:${mock-server-port}
+  project.service.url: http://localhost:${mock-server-port}
+  statistics.service.url: http://localhost:${mock-server-port}
+  notifications.service.url: http://localhost:${mock-server-port}
+user.user.service.url: http://localhost:${mock-server-port}

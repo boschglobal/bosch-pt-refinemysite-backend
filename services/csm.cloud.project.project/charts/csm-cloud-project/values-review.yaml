@@ -1,0 +1,18 @@
+# Environment specific values for csm-cloud-project.
+# Declare variables to be passed into your templates.
+
+stage: review
+profiles: production, idp-bosch-dev, init-topics, redirect-mails, swagger
+domainName: review.bosch-refinemysite.com
+domainNameApi: review-api.bosch-refinemysite.com
+
+mailjetBccEmail: REPLACE_ME
+mailjetErrorReportingEmail: REPLACE_ME
+mailjetRedirectEmail: REPLACE_ME
+mailjetRedirectPattern: "smartsiteapp\\+.*@gmail.com"
+
+# configuration for KV Flex volumes
+env: review
+subscription: qa
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

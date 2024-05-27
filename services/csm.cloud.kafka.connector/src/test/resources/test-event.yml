@@ -1,0 +1,9 @@
+event:
+  database-name: testdb
+  query:
+    table-names: "select LOWER(table_name) as table_name from information_schema.tables"
+
+custom:
+  table-mapping:
+    craft_kafka_event: "csm.${stage}.referencedata.craft"
+    user_kafka_event: "csm.${stage}.usermanagement.user"

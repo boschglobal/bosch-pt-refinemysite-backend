@@ -1,0 +1,20 @@
+/*
+ * ************************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+ *
+ * ************************************************************************
+ */
+
+package com.bosch.pt.csm.cloud.projectmanagement.project.message.facade.listener.message
+
+import com.bosch.pt.csm.cloud.projectmanagement.activity.model.EventInformation
+import com.bosch.pt.csm.cloud.projectmanagement.message.message.getLastModifiedByUserIdentifier
+import com.bosch.pt.csm.cloud.projectmanagement.message.message.getLastModifiedDate
+import com.bosch.pt.csm.cloud.projectmanagement.message.messages.MessageEventAvro
+
+fun MessageEventAvro.buildEventInformation() =
+    EventInformation(
+        name = getName().name,
+        date = getLastModifiedDate(),
+        user = getLastModifiedByUserIdentifier())

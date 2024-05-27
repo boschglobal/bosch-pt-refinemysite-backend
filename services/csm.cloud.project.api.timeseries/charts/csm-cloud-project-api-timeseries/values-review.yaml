@@ -1,0 +1,12 @@
+# Environment specific values for csm-cloud-project-api-timeseries.
+# Declare variables to be passed into your templates.
+
+stage: review
+profiles: production, idp-bosch-dev
+replicas: 3
+
+# configuration for KV Flex volumes
+env: review
+subscription: qa
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

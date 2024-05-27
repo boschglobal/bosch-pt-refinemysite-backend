@@ -1,0 +1,5 @@
+# Default values for csm-cloud-company.
+# Declare variables to be passed into your templates.
+
+maxStartUpTime: 500
+replicas: 2

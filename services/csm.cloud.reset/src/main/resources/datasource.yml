@@ -1,0 +1,200 @@
+smartsite:
+  datasource:
+    bam:
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+    company-service:
+      driverClassName: org.mariadb.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+    company-restore:
+      driverClassName: org.mariadb.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+    featuretoggle-service:
+      driverClassName: org.mariadb.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+    news-service:
+      driverClassName: org.mariadb.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+    project-service:
+      driverClassName: org.mariadb.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+    project-restore:
+      driverClassName: org.mariadb.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+    statistics-service:
+      driverClassName: org.mariadb.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+    user-service:
+      driverClassName: org.mariadb.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+    user-restore:
+      driverClassName: org.mariadb.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 1
+      maximum-pool-size: 1
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+smartsite:
+  datasource:
+    activity-service:
+      uri: ${csm-cloud-project-activity-mongodbatlas-connection-string}
+    bam:
+      url: ${csm-monitoring-event-postgresql-flexible-url}
+    company-service:
+      url: ${csm-cloud-company-mysql-flexible-url}
+    featuretoggle-service:
+      url: ${csm-cloud-featuretoggle-mysql-flexible-url}
+    job-service:
+      uri: ${csm-cloud-job-mongodbatlas-connection-string}
+    news-service:
+      url: ${csm-cloud-project-news-mysql-flexible-url}
+    notification-service:
+      uri: ${csm-cloud-project-notification-mongodbatlas-connection-string}
+    project-api-timeseries-service:
+      uri: ${csm-cloud-project-api-timeseries-mongodbatlas-connection-string}
+    project-service:
+      uri: ${csm-cloud-project-mongodbatlas-connection-string}
+      url: ${csm-cloud-project-mysql-flexible-url}
+    statistics-service:
+      url: ${csm-cloud-project-statistics-mysql-flexible-url}
+    user-service:
+      url: ${csm-cloud-user-mysql-flexible-url}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: company-restore-db && kubernetes
+
+smartsite:
+  datasource:
+    company-restore:
+      url: ${csm-cloud-company-restore-mysql-flexible-url}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: project-restore-db && kubernetes
+
+smartsite:
+  datasource:
+    project-restore:
+      url: ${csm-cloud-project-restore-mysql-flexible-url}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: user-restore-db && kubernetes
+
+smartsite:
+  datasource:
+    user-restore:
+      url: ${csm-cloud-user-restore-mysql-flexible-url}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+smartsite:
+  datasource:
+    activity-service:
+      uri: mongodb://localhost:27017/csm-pm-activity-service
+    bam:
+      url: jdbc:postgresql://localhost:5432/bam?user=postgres&password=smartsite
+    company-service:
+      url: jdbc:mysql://localhost:3306/csm-company?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval
+    featuretoggle-service:
+      url: jdbc:mysql://localhost:3306/csm-featuretoggle?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval
+    job-service:
+      uri: mongodb://localhost:27017/csm-job-service
+    news-service:
+      url: jdbc:mysql://localhost:3306/csm-project-news?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval
+    notification-service:
+      uri: mongodb://localhost:27017/csm-pm-notification-service
+    project-api-timeseries-service:
+      uri: mongodb://localhost:27017/csm-pm-project-api-timeseries-service
+    project-service:
+      uri: mongodb://localhost:27017/csm-pm-project-service
+      url: jdbc:mysql://localhost:3306/csm-project?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval
+    statistics-service:
+      url: jdbc:mysql://localhost:3306/csm-project-statistics?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval
+    user-service:
+      url: jdbc:mysql://localhost:3306/csm-user?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval
+
+---
+spring:
+  config:
+    activate:
+      on-profile: company-restore-db && local
+
+smartsite:
+  datasource:
+    company-restore:
+      url: jdbc:mysql://localhost:3306/csm-company-restore?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval
+
+---
+spring:
+  config:
+    activate:
+      on-profile: project-restore-db && local
+
+smartsite:
+  datasource:
+    project-restore:
+      url: jdbc:mysql://localhost:3306/csm-project-restore?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval
+
+---
+spring:
+  config:
+    activate:
+      on-profile: user-restore-db && local
+
+smartsite:
+  datasource:
+    user-restore:
+      url: jdbc:mysql://localhost:3306/csm-user-restore?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval

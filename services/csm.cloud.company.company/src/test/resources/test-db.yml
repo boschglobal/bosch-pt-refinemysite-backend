@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: # Set on startup by Testcontainers
+    username: test
+    password: test

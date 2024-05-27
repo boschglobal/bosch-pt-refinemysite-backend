@@ -1,0 +1,10 @@
+.idea/*
+charts/*
+scripts/*
+azure-pipelines.yaml
+coverage.html
+coverage.out
+Dockerfile
+README.md
+sonar-project.properties
+test-report.out

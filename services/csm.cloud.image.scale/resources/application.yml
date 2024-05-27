@@ -1,0 +1,31 @@
+kafka:
+  consumer:
+    readTimeout: 10s
+  schema:
+    autoRegisterSchemas: false
+    key:
+      schemaFile: resources/avro/MessageKeyAvro.avsc
+      schemaSubject: com.bosch.pt.csm.cloud.common.messages.MessageKeyAvro
+    stringKey:
+      schemaFile: resources/avro/StringMessageKeyAvro.avsc
+      schemaSubject: com.bosch.pt.csm.cloud.common.messages.StringMessageKeyAvro
+    uploaded:
+      schemaFile: resources/avro/FileCreatedEventAvro.avsc
+      schemaSubject: com.bosch.pt.csm.cloud.storage.event.messages.FileCreatedEventAvro
+    deleted:
+      schemaFile: resources/avro/ImageDeletedEventAvro.avsc
+      schemaSubject: com.bosch.pt.csm.cloud.image.messages.ImageDeletedEventAvro
+    scaled:
+      schemaFile: resources/avro/ImageScaledEventAvro.avsc
+      schemaSubject: com.bosch.pt.csm.cloud.image.messages.ImageScaledEventAvro
+  topic:
+    autoCreateTopics: false
+    uploaded:
+      partitions: 1
+      replicationFactor: 2
+    scaled:
+      partitions: 1
+      replicationFactor: 2
+
+server:
+  port: 8080

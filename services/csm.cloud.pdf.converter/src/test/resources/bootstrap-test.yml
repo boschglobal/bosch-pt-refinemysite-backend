@@ -1,0 +1,6 @@
+spring:
+  main:
+    banner-mode: off
+  cloud:
+    kubernetes:
+      enabled: false

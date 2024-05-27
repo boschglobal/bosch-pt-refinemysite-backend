@@ -1,0 +1,40 @@
+info:
+  app:
+    name: ${spring.application.name}
+
+spring:
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+  config:
+    import:
+      - classpath:actuator-common.yml
+      - classpath:event.yml
+      - classpath:kafka.yml
+      - classpath:logging.yml
+      - classpath:metrics.yml
+      - classpath:mysql.yml
+      - classpath:profiles.yml
+      - classpath:server.yml
+  sleuth:
+    scheduled:
+      skipPattern: com.bosch.pt.csm.cloud.common.kafkaconnector.schedule.ScheduleService
+  task:
+    scheduling:
+      shutdown:
+        await-termination: true
+        await-termination-period: 10s
+  threads:
+    virtual:
+      enabled: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+stage: local
+
+

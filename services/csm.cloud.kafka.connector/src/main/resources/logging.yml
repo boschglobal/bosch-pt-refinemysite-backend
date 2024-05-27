@@ -1,0 +1,31 @@
+logging:
+  level:
+    ROOT: WARN
+    #com.zaxxer.hikari: debug
+    com.bosch.pt.csm.cloud.common.kafkaconnector:
+      KafkaConnectorApplicationKt: info
+      config.ShutdownConfig: info
+      kafka.KafkaFeedService: info
+      # Useful log configuration or debugging
+      # schedule.ScheduleService: info
+    # org.apache.kafka.clients.producer.internals.ProducerBatch: trace
+    org:
+      springframework:
+        boot:
+          context: info
+
+---
+spring:
+  config:
+    activate:
+      on-profile: log-transactions
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc: debug
+        transaction: trace
+        kafka:
+          transaction: trace
+      mariadb: debug # use trace for more details

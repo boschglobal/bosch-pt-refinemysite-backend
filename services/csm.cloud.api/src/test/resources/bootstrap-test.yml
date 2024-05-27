@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    kubernetes:
+      enabled: false
+
+kubernetes.informer.enabled: false
+kubernetes.manifests.enabled: false

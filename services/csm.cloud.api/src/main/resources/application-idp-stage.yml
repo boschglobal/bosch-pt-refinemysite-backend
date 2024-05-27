@@ -1,0 +1,91 @@
+custom:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uris:
+            - ${spring.security.oauth2.client.provider.keycloak1.issuer-uri}
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak1:
+            client-id: refinemysite-dev
+            client-secret: ${keycloak1-client-secret}
+            client-authentication-method: client_secret_post
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+              - profile
+              - email
+              - offline_access
+            # redirect-uri, configured for each staging environment.
+            # defaults to {baseUrl}/{action}/oauth2/code/{registrationId}
+        # Note: provider issuer-uri need to be set exactly as defined in the provider's OIDC configuration
+        provider:
+          keycloak1:
+            issuer-uri: https://stage.key-cloak-one.com/auth/realms/central_profile
+
+---
+spring:
+  config:
+    activate:
+      on-profile: keycloak1
+
+custom:
+  auth:
+    idp:
+      client-registration: keycloak1
+      style-id: pt_bsch_rms_01
+      style-id-parameter: style_id
+      logout-url: ${spring.security.oauth2.client.provider.keycloak1.issuer-uri}/protocol/openid-connect/logout
+    myidp1:
+      user-profile-url: https://stage.my-idp-one.com/myprofile/
+
+---
+spring:
+  config:
+    activate:
+      # The staging-restricted profile can be used to prevent that local (web) clients can connect to an azure stage.
+      on-profile: staging-restricted
+
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak1:
+            redirect-uri: "{baseScheme}://{baseHost}{basePort}/login/oauth2/code/{registrationId}"
+
+---
+spring:
+  config:
+    activate:
+      # The staging-open profile can be used to allow that local (web) clients can connect to an azure stage.
+      on-profile: staging-open
+
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak1:
+            redirect-uri: "{baseScheme}://{baseHost}{basePort}/login/oauth2/code/{registrationId}"
+        provider:
+          keycloak1-local-redirect:
+            issuer-uri: ${spring.security.oauth2.client.provider.keycloak1.issuer-uri}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak1:
+            redirect-uri: "{baseScheme}://{baseHost}{basePort}/login/oauth2/code/{registrationId}"
+
+# Local configuration for MYIDP2 / KEYCLOAK1 (Stage)
+myidp1-client-secret: REPLACEME

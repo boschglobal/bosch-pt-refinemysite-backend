@@ -1,0 +1,485 @@
+[
+  {
+    "id": "ali",
+    "email": "smartsiteapp+ali@gmail.com",
+    "password": "Smartali#1",
+    "gender": "MALE",
+    "firstName": "Ali",
+    "lastName": "Yilmaz",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "219120129"
+      }
+    ],
+    "craftIds": [
+      "craft_2",
+      "craft_7"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "anne",
+    "email": "smartsiteapp+anne@gmail.com",
+    "password": "Smartann#1",
+    "gender": "FEMALE",
+    "firstName": "Anne",
+    "lastName": "Esch",
+    "position": "construction site manager",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "126484555"
+      }
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "armin",
+    "email": "smartsiteapp+armin@gmail.com",
+    "password": "Smartarm#1",
+    "gender": "MALE",
+    "firstName": "Armin",
+    "lastName": "Baum",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "19537845"
+      }
+    ],
+    "craftIds": [
+      "craft_15"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "bob",
+    "email": "smartsiteapp+bob@gmail.com",
+    "password": "Smartbob#1",
+    "gender": "MALE",
+    "firstName": "Bob",
+    "lastName": "West",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "bruno",
+    "email": "smartsiteapp+bruno@gmail.com",
+    "password": "Smartbru#1",
+    "gender": "MALE",
+    "firstName": "Bruno",
+    "lastName": "de Carvalho",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "carlos",
+    "email": "smartsiteapp+carlos@gmail.com",
+    "password": "Smartcar#1",
+    "gender": "MALE",
+    "firstName": "Carlos",
+    "lastName": "Caracho",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "984125329"
+      }
+    ],
+    "craftIds": [
+      "craft_11",
+      "craft_9"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "cesar",
+    "email": "smartsiteapp+cesar@gmail.com",
+    "password": "Smartces#1",
+    "gender": "FEMALE",
+    "firstName": "Julius",
+    "lastName": "Cesar",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "cindy",
+    "email": "smartsiteapp+cindy@gmail.com",
+    "password": "Smartcin#1",
+    "gender": "FEMALE",
+    "firstName": "Cindy",
+    "lastName": "Russo",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "113344685"
+      }
+    ],
+    "craftIds": [
+      "craft_14",
+      "craft_10",
+      "craft_1"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "daniel",
+    "email": "smartsiteapp+daniel@gmail.com",
+    "password": "Smartdan#1",
+    "gender": "MALE",
+    "firstName": "Daniel",
+    "lastName": "Kramer",
+    "position": "construction site manager",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "2193749596"
+      }
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "eddie",
+    "email": "smartsiteapp+eddie@gmail.com",
+    "password": "Smartedd#1",
+    "gender": "MALE",
+    "firstName": "Eddie",
+    "lastName": "Schmidt",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "46890029"
+      }
+    ],
+    "craftIds": [
+      "craft_3"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "frank",
+    "email": "smartsiteapp+frank@gmail.com",
+    "password": "Smartfra#1",
+    "gender": "MALE",
+    "firstName": "Frank",
+    "lastName": "Meister",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "12638496"
+      }
+    ],
+    "craftIds": [
+      "craft_4",
+      "craft_8"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "groot",
+    "email": "smartsiteapp+groot@gmail.com",
+    "password": "Smartgro#1",
+    "gender": "MALE",
+    "firstName": "I am",
+    "lastName": "groot",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "gustav",
+    "email": "smartsiteapp+gustav@gmail.com",
+    "password": "Smartgus#1",
+    "gender": "MALE",
+    "firstName": "Gustav",
+    "lastName": "Mayer",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "3648506"
+      }
+    ],
+    "craftIds": [
+      "craft_6"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "hannah",
+    "email": "smartsiteapp+hannah@gmail.com",
+    "password": "Smarthan#1",
+    "gender": "FEMALE",
+    "firstName": "Hannah",
+    "lastName": "Becker",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "57694031"
+      }
+    ],
+    "craftIds": [
+      "craft_13"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "ingo",
+    "email": "smartsiteapp+ingo@gmail.com",
+    "password": "Smarting#1",
+    "gender": "MALE",
+    "firstName": "Ingo",
+    "lastName": "Jansen",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "2048650765"
+      }
+    ],
+    "craftIds": [
+      "craft_5"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "jenny",
+    "email": "smartsiteapp+jenny@gmail.com",
+    "password": "Smartjen#1",
+    "gender": "FEMALE",
+    "firstName": "Jenny",
+    "lastName": "Ahlers",
+    "position": "worker",
+    "roles": [
+      "USER"
+    ],
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "86947311"
+      }
+    ],
+    "craftIds": [
+      "craft_16",
+      "craft_12"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "jong",
+    "email": "smartsiteapp+jong@gmail.com",
+    "password": "Smartjon#1",
+    "gender": "MALE",
+    "firstName": "Jong",
+    "lastName": "Xaolin",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "leal",
+    "email": "smartsiteapp+leal@gmail.com",
+    "password": "Smartlea#1",
+    "gender": "FEMALE",
+    "firstName": "Maria",
+    "lastName": "Leal",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "leonardo",
+    "email": "smartsiteapp+leonardo@gmail.com",
+    "password": "Smartleo#1",
+    "gender": "MALE",
+    "firstName": "Leonardo",
+    "lastName": "da Vinci",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "maduro",
+    "email": "smartsiteapp+maduro@gmail.com",
+    "password": "Smartmad#1",
+    "gender": "MALE",
+    "firstName": "Nicolás",
+    "lastName": "Maduro",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "monica",
+    "email": "smartsiteapp+monica@gmail.com",
+    "password": "Smartmon#1",
+    "gender": "FEMALE",
+    "firstName": "Monica",
+    "lastName": "Ferrari",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "pablo",
+    "email": "smartsiteapp+pablo@gmail.com",
+    "password": "Smartpab#1",
+    "gender": "MALE",
+    "firstName": "Pablo",
+    "lastName": "Picasso",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "pinto",
+    "email": "smartsiteapp+pinto@gmail.com",
+    "password": "Smartpin#1",
+    "gender": "MALE",
+    "firstName": "Pinto",
+    "lastName": "da Costa",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "roberto",
+    "email": "smartsiteapp+roberto@gmail.com",
+    "password": "Smartrob#1",
+    "gender": "MALE",
+    "firstName": "Roberto",
+    "lastName": "Guindon",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "sheila",
+    "email": "smartsiteapp+sheila@gmail.com",
+    "password": "Smartshe#1",
+    "gender": "FEMALE",
+    "firstName": "Sheila",
+    "lastName": "Banessa",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "vandelay",
+    "email": "smartsiteapp+vandelay@gmail.com",
+    "password": "Smartvan#1",
+    "gender": "MALE",
+    "firstName": "Art",
+    "lastName": "Vandelay",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "vieira",
+    "email": "smartsiteapp+vieira@gmail.com",
+    "password": "Smartvie#1",
+    "gender": "MALE",
+    "firstName": "Luis Filipe",
+    "lastName": "Vieira",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  }
+]

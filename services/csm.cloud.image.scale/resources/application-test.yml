@@ -1,0 +1,20 @@
+kafka:
+  broker:
+    urls: localhost:9092
+  consumer:
+    groupId: csm-im-local-scale
+  schemaRegistry:
+    urls: http://localhost:8081
+  schema:
+    autoRegisterSchemas: true
+  topic:
+    autoCreateTopics: true
+    uploaded:
+      name: csm.test.storagemanagement.upload
+      replicationFactor: 1
+    scaled:
+      name: csm.test.image.scale
+      replicationFactor: 1
+
+server:
+  port: 9041

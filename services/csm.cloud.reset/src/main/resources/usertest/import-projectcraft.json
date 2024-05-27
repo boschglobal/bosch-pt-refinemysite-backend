@@ -1,0 +1,338 @@
+[
+  {
+    "id": "project_craft_1_1",
+    "projectId": "project1",
+    "name": "Schlosser",
+    "color": "#0bd3d1",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_2",
+    "projectId": "project1",
+    "name": "Boden",
+    "color": "#896a43",
+    "etag": 1,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_3",
+    "projectId": "project1",
+    "name": "Sanitär",
+    "color": "#006249",
+    "etag": 2,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_4",
+    "projectId": "project1",
+    "name": "Sprinkler",
+    "color": "#50237f",
+    "etag": 3,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_5",
+    "projectId": "project1",
+    "name": "Lüftung",
+    "color": "#c384a1",
+    "etag": 4,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_6",
+    "projectId": "project1",
+    "name": "Brandschutz",
+    "color": "#f5a100",
+    "etag": 5,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_7",
+    "projectId": "project1",
+    "name": "H/K",
+    "color": "#ca3fa1",
+    "etag": 6,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_8",
+    "projectId": "project1",
+    "name": "Isolierung",
+    "color": "#5641c3",
+    "etag": 7,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_9",
+    "projectId": "project1",
+    "name": "Kleinkälte",
+    "color": "#1e8a3e",
+    "etag": 8,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_10",
+    "projectId": "project1",
+    "name": "Estrich",
+    "color": "#868686",
+    "etag": 9,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_11",
+    "projectId": "project1",
+    "name": "Elektroinstallation",
+    "color": "#859425",
+    "etag": 10,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_12",
+    "projectId": "project1",
+    "name": "Türen",
+    "color": "#5275a1",
+    "etag": 11,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_13",
+    "projectId": "project1",
+    "name": "Trockenbau",
+    "color": "#b90276",
+    "etag": 12,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_1_14",
+    "projectId": "project1",
+    "name": "Vermesser",
+    "color": "#c96819",
+    "etag": 13,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_2_1",
+    "projectId": "project2",
+    "name": "fitter",
+    "color": "#0bd3d1",
+    "etag": 0,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_2",
+    "projectId": "project2",
+    "name": "flooring",
+    "color": "#896a43",
+    "etag": 1,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_3",
+    "projectId": "project2",
+    "name": "sanitary",
+    "color": "#006249",
+    "etag": 2,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_4",
+    "projectId": "project2",
+    "name": "sprinklers",
+    "color": "#50237f",
+    "etag": 3,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_5",
+    "projectId": "project2",
+    "name": "ventilation",
+    "color": "#c384a1",
+    "etag": 4,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_6",
+    "projectId": "project2",
+    "name": "fire safety",
+    "color": "#f5a100",
+    "etag": 5,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_7",
+    "projectId": "project2",
+    "name": "heating/air condition",
+    "color": "#ca3fa1",
+    "etag": 6,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_8",
+    "projectId": "project2",
+    "name": "isolation",
+    "color": "#5641c3",
+    "etag": 7,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_9",
+    "projectId": "project2",
+    "name": "refrigeration",
+    "color": "#1e8a3e",
+    "etag": 8,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_10",
+    "projectId": "project2",
+    "name": "screed",
+    "color": "#868686",
+    "etag": 9,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_11",
+    "projectId": "project2",
+    "name": "electrical work",
+    "color": "#859425",
+    "etag": 10,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_12",
+    "projectId": "project2",
+    "name": "doors",
+    "color": "#5275a1",
+    "etag": 11,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_13",
+    "projectId": "project2",
+    "name": "drywall construction",
+    "color": "#b90276",
+    "etag": 12,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_2_14",
+    "projectId": "project2",
+    "name": "surveyors",
+    "color": "#c96819",
+    "etag": 13,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_3_1",
+    "projectId": "project3",
+    "name": "Elektroinstallation",
+    "color": "#d9c200",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_3_2",
+    "projectId": "project3",
+    "name": "Sanitär",
+    "color": "#f87f0a",
+    "etag": 1,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_3_3",
+    "projectId": "project3",
+    "name": "Brandschutz",
+    "color": "#ca3fa1",
+    "etag": 2,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_3_4",
+    "projectId": "project3",
+    "name": "Sprinkler",
+    "color": "#b93516",
+    "etag": 3,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_3_5",
+    "projectId": "project3",
+    "name": "H/K",
+    "color": "#7d38c7",
+    "etag": 4,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_3_6",
+    "projectId": "project3",
+    "name": "Lüftung",
+    "color": "#5275a1",
+    "etag": 5,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_3_7",
+    "projectId": "project3",
+    "name": "Isolierung",
+    "color": "#779ef5",
+    "etag": 6,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_craft_4_1",
+    "projectId": "project4",
+    "name": "electrical work",
+    "color": "#d9c200",
+    "etag": 0,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_4_2",
+    "projectId": "project4",
+    "name": "sanitary",
+    "color": "#f87f0a",
+    "etag": 1,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_4_3",
+    "projectId": "project4",
+    "name": "fire safety",
+    "color": "#ca3fa1",
+    "etag": 2,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_4_4",
+    "projectId": "project4",
+    "name": "sprinklers",
+    "color": "#b93516",
+    "etag": 3,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_4_5",
+    "projectId": "project4",
+    "name": "heating/air condition",
+    "color": "#7d38c7",
+    "etag": 4,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_4_6",
+    "projectId": "project4",
+    "name": "ventilation",
+    "color": "#5275a1",
+    "etag": 5,
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project_craft_4_7",
+    "projectId": "project4",
+    "name": "isolation",
+    "color": "#779ef5",
+    "etag": 6,
+    "createWithUserId": "anne"
+  }
+]

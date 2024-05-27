@@ -1,0 +1,71 @@
+spring:
+  kafka:
+    clientId: "csm-cloud-project"
+    listener:
+      concurrency: 3
+    consumer:
+      keyDeserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      valueDeserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      enableAutoCommit: false
+      group-id: "csm-pm-${stage}"
+      properties:
+        auto.offset.reset: earliest
+        isolation.level: read_committed
+        max.poll.records: 50
+        request.timeout.ms: 20000
+        session.timeout.ms: 30000
+        specific.avro.reader: true
+    producer:
+      keySerializer: com.bosch.pt.iot.smartsite.common.kafka.serializer.NoOpSerializer
+      valueSerializer: com.bosch.pt.iot.smartsite.common.kafka.serializer.NoOpSerializer
+      acks: all
+      properties:
+        max.in.flight.requests.per.connection: 1
+        # Azure closes idle tcp connections after 4 minutes by default
+        connections.max.idle.ms: 180000
+    properties:
+      auto.register.schemas: false
+      key.subject.name.strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+      value.subject.name.strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+      reconnect.backoff.max.ms: 15000
+      reconnect.backoff.ms: 2000
+      retry.backoff.ms: 5000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: restore-db
+  kafka:
+    clientId: "csm-cloud-project-restore"
+    consumer:
+      group-id: "csm-pm-${stage}-restore"
+    listener:
+      concurrency: 18
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  kafka:
+    bootstrap-servers: ${kafka-broker-urls}
+    properties:
+      schema.registry.url: ${kafka-schemaregistry-urls}
+      basic.auth.user.info: ${kafka-schemaregistry-api-key}:${kafka-schemaregistry-api-secret}
+      basic.auth.credentials.source: 'USER_INFO'
+      request.timeout.ms: 20000
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${csm-cloud-project-kafka-broker-api-key}" password="${csm-cloud-project-kafka-broker-api-secret}";
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_SSL
+      ssl.endpoint.identification.algorithm: https
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      schema.registry.url: http://localhost:8081

@@ -1,0 +1,70 @@
+[
+  {
+    "id": "project1",
+    "title": "Fasanenhof Grundsanierung",
+    "client": "Krämer Projektbau GmbH",
+    "description": "Neubau von drei Wohnhäusern",
+    "end": 80,
+    "start": -80,
+    "projectNumber": "20170420_13",
+    "category": "OB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "10 A",
+      "street": "Zettachring",
+      "zipCode": "70567"
+    },
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project2",
+    "title": "Stuttgart 21 (Hbf)",
+    "client": "DB Projekt Stuttgart–Ulm GmbH",
+    "description": "Stuttgart 21 (auch kurz S21) ist ein Verkehrs- und Städtebauprojekt zur Neuordnung des Eisenbahnknotens Stuttgart. Kernstück ist der Umbau des Kopfbahnhofes Stuttgart Hauptbahnhof in einen unterirdischen Durchgangsbahnhof.",
+    "end": 80,
+    "start": -80,
+    "projectNumber": "20170420_13",
+    "category": "NB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "2",
+      "street": "Arnulf-Klett-Platz",
+      "zipCode": "70173"
+    },
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project3",
+    "title": "Elbphilharmonie",
+    "client": "Elbphilharmonie Bau KG",
+    "description": "Neubau von drei Wohnhäusern",
+    "end": 80,
+    "start": -80,
+    "projectNumber": "20170530_1",
+    "category": "OB",
+    "address": {
+      "city": "Hamburg",
+      "houseNumber": "1",
+      "street": "Platz der Deutschen Einheit",
+      "zipCode": "20457"
+    },
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4",
+    "title": "Renovierung Flughafen Stuttgart",
+    "client": "Krämer Projektbau GmbH",
+    "description": "Neubau von drei Wohnhäusern",
+    "end": 80,
+    "start": -80,
+    "projectNumber": "20170530_2",
+    "category": "OB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "10 B",
+      "street": "Zettachring",
+      "zipCode": "70567"
+    },
+    "createWithUserId": "daniel"
+  }
+]

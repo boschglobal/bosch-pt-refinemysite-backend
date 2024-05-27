@@ -1,0 +1,37 @@
+info:
+  app:
+    name: ${spring.application.name}
+
+locale:
+  default: en
+  supported: en, de
+
+spring:
+  config:
+    import:
+      - classpath:actuator-common.yml
+      - classpath:kafka.yml
+      - classpath:logging.yml
+      - classpath:metrics-common.yml
+      - classpath:postgres.yml
+      - classpath:profiles.yml
+      - classpath:server.yml
+      - classpath:topics.yml
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+  cache:
+    type: simple
+  jackson:
+    default-property-inclusion: non_null
+  jmx:
+    enabled: true # enable jmx to get kafka metrics via micrometer
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+stage: local

@@ -1,0 +1,27 @@
+# Default values for csm-cloud-reset.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+maxStartUpTime: 100
+
+stage: dev
+profiles: kubernetes, azure
+
+company:
+  restore:
+    secret:
+      enabled: false
+project:
+  restore:
+    secret:
+      enabled: false
+user:
+  restore:
+    secret:
+      enabled: false
+
+# configuration for KV Flex volumes
+env: dev
+subscription: dev
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

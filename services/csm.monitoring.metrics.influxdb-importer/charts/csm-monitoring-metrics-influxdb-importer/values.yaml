@@ -1,0 +1,14 @@
+# Default values for csm-cloud-project.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+maxStartUpTime: 40
+
+stage: dev
+profiles: kubernetes
+
+# configuration for KV Flex volumes
+env: dev
+subscription: dev
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

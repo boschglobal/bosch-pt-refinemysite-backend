@@ -1,0 +1,14 @@
+# Environment specific values for csm-cloud-pdf-converter.
+# Declare variables to be passed into your templates.
+
+stage: prod
+profiles: production
+livenessProbeInitialDelay: 60
+limits:
+  memory: 4Gi
+
+# configuration for KV Flex volumes
+env: prod
+subscription: prod
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

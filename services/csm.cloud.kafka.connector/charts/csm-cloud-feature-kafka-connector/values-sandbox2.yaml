@@ -1,0 +1,11 @@
+# Environment specific values for csm-cloud-feature-kafka-connector.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+stage: sandbox2
+
+# configuration for KV Flex volumes
+env: sandbox2
+subscription: sandbox
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

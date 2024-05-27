@@ -1,0 +1,5 @@
+# Default values for csm-cloud-feature-kafka-connector.
+# Declare variables to be passed into your templates.
+
+profiles: kubernetes-featuretoggle
+maxStartUpTime: 500

@@ -1,0 +1,15 @@
+server:
+  tomcat:
+    threads:
+      max: 2
+    mbeanregistry:
+      enabled: true # enable the mbean registry to get tomcat metrics via micrometer
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+server:
+  port: 8052

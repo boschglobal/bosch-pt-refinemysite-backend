@@ -1,0 +1,69 @@
+custom:
+  kafka:
+    bindings:
+      featuretoggle:
+        configuration:
+          properties:
+            retention.ms: -1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  kafka:
+    bindings:
+      featuretoggle:
+        kafkaTopic: ${kafka-topic-featuretoggle}
+        configuration:
+          properties:
+            min.insync.replicas: 2
+      user:
+        kafkaTopic: ${kafka-topic-user}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: staging
+
+custom:
+  kafka:
+    bindings:
+      featuretoggle:
+        configuration:
+          partitions: 1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+
+custom:
+  kafka:
+    bindings:
+      featuretoggle:
+        configuration:
+          partitions: 1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local || test
+
+custom:
+  kafka:
+    bindings:
+      featuretoggle:
+        kafkaTopic: "csm.local.featuretogglemanagement.featuretoggle"
+        configuration:
+          partitions: 1
+          replication: 1
+          properties:
+            min.insync.replicas: 1
+      user:
+        kafkaTopic: "csm.local.usermanagement.user"

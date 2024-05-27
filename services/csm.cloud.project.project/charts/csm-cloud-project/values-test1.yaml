@@ -1,0 +1,18 @@
+# Environment specific values for csm-cloud-project.
+# Declare variables to be passed into your templates.
+
+stage: test1
+profiles: staging
+domainName: test1.bosch-refinemysite.com
+domainNameApi: test1-api.bosch-refinemysite.com
+
+mailjetBccEmail: REPLACE_ME
+mailjetErrorReportingEmail: REPLACE_ME
+mailjetRedirectEmail: REPLACE_ME
+mailjetRedirectPattern: ".*"
+
+# configuration for KV Flex volumes
+env: test1
+subscription: qa
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

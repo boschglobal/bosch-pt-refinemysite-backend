@@ -1,0 +1,61 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "{{ .Chart.Name }}-ingress"
+  labels:
+    custom/ingressClass: nginx
+  annotations:
+    # Configuration for the max body size of a request
+    # The size of 201m limits attachment uploads to a maximum of
+    # 200m per file (the extra 1m is for the remaining request size).
+    # More information about the parameter can be found in the documentation:
+    # https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#custom-max-body-size
+    nginx.ingress.kubernetes.io/proxy-body-size: {{ quote .Values.ingress.proxyBodySize }}
+    # By default, buffer size is equal to two memory pages (16k on x86-64 systems).
+    # In case the request body is larger than the buffer, the whole body or only
+    # its part is written to a temporary file (decreases performance).
+    # Since our batch endpoints send a lot of data, the default 16k buffer
+    # size is exceeded, which leads to disk writes with increased response times.
+    # The new limit of 2m is equal to the max request body size that is configured
+    # in the Azure application gateway WAF policy.
+    # More information about the parameter can be found in the documentation:
+    # https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#client-body-buffer-size
+    nginx.ingress.kubernetes.io/client-body-buffer-size: "2m"
+    # To enable the instrumentation OpenTracing must be enabled in the ConfigMap of the ingress-controller.
+    # Additionally, OpenTracing MUST be disabled or enabled for a single Ingress:
+    # https://kubernetes.github.io/ingress-nginx/user-guide/third-party-addons/opentracing/
+    nginx.ingress.kubernetes.io/enable-opentracing: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      opentracing_trace_locations off;
+      opentracing_tag resource.name "$request_method $uri";
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: {{ quote .Values.domainName }}
+    http:
+      paths:
+      {{- range .Values.appIngressPaths }}
+      - path: {{ . | quote }}
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: {{ $.Chart.Name }}
+            port:
+              number: 8090
+      {{- end }}
+  - host: {{ quote .Values.domainNameApi }}
+    http:
+      paths:
+      {{- range .Values.apiIngressPaths }}
+      - path: {{ . | quote }}
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: {{ $.Chart.Name }}
+            port:
+              number: 8090
+      {{- end }}
+  tls:
+  - hosts:
+    - {{ quote .Values.domainName }}
+    secretName: tls-secret

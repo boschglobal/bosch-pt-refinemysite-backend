@@ -1,0 +1,392 @@
+/*
+ * ************************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+ *
+ * ************************************************************************
+ */
+
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+import com.github.jk1.license.render.InventoryHtmlReportRenderer
+
+buildscript {
+    ext {
+        csmCloudCommonAvroVersion = "10.0.0"
+        csmCloudCommonCoreVersion = "12.0.0"
+        csmCloudCommonEventConsumerVersion = "4.0.0"
+        csmCloudCommonMongoDbVersion = "3.0.0"
+        csmCloudCommonKafkaVersion = "4.0 .0"
+        csmCloudCommonMySqlVersion = "4.0.0"
+        csmCloudCommonWebVersion = "8.0.0"
+        csmCloudCompanyAvroVersion = "10.0.0"
+        csmCloudProjectAvroVersion = "15.0.0"
+        csmCloudUserAvroVersion = "11.0.0"
+        detektVersion = "${externalCatalog.versions.detekt.get()}"
+        kotlinVersion = "${externalCatalog.versions.kotlin.get()}"
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+        snippetsDir = file("build/generated-snippets")
+        springBootVersion = "${externalCatalog.versions.springBoot.get()}"
+        springCloudVersion = "${externalCatalog.versions.springCloud.get()}"
+        springRestDocsAsciiDoctorExtension = "${externalCatalog.versions.springRestDocsAsciiDoctorExtension.get()}"
+    }
+}
+
+plugins {
+    id "com.bosch.pt.csm.cloud.translations" version "4.0.0"
+    id "jacoco"
+    id "maven-publish"
+
+    alias(externalCatalog.plugins.asciiDoctor)
+    alias(externalCatalog.plugins.dependencyLicenseReport)
+    alias(externalCatalog.plugins.detekt)
+    alias(externalCatalog.plugins.docker)
+    alias(externalCatalog.plugins.gitProperties)
+    alias(externalCatalog.plugins.kotlinJvm)
+    alias(externalCatalog.plugins.kotlinKapt)
+    alias(externalCatalog.plugins.kotlinPluginJpa)
+    alias(externalCatalog.plugins.kotlinPluginSpring)
+    alias(externalCatalog.plugins.owaspDependencyCheck)
+    alias(externalCatalog.plugins.sonarqube)
+    alias(externalCatalog.plugins.springBoot)
+
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
+
+configurations {
+    // Configuration as described here: https://github.com/spring-projects/spring-restdocs/issues/680
+    asciidoctorExtensions
+}
+
+configurations.all {
+    resolutionStrategy {
+        // this avoids a caching snapshot dependencies so that the latest version is always downloaded.
+        cacheChangingModulesFor 0, 'minutes'
+
+        eachDependency { details ->
+            if (details.requested.group == 'io.swagger.core.v3') {
+                details.useVersion("2.2.20")
+                details.because('Swagger ui and Kafka Avro serializer incompatible dependency io.swagger.core.v3:swagger-annotations')
+                // see: https://stackoverflow.com/questions/75732794/spring-boot-3-and-swagger-ui-java-lang-nosuchmethoderror-io-swagger-v3-oas-ann
+            }
+        }
+    }
+}
+
+tasks.configureEach {
+    if (name.equals("kaptGenerateStubsKotlin")) {
+        dependsOn("generateMessagesKeyKotlin")
+    }
+    if (name.equals("kaptKotlin")) {
+        dependsOn("generateMessagesKeyKotlin")
+    }
+}
+
+tasks.withType(io.gitlab.arturbosch.detekt.Detekt).configureEach {
+    dependsOn generateMessagesKeyKotlin
+}
+
+compileKotlin {
+    dependsOn generateMessagesKeyKotlin
+}
+
+// Configurations in alphabetical order
+
+asciidoctor {
+    attributes "snippets": snippetsDir
+    configurations 'asciidoctorExtensions'
+    dependsOn test
+    forkOptions {
+        jvmArgs = [
+                '--add-opens', 'java.base/java.io=ALL-UNNAMED',
+                '--add-opens', 'java.base/sun.nio.ch=ALL-UNNAMED'
+        ]
+    }
+    inputs.dir snippetsDir
+}
+
+bootJar {
+    archiveBaseName = project.name
+    dependsOn asciidoctor
+    from("${asciidoctor.outputDir}") {
+        into "BOOT-INF/classes/static/docs/projects/notifications"
+    }
+}
+
+bootRun {
+    systemProperties = System.properties
+}
+
+dependencies {
+    implementation platform("com.bosch.pt:csm.cloud.dependency.bom-external:${gradle.externalBomVersion}")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+    implementation platform("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
+
+    asciidoctorExtensions("org.springframework.restdocs:spring-restdocs-asciidoctor:$springRestDocsAsciiDoctorExtension")
+
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+
+    implementation("com.bosch.pt:csm.cloud.common.avro:$csmCloudCommonAvroVersion")
+    implementation("com.bosch.pt:csm.cloud.common.event-consumer:$csmCloudCommonEventConsumerVersion") {
+        exclude(group: "org.springframework.boot", module: "spring-boot-starter-data-jpa")
+    }
+    implementation("com.bosch.pt:csm.cloud.common.mongodb:$csmCloudCommonMongoDbVersion")
+    implementation("com.bosch.pt:csm.cloud.common.kafka:$csmCloudCommonKafkaVersion")
+    implementation("com.bosch.pt:csm.cloud.common.web:$csmCloudCommonWebVersion")
+    implementation("com.bosch.pt:csm.cloud.company.avro:$csmCloudCompanyAvroVersion")
+    implementation("com.bosch.pt:csm.cloud.project.avro:$csmCloudProjectAvroVersion")
+    implementation("com.bosch.pt:csm.cloud.user.avro:$csmCloudUserAvroVersion")
+
+    implementation("com.datadoghq:dd-trace-api")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+
+    implementation("io.confluent:kafka-avro-serializer")
+    implementation("io.confluent:kafka-json-serializer")
+    implementation("io.micrometer:micrometer-core")
+    implementation("io.micrometer:micrometer-registry-statsd")
+    implementation("org.ehcache:ehcache") { artifact { classifier = 'jakarta' } }
+
+    implementation("org.apache.commons:commons-lang3")
+    implementation("org.apache.commons:commons-text")
+    implementation("org.apache.kafka:kafka-clients")
+    implementation("org.ehcache:ehcache") { artifact { classifier = 'jakarta' } }
+    implementation("org.mongodb:mongodb-driver-core:4.9.0")
+    implementation("org.mongodb:mongodb-driver-sync:4.9.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+
+    implementation("org.springframework.boot:spring-boot-configuration-processor")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.boot:spring-boot-starter-cache")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+    implementation("org.springframework.boot:spring-boot-starter-hateoas")
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.cloud:spring-cloud-starter-bootstrap")
+    implementation("org.springframework.cloud:spring-cloud-starter-kubernetes-client-config") {
+        exclude group: "com.vaadin.external.google", module: "android-json"
+    }
+
+    implementation("org.springframework.kafka:spring-kafka")
+    implementation("org.springframework.retry:spring-retry")
+
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-api")
+
+    // ehcache lib requires jaxb implementation.
+    // This is the only reason why the jaxb-dependency is added here
+    runtimeOnly("org.glassfish.jaxb:jaxb-runtime:2.3.5")
+
+    testImplementation("com.bosch.pt:csm.cloud.common.avro:$csmCloudCommonAvroVersion:tests")
+    testImplementation("com.bosch.pt:csm.cloud.common.core:$csmCloudCommonCoreVersion:tests")
+    testImplementation("com.bosch.pt:csm.cloud.common.mongodb:$csmCloudCommonMongoDbVersion:tests")
+    testImplementation("com.bosch.pt:csm.cloud.common.web:$csmCloudCommonWebVersion:tests")
+    testImplementation("com.bosch.pt:csm.cloud.company.avro:$csmCloudCompanyAvroVersion:tests")
+    testImplementation("com.bosch.pt:csm.cloud.project.avro:$csmCloudProjectAvroVersion:tests")
+    testImplementation("com.bosch.pt:csm.cloud.user.avro:$csmCloudUserAvroVersion:tests")
+
+    testImplementation("com.ninja-squad:springmockk")
+    testImplementation("com.tngtech.archunit:archunit")
+
+    testImplementation("io.mockk:mockk")
+
+    testImplementation("org.assertj:assertj-core")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.restdocs:spring-restdocs-core")
+    testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
+    testImplementation("org.springframework.security:spring-security-test")
+
+    testImplementation("org.testcontainers:testcontainers")
+    testImplementation("org.testcontainers:kafka")
+    testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.testcontainers:mongodb")
+}
+
+dependencyCheck {
+    analyzers {
+        assemblyEnabled = false
+        nugetconfEnabled = false
+        nuspecEnabled = false
+    }
+    failBuildOnCVSS = 11
+    formats = ["HTML", "XML"]
+    // A list of configurations to exclude
+    // configurations.each { println it.name }
+    skipConfigurations = [
+            "asciidoctor",
+            "compileOnly",
+            "compileClasspath",
+            "detekt",
+            "detektPlugins",
+            "developmentOnly",
+            "docker",
+            "jacocoAgent",
+            "jacocoAnt",
+            "kaptTest",
+            "spotbugs",
+            "spotbugsPlugins",
+            "spotbugsSlf4j",
+            "testAnnotationProcessor",
+            "testApi",
+            "testApiDependenciesMetadata",
+            "testCompile",
+            "testCompileClasspath",
+            "testCompileOnly",
+            "testCompileOnlyDependenciesMetadata",
+            "testImplementation",
+            "testImplementationDependenciesMetadata",
+            "testKotlinScriptDef",
+            "testKotlinScriptDefExtensions",
+            "testRuntime",
+            "testRuntimeClasspath",
+            "testRuntimeOnly",
+            "testRuntimeOnlyDependenciesMetadata"
+    ]
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config = files("config/detekt-config.yml")
+    input = files("src/main/kotlin", "src/test/kotlin")
+}
+
+dockerPrepare {
+    dependsOn bootJar
+}
+
+docker {
+    buildArgs(["JAR_FILE": "${bootJar.archiveFileName.get()}"])
+    dependsOn build
+    files bootJar.archiveFile.get()
+    name "ptcsmacr.azurecr.io/com.bosch.pt/csm.cloud.project.notifications:$version"
+}
+
+generateMessagesKeyKotlin {
+    inputFile file("src/main/resources/i18n/messages.properties")
+    outputFile file("src/main/kotlin/com/bosch/pt/csm/cloud/projectmanagement/common/i18n/Key.kt")
+}
+
+jacocoTestReport {
+    reports {
+        html.required = true
+        xml.required = true
+    }
+}
+
+jar {
+    // Disable plain jar creation
+    enabled = false
+}
+
+licenseReport {
+    excludeGroups = ["com.bosch.pt"]
+    filters = [new LicenseBundleNormalizer()]
+    renderers = [new InventoryHtmlReportRenderer()]
+}
+
+publishing {
+    publications {
+        jar(MavenPublication) {
+            artifact bootJar
+            artifactId = "csm.cloud.project.notifications"
+            from components.java
+            groupId = "com.bosch.pt"
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://packages.confluent.io/maven/" }
+    maven mavenAzureArtifact
+}
+
+sonarqube {
+    def buildReason = project.hasProperty("BuildReason") && !BuildReason.isEmpty() ? BuildReason : "Build"
+    def sourceBranch = project.hasProperty("SourceBranchName") && !SourceBranchName.isEmpty() ? SourceBranchName : "${gitBranch()}-local"
+
+    println "$buildReason for branch $sourceBranch"
+    properties {
+        property "sonar.projectKey", "csm.cloud.project.notifications"
+        property "sonar.projectName", "csm.cloud.project.notifications"
+        property "sonar.exclusions", "src/test/kotlin/**,**/Key.java"
+        property "sonar.coverage.exclusions", "**/application/**, **/EntityOperations.java"
+
+        // Disable some rules on some files
+        property "sonar.issue.ignore.multicriteria", "j1,j2,j3,j4"
+        // Cognitive Complexity of functions should not be too high (kotlin:S3776)
+        property "sonar.issue.ignore.multicriteria.j1.ruleKey", "kotlin:S3776"
+        property "sonar.issue.ignore.multicriteria.j1.resourceKey", "**/*.kt"
+        // Track uses of "TO DO" tags (kotlin:S1135)
+        property "sonar.issue.ignore.multicriteria.j2.ruleKey", "kotlin:S1135"
+        property "sonar.issue.ignore.multicriteria.j2.resourceKey", "**/*.kt"
+        // Functions should not have identical implementations (kotlin:S4144)
+        property "sonar.issue.ignore.multicriteria.j3.ruleKey", "kotlin:S4144"
+        property "sonar.issue.ignore.multicriteria.j3.resourceKey", "**/*.kt"
+        // Exception for unconditional formatting in log statememt
+        property "sonar.issue.ignore.multicriteria.j4.ruleKey", "java:S2629"
+        property "sonar.issue.ignore.multicriteria.j4.resourceKey", "**/ErrorController.java"
+
+        // If the pull request was manually triggered the BuildReason is "Manual", else "PullRequest".
+        // Whether the BuildReason is "PullRequest" or "Manual" we assume that a pull request has a SourceBranchName "merge".
+        if ("merge" != sourceBranch) {
+            property "sonar.branch.name", sourceBranch
+        }
+    }
+}
+
+// Workaround for now to get the spring boot tests running with gradle
+sourceSets {
+    main.java.srcDirs += "src/main/kotlin/"
+    test.java.srcDirs += "src/test/kotlin/"
+}
+
+springBoot {
+    buildInfo()
+}
+
+def isLocal = !project.hasProperty("BuildReason") || BuildReason.isEmpty()
+
+test {
+    systemProperty "user.timezone", "UTC"
+    doFirst { jvmArgs = ['-Xshare:off'] }
+    finalizedBy jacocoTestReport
+    jvmArgs "-XX:-OmitStackTraceInFastThrow"
+    maxHeapSize = "2048m"
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    outputs.dir snippetsDir
+    useJUnitPlatform()
+}
+
+def isMergeBranch = project.hasProperty("SourceBranchName") && !SourceBranchName.isEmpty() && "merge" == SourceBranchName
+def isIntegrationBranch = project.hasProperty("SourceBranchName") && !SourceBranchName.isEmpty() && "integration" == SourceBranchName
+if (isLocal || isMergeBranch || isIntegrationBranch) {
+    check.dependsOn dependencyCheckAnalyze
+}
+
+static def gitBranch() {
+    def branch = ""
+    def proc = "git rev-parse --abbrev-ref HEAD".execute()
+    proc.in.eachLine { line -> branch = line }
+    proc.err.eachLine { line -> println line }
+    proc.waitFor()
+    branch
+}
+version='1.0.0'
+group='com.bosch.pt'

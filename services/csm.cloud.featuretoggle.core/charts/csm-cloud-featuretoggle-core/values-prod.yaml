@@ -1,0 +1,12 @@
+# Environment specific values for csm-cloud-featuretoggle-core.
+# Declare variables to be passed into your templates.
+
+stage: prod
+profiles: production, idp-bosch-prod
+livenessProbeInitialDelay: 240
+
+# configuration for KV Flex volumes
+env: prod
+subscription: prod
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

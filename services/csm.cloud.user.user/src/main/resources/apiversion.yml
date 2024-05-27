@@ -1,0 +1,9 @@
+custom:
+  api:
+    version:
+      prefix: "/v"
+      # please do not change min version since we need this for the announcement and craft api
+      # use the @ApiVersion annotation properties on the controller classes instead to control the min
+      # version of each api
+      min: 1
+      max: 3

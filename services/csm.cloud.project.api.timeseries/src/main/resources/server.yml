@@ -1,0 +1,28 @@
+server:
+  compression:
+    enabled: true
+    mime-types: text/html,text/plain,text/csv,application/json,application/graphql-response+json
+    min-response-size: 1024
+  servlet:
+    context-path:
+  shutdown: graceful
+  tomcat:
+    connection-timeout: 60s
+    threads:
+      max: 45
+    mbeanregistry:
+      enabled: true # enable the mbean registry to get tomcat metrics via micrometer
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+custom:
+  shutdown:
+    timeout-seconds: 0
+
+server:
+  port: 8072
+  shutdown: immediate

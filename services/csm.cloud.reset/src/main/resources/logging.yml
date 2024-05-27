@@ -1,0 +1,24 @@
+logging:
+  level:
+    ROOT: warn
+    #com.zaxxer.hikari: debug
+    com:
+      bosch:
+        pt:
+          iot:
+            smartsite:
+              application:
+                config: info
+              reset: info
+              importer: info
+              SmartsiteResetApplicationKt: info
+    org:
+      springframework:
+        boot:
+          context: info
+        cloud:
+          config: debug
+        data.convert.CustomConversions: error
+        kafka:
+          core:
+            KafkaAdmin: info

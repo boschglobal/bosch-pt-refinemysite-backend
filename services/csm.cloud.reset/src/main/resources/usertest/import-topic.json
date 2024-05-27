@@ -1,0 +1,576 @@
+[
+    {
+        "id": "topic1",
+        "taskId": "project1-task21",
+        "description": "Die erste T\u00fcr ist jetzt drin. Wann bekomme ich die weiteren Pl\u00e4ne vom Fachplaner?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic2",
+        "taskId": "project2-task21",
+        "description": "The first door is built in now. When do I get further plans from specialist planners?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic3",
+        "taskId": "project1-task17",
+        "description": "Ein kurzer Zwischenstand. Ich werde wie geplant am 19. fertig sein. Danach muss das Ganze aber drei Wochen trocknen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic4",
+        "taskId": "project2-task17",
+        "description": "Preliminary Results. I\u2019ll be finished as planned on 19th. Then it has to dry three weeks",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic5",
+        "taskId": "project1-task30",
+        "description": "Der erste Zwischenstand.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic6",
+        "taskId": "project2-task30",
+        "description": "First Results.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic7",
+        "taskId": "project1-task23",
+        "description": "K\u00fcmmern Sie sich bitte schnellstm\u00f6glich um die Baubeleuchtung? Sie sind bereits im Verzug und wir m\u00fcssen dringend im B\u00fcrobereich mit den anderen Arbeiten beginnen. Sp\u00e4testens Mittwoch sollten Sie anfangen. ",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic8",
+        "taskId": "project2-task23",
+        "description": "Please look as soon as possible after the construction lighting. You\u2019re already in default and we have to start with the work in the office area urgently. At the latest you should start on Wednesday. ",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic9",
+        "taskId": "project1-task84",
+        "description": "K\u00f6nnen Sie hier schon fr\u00fcher mit den Malerarbeiten beginnen? Am liebsten schon am 06.04.2018.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic10",
+        "taskId": "project2-task84",
+        "description": "Could you start with the paint work earlier than planned? Preferably on April 6, 2018.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic11",
+        "taskId": "project1-task70",
+        "description": "Es gibt Probleme mit der Rohrleitung. Wir brauchen Sie hier nochmal dringend. Haben Sie am Montag um 15:00 Uhr oder am Dienstag um 09:00 Uhr Zeit?",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic12",
+        "taskId": "project2-task70",
+        "description": "There are problems with the pipe. We need you here urgently. Do you have time on Monday at 3 pm or on Tuesday at 9 am?",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic13",
+        "taskId": "project1-task101",
+        "description": "Ich bin mit der Endreinigung noch nicht zufrieden. Bitte kommen Sie diese Woche noch einmal vorbei, es gibt dort noch einiges zu tun.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic14",
+        "taskId": "project2-task101",
+        "description": "I\u2019m not satisfied with the final cleaning. Please take a look on it this week again, there are still things to do.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic15",
+        "taskId": "project1-task65",
+        "description": "Wann bekomme ich die Pl\u00e4ne vom Fachplaner? Ich m\u00fcsste langsam anfangen.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic16",
+        "taskId": "project2-task65",
+        "description": "When do I get plans from specialist planner? I have to start urgently.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic17",
+        "taskId": "project1-task1",
+        "description": "K\u00f6nnen Sie damit bitte schon vorher anfangen? Die anderen Arbeiten sind n\u00e4mlich jetzt schon abgeschlossen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic18",
+        "taskId": "project2-task1",
+        "description": "Could you please start with your work earlier than planned? The other work is now finished so you can start.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic19",
+        "taskId": "project1-task2",
+        "description": "Ich bin fertig.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic20",
+        "taskId": "project2-task2",
+        "description": "I\u2019ve finished.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic21",
+        "taskId": "project1-task4",
+        "description": "Wann bekomme ich die weiteren Pl\u00e4ne vom Fachplaner?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic22",
+        "taskId": "project2-task4",
+        "description": "When do I get further plans from specialist planners?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic23",
+        "taskId": "project1-task6",
+        "description": "Ein Zwischenstand:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic24",
+        "taskId": "project2-task6",
+        "description": "First results:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic25",
+        "taskId": "project1-task9",
+        "description": "Ich bin mit den Arbeiten noch nicht zufrieden. Bitte kommen Sie diese Woche noch einmal vorbei, es gibt dort noch einiges zu tun.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic26",
+        "taskId": "project2-task9",
+        "description": "I\u2019m not satisfied with your work. Please take a look on it this week again, there are still things to do.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic27",
+        "taskId": "project1-task10",
+        "description": "Es sind Probleme aufgetreten. Wir brauchen Sie hier nochmal dringend. Haben Sie am Montag um 15:00 Uhr oder am Dienstag um 09:00 Uhr Zeit?",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic28",
+        "taskId": "project2-task10",
+        "description": "Problems have appeared. We need you here urgently. Do you have time on Monday at 3 pm or on Tuesday at 9 am?",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic29",
+        "taskId": "project1-task14",
+        "description": "K\u00fcmmern Sie sich bitte schnellstm\u00f6glich darum? Sie sind bereits im Verzug und wir m\u00fcssen dringend auf dem oberen Stock mit den Arbeiten beginnen. Sp\u00e4testens Mittwoch sollten Sie anfangen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic30",
+        "taskId": "project2-task14",
+        "description": "Please look as soon as possible after it. You\u2019re already in default and we have to start with the work on the upper floor urgently. At the latest you should start on Wednesday.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic31",
+        "taskId": "project1-task26",
+        "description": "Ein kurzer Zwischenstand. Ich werde wie geplant am 19. fertig sein.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic32",
+        "taskId": "project2-task26",
+        "description": "Preliminary results. I\u2019ll be finished as planned on 19th.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic33",
+        "taskId": "project1-task33",
+        "description": "Ein kurzer Zwischenstand. Ich werde wie geplant am 19. fertig sein.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic34",
+        "taskId": "project2-task33",
+        "description": "Preliminary results. I\u2019ll be finished as planned on 19th.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic35",
+        "taskId": "project1-task36",
+        "description": "K\u00f6nnen Sie damit bitte schon vorher anfangen? Die anderen Arbeiten sind n\u00e4mlich jetzt schon abgeschlossen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic36",
+        "taskId": "project2-task36",
+        "description": "Could you please start with your work earlier than planned? The other work is now finished so you can start.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic37",
+        "taskId": "project1-task37",
+        "description": "K\u00f6nnen Sie damit bitte schon vorher anfangen? Die anderen Arbeiten sind n\u00e4mlich jetzt schon abgeschlossen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic38",
+        "taskId": "project2-task37",
+        "description": "Could you please start with your work earlier than planned? The other work is now finished so you can start.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic39",
+        "taskId": "project1-task40",
+        "description": "K\u00f6nnen Sie damit bitte schon vorher anfangen? Die anderen Arbeiten sind n\u00e4mlich jetzt schon abgeschlossen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic40",
+        "taskId": "project2-task40",
+        "description": "Could you please start with your work earlier than planned? The other work is now finished so you can start.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic41",
+        "taskId": "project1-task54",
+        "description": "K\u00f6nnen Sie damit bitte schon vorher anfangen? Die anderen Arbeiten sind n\u00e4mlich jetzt schon abgeschlossen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic42",
+        "taskId": "project2-task54",
+        "description": "Could you please start with your work earlier than planned? The other work is now finished so you can start.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic43",
+        "taskId": "project1-task73",
+        "description": "K\u00f6nnen Sie damit bitte schon vorher anfangen? Die anderen Arbeiten sind n\u00e4mlich jetzt schon abgeschlossen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic44",
+        "taskId": "project2-task73",
+        "description": "Could you please start with your work earlier than planned? The other work is now finished so you can start.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic45",
+        "taskId": "project1-task80",
+        "description": "K\u00f6nnen Sie damit bitte schon vorher anfangen? Die anderen Arbeiten sind n\u00e4mlich jetzt schon abgeschlossen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic46",
+        "taskId": "project2-task80",
+        "description": "Could you please start with your work earlier than planned? The other work is now finished so you can start.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic47",
+        "taskId": "project1-task92",
+        "description": "K\u00f6nnen Sie damit bitte schon vorher anfangen? Die anderen Arbeiten sind n\u00e4mlich jetzt schon abgeschlossen.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic48",
+        "taskId": "project2-task92",
+        "description": "Could you please start with your work earlier than planned? The other work is now finished so you can start.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic49",
+        "taskId": "project1-task42",
+        "description": "Ich bin fertig.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic50",
+        "taskId": "project2-task42",
+        "description": "I\u2019ve finished.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic51",
+        "taskId": "project1-task46",
+        "description": "Ich bin fertig.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic52",
+        "taskId": "project2-task46",
+        "description": "I\u2019ve finished.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic53",
+        "taskId": "project1-task50",
+        "description": "Ich bin fertig.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic54",
+        "taskId": "project2-task50",
+        "description": "I\u2019ve finished.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic55",
+        "taskId": "project1-task60",
+        "description": "Ich bin fertig.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic56",
+        "taskId": "project2-task60",
+        "description": "I\u2019ve finished.",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic57",
+        "taskId": "project1-task12",
+        "description": "Ein Zwischenstand:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic58",
+        "taskId": "project2-task12",
+        "description": "First results:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic59",
+        "taskId": "project1-task28",
+        "description": "Ein Zwischenstand:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic60",
+        "taskId": "project2-task28",
+        "description": "First results:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic61",
+        "taskId": "project1-task57",
+        "description": "Ein Zwischenstand:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic62",
+        "taskId": "project2-task57",
+        "description": "First results:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic63",
+        "taskId": "project1-task76",
+        "description": "Ein Zwischenstand:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic64",
+        "taskId": "project2-task76",
+        "description": "First results:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic65",
+        "taskId": "project3-task1",
+        "description": "Ich bin mit den Arbeiten noch nicht zufrieden. Bitte kommen Sie diese Woche noch einmal vorbei, es gibt dort noch einiges zu tun.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic66",
+        "taskId": "project4-task1",
+        "description": "I\u2019m not satisfied with your work. Please take a look on it this week again, there are still things to do.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic67",
+        "taskId": "project3-task4",
+        "description": "Ich bin mit den Arbeiten noch nicht zufrieden. Bitte kommen Sie diese Woche noch einmal vorbei, es gibt dort noch einiges zu tun.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic68",
+        "taskId": "project4-task4",
+        "description": "I\u2019m not satisfied with your work. Please take a look on it this week again, there are still things to do.",
+        "criticality": "CRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic69",
+        "taskId": "project3-task8",
+        "description": "Wann bekomme ich die weiteren Pl\u00e4ne vom Fachplaner?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic70",
+        "taskId": "project4-task8",
+        "description": "When do I get further plans from specialist planners?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic71",
+        "taskId": "project3-task12",
+        "description": "Wann bekomme ich die weiteren Pl\u00e4ne vom Fachplaner?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic72",
+        "taskId": "project4-task12",
+        "description": "When do I get further plans from specialist planners?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic73",
+        "taskId": "project3-task16",
+        "description": "Wann bekomme ich die weiteren Pl\u00e4ne vom Fachplaner?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic74",
+        "taskId": "project4-task16",
+        "description": "When do I get further plans from specialist planners?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic75",
+        "taskId": "project3-task3",
+        "description": "Ich bin fertig:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic76",
+        "taskId": "project4-task3",
+        "description": "I've finished:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic77",
+        "taskId": "project3-task10",
+        "description": "Ich bin fertig:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic78",
+        "taskId": "project4-task10",
+        "description": "I've finished:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic79",
+        "taskId": "project3-task14",
+        "description": "Es sind Probleme aufgetreten. Wir brauchen Sie hier nochmal dringend. Haben Sie am Montag um 15:00 Uhr oder am Dienstag um 09:00 Uhr Zeit?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic80",
+        "taskId": "project4-task14",
+        "description": "Problems have appeared. We need you here urgently. Do you have time on Monday at 3 pm or on Tuesday at 9 am?",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "topic81",
+        "taskId": "project3-task5",
+        "description": "Ergebnis:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "topic82",
+        "taskId": "project4-task5",
+        "description": "Result:",
+        "criticality": "UNCRITICAL",
+        "createWithUserId": "anne"
+    }
+]

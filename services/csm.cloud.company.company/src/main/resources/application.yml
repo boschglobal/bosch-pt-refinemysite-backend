@@ -1,0 +1,92 @@
+info:
+  app:
+    name: ${spring.application.name}
+
+spring:
+  config:
+    import:
+      - classpath:actuator-common.yml
+      - classpath:apiversion.yml
+      - classpath:flyway.yml
+      - classpath:kafka.yml
+      - classpath:logging.yml
+      - classpath:metrics-common.yml
+      - classpath:listeners.yml
+      - classpath:mysql.yml
+      - classpath:profiles.yml
+      - classpath:server.yml
+      - classpath:topics.yml
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+  aop:
+    auto: true
+  cache:
+    type: simple
+  data:
+    web:
+      pageable:
+        max-page-size: 100
+        default-page-size: 20
+  jackson:
+    default-property-inclusion: non_null
+  jpa:
+    properties:
+      hibernate:
+        id:
+        implicit_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical_naming_strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+        order_inserts: true
+        order_updates: true
+        #log sql statements
+        #show_sql: true
+        #format_sql: true
+      jdbc:
+        batch_size: 100
+    open-in-view: false
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+  threads:
+    virtual:
+      enabled: true
+
+locale:
+  default: en_GB
+  supported: en_GB, de_DE, es_ES, pt_PT, fr_FR
+
+system:
+  user:
+    identifier: c37da613-8e70-4003-9106-12412c9d2496
+
+ignored:
+  ciam:
+    users:
+      - smartsiteapp+system@gmail.com
+      - smartsiteapp+admin@gmail.com
+      - smartsiteapp+testadmin@gmail.com
+      - smartsiteapp+announcement@gmail.com
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+custom:
+  swagger:
+    url: /
+
+stage: local
+---
+spring:
+  config:
+    activate:
+      on-profile: swagger
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /swagger/companies/api-definition
+  writer-with-order-by-keys: true

@@ -1,0 +1,148 @@
+//////////////////////////////////////////
+*****************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+ * *****************************************************************
+//////////////////////////////////////////
+
+= SmartSite Crafts API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+== Crafts
+Crafts are reference resource that is used by other resources like "task" or "user" for example.
+They are currently translated in English and German.
+
+Each craft has a fixed UUID which is identical for all translations.
+
+
+
+[[list-crafts]]
+=== List all crafts
+In order to retrieve a list of all crafts, a `GET` on the crafts resource can be
+performed. The requested locale is used to select the translation.
+
+[[list-crafts-latest]]
+==== Latest API version
+
+[[list-crafts-request-latest]]
+===== Request
+A `GET` request is used to retrieve the list of all crafts. The response is paged.
+
+====== Example request
+include::{snippets}/crafts/document-get-crafts/http-request.adoc[]
+include::{snippets}/crafts/document-get-crafts/curl-request.adoc[]
+
+[[list-crafts-response-latest]]
+===== Response
+The list of crafts is returned.
+
+====== Response fields
+include::{snippets}/crafts/document-get-crafts/response-fields.adoc[]
+
+====== Links
+include::{snippets}/crafts/document-get-crafts/links.adoc[]
+
+====== Example response
+include::{snippets}/crafts/document-get-crafts/http-response.adoc[]
+
+
+
+[[get-craft]]
+=== Get craft
+A single craft can be retrieved by its identifier.
+
+[[get-craft-latest]]
+==== Latest API version
+
+[[get-craft-request-latest]]
+===== Request
+A `GET` request is used to retrieve a single craft.
+
+====== Path parameters
+include::{snippets}/crafts/document-get-single-craft/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/crafts/document-get-single-craft/http-request.adoc[]
+include::{snippets}/crafts/document-get-single-craft/curl-request.adoc[]
+
+[[get-craft-response-latest]]
+===== Response
+The craft resource is returned.
+
+====== Response Fields
+include::{snippets}/crafts/document-get-single-craft/response-fields.adoc[]
+
+====== Example Response
+include::{snippets}/crafts/document-get-single-craft/http-response.adoc[]
+
+
+
+[[create-craft]]
+=== Create Craft
+A craft can be created by specifying a list of translations.
+
+[[create-craft-latest]]
+==== Latest API version
+
+[[create-craft-request-latest]]
+===== Request
+A `POST` request is used to create a new craft.
+
+====== Request fields
+include::{snippets}/crafts/document-create-craft/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/crafts/document-create-craft/http-request.adoc[]
+include::{snippets}/crafts/document-create-craft/curl-request.adoc[]
+
+[[create-craft-response-latest]]
+===== Response
+The created craft is returned.
+
+==== Response fields
+include::{snippets}/crafts/document-create-craft/response-fields.adoc[]
+
+==== Example response
+include::{snippets}/crafts/document-create-craft/http-response.adoc[]
+
+
+[[create-craft-with-identifier]]
+=== Create Craft with identifier
+Same as the previous request, but choose the craft identifier client-side.
+
+[[create-craft-with-identifier-latest]]
+==== Latest API version
+
+[[create-craft-with-identifier-request-latest]]
+===== Request
+A `POST` request is used to create a new craft.
+
+====== Path parameters
+include::{snippets}/crafts/document-create-craft-with-identifier/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/crafts/document-create-craft-with-identifier/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/crafts/document-create-craft-with-identifier/http-request.adoc[]
+include::{snippets}/crafts/document-create-craft-with-identifier/curl-request.adoc[]
+
+[[create-craft-with-identifier-response-latest]]
+===== Response
+The created craft is returned.
+
+==== Response Fields
+include::{snippets}/crafts/document-create-craft-with-identifier/response-fields.adoc[]
+
+==== Example response
+include::{snippets}/crafts/document-create-craft-with-identifier/http-response.adoc[]

@@ -1,0 +1,17 @@
+custom:
+  api:
+    authentication-status:
+      min: 1
+      max: 1
+    company:
+      min: 1
+      max: 1
+    project:
+      min: 1
+      max: 1
+    translation:
+      min: 1
+      max: 1
+    user:
+      min: 1
+      max: 1

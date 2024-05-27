@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    group:
+      local:
+        - idp-bosch-dev
+        - init-topics
+        - swagger
+      staging:
+        - docs
+        - idp-bosch-dev
+        - init-topics
+        - kubernetes
+        - log-json
+        - redirect-mails
+        - swagger
+      production:
+        # - idp-bosch-prod (controlled by helm chart since production profile is used on review, too
+        - kubernetes
+        - log-json
+      kafka-listener-disabled:
+        - kafka-company-listener-disabled
+        - kafka-craft-listener-disabled
+        - kafka-delete-listener-disabled
+        - kafka-feature-projector-listener-disabled
+        - kafka-image-listener-disabled
+        - kafka-project-listener-disabled
+        - kafka-user-listener-disabled
+        - kafka-job-listener-disabled
+        - project-context-restore-snapshot-event-listener-disabled
+        - project-invitation-context-restore-snapshots-event-listener-disabled
+      # disables all kafka listeners listening to project topic
+      kafka-project-listener-disabled:
+        - project-context-restore-snapshot-event-listener-disabled
+      # disables all kafka listeners listening to project invitation topic
+      kafka-project-invitation-listener-disabled:
+        - project-invitation-context-restore-snapshots-event-listener-disabled
+
+# restore-db: Additional profile used when application should start in restore mode
+# log-jpa: Additional profile used for additional jpa logging output

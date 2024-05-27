@@ -1,0 +1,71 @@
+[
+  {
+    "id": "project1",
+    "title": "Refactor Rossio",
+    "client": "CMAveiro",
+    "description": "Reconstruir o Rossio",
+    "end": 20,
+    "start": -20,
+    "projectNumber": "20170420_13",
+    "category": "OB",
+    "address": {
+      "city": "Aveiro",
+      "houseNumber": "1",
+      "street": "rossio",
+      "zipCode": "3800"
+    },
+    "createWithUserId": "leonardo"
+  },
+  {
+    "id": "project2",
+    "title": "Limpeza Canal de S.Roque",
+    "client": "CMAveiro",
+    "description": "Limpar o canal",
+    "end": 20,
+    "start": -20,
+    "projectNumber": "20170420_13",
+    "category": "OB",
+    "address": {
+      "city": "Aveiro",
+      "houseNumber": "1",
+      "street": "canal",
+      "zipCode": "3800"
+    },
+    "createWithUserId": "pinto"
+  },
+  {
+    "id": "project3",
+    "title": "Industrial park Vogelsang",
+    "client": "Krämer Projektbau GmbH",
+    "description": "construction of a company building",
+    "end": 20,
+    "start": -20,
+    "projectNumber": "20170420_13",
+    "category": "NB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "2",
+      "street": "Arnulf-Klett-Platz",
+      "zipCode": "70173"
+    },
+    "createWithUserId": "roberto"
+  },
+  {
+    "id": "project4",
+    "constructionSiteManagerId": "employee19",
+    "title": "Stuttgart 21 (Hbf)",
+    "client": "DB Projekt Stuttgart–Ulm GmbH",
+    "description": "Stuttgart 21 (auch kurz S21) ist ein Verkehrs- und Städtebauprojekt zur Neuordnung des Eisenbahnknotens Stuttgart. Kernstück ist der Umbau des Kopfbahnhofes Stuttgart Hauptbahnhof in einen unterirdischen Durchgangsbahnhof.",
+    "end": 20,
+    "start": -20,
+    "projectNumber": "20170420_13",
+    "category": "NB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "2",
+      "street": "Arnulf-Klett-Platz",
+      "zipCode": "70173"
+    },
+    "createWithUserId": "frank"
+  }
+]

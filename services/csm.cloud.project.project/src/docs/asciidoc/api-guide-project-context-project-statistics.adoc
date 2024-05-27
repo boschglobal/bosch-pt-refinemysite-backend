@@ -1,0 +1,41 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[project-statistics]]
+== Project Statistics
+Project Statistics are used to show the number of DRAFT, OPEN, STARTED and CLOSED tasks of the project
+as well as the number of critical and uncritical topics of the tasks of the project.
+
+
+[[get-project-statistics]]
+=== Get project statistics
+This endpoint can be used to get statistics of a single project.
+
+[[get-project-statistics-latest]]
+==== Latest API Version
+
+[[get-project-statistics-request-latest]]
+===== Request
+A `GET` request is used to get the statistics of a single project.
+
+====== Path parameters
+include::{snippets}/projects/document-get-project-statistics/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-get-project-statistics/http-request.adoc[]
+include::{snippets}/projects/document-get-project-statistics/curl-request.adoc[]
+
+[[get-project-statistics-response-latest]]
+===== Response
+The statistics is returned.
+
+====== Response fields
+include::{snippets}/projects/document-get-project-statistics/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-get-project-statistics/http-response.adoc[]

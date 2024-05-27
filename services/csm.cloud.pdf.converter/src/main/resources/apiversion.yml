@@ -1,0 +1,6 @@
+custom:
+  api:
+    version:
+      prefix: "/v"
+      min: 1
+      max: 1

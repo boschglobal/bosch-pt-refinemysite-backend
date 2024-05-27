@@ -1,0 +1,5 @@
+# Default values for csm-cloud-project-kafka-connector.
+# Declare variables to be passed into your templates.
+
+profiles: kubernetes-project
+maxStartUpTime: 500

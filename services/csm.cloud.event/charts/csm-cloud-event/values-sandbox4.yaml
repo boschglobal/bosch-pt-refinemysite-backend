@@ -1,0 +1,12 @@
+# Environment specific values for csm-cloud-project.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+stage: sandbox4
+profiles: staging
+
+# configuration for KV Flex volumes
+env: sandbox4
+subscription: sandbox
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

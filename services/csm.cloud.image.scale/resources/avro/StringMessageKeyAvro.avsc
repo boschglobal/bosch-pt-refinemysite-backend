@@ -1,0 +1,14 @@
+{
+  "fields": [
+    {
+      "name": "identifier",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    }
+  ],
+  "name": "StringMessageKeyAvro",
+  "namespace": "com.bosch.pt.csm.cloud.common.messages",
+  "type": "record"
+}

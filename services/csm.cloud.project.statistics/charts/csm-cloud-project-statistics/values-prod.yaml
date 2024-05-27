@@ -1,0 +1,13 @@
+# Environment specific values for csm-cloud-project-statistics.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+stage: prod
+profiles: production, idp-bosch-prod
+livenessProbeInitialDelay: 30
+
+# configuration for KV Flex volumes
+env: prod
+subscription: prod
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

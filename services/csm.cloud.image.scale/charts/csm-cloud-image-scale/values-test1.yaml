@@ -1,0 +1,11 @@
+# Environment specific values for csm-cloud-image-scale.
+# Declare variables to be passed into your templates.
+
+stage: test1
+profiles: staging, kubernetes
+
+# configuration for KV Flex volumes
+env: test1
+subscription: qa
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

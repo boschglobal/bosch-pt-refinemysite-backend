@@ -1,0 +1,18 @@
+[
+  {
+    "id": "bosch",
+    "client": "KNK",
+    "end": -45,
+    "start": -686,
+    "projectNumber": "NBK701",
+    "title": "Neubau Klinik",
+    "category": "NB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "1",
+      "street": "Marktplatz",
+      "zipCode": "70173"
+    },
+    "createWithUserId": "daniel"
+  }
+]

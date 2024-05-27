@@ -1,0 +1,57 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2023
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[taskcopy]]
+== Task Copy
+
+The task copy functionality is used to copy tasks a number of days forward or backward, with or without day cards.
+The new tasks are created with the same data as the copied task, but with DRAFT status, without assignee and the work area can be changed.
+If the copied task has a task schedule, a new task schedule will be also created with the shift days applied the his dates.
+If the user request to include day cards they will also be copied in OPEN status and with the same shift days applied.
+
+[[task-copy]]
+=== Copy task
+
+Copy task operation that copies the given task a number of days forward or backward, with or without day cards.
+Returns the list of created task (copies).
+
+[[task-copy-latest]]
+==== Latest API Version
+
+[[task-copy-request-latest]]
+===== Request
+
+Does a request to copy, for a specific list of copy operations.
+Includes the task id to copy, the number of days to shift, a boolean if day cards should be copied and the task parameters to override.
+
+====== Path parameters
+
+include::{snippets}/task-copy/document-task-copy/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/task-copy/document-task-copy/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/task-copy/document-task-copy/http-request.adoc[]
+include::{snippets}/task-copy/document-task-copy/curl-request.adoc[]
+
+[[task-copy-response-latest]]
+===== Response
+
+The list of created tasks (copies)
+
+====== Response fields
+
+include::{snippets}/task-copy/document-task-copy/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/task-copy/document-task-copy/http-response.adoc[]
+

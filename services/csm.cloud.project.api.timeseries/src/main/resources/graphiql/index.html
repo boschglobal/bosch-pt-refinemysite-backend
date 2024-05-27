@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GraphiQL</title>
+    <!-- Calculate integrity hashes by executing: cat xxx.js | openssl dgst -sha512 -binary | openssl base64 -A -->
+    <script
+            src="/graphiql/resources/react.production.min.js"
+            type="application/javascript"
+            integrity="sha512-YGOcMseH774jXezvdUgeDfL5zKBerNaJ1c95zSxCgaIy3NqDcC+npnS7cjxi//Xw80d9kmW4T95+7gAeBDiqdA=="
+            crossorigin="anonymous"
+    ></script>
+    <script
+            src="/graphiql/resources/react-dom.production.min.js"
+            type="application/javascript"
+            integrity="sha512-cW5zJ7kyQP/lmSPIQjkHaOMUt2CIfS1bDHC6btiZULUfbgIskxQIqD//HSVzdRfJTDlkKtha9dcHC4dAWSb0lw=="
+            crossorigin="anonymous"
+    ></script>
+
+    <script
+            src="/graphiql/resources/graphiql.min.js"
+            type="application/javascript"
+            integrity="sha512-0mq8x5RS/hE1dCUib3q3uvO4mLI0Dk16ORTPQO1eF7ZQfUN/SYDnZMqHE8q2WAomtOpoPqG2yMP35b3NJgVtcQ=="
+    ></script>
+    <link rel="stylesheet" href="/graphiql/resources/graphiql.min.css"/>
+    <link rel="stylesheet" href="/graphiql/resources/style.css"/>
+
+    <script src="/graphiql/resources/plugin-explorer-index.umd.js"
+            type="application/javascript"
+            integrity="sha512-IDbV3QsOmVaeAJ1hQc0NiDrxZLpd7wCkjekBl3rmJjPsdEJagBhnWSwLqiD5NRqH6gy0QvP49P7tDH4xF1J9tA=="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/graphiql/resources/plugin-explorer-style.css"/>
+</head>
+
+<body>
+<div id="graphiql">Loading...</div>
+
+<script src="/graphiql/resources/loader.js"
+        type="application/javascript"
+        integrity="sha512-kFwIYMsTm+QmsugMw2nAp+orqVEYAW+L4O0bGCbWG/kZVHV65iRKg4XcwlF4jzSR6UjqrJRw59+NEUdS/cbIVw=="
+></script>
+</body>
+</html>

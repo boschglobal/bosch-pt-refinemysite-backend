@@ -1,0 +1,45 @@
+<!--
+  ~ *************************************************************************
+  ~
+  ~  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+  ~
+  ~ *************************************************************************
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<table>
+    <!--/*@thymesVar id="monthRow" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.header.MonthRow"*/-->
+    <tr th:fragment="month-header (monthRow, expanded)">
+        <td class="month-header" colspan="2" th:text="${monthRow.year}"></td>
+        <td class="month" th:each="month : ${monthRow.months}" th:colspan="${month.length}"
+            th:text="${month.length > 1 ? month.name : ''}"></td>
+    </tr>
+
+    <!--/*@thymesVar id="weekRow" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.header.WeekRow"*/-->
+    <th:block th:fragment="week-header (weekRow, expanded)">
+        <tr>
+            <td class="week-header" colspan="2" th:rowspan="${expanded ? 2 : 1}" th:text="${weekRow.name}"></td>
+            <td class="week" colspan="7" th:each="week : ${weekRow.weeks}">
+                <div class="week-content">
+                    <span class="week-number" th:text="${week.name}"></span>
+                    <span th:if="${!expanded}"
+                          th:text="${week.startDate + ' - ' + week.endDate}"
+                          class="week-range"></span>
+                </div>
+            </td>
+        </tr>
+        <tr th:if="${expanded}">
+            <th:block th:each="week : ${weekRow.weeks}">
+                <td th:each="weekDay : ${week.days}" th:text="${weekDay.name}"
+                    th:class="|week-day week-day--${weekDay.type.value}|"></td>
+            </th:block>
+        </tr>
+    </th:block>
+</table>
+
+</body>
+</html>

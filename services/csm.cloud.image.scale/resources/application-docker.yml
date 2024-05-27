@@ -1,0 +1,39 @@
+httpClient:
+  requestHostRewrites:
+    - from: 127.0.0.1:10001
+      to: storage-emulator:10001
+    - from: localhost:10001
+      to: storage-emulator:10001
+    - from: 127.0.0.1:10000
+      to: storage-emulator:10000
+    - from: localhost:10000
+      to: storage-emulator:10000
+
+kafka:
+  broker:
+    urls: broker:29092
+  consumer:
+    groupId: csm-im-docker-scale
+  schema:
+    autoRegisterSchemas: true
+  schemaRegistry:
+    urls: http://schema-registry:8081
+  topic:
+    autoCreateTopics: true
+    uploaded:
+      name: csm.local.storage.event
+      replicationFactor: 1
+    scaled:
+      name: csm.local.image.scale
+      replicationFactor: 1
+
+storage:
+  quarantine:
+    containerName: csm-quarantine-container
+    connectionString: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://storage-emulator:10000/devstoreaccount1;QueueEndpoint=http://storage-emulator:10001/devstoreaccount1
+  project:
+    containerName: csm
+    connectionString: DefaultEndpointsProtocol=http;AccountName=projectimagesaccount;AccountKey=cHJvamVjdGltYWdlc2tleQ==;BlobEndpoint=http://storage-emulator:10000/projectimagesaccount;QueueEndpoint=http://storage-emulator:10001/projectimagesaccount;
+  user:
+    containerName: csm
+    connectionString: DefaultEndpointsProtocol=http;AccountName=userimagesaccount;AccountKey=dXNlcmltYWdlc2tleQ==;BlobEndpoint=http://storage-emulator:10000/userimagesaccount;QueueEndpoint=http://storage-emulator:10001/userimagesaccount;

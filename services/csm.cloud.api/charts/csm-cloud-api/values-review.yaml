@@ -1,0 +1,14 @@
+# Environment specific values for csm-cloud-project.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+domainName: review.bosch-refinemysite.com
+domainNameAdmin: review-admin.bosch-refinemysite.com
+domainNameApi: review-api.bosch-refinemysite.com
+profiles: staging-restricted
+
+# configuration for KV Flex volumes
+env: review
+subscription: qa
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

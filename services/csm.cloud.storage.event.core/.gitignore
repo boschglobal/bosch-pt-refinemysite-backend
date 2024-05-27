@@ -1,0 +1,18 @@
+# Go specific
+.gomodcache/
+.owasp-nvd/
+csm.cloud.storage.event.core
+dependency-check/
+coverage.html
+coverage.out
+dependency-check-report.html
+test-report.out
+
+# FOSS licenses
+foss/report/licenses
+
+# IntelliJ
+bin
+
+# Mac specific
+.DS_Store

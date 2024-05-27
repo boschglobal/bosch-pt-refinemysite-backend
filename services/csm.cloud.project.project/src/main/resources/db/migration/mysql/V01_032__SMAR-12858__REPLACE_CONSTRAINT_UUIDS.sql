@@ -1,0 +1,12 @@
+update task_action_selection_set set action = "RESOURCES" where action = "c2d498ff-b5ba-a1a0-6d03-b08cc8b46cce";
+update task_action_selection_set set action = "INFORMATION" where action = "4555d002-e433-722c-89f4-f6a9161e91e8";
+update task_action_selection_set set action = "EQUIPMENT" where action = "168a3c5e-6db8-04cf-c0e1-7d28d73cd5c3";
+update task_action_selection_set set action = "MATERIAL" where action = "078c1447-637f-86ac-df35-2727d770022c";
+update task_action_selection_set set action = "PRELIMINARY_WORK" where action = "66ec52d3-59b9-cfcc-8de1-2fc9ca596e85";
+update task_action_selection_set set action = "SAFE_WORKING_ENVIRONMENT" where action = "f985a561-bf4e-707d-222c-4d0d34bc8af1";
+update task_action_selection_set set action = "EXTERNAL_FACTORS" where action = "585e110c-7e3b-14c3-729a-39c7fc897220";
+update task_action_selection_set set action = "COMMON_UNDERSTANDING" where action = "35ad5368-3b6d-dd5b-838c-26ab091ed7f1";
+update task_action_selection_set set action = "CUSTOM1" where action = "b49ee954-bff1-038e-3f66-15dc1844ec99";
+update task_action_selection_set set action = "CUSTOM2" where action = "45b49cbb-7c81-ebad-3afb-c2877754b1f2";
+update task_action_selection_set set action = "CUSTOM3" where action = "2ff6b42d-8fcd-e21f-7b16-47c8336e4a4e";
+update task_action_selection_set set action = "CUSTOM4" where action = "570e963d-0e32-5a4d-ec28-646224cd6b59";

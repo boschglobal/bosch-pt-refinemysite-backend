@@ -1,0 +1,62 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+*
+**************************************************************************
+//////////////////////////////////////////
+
+See link:/internal/docs/projects/api-guide-project-context.html#_task_activities[Task Documentation]
+
+== Task Activities
+
+[[resources-get-task-activities]]
+=== List all task activities
+
+The following section describes how to get a list of task activities.
+
+==== Request
+
+A `GET` request is used to access task activities.
+
+Path parameters:
+include::{snippets}/get-task-activities/path-parameters.adoc[]
+
+Request parameters:
+include::{snippets}/get-task-activities/query-parameters.adoc[]
+
+include::{snippets}/get-task-activities/http-request.adoc[]
+
+include::{snippets}/get-task-activities/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/get-task-activities/http-response.adoc[]
+
+==== Response fields
+
+include::{snippets}/get-task-activities/response-fields.adoc[]
+
+==== Links
+
+include::{snippets}/get-task-activities/links.adoc[]
+
+=== Download activity attachments
+
+The following section describes how to download an attachment of an activity. Attachment resources are provided as byte-array binary data with mime-type 'image/jpeg'.
+
+==== Request
+
+A `GET` request is used to download activity attachments.
+
+Path parameters:
+include::{snippets}/get-attachment/path-parameters.adoc[]
+
+include::{snippets}/get-attachment/http-request.adoc[]
+
+include::{snippets}/get-attachment/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/get-attachment/http-response.adoc[]
+

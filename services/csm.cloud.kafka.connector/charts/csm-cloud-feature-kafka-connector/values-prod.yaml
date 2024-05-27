@@ -1,0 +1,11 @@
+# Environment specific values for csm-cloud-feature-kafka-connector.
+# Declare variables to be passed into your templates.
+
+stage: prod
+livenessProbeInitialDelay: 30
+
+# configuration for KV Flex volumes
+env: prod
+subscription: prod
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

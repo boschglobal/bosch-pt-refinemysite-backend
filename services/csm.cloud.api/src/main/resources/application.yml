@@ -1,0 +1,90 @@
+info.app.name: ${spring.application.name}
+
+server:
+  port: 8090
+  shutdown: graceful
+
+spring:
+  application:
+    name: "csm-cloud-api"
+  config:
+    import:
+      - classpath:actuator-common.yml
+      - classpath:apiversion.yml
+      - classpath:cors.yml
+      - classpath:logging.yml
+      - classpath:metrics.yml
+      - classpath:mobileversion.yml
+      - classpath:mongodb.yml
+      - classpath:profiles.yml
+      - classpath:security.yml
+      - classpath:swagger.yml
+  jackson:
+    default-property-inclusion: non_null
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+  cloud:
+    gateway:
+      forwarded.enabled: false
+      x-forwarded.enabled: true
+      discovery.locator.enabled: false
+  session:
+    store-type: mongodb
+    timeout: 7d
+    mongodb:
+      collection-name: Sessions
+  threads:
+    virtual:
+      enabled: true
+
+custom:
+  request:
+    filter:
+      large:
+        max-size-in-mb: 200
+        paths:
+          - /projects/{id}/import/**
+      default:
+        max-size-in-mb: 20
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uris:
+            - ${spring.security.oauth2.client.provider.keycloak1.issuer-uri}
+---
+spring:
+  config:
+    activate:
+      on-profile: keycloak1
+custom:
+  auth:
+    system: keycloak1
+---
+spring:
+  config:
+    activate:
+      on-profile: local || test
+
+server:
+  shutdown: immediate
+
+custom:
+  shutdown:
+    timeout-seconds: 0
+
+web.ui.url: http://localhost:8000
+admin.web.ui.url: http://localhost:8001
+
+company.company.service.url: http://localhost:9030
+event.service.url: http://localhost:8020
+featuretoggle.service.url: http://localhost:8083
+job.service.url: http://localhost:8011
+project:
+  activity.service.url: http://localhost:8071
+  api.timeseries.service.url: http://localhost:8072
+  news.service.url: http://localhost:8060
+  project.service.url: http://localhost:8080
+  statistics.service.url: http://localhost:8050
+  notifications.service.url: http://localhost:8030
+user.user.service.url: http://localhost:8010

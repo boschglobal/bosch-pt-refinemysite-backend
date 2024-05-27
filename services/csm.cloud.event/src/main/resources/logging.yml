@@ -1,0 +1,31 @@
+logging:
+  level:
+    ROOT: WARN
+    com.bosch.pt.csm.cloud.event:
+      application:
+        config: INFO
+        # Uncomment to also see exceptions that are logged as info
+        # error: INFO
+        filter.LoggingWebFilter: INFO
+      event.boundary.EventService: INFO
+      EventApplication: INFO
+      EventApplicationKt: INFO
+    org.springframework:
+      boot:
+        context: info
+        web.embedded.netty.GracefulShutdown: info
+      web.server.adapter.HttpWebHandlerAdapter: "OFF"
+    reactor.netty.http:
+      server.HttpServerOperations: "OFF"
+      client.HttpClientConnect: "OFF"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  level:
+    com.bosch.pt.csm.cloud.event:
+      event.boundary.handler.EventMessageHandler: debug

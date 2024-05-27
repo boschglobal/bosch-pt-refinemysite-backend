@@ -1,0 +1,11 @@
+# Environment specific values for csm-cloud-project-restore-db.
+# Declare variables to be passed into your templates.
+
+stage: sandbox1
+profiles: staging, restore-db
+
+# configuration for KV Flex volumes
+env: sandbox1
+subscription: sandbox
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

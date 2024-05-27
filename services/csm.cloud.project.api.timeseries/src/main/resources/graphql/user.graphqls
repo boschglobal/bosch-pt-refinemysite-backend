@@ -1,0 +1,122 @@
+"""
+User
+"""
+type UserPayloadV1 {
+
+    """
+    Unique identifier of the user
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    First name
+    """
+    firstName: String!,
+
+    """
+    Last name
+    """
+    lastName: String!,
+
+    """
+    E-Mail address
+    """
+    email: String!,
+
+    """
+    Optional position
+    """
+    position: String,
+
+    """
+    User's preferred locale (if set)
+    """
+    locale: String,
+
+    """
+    The country of the user
+    """
+    country: IsoCountryCodeEnumPayloadV1,
+
+    """
+    Phone numbers
+    """
+    phoneNumbers: [UserPhoneNumberPayloadV1],
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}
+
+"""
+Representation of a phone number
+"""
+type UserPhoneNumberPayloadV1 {
+
+    """
+    Country code
+    """
+    countryCode: String,
+
+    """
+    The type of phone number
+    """
+    phoneNumberType: PhoneNumberTypeEnumPayloadV1,
+
+    """
+    The call number
+    """
+    callNumber: String,
+}
+
+"""
+The type of a phone number
+"""
+enum PhoneNumberTypeEnumPayloadV1 {
+
+    """
+    Assistant
+    """
+    ASSISTANT,
+
+    """
+    Business
+    """
+    BUSINESS,
+
+    """
+    Fax
+    """
+    FAX,
+
+    """
+    Home
+    """
+    HOME,
+
+    """
+    Mobile
+    """
+    MOBILE,
+
+    """
+    Organization
+    """
+    ORGANIZATION,
+
+    """
+    Other
+    """
+    OTHER,
+
+    """
+    Pager
+    """
+    PAGER,
+}

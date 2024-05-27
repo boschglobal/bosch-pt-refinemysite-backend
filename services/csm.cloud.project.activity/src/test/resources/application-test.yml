@@ -1,0 +1,31 @@
+spring:
+  cache:
+    type: NONE
+  config:
+    import:
+      - classpath:application-idp-bosch-dev.yml
+  mongodb:
+    embedded:
+      version: 5.0.6
+custom:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uris:
+            - https://jwtcreator.example.com
+logging:
+  level:
+    org:
+      springframework:
+        test:
+          context:
+            # change to debug to get infos about testcontext caching and reusing
+            cache: info
+      mongodb.driver.protocol: info
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 5.0.6
+

@@ -1,0 +1,18 @@
+# Environment specific values for csm-cloud-project.
+# Declare variables to be passed into your templates.
+
+stage: sandbox2
+profiles: staging
+domainName: sandbox2.bosch-refinemysite.com
+domainNameApi: sandbox2-api.bosch-refinemysite.com
+
+mailjetBccEmail: REPLACE_ME
+mailjetErrorReportingEmail: REPLACE_ME
+mailjetRedirectEmail: REPLACE_ME
+mailjetRedirectPattern: ".*"
+
+# configuration for KV Flex volumes
+env: sandbox2
+subscription: sandbox
+subscriptionid: "REPLACE_ME"
+tenantid: "REPLACE_ME"

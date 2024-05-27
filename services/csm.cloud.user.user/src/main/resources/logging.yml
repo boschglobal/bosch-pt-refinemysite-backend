@@ -1,0 +1,80 @@
+logging:
+  level:
+    ROOT: warn
+    #com.zaxxer.hikari: debug
+    com.bosch.pt.csm.cloud:
+      common.security.CustomAuthenticationEntryPoint: info
+      usermanagement:
+        UserApplicationKt: info
+        application:
+          config: info
+          lifecycle: info
+          security.SmartSiteAuthenticationEntryPoint: info
+        attachment.facade.listener: info
+        common.facade.rest.ErrorController: info
+        user.user.facade:
+          rest.sideeffect: info
+          job: info
+    org:
+      #Configure logging for sql parameters
+      # hibernate:
+      # type.descriptor.sql.BasicBinder: TRACE
+      # SQL: debug
+      apache.kafka.clients.consumer.internals.Fetcher: error
+      flywaydb.core.internal.command: info
+      springframework:
+        boot:
+          context: info
+          web.embedded.tomcat.GracefulShutdown: info
+        cloud.config: debug
+        kafka.core.KafkaAdmin: info
+        retry: info
+        web.filter.CommonsRequestLoggingFilter: debug
+        web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: error
+
+---
+spring:
+  config:
+    activate:
+      on-profile: log-jpa
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        event: debug
+        persister:
+          collection: debug
+        internal:
+          util:
+            EntityPrinter: debug
+        type:
+          EnumType: trace
+          CollectionType: trace
+          descriptor:
+            sql: trace
+      springframework:
+        transaction:
+          support:
+            AbstractPlatformTransactionManager: debug
+        orm:
+          jpa:
+            JpaTransactionManager: debug
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  level:
+    com.bosch.pt.csm.cloud.usermanagement:
+      consents.eventstore.restore: debug
+      craft.eventstore.restore: debug
+      user.eventstore.restore: debug

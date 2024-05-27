@@ -1,0 +1,509 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[day-card]]
+== Day Cards
+
+[[get-day-card]]
+=== Get Day Card
+Retrieves the day card with the given id.
+
+[[get-day-card-latest]]
+==== Latest API Version
+
+[[get-day-card-request-latest]]
+===== Request
+A `GET` request is used to retrieve the information of a day card.
+
+====== Path parameters
+include::{snippets}/day-card/document-get-day-card/path-parameters.adoc[]
+
+====== Example request
+operation::day-card/document-get-day-card[snippets='http-request,curl-request']
+
+[[get-day-card-response-latest]]
+===== Response
+The day card is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-get-day-card/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-get-day-card/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-get-day-card/http-response.adoc[]
+
+
+
+[[get-multiple-day-cards]]
+=== Get Multiple Day Cards (Batch)
+Retrieves multiple day cards specified by the list of given ids.
+
+[[get-multiple-day-cards-latest]]
+==== Latest API Version
+
+[[get-multiple-day-cards-request-latest]]
+===== Request
+A `POST` request is used to retrieve multiple day cards.
+
+====== Request parameters
+include::{snippets}/day-card/document-get-multiple-day-cards/query-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/day-card/document-get-multiple-day-cards/request-fields.adoc[]
+
+====== Example request
+operation::day-card/document-get-multiple-day-cards[snippets='http-request,curl-request']
+
+[[get-multiple-day-cards-response-latest]]
+===== Response
+A list of day cards is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-get-multiple-day-cards/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-get-day-card/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-get-multiple-day-cards/http-response.adoc[]
+
+
+
+[[create-day-card]]
+=== Create Day Card (and add to schedule)
+This endpoint can be used to create a day card and add it to the task schedule.
+
+[[create-day-card-latest]]
+==== Latest API Version
+
+[[create-day-card-request-latest]]
+===== Request
+A `POST` request is used to create a new day card. This endpoint required the version of the task schedule in the If-Match header since it changes the task schedule, too.
+
+====== Path parameters
+include::{snippets}/day-card/document-add-day-card/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/day-card/document-add-day-card/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/day-card/document-add-day-card/request-fields.adoc[]
+
+====== Example request
+operation::day-card/document-add-day-card[snippets='http-request,curl-request']
+
+[[create-day-card-response-latest]]
+===== Response
+The updated task schedule including the new day card (as embedded resource) is returned
+
+====== Response fields
+include::{snippets}/day-card/document-add-day-card/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-add-day-card/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-add-day-card/http-response.adoc[]
+
+
+
+[[update-day-card]]
+=== Update Day Card
+This endpoint can be used to update a day card.
+
+[[update-day-card-latest]]
+==== Latest API Version
+
+[[update-day-card-request-latest]]
+===== Request
+A `PUT` request is used to update information of a day card.
+Please note that the date information belongs to the
+<<Task Schedule>> and is maintained there.
+
+====== Path parameters
+include::{snippets}/day-card/document-update-day-card/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/day-card/document-update-day-card/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/day-card/document-update-day-card/request-fields.adoc[]
+
+====== Example request
+operation::day-card/document-update-day-card[snippets='http-request,curl-request']
+
+[[update-day-card-response-latest]]
+===== Response
+The updated day card is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-update-day-card/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-update-day-card/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-update-day-card/http-response.adoc[]
+
+
+
+[[remove-day-card]]
+=== Delete Day Card
+Deletes the day card for the given id and removes it from the corresponding task schedule.
+
+NOTE: You have to specify the ETag of the task schedule here.
+
+[[remove-day-card-latest]]
+==== Latest API Version
+
+[[remove-day-card-request-latest]]
+===== Request
+A `DELETE` request is used to delete the day card.
+
+====== Path parameters
+include::{snippets}/day-card/document-remove-day-card/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/day-card/document-remove-day-card/request-headers.adoc[]
+
+====== Example request
+operation::day-card/document-remove-day-card[snippets='http-request,curl-request']
+
+[[remove-day-card-response-latest]]
+====== Response
+The updated task schedule without the deleted day card is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-remove-day-card/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-remove-day-card/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-remove-day-card/http-response.adoc[]
+
+
+
+[[remove-multiple-day-card]]
+=== Delete Multiple Day Cards (Batch)
+Deletes the day cards for the given IDs and removes them from the corresponding task schedule.
+This operation is executed as a batch in a single, atomic transaction.
+
+NOTE: You have to specify the version of the corresponding task schedule here.
+
+[[remove-multiple-day-card-latest]]
+==== Latest API Version
+
+[[remove-multiple-day-card-request-latest]]
+===== Request
+A `DELETE` is used to delete multiple day cards of task schedule.
+
+====== Request parameters
+include::{snippets}/day-card/document-remove-day-cards/query-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/day-card/document-remove-day-cards/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/day-card/document-remove-day-cards/request-fields.adoc[]
+
+====== Example request
+operation::day-card/document-remove-day-cards[snippets='http-request,curl-request']
+
+[[remove-multiple-day-card-response-latest]]
+===== Response
+The updated task schedule without the deleted day cards is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-remove-day-cards/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-remove-day-cards/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-remove-day-cards/http-response.adoc[]
+
+
+
+[[day-card-status]]
+== Day Card Status Changes
+
+[[cancel-day-card]]
+=== Cancel Day Card
+Cancel a single day card.
+
+[[cancel-day-card-latest]]
+==== Latest API Version
+
+[[cancel-day-card-request-latest]]
+===== Request
+A `POST` request is used to change the day card status to _NOT DONE_.
+
+====== Path parameters
+include::{snippets}/day-card/document-cancel-day-card/path-parameters.adoc[]
+
+===== Request headers
+include::{snippets}/day-card/document-cancel-day-card/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/day-card/document-cancel-day-card/request-fields.adoc[]
+
+====== Example request
+operation::day-card/document-cancel-day-card[snippets='http-request,curl-request']
+
+[[cancel-day-card-response-latest]]
+===== Response
+The updated day card is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-cancel-day-card/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-cancel-day-card/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-cancel-day-card/http-response.adoc[]
+
+
+
+[[cancel-multiple-day-cards]]
+=== Cancel Multiple Day Cards (Batch)
+Cancels multiple day cards at once. This operation is executed as a batch in a single,
+atomic transaction, i.e. either all cancellations succeed or none at all.
+
+[[cancel-multiple-day-cards-latest]]
+==== Latest API Version
+
+[[cancel-multiple-day-cards-request-latest]]
+===== Request
+A `POST` request is used to change the status of multiple day cards to _NOT DONE_.
+
+===== Request parameters
+include::{snippets}/day-card/document-cancel-multiple-day-cards/query-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/day-card/document-cancel-multiple-day-cards/request-fields.adoc[]
+
+====== Example request
+operation::day-card/document-cancel-multiple-day-cards[snippets='http-request,curl-request']
+
+[[cancel-multiple-day-cards-response-latest]]
+===== Response
+The list of updated day cards is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-cancel-multiple-day-cards/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-cancel-multiple-day-cards/http-response.adoc[]
+
+
+
+[[complete-day-card]]
+=== Complete Day Card
+Completes a single day card.
+
+[[complete-day-card-latest]]
+==== Latest API Version
+
+[[complete-day-card-request-latest]]
+===== Request
+A `POST` request is used to change the day card status to _DONE_.
+
+====== Path parameters
+include::{snippets}/day-card/document-complete-day-card/path-parameters.adoc[]
+
+===== Request headers
+include::{snippets}/day-card/document-complete-day-card/request-headers.adoc[]
+
+====== Example request
+operation::day-card/document-complete-day-card[snippets='http-request,curl-request']
+
+[[complete-day-card-response-latest]]
+===== Response
+The updated day card is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-complete-day-card/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-complete-day-card/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-complete-day-card/http-response.adoc[]
+
+
+
+[[complete-multiple-day-cards]]
+=== Complete Multiple Day Cards (Batch)
+Completes multiple day cards at once. This operation is executed as a batch in a single,
+atomic transaction, i.e. either all completions succeed or none at all.
+
+[[complete-multiple-day-cards-latest]]
+==== Latest API Version
+
+[[complete-multiple-day-cards-request-latest]]
+===== Request
+A `POST` request is used to change the status of multiple day cards to _DONE_.
+
+====== Request parameters
+include::{snippets}/day-card/document-complete-multiple-day-cards/query-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/day-card/document-complete-multiple-day-cards/request-fields.adoc[]
+
+====== Example request
+operation::day-card/document-complete-multiple-day-cards[snippets='http-request,curl-request']
+
+[[complete-multiple-day-cards-response-latest]]
+===== Response
+A list of updated day cards is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-complete-multiple-day-cards/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-complete-multiple-day-cards/http-response.adoc[]
+
+
+
+[[approve-day-card]]
+=== Approve Day Card
+Approve a single day card.
+
+[[approve-day-card-latest]]
+==== Latest API Version
+
+[[approve-day-card-request-latest]]
+===== Request
+A `POST` request is used to change the day card status to _APPROVED_.
+
+====== Path parameters
+include::{snippets}/day-card/document-approve-day-card/path-parameters.adoc[]
+
+===== Request headers
+include::{snippets}/day-card/document-approve-day-card/request-headers.adoc[]
+
+====== Example request
+operation::day-card/document-approve-day-card[snippets='http-request,curl-request']
+
+[[approve-day-card-response-latest]]
+===== Response
+The updated day card is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-approve-day-card/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-approve-day-card/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-approve-day-card/http-response.adoc[]
+
+
+
+[[approve-multiple-day-cards]]
+=== Approve Multiple Day Cards (Batch)
+Approves multiple day cards at once. This operation is executed as a batch in a single,
+atomic transaction, i.e. either all approvals succeed or none at all.
+
+[[approve-multiple-day-cards-latest]]
+==== Latest API Version
+
+[[approve-multiple-day-cards-request-latest]]
+===== Request
+A `POST` request is used to change the status of multiple day cards to _APPROVED_.
+
+====== Request parameters
+include::{snippets}/day-card/document-approve-multiple-day-cards/query-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/day-card/document-approve-multiple-day-cards/request-fields.adoc[]
+
+====== Example request
+operation::day-card/document-approve-multiple-day-cards[snippets='http-request,curl-request']
+
+[[approve-multiple-day-cards-response-latest]]
+===== Response
+A list with the updated day cards is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-approve-multiple-day-cards/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-approve-multiple-day-cards/http-response.adoc[]
+
+
+
+[[reset-day-card]]
+=== Reset (Re-Open) Day Card
+Resets a day card.
+
+[[reset-day-card-latest]]
+==== Latest API Version
+
+[[reset-day-card-request-latest]]
+===== Request
+A `POST` request is used to reset the day card status back to _OPEN_ again.
+
+====== Path parameters
+include::{snippets}/day-card/document-reset-day-card/path-parameters.adoc[]
+
+===== Request headers
+include::{snippets}/day-card/document-reset-day-card/request-headers.adoc[]
+
+====== Example request
+operation::day-card/document-reset-day-card[snippets='http-request,curl-request']
+
+[[reset-day-card-response-latest]]
+===== Response
+The updated day card is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-reset-day-card/response-fields.adoc[]
+
+====== Links
+include::{snippets}/day-card/document-reset-day-card/links.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-reset-day-card/http-response.adoc[]
+
+
+
+[[reset-multiple-day-cards]]
+=== Reset (Re-Open) Multiple Day Cards (Batch)
+Resets multiple day cards at once. This operation is executed as a batch in a single,
+atomic transaction, i.e. either all resets succeed or none at all.
+
+[[reset-multiple-day-cards-latest]]
+==== Latest API Version
+
+[[reset-multiple-day-cards-request-latest]]
+===== Request
+A `POST` request is used to change the status of multiple day cards back to _OPEN_.
+
+====== Request parameters
+include::{snippets}/day-card/document-reset-multiple-day-cards/query-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/day-card/document-reset-multiple-day-cards/request-fields.adoc[]
+
+====== Example request
+operation::day-card/document-reset-multiple-day-cards[snippets='http-request,curl-request']
+
+[[reset-multiple-day-cards-response-latest]]
+===== Response
+A list with the updated day cards is returned.
+
+====== Response fields
+include::{snippets}/day-card/document-reset-multiple-day-cards/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/day-card/document-reset-multiple-day-cards/http-response.adoc[]

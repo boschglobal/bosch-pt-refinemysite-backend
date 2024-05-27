@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    group:
+      local:
+        - idp-bosch-dev
+        - init-topics
+        - splunk-local
+        - swagger
+      staging:
+        - idp-bosch-dev
+        - init-topics
+        - kubernetes
+        - skid-deleted-user-propagation
+        - log-json
+        - docs
+        - swagger
+      production:
+        # - idp-bosch-prod (controlled by helm chart since production profile is used on review, too
+        - kubernetes
+        - skid-deleted-user-propagation
+        - log-json
+      kafka-listener-disabled:
+        - kafka-craft-listener-disabled
+        - kafka-image-listener-disabled
+        - kafka-user-listener-disabled
+
+# restore-db: Additional profile used when application should start in restore mode
+# log-jpa: Additional profile used for additional jpa logging output

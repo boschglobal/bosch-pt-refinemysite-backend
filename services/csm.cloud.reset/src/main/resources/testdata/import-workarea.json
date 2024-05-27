@@ -1,0 +1,79 @@
+[
+  {
+    "id": "work_area_1_1",
+    "projectId": "project1",
+    "name": "Work Area 1",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_1_2",
+    "projectId": "project1",
+    "name": "Work Area 2",
+    "etag": 1,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_1_3",
+    "projectId": "project1",
+    "name": "Work Area 3",
+    "etag": 2,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_1_4",
+    "projectId": "project1",
+    "name": "Work Area 4",
+    "etag": 3,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_2_1",
+    "projectId": "project2",
+    "name": "Work Area 1",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_2_2",
+    "projectId": "project2",
+    "name": "Work Area 2",
+    "etag": 1,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_3_1",
+    "projectId": "project3",
+    "name": "Work Area 1",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_4_1",
+    "projectId": "project4",
+    "name": "Work Area 1",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_4_2",
+    "projectId": "project4",
+    "name": "Work Area 2",
+    "etag": 1,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_4_3",
+    "projectId": "project4",
+    "name": "Work Area 3",
+    "etag": 2,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "work_area_4_4",
+    "projectId": "project4",
+    "name": "Work Area 4",
+    "etag": 3,
+    "createWithUserId": "daniel"
+  }
+]

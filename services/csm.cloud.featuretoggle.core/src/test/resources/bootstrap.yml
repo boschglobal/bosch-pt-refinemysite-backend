@@ -1,0 +1,17 @@
+kubernetes:
+  manifests:
+    enabled: false
+  informer:
+    enabled: false
+
+spring:
+  application:
+    name: csm-cloud-featuretoggle-core
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+  cloud:
+    kubernetes:
+      enabled: false
+  main:
+    banner-mode: off

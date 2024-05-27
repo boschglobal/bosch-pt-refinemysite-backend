@@ -1,0 +1,19 @@
+# Due to a bug in spring boot, we had to prefix the files with "test-" instead of using a suffix "-test"
+# https://github.com/spring-projects/spring-boot/issues/26147
+spring:
+  config:
+    import:
+      - classpath:application-idp-bosch-dev.yml
+      - classpath:test-flyway.yml
+      - classpath:test-db.yml
+      - classpath:test-kafka.yml
+      - classpath:test-logging.yml
+  cache:
+    type: none
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://jwtcreator.example.com
+
+stage: test

@@ -1,0 +1,150 @@
+trigger:
+  - integration
+  - production
+  - SMAR-*
+  - sandbox*
+
+name: "1.0.0-$(Date:yyyyMMdd)-$(Build.SourceBranchName)$(Rev:.r)"
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+variables:
+  - name: isIntegration
+    value: ${{ eq(variables['Build.SourceBranchName'], 'integration') }}
+  - name: isSandbox
+    value: ${{ startsWith(variables['Build.SourceBranchName'], 'sandbox') }}
+  - name: isPullRequest
+    value: ${{ eq(variables['Build.Reason'], 'PullRequest') }}
+  - template: /templates/variables/pipelines.yaml@csm_templates
+
+stages:
+  - stage: build
+    displayName: BUILD
+    variables:
+      - group: Build Pipelines
+    jobs:
+      - job: build_and_push
+        pool:
+          vmImage: ${{ variables.ubuntuImage }}
+        steps:
+          - checkout: self
+            persistCredentials: true
+            fetchDepth: 0
+
+          - task: GoTool@0
+            displayName: Use Go
+            inputs:
+              version: 1.21.6
+
+          - bash: |
+              git config --global url."https://access_token:$SYSTEM_ACCESSTOKEN@dev.azure.com/pt-iot/smartsite/_git/".insteadOf "https://dev.azure.com/pt-iot/smartsite/"
+              go env -w GOPRIVATE="dev.azure.com/pt-iot/smartsite/*"
+              go env -w GOMODCACHE="$(pwd)/.gomodcache"
+            displayName: Configure go environment for private repos
+            env:
+              SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
+          # Download of all dependencies is required before docker build can be done.
+          # The docker build itself cannot download from private git repositories (no git tool available)
+          - task: Go@0
+            displayName: Download go modules to local cache (.gomodcache)
+            inputs:
+              command: custom
+              customCommand: mod
+              arguments: download
+
+          - ${{ if eq(variables.isSandbox, false) }}:
+              - bash: ./verify-report-integrity.sh
+                displayName: Verify FOSS license report is up to date
+                workingDirectory: foss
+
+              # If the .owasp-nvd is not created in the pipeline (by running dependency-check)
+              # the Post-job of the cache fails because of the missing .owasp-nvd.
+              # Therefore, the cache should only run when the analysis is running.
+              - task: Cache@2
+                displayName: OWASP Dependency-Check NVD
+                inputs:
+                  key: '"csm.cloud.storage.event.core.v1"'
+                  path: .owasp-nvd
+
+              - template: /templates/sonarqube/sonarqube-vpn.yaml@csm_templates
+                parameters:
+                  scannerMode: CLI
+                  # If the pull request was manually triggered the BuildReason is "Manual", else "PullRequest".
+                  # Whether the BuildReason is "PullRequest" or "Manual" we assume that a pull request has a SourceBranchName "merge".
+                  ${{ if eq(variables['Build.SourceBranchName'], 'merge') }}:
+                    extraProperties: |
+                      sonar.projectVersion=$(Build.BuildNumber)
+                  ${{ if ne(variables['Build.SourceBranchName'], 'merge') }}:
+                    extraProperties: |
+                      sonar.projectVersion=$(Build.BuildNumber)
+                      sonar.branch.name=$(Build.SourceBranchName)
+                  sonarQubeRunAnalysisSteps:
+                    - bash: ./scripts/dependency-check.sh 9.0.8
+                      displayName: Download and run OWASP Dependency-Check
+                    - task: Go@0
+                      displayName: Create coverage report
+                      inputs:
+                        command: test
+                        arguments: -coverprofile=coverage.out ./...
+                    - bash: ./scripts/test-report.sh
+                      displayName: Create test report
+                    - task: SonarQubeAnalyze@5
+                      displayName: Run SonarQube analysis
+
+          - template: /templates/docker/docker.yaml@csm_templates
+            parameters:
+              condition: and(succeeded(), eq(variables.isPullRequest, false))
+              command: buildAndPush
+              repository: csm.cloud.storage.event.core
+              pushTag: $(Build.BuildNumber)
+
+          - template: /templates/docker/docker.yaml@csm_templates
+            parameters:
+              condition: and(succeeded(), eq(variables.isIntegration, true))
+              command: tagAndPush
+              repository: csm.cloud.storage.event.core
+              existingTag: $(Build.BuildNumber)
+              pushTag: latest
+
+          - template: /templates/helm/helm-package.yaml@csm_templates
+            parameters:
+              condition: and(succeeded(), eq(variables.isPullRequest, false))
+              chartPath: charts/csm-cloud-storage-event-core
+              chartName: csm-cloud-storage-event-core
+              chartVersion: $(Build.BuildNumber)
+
+          - bash: git push origin HEAD:master
+            displayName: Push integration to master
+            condition: and(succeeded(), eq(variables.isIntegration, true))
+
+          - bash: sudo rm -rf .gomodcache
+            displayName: Clean up the local cache (.gomodcache)
+            condition: always()
+
+  - ${{ if eq(variables.isSandbox, true) }}:
+      - stage: sandbox
+        displayName: ${{ upper(variables['Build.SourceBranchName']) }}
+        dependsOn: build
+        condition: and(succeeded(), eq(variables.isSandbox, true))
+        pool:
+          name: Azure-selfhosted Ubuntu
+          demands:
+            - SMARTSITE_ENV -equals ${{ lower(variables['Build.SourceBranchName']) }}
+        variables:
+          - group: ${{ replace(lower(variables['Build.SourceBranchName']), 's', 'S') }}
+        jobs:
+          - template: /templates/helm/helm-deploy-blue-green.yaml@csm_templates
+            parameters:
+              environment: NO_APPROVAL
+              azureSubscription: sandbox
+              aksEnv: ${{ lower(variables['Build.SourceBranchName']) }}
+              chartName: csm-cloud-storage-event-core
+              chartVersion: $(Build.BuildNumber)
+              releaseName: csm-cloud-storage-event-core
+              helmValuesFile: charts/csm-cloud-storage-event-core/values-${{ lower(variables['Build.SourceBranchName']) }}.yaml

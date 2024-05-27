@@ -1,0 +1,30 @@
+"""
+Representation of a crafts / disciplines in RefinemySite
+"""
+type ProjectCraftPayloadV1 {
+
+    """
+    Unique identifier of the project
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    Name
+    """
+    name: String!,
+
+    """
+    Color
+    """
+    color: String!,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}

@@ -1,0 +1,408 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[project]]
+== Projects
+Projects are the parents of tasks, topics, messages, ...
+
+
+
+[[import-project]]
+=== Import project
+This endpoint can be used to import a project either from a Microsoft Project (.mpp) file
+or an Oracle Primavera P6 (.xer) file.
+
+The import consists of three steps:
+
+* upload
+* analyze
+* import
+
+The steps with their corresponding endpoints are described below.
+
+[[import-project-upload]]
+==== Upload file to import
+This endpoint can be used to upload the file to import.
+Imports can only be applied to empty projects (a project without crafts, working areas, tasks, topics, etc.)
+The uploaded file is validated and a list of column names, extracted from the file is returned to the caller.
+The column names can be used in the analysis step to configure how the data should be interpreted in the
+import process.
+
+[[import-project-upload-latest]]
+===== Latest API Version
+
+[[import-project-upload-request-latest]]
+====== Request
+A `POST` / `Multipart-File-Upload` request is used to upload the file to import.
+
+====== Path parameters
+include::{snippets}/project-import/document-project-import-upload/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/project-import/document-project-import-upload/curl-request.adoc[]
+
+[[import-project-upload-response-latest]]
+====== Response
+The upload response with the columns is returned.
+
+====== Response fields
+include::{snippets}/project-import/document-project-import-upload/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/project-import/document-project-import-upload/http-response.adoc[]
+
+
+[[import-project-analyze]]
+==== Analyze file to import
+This endpoint can be used to analyze the file to import.
+The import process can be customized by specifying the additional parameters how the data in the file should
+be interpreted. The previously returned column names can be used to specify e.g. the column from where the
+working area and craft/discipline names should be extracted.
+The endpoint analyzes the file using the supplied optional parameters and returns a list of elements that are
+either auto-corrected or cannot be imported.
+If there are no errors detected that prevent an import, then a `import` link is in the response, emphasising
+that the import can be started.
+
+[[import-project-analyze-latest]]
+===== Latest API Version
+
+[[import-project-analyze-request-latest]]
+====== Request
+A `POST` request is used to analyze the file and to update the import parameters.
+
+====== Path parameters
+include::{snippets}/project-import/document-project-import-analyze/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/project-import/document-project-import-analyze/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/project-import/document-project-import-analyze/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/project-import/document-project-import-analyze/http-request.adoc[]
+include::{snippets}/project-import/document-project-import-analyze/curl-request.adoc[]
+
+[[import-project-analyze-response-latest]]
+====== Response
+A statistic about the number of elements of each type to import and a list of auto-corrections / errors
+are returned.
+
+====== Response fields
+include::{snippets}/project-import/document-project-import-analyze/response-fields.adoc[]
+
+====== Links
+include::{snippets}/project-import/document-project-import-analyze/links.adoc[]
+
+====== Example response
+include::{snippets}/project-import/document-project-import-analyze/http-response.adoc[]
+
+
+[[import-project-import]]
+==== Import the file
+This endpoint can be used to trigger the asynchronous import of the previously uploaded file.
+The endpoint returns the id of the asynchronous job that can be used to retrieve the status
+via the Job API.
+
+[[import-project-import-latest]]
+===== Latest API Version
+
+[[import-project-import-request-latest]]
+====== Request
+A `POST` request is used to trigger the asynchronous import.
+
+====== Path parameters
+include::{snippets}/project-import/document-project-import/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/project-import/document-project-import/request-headers.adoc[]
+
+====== Example request
+include::{snippets}/project-import/document-project-import/http-request.adoc[]
+include::{snippets}/project-import/document-project-import/curl-request.adoc[]
+
+[[import-project-import-response-latest]]
+====== Response
+The job id is returned.
+
+====== Response fields
+include::{snippets}/project-import/document-project-import/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/project-import/document-project-import/http-response.adoc[]
+
+
+
+[[export-project]]
+=== Export project
+Projects can be exported into either a Microsoft Project XML (.xml) file or an Oracle
+Primavera P6 XML (.xml) file.
+
+The process to export project data to file is asynchronous.
+
+
+[[export-project-export]]
+==== Export project to file
+This endpoint can be used to trigger the asynchronous export of a project.
+The endpoint returns the id of the asynchronous job that can be used to retrieve the status
+via the Job API.
+
+[[export-project-export-latest]]
+===== Latest API Version
+
+[[export-project-export-request-latest]]
+====== Request
+A `POST` request is used to trigger the asynchronous export.
+
+====== Path parameters
+include::{snippets}/project-export/document-project-export/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/project-export/document-project-export/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/project-export/document-project-export/http-request.adoc[]
+include::{snippets}/project-export/document-project-export/curl-request.adoc[]
+
+[[export-project-export-response-latest]]
+====== Response
+The job id is returned.
+
+====== Response fields
+include::{snippets}/project-export/document-project-export/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/project-export/document-project-export/http-response.adoc[]
+
+
+
+[[create-project]]
+=== Create project
+This endpoint can be used to create projects via API.
+
+[[create-project-latest]]
+==== Latest API Version
+
+[[create-project-request-latest]]
+===== Request
+A `POST` request is used to create a new project.
+
+====== Request fields
+include::{snippets}/projects/document-create-project/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-create-project/http-request.adoc[]
+include::{snippets}/projects/document-create-project/curl-request.adoc[]
+
+[[create-project-response-latest]]
+===== Response
+The created project is returned.
+
+====== Response fields
+include::{snippets}/projects/document-create-project/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-create-project/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-create-project/http-response.adoc[]
+
+
+
+[[create-project-with-identifier]]
+=== Create project with identifier
+Same as the previous request, but choose the project identifier client-side.
+
+[[create-project-with-identifier-latest]]
+==== Latest API Version
+
+[[create-project-with-identifier-request-latest]]
+===== Request
+A `POST` request is used to create a new project.
+
+====== Path parameters
+include::{snippets}/projects/document-create-project-with-identifier/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/projects/document-create-project-with-identifier/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-create-project-with-identifier/http-request.adoc[]
+include::{snippets}/projects/document-create-project-with-identifier/curl-request.adoc[]
+
+[[create-project-with-identifier-response-latest]]
+===== Response
+The created project is returned.
+
+====== Response fields
+include::{snippets}/projects/document-create-project-with-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-create-project-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-create-project-with-identifier/http-response.adoc[]
+
+
+
+[[update-project]]
+=== Update project
+Update a project for a given id with the given data.
+
+[[update-project-latest]]
+==== Latest API Version
+
+[[update-project-request-latest]]
+===== Request
+A `PUT` request is used to update a project.
+
+====== Path parameters
+include::{snippets}/projects/document-update-project/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/projects/document-update-project/request-headers.adoc[]
+
+====== Request fields
+NOTE: The constructionSiteManagerId field value is not used to update the project.
+include::{snippets}/projects/document-update-project/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-update-project/http-request.adoc[]
+include::{snippets}/projects/document-update-project/curl-request.adoc[]
+
+[[update-project-response-latest]]
+===== Response
+The updated project is returned.
+
+====== Response fields
+include::{snippets}/projects/document-update-project/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-update-project/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-update-project/http-response.adoc[]
+
+
+
+[[list-projects]]
+=== List all projects
+Retrieves a list of projects accessible by the user.
+
+[[list-projects-latest]]
+==== Latest API Version
+
+[[list-projects-reques-latest]]
+===== Request
+A `GET` request is used to retrieve the list of projects.
+
+====== Example request
+include::{snippets}/projects/document-get-projects/http-request.adoc[]
+include::{snippets}/projects/document-get-projects/curl-request.adoc[]
+
+[[list-projects-response-latest]]
+===== Response
+A list of projects is returned.
+
+====== Response fields
+include::{snippets}/projects/document-get-projects/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-get-projects/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-get-projects/http-response.adoc[]
+
+
+
+[[get-project]]
+=== Get project
+Retrieve the project information for a given id.
+The resource can contain a project picture as an embedded resource.
+
+[[get-project-latest]]
+==== Latest API Version
+
+[[get-project-request-latest]]
+===== Request
+A `GET` request is used to retrieve a single project.
+
+====== Path parameters
+include::{snippets}/projects/document-get-project/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-get-project/http-request.adoc[]
+include::{snippets}/projects/document-get-project/curl-request.adoc[]
+
+[[get-project-response-latest]]
+===== Response
+The project is returned.
+
+====== Response fields
+include::{snippets}/projects/document-get-project/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-get-project/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-get-project/http-response.adoc[]
+
+
+
+[[search-projects]]
+=== Search a list of projects
+Search for projects by a set of filters.
+
+[[search-projects-latest]]
+==== Latest API Version
+
+[[search-projects-request-latest]]
+===== Request
+A `POST` request is used to search for projects by a set of filters.
+
+====== Example request
+include::{snippets}/projects/document-search-project/http-request.adoc[]
+include::{snippets}/projects/document-search-project/curl-request.adoc[]
+
+[[search-projects-response-latest]]
+===== Response
+A page of projects is returned.
+
+====== Response fields
+include::{snippets}/projects/document-search-project/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-search-project/http-response.adoc[]
+
+
+
+[[delete-project]]
+=== Delete project
+A project can be deleted by calling this endpoint with an identifier and HTTP-Method `DELETE`.
+All nested resources are automatically deleted prior the deletion of the project itself.
+
+[[delete-project-latest]]
+==== Latest API Version
+
+[[delete-project-request-latest]]
+===== Request
+A `DELETE` request is used to delete a project.
+
+====== Path parameters
+include::{snippets}/projects/document-delete-project-with-identifier/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-delete-project-with-identifier/http-request.adoc[]
+include::{snippets}/projects/document-delete-project-with-identifier/curl-request.adoc[]
+
+[[delete-project-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/projects/document-delete-project-with-identifier/http-response.adoc[]

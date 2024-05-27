@@ -1,0 +1,172 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[project-picture]]
+== Project Picture
+
+
+
+[[save-project-picture]]
+=== Save picture
+This endpoint can be used to store a picture for a project.
+If there already is a picture associated with the project, it will be replaced.
+
+[[save-project-picture-latest]]
+==== Latest API Version
+
+[[save-project-picture-request-latest]]
+===== Request
+A `POST` request is used to upload a project picture.
+
+====== Path parameters
+include::{snippets}/projects/document-save-project-picture-without-identifier/path-parameters.adoc[]
+
+====== Request parts
+include::{snippets}/projects/document-save-project-picture-without-identifier/request-parts.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-save-project-picture-without-identifier/http-request.adoc[]
+include::{snippets}/projects/document-save-project-picture-without-identifier/curl-request.adoc[]
+
+[[save-project-picture-response-latest]]
+===== Response
+The created project picture resource is returned.
+
+====== Response fields
+include::{snippets}/projects/document-save-project-picture-without-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-save-project-picture-without-identifier/links.adoc[]
+
+==== Example response
+include::{snippets}/projects/document-save-project-picture-without-identifier/http-response.adoc[]
+
+
+
+[[save-project-picture-with-identifier]]
+=== Save picture with identifier
+Same as the previous request, but choose the project picture identifier client-side.
+
+[[save-project-picture-with-identifier-latest]]
+==== Latest API Version
+
+[[save-project-picture-with-identifier-request-latest]]
+===== Request
+A `POST` request is used to upload project picture resources.
+
+====== Path parameters
+include::{snippets}/projects/document-save-project-picture-with-identifier/path-parameters.adoc[]
+
+====== Request parts
+include::{snippets}/projects/document-save-project-picture-with-identifier/request-parts.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-save-project-picture-with-identifier/http-request.adoc[]
+include::{snippets}/projects/document-save-project-picture-with-identifier/curl-request.adoc[]
+
+[[save-project-picture-with-identifier-response-latest]]
+===== Response
+The created project picture resource is returned.
+
+====== Response fields
+include::{snippets}/projects/document-save-project-picture-with-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-save-project-picture-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-save-project-picture-with-identifier/http-response.adoc[]
+
+
+
+[[get-project-picture-meta-data]]
+=== Get project picture's metadata
+Get the metadata for the current project picture.
+
+[[get-project-picture-meta-data-latest]]
+==== Latest API Version
+
+[[get-project-picture-meta-data-request-latest]]
+===== Request
+A `GET` request is used to retrieve the metadata of a project picture.
+
+====== Path parameters
+include::{snippets}/projects/document-find-project-picture-meta-data/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-find-project-picture-meta-data/http-request.adoc[]
+include::{snippets}/projects/document-find-project-picture-meta-data/curl-request.adoc[]
+
+[[get-project-picture-meta-data-response-latest]]
+===== Response
+The project picture's metadata is returned.
+
+====== Response fields
+include::{snippets}/projects/document-find-project-picture-meta-data/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-find-project-picture-meta-data/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-find-project-picture-meta-data/http-response.adoc[]
+
+
+
+[[get-project-picture]]
+=== Get project picture
+Retrieve the project picture for specific project in a specified size.
+The sizes "full" and "small" are available. Size "full" is a full-size scaled image,
+"small" a scaled down preview image.
+
+[[get-project-picture-latest]]
+==== Latest API Version
+
+[[get-project-picture-request-latest]]
+===== Request
+A `GET` request is used to retrieve the image binary data.
+
+====== Path parameters
+include::{snippets}/projects/document-find-project-picture/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-find-project-picture/http-request.adoc[]
+include::{snippets}/projects/document-find-project-picture/curl-request.adoc[]
+
+[[get-project-picture-response-latest]]
+===== Response
+HTTP-Status 302 is returned to get the binary data from the blob storage.
+
+====== Example response
+include::{snippets}/projects/document-find-project-picture/http-response.adoc[]
+
+
+
+[[delete-project-picture]]
+=== Delete project picture
+This endpoint can be used to  delete a project picture.
+
+[[delete-project-picture-latest]]
+==== Latest API Version
+
+[[delete-project-picture-request-latest]]
+===== Request
+A `DELETE` request is used to delete the project picture.
+
+====== Path parameters
+include::{snippets}/projects/document-delete-project-picture/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-delete-project-picture/http-request.adoc[]
+include::{snippets}/projects/document-delete-project-picture/curl-request.adoc[]
+
+[[delete-project-picture-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/projects/document-delete-project-picture/http-response.adoc[]

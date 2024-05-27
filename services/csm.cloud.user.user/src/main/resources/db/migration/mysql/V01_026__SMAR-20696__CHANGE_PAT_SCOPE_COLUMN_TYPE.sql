@@ -1,0 +1,1 @@
+alter table pat_scope modify scopes varchar (32);

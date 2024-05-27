@@ -1,0 +1,2 @@
+alter table projection_employable_user
+drop index UK_Identifier;

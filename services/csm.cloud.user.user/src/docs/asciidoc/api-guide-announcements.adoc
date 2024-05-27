@@ -1,0 +1,104 @@
+//////////////////////////////////////////
+ *****************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+ * *****************************************************************
+//////////////////////////////////////////
+
+= SmartSite Crafts API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+== Announcements
+Announcements are getting published in case the user needs to be informed on underneath maintenance work.
+They are translated in several languages as far as given.
+
+Each announcement has a fixed UUID which is identical for all translations.
+
+
+
+[[list-announcements]]
+=== List all announcements
+In order to retrieve a list of all announcements, a `GET` on the announcement's resource can be
+performed. To specify the returned translation, pass the required locale.
+
+[[list-announcements-latest]]
+==== Latest API version
+
+[[list-announcements-request-latest]]
+===== Request
+Use a `GET` request to retrieve the list of all announcements.
+
+====== Example request
+include::{snippets}/announcements/document-get-announcements/http-request.adoc[]
+include::{snippets}/announcements/document-get-announcements/curl-request.adoc[]
+
+[[list-announcements-response-latest]]
+===== Request
+The list of announcements is returned.
+
+====== Example response
+include::{snippets}/announcements/document-get-announcements/http-response.adoc[]
+include::{snippets}/announcements/document-get-announcements/response-fields.adoc[]
+
+
+
+[[create-announcement]]
+=== Create announcement
+Multiple announcements can be created but only the latest is displayed in the client currently.
+
+[[create-announcement-latest]]
+==== Latest API version
+
+[[create-announcement-request-latest]]
+===== Request
+Use a `POST` request to create a new announcement.
+
+====== Request fields
+include::{snippets}/announcements/document-create-announcement/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/announcements/document-create-announcement/http-request.adoc[]
+include::{snippets}/announcements/document-create-announcement/curl-request.adoc[]
+
+[[create-announcement-response-latest]]
+===== Response
+The created announcement is returned.
+
+====== Example response
+include::{snippets}/announcements/document-create-announcement/http-response.adoc[]
+
+
+[[delete-announcement]]
+=== Delete announcement
+An announcement can be deleted by its identifier.
+
+[[delete-announcement-latest]]
+==== Latest API version
+
+[[delete-announcement-request-latest]]
+===== Request
+Use a `DELETE` request to delete an announcement.
+
+====== Path parameters
+include::{snippets}/announcements/document-delete-announcement/path-parameters.adoc[]
+
+====== Example Request
+include::{snippets}/announcements/document-delete-announcement/http-request.adoc[]
+include::{snippets}/announcements/document-delete-announcement/curl-request.adoc[]
+
+[[delete-announcement-response-latest]]
+===== Response
+HTTP-Status 204 (No Content) is returned.
+
+====== Example response
+include::{snippets}/announcements/document-delete-announcement/http-response.adoc[]

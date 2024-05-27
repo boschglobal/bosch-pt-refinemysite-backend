@@ -1,0 +1,8 @@
+custom:
+  api:
+    version:
+      prefix: "/v"
+      min: 2
+      max: 2
+    user:
+      version: 3

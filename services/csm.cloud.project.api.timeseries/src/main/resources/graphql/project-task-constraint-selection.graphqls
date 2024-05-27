@@ -1,0 +1,25 @@
+"""
+Task constraint selection
+"""
+type TaskConstraintSelectionPayloadV1 {
+
+    """
+    Unique identifier of the constraint selection
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    List of constraints
+    """
+    items: [TaskConstraintPayloadV1],
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime
+}
