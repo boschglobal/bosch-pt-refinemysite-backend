@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.kafka.migrator" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="development - optional">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <envs>
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+    </envs>
+    <module name="csm.cloud.kafka.migrator.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.csm.kafka.migrator.KafkaMigratorApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Xmx64m" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.bosch.pt.csm.dev.tools.kafka.migrator.application.config.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

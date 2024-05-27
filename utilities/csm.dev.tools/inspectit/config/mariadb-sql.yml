@@ -1,0 +1,75 @@
+#
+# Instruments MariaDB prepared statements to create a span for each query or 
+# update. 
+# 
+# Extracts the actual SQL statement sent to the database.
+#
+inspectit:
+  instrumentation:
+  
+    scopes:
+      mariadb_statement_scope:
+        type:
+          name: "org.mariadb.jdbc.ClientPreparedStatement"
+          matcher-mode: "EQUALS_FULLY"
+        methods:
+          - name: "executeQuery"
+            matcher-mode: "EQUALS_FULLY"
+            visibility: [PUBLIC]
+          - name: "executeUpdate"
+            matcher-mode: "EQUALS_FULLY"
+            visibility: [PUBLIC]
+    
+    actions:
+      # Extracts the actual SQL statement
+      a_get_sql_mariadb:
+        imports:
+          - org.mariadb.jdbc
+          - org.mariadb.jdbc.client
+          - org.mariadb.jdbc.client.util
+          - java.lang.reflect
+        input:
+          _this: ClientPreparedStatement
+        value-body: |
+          Field sqlField = _this.getClass().getSuperclass().getDeclaredField("sql");
+          sqlField.setAccessible(true);
+          String sql = (String) sqlField.get(_this);
+          if (sql == null) {
+            return "null";
+          }
+
+          Field parametersField = _this.getClass().getSuperclass().getDeclaredField("parameters");
+          parametersField.setAccessible(true);
+          Parameters parameters = (Parameters) parametersField.get(_this);
+
+          Field connectionField = _this.getClass().getSuperclass().getSuperclass().getDeclaredField("con");
+          connectionField.setAccessible(true);
+          Connection connection = (Connection) connectionField.get(_this);
+          Context context = connection.getContext();
+
+          int paramsIndex = 0;
+          StringBuilder result = new StringBuilder();
+          for(int i = 0; i < sql.length(); i++) {
+            char c = sql.charAt(i);
+            if (c == '?') {
+              if (parameters.containsKey(paramsIndex)) {
+                Parameter p = parameters.get(paramsIndex);
+                result.append(p.bestEffortStringValue(context));
+              } else {
+                result.append("null");
+              }
+              paramsIndex++;
+            } else {
+              result.append(c);
+            }
+          }
+
+          return result.toString();
+
+    rules:
+      mariadb_rule:
+        scopes:
+          mariadb_statement_scope: true
+        entry:
+          'prepared_sql':
+            action: a_get_sql_mariadb

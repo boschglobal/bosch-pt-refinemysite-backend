@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.company.company" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="development - main">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <envs>
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+    </envs>
+    <module name="csm.cloud.company.company.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.csm.CompanyApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Xmx128m --add-opens java.base/java.time=ALL-UNNAMED" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

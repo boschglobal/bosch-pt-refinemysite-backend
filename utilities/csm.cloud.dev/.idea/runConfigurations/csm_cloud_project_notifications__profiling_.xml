@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.project.notifications (profiling)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="profiling">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="ENABLE_JMX_AGENT" value="false" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <envs>
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+    </envs>
+    <module name="csm.cloud.project.notifications.main" />
+    <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.csm.cloud.projectmanagement.NotificationServiceApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Xmx128m -javaagent:${INSPECTIT_AGENT} -Dinspectit.config.file-based.path=${INSPECTIT_CONFIG} -Dinspectit.service-name=csm-cloud-project-notifications:ocelot --add-opens java.base/sun.util.locale=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

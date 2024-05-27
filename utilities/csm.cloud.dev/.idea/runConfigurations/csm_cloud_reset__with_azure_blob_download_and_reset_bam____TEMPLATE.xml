@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.reset (with azure blob download and reset-bam) - TEMPLATE" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="others">
+    <option name="ACTIVE_PROFILES" value="local, azure-blob-download, reset-bam, influxdb-local" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <envs>
+      <env name="CSM_CLOUD_RESET_STORAGE_ACCOUNT_CONNECTION_STRING" value="" />
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+    </envs>
+    <module name="csm.cloud.reset.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.iot.smartsite.SmartsiteResetApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Dskip-invalid=true" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,20 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.featuretoggle.core (datadog)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="datadog">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <envs>
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+      <env name="DD_SERVICE" value="csm-cloud-featuretoggle-core" />
+      <env name="DD_VERSION" value="local" />
+    </envs>
+    <module name="csm.cloud.featuretoggle.core.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.csm.cloud.FeatureToggleApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Xss1m -XX:+UseG1GC -XX:NativeMemoryTracking=summary -javaagent:$PROJECT_DIR$/../datadog/dd-java-agent.jar --add-opens java.base/java.time=ALL-UNNAMED" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

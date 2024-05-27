@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.user.user (restore) (datadog)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="datadog">
+    <option name="ACTIVE_PROFILES" value="local, restore-db" />
+    <option name="ENABLE_JMX_AGENT" value="false" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <envs>
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+      <env name="DD_SERVICE" value="csm-cloud-user-restore-db" />
+      <env name="DD_VERSION" value="local" />
+      <env name="DD_SERVICE_MAPPING" value="mysql:csm-cloud-user-restore-db-mysql" />
+    </envs>
+    <module name="csm.cloud.user.user.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.csm.cloud.usermanagement.UserApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Xss1m -XX:+UseG1GC -XX:NativeMemoryTracking=summary -javaagent:$PROJECT_DIR$/../datadog/dd-java-agent.jar -Xshare:off --add-opens java.base/java.time=ALL-UNNAMED" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

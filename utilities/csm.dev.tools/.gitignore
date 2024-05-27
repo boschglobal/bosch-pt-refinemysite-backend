@@ -1,0 +1,20 @@
+**/.gradle
+**/build
+**/out
+**/bin
+
+.vscode/*
+.settings/*
+.project
+.classpath
+.idea/*
+*.iml
+kafka/.idea
+
+# Personal copy of config.properties
+config.properties
+
+__pycache__
+
+# Mac related files
+.DS_Store
