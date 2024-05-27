@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="schema client - list" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="development - optional">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <module name="csm.dev.tools.schema-client.main" />
+    <option name="PROGRAM_PARAMETERS" value="--list" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.csm.dev.tools.schema.client.SchemaClientApplicationKt" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

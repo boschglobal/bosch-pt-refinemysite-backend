@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.project.project (restore)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="development - optional">
+    <option name="ACTIVE_PROFILES" value="local, restore-db" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <envs>
+      <env name="SPRING_CLOUD_KUBERNETES_ENABLED" value="false" />
+      <env name="KUBERNETES_MANIFESTS_ENABLED" value="false" />
+      <env name="KUBERNETES_INFORMER_ENABLED" value="false" />
+    </envs>
+    <module name="csm.cloud.project.project.main" />
+    <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.bosch.pt.iot.smartsite.ProjectApplicationKt" />
+    <option name="VM_PARAMETERS" value="-Xmx256m --add-opens java.base/java.time=ALL-UNNAMED" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

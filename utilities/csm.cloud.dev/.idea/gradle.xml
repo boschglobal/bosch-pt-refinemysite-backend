@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.api" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.api" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.common.avro" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.common.avro" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.common.blob" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.common.blob" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.common.core" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.common.core" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.common.event-consumer" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.common.event-consumer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.common.kafka" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.common.kafka" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.common.mongodb" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.common.mongodb" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.common.mysql" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.common.mysql" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.common.streamable" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.common.streamable" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.common.web" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.common.web" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.company.avro" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.company.avro" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.company.company" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.company.company" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.dependency-management/csm.cloud.dependency.bom-external" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.dependency-management/csm.cloud.dependency.bom-external" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.dependency-management/csm.cloud.dependency.version-catalog-external" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.dependency-management/csm.cloud.dependency.version-catalog-external" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.event" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.event" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.featuretoggle.avro" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.featuretoggle.avro" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.featuretoggle.core" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.featuretoggle.core" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.featuretoggle.lib" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.featuretoggle.lib" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.i18n-plugin" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.i18n-plugin" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.image.avro" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.image.avro" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.job.avro" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.job.avro" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.job.job" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.job.job" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.kafka.backup" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.kafka.backup" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.kafka.connector" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.kafka.connector" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.kafka.migrator" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.kafka.migrator" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.kafka.validator" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.kafka.validator" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.pdf.converter" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.pdf.converter" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.project.activity" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.project.activity" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.project.api.timeseries" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.project.api.timeseries" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.project.avro" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.project.avro" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.project.news" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.project.news" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.project.notifications" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.project.notifications" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.project.project" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.project.project" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.project.statistics" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.project.statistics" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.reset" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.reset" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.storage.event.avro" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.storage.event.avro" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.user.avro" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.user.avro" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.cloud.user.user" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.cloud.user.user" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.dev.loadtest" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.dev.loadtest" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.dev.oauth-utilities" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.dev.oauth-utilities" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.dev.tools.kafka-reader" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.dev.tools.kafka-reader" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.dev.tools.schema-client" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.dev.tools.schema-client" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../csm.monitoring.metrics.influxdb-importer" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../csm.monitoring.metrics.influxdb-importer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

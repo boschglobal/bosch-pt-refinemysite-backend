@@ -1,0 +1,44 @@
+{
+	"folders": [
+                {
+                        "path": "../csm.cloud.api"
+                },
+		{
+			"path": "../csm.cloud.common"
+		},
+		{
+			"path": "../csm.cloud.common.avro"
+		},
+		{
+			"path": "../csm.cloud.company.avro"
+		},
+		{
+			"path": "../csm.cloud.dev"
+		},
+		{
+			"path": "../csm.cloud.project"
+		},
+		{
+			"path": "../csm.cloud.project.activities"
+		},
+		{
+			"path": "../csm.cloud.project.avro"
+		},
+		{
+			"path": "../csm.cloud.project.kafka.connector"
+		},
+                {
+                        "path": "../csm.cloud.project.news"
+                },
+		{
+			"path": "../csm.cloud.project.statistics"
+		},
+                {
+                        "path": "../csm.cloud.reset"
+                },
+		{
+			"path": "../csm.cloud.user.avro"
+		}
+	],
+	"settings": {}
+}

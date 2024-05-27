@@ -1,0 +1,9 @@
+#Ignore personal configuration
+conf.json
+
+# Ignore PyCharm files ...
+.idea/workspace.xml
+
+# Ignore IntelliJ project files
+.idea/*
+*.iml

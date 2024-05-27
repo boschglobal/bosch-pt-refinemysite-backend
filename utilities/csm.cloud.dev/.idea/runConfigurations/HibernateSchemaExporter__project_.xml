@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="HibernateSchemaExporter (project)" type="JUnit" factoryName="JUnit">
+    <module name="csm.cloud.project.project.test" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.bosch.pt.iot.smartsite.application.db.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="com.bosch.pt.iot.smartsite.application.db" />
+    <option name="MAIN_CLASS_NAME" value="com.bosch.pt.iot.smartsite.application.db.HibernateSchemaExporter" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <option name="VM_PARAMETERS" value="-ea --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED -Xshare:off -DreuseContainer=true" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

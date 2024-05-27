@@ -1,0 +1,22 @@
+inspectit:
+  tracing:
+    # always start a trace if there is none yet
+    sampleProbability: 1
+
+  exporters:
+    tracing:
+      jaeger:
+        url: http://127.0.0.1:14268/api/traces
+
+  # we use Micrometer, so metrics collection by the agent would be redundant
+  metrics:
+    enabled: false
+
+  # we have no need for self monitoring of the agent
+  self-monitoring:
+    enabled: false
+  
+  # enable logging if required
+  logging:
+    debug: true
+    trace: false

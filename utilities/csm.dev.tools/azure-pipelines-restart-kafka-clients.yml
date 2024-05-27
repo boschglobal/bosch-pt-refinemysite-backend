@@ -1,0 +1,70 @@
+trigger: none
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+parameters:
+  - name: environment
+    displayName: ENV - The environment on which the kafka clients should be restarted.
+    type: string
+    values:
+      - Dev
+      - Prod
+      - Review
+      - Sandbox1
+      - Sandbox2
+      - Sandbox3
+      - Test1
+    default: Sandbox1
+
+variables:
+  - group: ${{ parameters.environment }}
+  - name: subscription
+    ${{ if eq(parameters.environment, 'Prod') }}:
+      value: prod
+    ${{ elseif in(parameters.environment, 'Test1', 'Review') }}:
+      value: qa
+    ${{ elseif eq(parameters.environment, 'Dev') }}:
+      value: dev
+    ${{ else }}:
+      value: sandbox
+
+stages:
+  - stage: ${{ lower(parameters.environment) }}
+    displayName: ${{ upper(parameters.environment) }}
+    pool:
+      name: Azure-selfhosted Ubuntu
+      demands:
+        - SMARTSITE_ENV -equals ${{ lower(parameters.environment) }}
+    jobs:
+      - job: rollout_restart
+        displayName: Restart kafka clients on ${{ upper(parameters.environment) }}
+        steps:
+          - task: KubectlInstaller@0
+            displayName: Install Kubectl $(kubernetes-version)
+            inputs:
+              kubectlVersion: $(kubernetes-version)
+
+          - template: /templates/kubelogin/kubelogin-installer.yaml@csm_templates
+
+          - template: /templates/kubelogin/kubelogin-spn.yaml@csm_templates
+            parameters:
+              azureSubscription: ${{ variables.subscription }}
+              aksEnv: ${{ lower(parameters.environment) }}
+              aksColor: $(activeAksColor)
+
+          - bash: |
+              #!/bin/bash
+              kubectl rollout restart deployment -l custom/kafkaClient=true
+              kubectl rollout restart deployment -l custom/kafkaClient=true -n monitoring
+            displayName: Restart kafka clients on ${{ upper(parameters.environment) }}
+            env:
+              AAD_SERVICE_PRINCIPAL_CLIENT_ID: $(spnId)
+              AAD_SERVICE_PRINCIPAL_CLIENT_SECRET: $(spnSecret)
+            failOnStderr: true
+
+          - template: /templates/kubelogin/kubelogin-cleanup.yaml@csm_templates

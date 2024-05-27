@@ -1,0 +1,22 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="ktlint" />
+    <inspection_tool class="4755ffca-7a02-3d25-97b4-2467d112757d" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="KotlinUnusedImport" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="RedundantSemicolon" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <replaceConfiguration name="Replace static attibutes and method calls with static import" uuid="a36fe197-6a5d-3291-b62a-d50831198fab" problemDescriptor="Replace this with static import or alt+Enter and &quot;Add static import for&quot; to replace all" text="$ClassName$.$MethodCall$($Parameter$)" recursive="false" caseInsensitive="true" type="JAVA" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="false" useStaticImport="true" replacement="$ClassName$.$MethodCall$($Parameter$)">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="MethodCall" regexp="(newBuilder|of|by)" target="true" negateName="true" within="" contains="" />
+        <constraint name="Parameter" minCount="0" maxCount="2147483647" within="" contains="" />
+        <constraint name="ClassName" reference="classes" negateName="true" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Replace static attibutes and method calls with static import" uuid="a36fe197-6a5d-3291-b62a-d50831198fab" text="$ClassName$.$Constant$" recursive="false" caseInsensitive="true" type="JAVA" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="false" useStaticImport="true" replacement="$ClassName$.$Constant$">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="ClassName" regexp="this" reference="classes" negateName="true" within="" contains="" />
+        <constraint name="Constant" reference="fields of a class" target="true" negateName="true" within="" contains="" />
+      </replaceConfiguration>
+    </inspection_tool>
+    <inspection_tool class="f3f88119-24ab-3f64-b19f-1ac32f69ce9e" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>

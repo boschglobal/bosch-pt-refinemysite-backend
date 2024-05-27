@@ -1,0 +1,34 @@
+**/.gradle
+**/build
+**/out
+**/bin
+
+.vscode/*
+.settings/*
+.project
+.classpath
+.DS_Store
+
+# Ignore all ...
+.idea/*
+# ... except:
+!.idea/checkstyle-idea.xml
+!.idea/codeStyles/
+!.idea/copyright/
+!.idea/encodings.xml
+!.idea/externalDependencies.xml
+!.idea/fileTemplates/
+!.idea/gradle.xml
+!.idea/google-java-format.xml
+!.idea/inspectionProfiles/
+!.idea/kotlinc.xml
+!.idea/ktfmt.xml
+!.idea/runConfigurations
+!.idea/scopes/
+!.idea/vcs.xml
+
+# Ignore inspectIT
+logDir/*
+
+# Ignore docker/.env file
+docker/.env
