@@ -1,0 +1,34 @@
+{
+  "type": "record",
+  "name": "StreetAddressAvro",
+  "namespace": "com.bosch.pt.csm.cloud.companymanagement.company.messages",
+  "fields": [
+    {
+      "name": "street",
+      "type": "string"
+    },
+    {
+      "name": "houseNumber",
+      "type": "string"
+    },
+    {
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "name": "zipCode",
+      "type": "string"
+    },
+    {
+      "name": "area",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country",
+      "type": "string"
+    }
+  ]
+}

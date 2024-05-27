@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "JsonSerializedObjectAvro",
+  "namespace": "com.bosch.pt.csm.cloud.job.messages",
+  "fields": [
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "json",
+      "type": "string"
+    }
+  ]
+}

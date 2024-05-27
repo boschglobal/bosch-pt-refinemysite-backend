@@ -1,0 +1,42 @@
+{
+  "type": "record",
+  "name": "TaskScheduleAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.task.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "task",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "start",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "end",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "slots",
+      "type": {
+         "type": "array",
+         "items": "com.bosch.pt.csm.cloud.projectmanagement.task.messages.TaskScheduleSlotAvro"
+       }
+    }
+  ]
+}

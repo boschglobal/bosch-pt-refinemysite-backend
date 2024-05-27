@@ -1,0 +1,9 @@
+{
+  "type": "enum",
+  "name": "TopicCriticalityEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.topic.messages",
+  "symbols": [
+    "CRITICAL",
+    "UNCRITICAL"
+  ]
+}

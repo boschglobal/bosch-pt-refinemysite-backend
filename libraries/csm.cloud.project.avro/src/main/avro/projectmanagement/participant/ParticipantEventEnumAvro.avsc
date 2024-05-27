@@ -1,0 +1,12 @@
+{
+  "type": "enum",
+  "name": "ParticipantEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.participant.messages",
+  "symbols": [
+    "CREATED",
+    "DEACTIVATED",
+    "REACTIVATED",
+    "UPDATED",
+    "CANCELLED"
+  ]
+}

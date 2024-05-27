@@ -1,0 +1,17 @@
+custom:
+  business-transaction:
+    consumer:
+      persistence: jpa
+
+spring:
+  mongodb:
+    embedded:
+      version: 5.0.6
+  datasource:
+    url: # Set by TestContainers on container start
+    username: test
+    password: test
+    driverClassName: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

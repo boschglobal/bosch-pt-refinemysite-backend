@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "BusinessTransactionFinishedMessageKeyAvro",
+  "namespace": "com.bosch.pt.csm.cloud.common.transaction.messages",
+  "fields": [
+    {
+      "name": "rootContextIdentifier",
+      "type": "string"
+    },
+    {
+      "name": "transactionIdentifier",
+      "type": "string"
+    }
+  ]
+}

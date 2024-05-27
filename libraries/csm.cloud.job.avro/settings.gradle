@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        maven {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+        gradlePluginPortal()
+    }
+}
+gradle.ext.externalBomVersion = "4.0.0.DME"
+dependencyResolutionManagement {
+    repositories {
+        maven {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+    }
+    versionCatalogs {
+        externalCatalog {
+            // The external version catalog and the external BOM are released together
+            from("com.bosch.pt:csm.cloud.dependency.version-catalog-external:${gradle.externalBomVersion}")
+        }
+    }
+}
+rootProject.name = 'csm.cloud.job.avro'
+

@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "WorkdayConfigurationEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.workday.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.workday.messages.WorkdayConfigurationEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.workday.messages.WorkdayConfigurationAggregateAvro"
+    }
+  ]
+}

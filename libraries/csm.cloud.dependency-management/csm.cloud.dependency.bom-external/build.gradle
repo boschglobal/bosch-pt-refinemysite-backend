@@ -1,0 +1,162 @@
+buildscript {
+    ext {
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+
+        // Dependency versions
+
+        // Check compatible versions of spring kafka and confluent cloud here:
+        // https://docs.spring.io/spring-kafka/reference/html/#compatibility
+        // https://docs.confluent.io/platform/current/installation/versions-interoperability.html
+        // https://github.com/spring-projects/spring-boot/blob/x.x.x/spring-boot-project/spring-boot-dependencies/build.gradle
+        // https://packages.confluent.io/maven/io/confluent/
+        ccKafkaClientVersion = "7.5.3"
+        kotlinVersion = "1.9.22"
+        micrometerVersion = "1.12.1"
+        openTracingVersion = "0.33.0"
+        shedlockVersion = "5.10.2"
+        springBootVersion = "3.2.2"
+        springCloudVersion = "2023.0.0"
+        testContainersVersion = "1.19.3"
+    }
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+plugins {
+    id 'java-platform'
+    id "maven-publish"
+    id "net.researchgate.release" version "3.0.2"
+}
+
+//Read version number from version.txt
+String versionFromFile = file("version.txt").text.trim()
+String versionNumber = versionFromFile.substring(versionFromFile.indexOf("=") + 1)
+//If version number is specified by -Pversion=... take it, otherwise take number from file
+version = "unspecified".equals(version) ? versionNumber : version
+
+dependencies {
+    // Main dependencies
+    api("commons-codec:commons-codec:1.16.0")
+    api("commons-io:commons-io:2.15.1")
+    api("com.azure:azure-storage-blob:12.25.1")
+    api("com.datadoghq:dd-trace-api:1.27.0")
+    api("com.drewnoakes:metadata-extractor:2.19.0")
+    api("com.google.guava:guava:33.0.0-jre")
+    api("com.mailjet:mailjet-client:5.2.5")
+    api("com.nimbusds:nimbus-jose-jwt:9.37.3")
+    api("com.opencsv:opencsv:5.9")
+    api("com.squareup.okhttp3:okhttp:4.12.0")
+    api("com.squareup.retrofit2:converter-jackson:2.9.0")
+    api("com.squareup.retrofit2:retrofit:2.9.0")
+    api("io.confluent:kafka-avro-serializer:$ccKafkaClientVersion")
+    api("io.confluent:kafka-json-serializer:$ccKafkaClientVersion")
+    api("io.micrometer:micrometer-core:$micrometerVersion")
+    api("io.micrometer:micrometer-registry-statsd:$micrometerVersion")
+    api("io.opentracing:opentracing-api:$openTracingVersion")
+    api("io.opentracing:opentracing-util:$openTracingVersion")
+    api("net.javacrumbs.shedlock:shedlock-provider-jdbc-template:$shedlockVersion")
+    api("net.javacrumbs.shedlock:shedlock-provider-mongo:$shedlockVersion")
+    api("net.javacrumbs.shedlock:shedlock-spring:$shedlockVersion")
+    api("net.logstash.logback:logstash-logback-encoder:7.4")
+    api("org.apache.avro:avro:1.11.3")
+    api("org.apache.commons:commons-collections4:4.4")
+    api("org.apache.commons:commons-lang3:3.14.0")
+    api("org.apache.commons:commons-text:1.11.0")
+    api("org.apache.kafka:kafka-clients:$ccKafkaClientVersion-ccs")
+    api("org.apache.tika:tika-core:2.9.1")
+    api("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+    api("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+    api("org.jsoup:jsoup:1.17.2")
+    api("org.mariadb.jdbc:mariadb-java-client:3.3.2")
+    api("org.springdoc:springdoc-openapi-starter-webmvc-api:2.3.0")
+
+    // Test dependencies
+    api("com.ninja-squad:springmockk:4.0.2")
+    api("com.squareup.okhttp3:mockwebserver:4.12.0")
+    api("com.tngtech.archunit:archunit:1.2.1")
+    api("de.flapdoodle.embed:de.flapdoodle.embed.mongo.spring3x:4.12.0")
+    api("io.mockk:mockk:1.13.9")
+    api("org.apache.kafka:kafka_2.13:$ccKafkaClientVersion-ccs")
+    api("org.assertj:assertj-core:3.25.1")
+    api("org.junit.jupiter:junit-jupiter:5.10.1")
+    api("org.slf4j:slf4j-api:2.0.10")
+    api("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+    api("org.testcontainers:testcontainers:$testContainersVersion")
+    api("org.testcontainers:junit-jupiter:$testContainersVersion")
+    api("org.testcontainers:kafka:$testContainersVersion")
+    api("org.testcontainers:mariadb:$testContainersVersion")
+    api("org.testcontainers:mongodb:$testContainersVersion")
+}
+
+javaPlatform {
+    allowDependencies()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId = "csm.cloud.dependency.bom-external"
+            groupId = "com.bosch.pt"
+
+            // Publish the BOM
+            pom.withXml {
+                asNode().children().last() + {
+                    resolveStrategy = Closure.DELEGATE_FIRST
+
+                    name "CSM Cloud External Dependency Management"
+                    description "Versions of external dependencies to be used in CSM cloud services"
+
+                    dependencyManagement {
+                        dependencies {
+                            project.configurations.each { conf ->
+                                conf.dependencies.each { dep ->
+                                    dependency {
+                                        groupId "${dep.group}"
+                                        artifactId "${dep.name}"
+                                        version "${dep.version}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+release {
+    buildTasks = []
+    newVersionCommitMessage = "New snapshot version [external: bom + catalog]:"
+    preTagCommitMessage = "Release [external: bom + catalog]:"
+    versionPropertyFile = "version.txt"
+    git {
+        requireBranch.set('master')
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven mavenAzureArtifact
+    maven { url "https://packages.confluent.io/maven/" }
+}
+
+tasks.register('ensureDependenciesExist') {
+    doLast {
+        configurations.api.canBeResolved(true)
+        configurations.api.resolve()
+    }
+}
+
+assemble.dependsOn ensureDependenciesExist

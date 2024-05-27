@@ -1,0 +1,52 @@
+# Gradle
+# Build your Java project and run tests with Gradle using a Gradle wrapper script.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+  - master
+  - SMAR-*
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+variables:
+  - template: /templates/variables/pipelines.yaml@csm_templates
+  - group: Build Pipelines
+
+parameters:
+  - name: releaseType
+    displayName: Type of the release, use 'noRelease' to publish library artifact
+    type: string
+    default: noRelease
+    values:
+      - major
+      - minor
+      - patch
+      - noRelease
+
+jobs:
+  - job: build_push_release
+    pool:
+      vmImage: ${{ variables.ubuntuImage }}
+    steps:
+      - ${{ if ne(parameters.releaseType, 'noRelease') }}:
+          - template: /templates/pipeline/release-library.yaml@csm_templates
+            parameters:
+              releaseType: ${{ parameters.releaseType }}
+
+      - ${{ if eq(parameters.releaseType, 'noRelease') }}:
+          - template: /templates/sonarqube/sonarqube-vpn.yaml@csm_templates
+            parameters:
+              sonarQubeRunAnalysisSteps:
+                - task: Gradle@2
+                  displayName: Build and publish library
+                  inputs:
+                    jdkVersionOption: "1.21"
+                    tasks: build sonarqube publish
+                    options: -PSourceBranchName=$(Build.SourceBranchName) -PBuildReason=$(Build.Reason) --no-daemon
+                    sonarQubeRunAnalysis: true

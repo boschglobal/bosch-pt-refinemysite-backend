@@ -1,0 +1,70 @@
+# Gradle
+# Build your Java project and run tests with Gradle using a Gradle wrapper script.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+  - master
+  - SMAR-*
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+variables:
+  - template: /templates/variables/pipelines.yaml@csm_templates
+
+parameters:
+  - name: releaseType
+    displayName: Type of the release, use 'noRelease' to publish library artifact
+    type: string
+    default: noRelease
+    values:
+      - major
+      - minor
+      - patch
+      - noRelease
+
+jobs:
+  - ${{ if ne(parameters.releaseType, 'noRelease') }}:
+      - job: release
+        pool:
+          vmImage: ${{ variables.ubuntuImage }}
+        steps:
+          - template: /templates/pipeline/release-library.yaml@csm_templates
+            parameters:
+              releaseType: ${{ parameters.releaseType }}
+              # Release runs only in csm.cloud.dependency.bom-external because there is only one version.txt
+              # for everything and there is no need to build the source when we are releasing the libraries.
+              # The release could be run in all other directories, where the release plugin is used, as well.
+              workingDirectory: "csm.cloud.dependency.bom-external"
+
+  - ${{ if eq(parameters.releaseType, 'noRelease') }}:
+      - job: build_and_push_bom_external
+        pool:
+          vmImage: ${{ variables.ubuntuImage }}
+        steps:
+          - task: Gradle@3
+            displayName: Build and publish library
+            inputs:
+              cwd: "csm.cloud.dependency.bom-external"
+              jdkVersionOption: "1.21"
+              tasks: build publish
+              publishJUnitResults: false
+              wrapperScript: "csm.cloud.dependency.bom-external/gradlew"
+
+      - job: build_and_push_version_catalog_external
+        pool:
+          vmImage: ${{ variables.ubuntuImage }}
+        steps:
+          - task: Gradle@3
+            displayName: Build and publish library
+            inputs:
+              cwd: "csm.cloud.dependency.version-catalog-external"
+              jdkVersionOption: "1.21"
+              tasks: build publish
+              publishJUnitResults: false
+              wrapperScript: "csm.cloud.dependency.version-catalog-external/gradlew"

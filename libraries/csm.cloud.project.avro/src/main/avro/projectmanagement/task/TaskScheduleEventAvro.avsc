@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "TaskScheduleEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.task.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.task.messages.TaskScheduleEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.task.messages.TaskScheduleAggregateAvro"
+    }
+  ]
+}

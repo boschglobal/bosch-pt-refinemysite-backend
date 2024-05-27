@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "name": "UserEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.user.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "REGISTERED",
+    "DELETED"
+  ]
+}

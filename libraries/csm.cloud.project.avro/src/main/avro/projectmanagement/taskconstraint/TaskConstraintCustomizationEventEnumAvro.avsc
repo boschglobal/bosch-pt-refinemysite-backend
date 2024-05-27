@@ -1,0 +1,10 @@
+{
+  "type": "enum",
+  "name": "TaskConstraintCustomizationEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.taskconstraint.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "DELETED"
+  ]
+}

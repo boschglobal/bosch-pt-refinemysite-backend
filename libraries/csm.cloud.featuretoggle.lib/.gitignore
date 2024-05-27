@@ -1,0 +1,16 @@
+**/.gradle
+**/build
+**/out
+**/bin
+
+.vscode/*
+.settings/*
+.project
+.classpath
+
+# IntelliJ
+.idea
+*.iml
+
+# macos
+.DS_Store

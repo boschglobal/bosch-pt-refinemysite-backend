@@ -1,0 +1,14 @@
+{
+  "type": "enum",
+  "name": "DayCardEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.task.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "DELETED",
+    "CANCELLED",
+    "COMPLETED",
+    "RESET",
+    "APPROVED"
+  ]
+}

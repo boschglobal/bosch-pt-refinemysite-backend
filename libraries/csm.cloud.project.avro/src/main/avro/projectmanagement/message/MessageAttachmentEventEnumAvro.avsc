@@ -1,0 +1,9 @@
+{
+  "type": "enum",
+  "name": "MessageAttachmentEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.message.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "enum",
+  "name": "RfvCustomizationEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.rfv.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "DELETED"
+  ]
+}

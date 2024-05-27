@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "ProjectAddressAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.project.messages",
+  "fields": [
+    {
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "name": "houseNumber",
+      "type": "string"
+    },
+    {
+      "name": "street",
+      "type": "string"
+    },
+    {
+      "name": "zipCode",
+      "type": "string"
+    }
+  ]
+}

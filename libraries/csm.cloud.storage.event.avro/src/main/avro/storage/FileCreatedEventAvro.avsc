@@ -1,0 +1,28 @@
+{
+  "type": "record",
+  "name": "FileCreatedEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.storage.event.messages",
+  "fields": [
+    {
+      "name": "identifier",
+      "doc": "Identifier of the storage event",
+      "type": "string"
+    },
+    {
+      "name": "path",
+      "type": "string"
+    },
+    {
+      "name": "filename",
+      "type": "string"
+    },
+    {
+      "name": "contentType",
+      "type": "string"
+    },
+    {
+      "name": "contentLength",
+      "type": "long"
+    }
+  ]
+}

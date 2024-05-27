@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "MessageAttachmentEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.message.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.message.messages.MessageAttachmentEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.message.messages.MessageAttachmentAggregateAvro"
+    }
+  ]
+}

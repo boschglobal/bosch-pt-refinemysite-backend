@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "PhoneNumberAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.common.messages",
+  "fields": [
+    {
+      "name": "phoneNumberType",
+      "type": "com.bosch.pt.csm.cloud.usermanagement.common.messages.PhoneNumberTypeEnumAvro"
+    },
+    {
+      "name": "countryCode",
+      "type": "string"
+    },
+    {
+      "name": "callNumber",
+      "type": "string"
+    }
+  ]
+}

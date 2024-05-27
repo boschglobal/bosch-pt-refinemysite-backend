@@ -1,0 +1,45 @@
+{
+  "type": "record",
+  "name": "DocumentCreatedEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.consents.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "doc": "Identifier of the document",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "client",
+      "type": "string",
+      "default": "ALL"
+    },
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "com.bosch.pt.csm.cloud.common.messages.IsoCountryCodeEnumAvro"
+    },
+    {
+      "name": "locale",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "url",
+      "type": "string"
+    },
+    {
+      "name": "initialVersion",
+      "type": "com.bosch.pt.csm.cloud.usermanagement.consents.messages.DocumentVersionAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.EventAuditingInformationAvro"
+    }
+  ]
+}

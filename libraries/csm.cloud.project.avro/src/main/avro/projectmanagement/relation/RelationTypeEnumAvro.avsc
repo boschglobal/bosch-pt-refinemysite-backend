@@ -1,0 +1,9 @@
+{
+  "type": "enum",
+  "name": "RelationTypeEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.relation.messages",
+  "symbols": [
+    "FINISH_TO_START",
+    "PART_OF"
+  ]
+}

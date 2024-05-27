@@ -1,0 +1,46 @@
+#A copy of this configuration is located in csm.cloud.dev/config/detekt-config.yml
+build:
+  maxIssues: 0
+
+complexity:
+  active: false
+formatting:
+  ArgumentListWrapping:
+    active: false
+  ChainWrapping:
+    active: false
+  FinalNewline:
+    active: false
+  ImportOrdering:
+    active: false
+  Indentation:
+    active: false
+  MaximumLineLength:
+    excludes: [ '**/Key.kt' ]
+  MultiLineIfElse:
+    active: false
+  NoBlankLineBeforeRbrace:
+    excludes: [ '**/Key.kt' ]
+  Wrapping:
+    active: false
+naming:
+  ClassNaming:
+    excludes: [ '**/test/**' ]
+  MemberNameEqualsClassName:
+    excludes: [ '**/Key.kt' ]
+performance:
+  SpreadOperator:
+    active: false
+style:
+  ForbiddenComment:
+    active: false
+  MagicNumber:
+    active: false
+  MaxLineLength:
+    excludes: [ '**/Key.kt' ]
+  NewLineAtEndOfFile:
+    active: false
+  ReturnCount:
+    active: false
+  UnusedImports:
+    active: true

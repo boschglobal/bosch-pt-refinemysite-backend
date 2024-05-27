@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "MessageEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.message.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.message.messages.MessageEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.message.messages.MessageAggregateAvro"
+    }
+  ]
+}

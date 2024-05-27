@@ -1,0 +1,12 @@
+{
+  "type": "enum",
+  "name": "MilestoneListEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.milestone.messages",
+  "symbols": [
+    "CREATED",
+    "ITEMADDED",
+    "ITEMREMOVED",
+    "REORDERED",
+    "DELETED"
+  ]
+}

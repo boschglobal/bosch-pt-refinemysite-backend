@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "ExternalIdEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.external.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.external.messages.ExternalIdEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.external.messages.ExternalIdAggregateAvro"
+    }
+  ]
+}

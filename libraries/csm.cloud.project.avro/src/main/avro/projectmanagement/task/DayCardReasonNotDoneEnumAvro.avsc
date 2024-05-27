@@ -1,0 +1,21 @@
+{
+  "type": "enum",
+  "name": "DayCardReasonNotDoneEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.task.messages",
+  "symbols": [
+    "DELAYED_MATERIAL",
+    "NO_CONCESSION",
+    "CONCESSION_NOT_RECOGNIZED",
+    "CHANGED_PRIORITY",
+    "MANPOWER_SHORTAGE",
+    "OVERESTIMATION",
+    "TOUCHUP",
+    "MISSING_INFOS",
+    "MISSING_TOOLS",
+    "BAD_WEATHER",
+    "CUSTOM1",
+    "CUSTOM2",
+    "CUSTOM3",
+    "CUSTOM4"
+  ]
+}

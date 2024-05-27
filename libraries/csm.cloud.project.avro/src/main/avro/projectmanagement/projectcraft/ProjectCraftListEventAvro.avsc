@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "ProjectCraftListEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.craft.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.craft.messages.ProjectCraftListEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.craft.messages.ProjectCraftListAggregateAvro"
+    }
+  ]
+}

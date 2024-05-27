@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "HolidayAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.workday.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "date",
+      "type": "long"
+    }
+  ]
+}

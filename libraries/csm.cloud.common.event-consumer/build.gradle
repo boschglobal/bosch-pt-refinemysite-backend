@@ -1,0 +1,226 @@
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+import com.github.jk1.license.render.InventoryHtmlReportRenderer
+
+buildscript {
+    ext {
+        csmCloudCommonKafkaVersion = "4.0.0"
+        csmCloudCommonMongoDbVersion = "3.0.0"
+        csmCloudCommonMySqlVersion = "4.0.0"
+        csmCloudCommonStreamableVersion = "13.0.0"
+        detektVersion = "${externalCatalog.versions.detekt.get()}"
+        hibernateVersion = "${externalCatalog.versions.hibernate.get()}"
+        kotlinVersion = "${externalCatalog.versions.kotlin.get()}"
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+        snippetsDir = file("build/generated-snippets")
+        springBootVersion = "${externalCatalog.versions.springBoot.get()}"
+    }
+}
+
+plugins {
+    id "jacoco"
+    id "java-library"
+    id "maven-publish"
+
+    alias(externalCatalog.plugins.dependencyLicenseReport)
+    alias(externalCatalog.plugins.detekt)
+    alias(externalCatalog.plugins.kotlinJvm)
+    alias(externalCatalog.plugins.kotlinKapt)
+    alias(externalCatalog.plugins.kotlinPluginSpring)
+    alias(externalCatalog.plugins.kotlinPluginJpa)
+    alias(externalCatalog.plugins.release)
+    alias(externalCatalog.plugins.sonarqube)
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
+//Read version number from version.txt
+String versionFromFile = file("version.txt").text.trim()
+String versionNumber = versionFromFile.substring(versionFromFile.indexOf("=") + 1)
+//If version number is specified by -Pversion=... take it, otherwise take number from file
+version = "unspecified".equals(version) ? versionNumber : version
+
+// Task registrations and definitions
+
+configurations {
+    tests
+}
+
+configurations.all {
+    // this avoids a caching snapshot dependencies so that the latest version is always downloaded.
+    resolutionStrategy.cacheChangingModulesFor 0, 'minutes'
+}
+
+task testJar(type: Jar) {
+    archiveClassifier = "tests"
+    dependsOn testClasses
+    from sourceSets.test.output.classesDirs
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier = "sources"
+    dependsOn testClasses
+    from sourceSets.main.allSource + sourceSets.test.allSource
+}
+
+// Configurations in alphabetical order
+
+artifacts {
+    archives testJar
+    archives sourcesJar
+    tests testJar
+}
+
+dependencies {
+    implementation platform("com.bosch.pt:csm.cloud.dependency.bom-external:${gradle.externalBomVersion}")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+
+    kapt("org.hibernate.orm:hibernate-jpamodelgen:$hibernateVersion")
+
+    api("com.bosch.pt:csm.cloud.common.kafka:$csmCloudCommonKafkaVersion")
+    api("com.bosch.pt:csm.cloud.common.mysql:$csmCloudCommonMySqlVersion")
+    api("com.bosch.pt:csm.cloud.common.streamable:$csmCloudCommonStreamableVersion")
+
+    implementation("io.confluent:kafka-avro-serializer")
+    implementation("io.micrometer:micrometer-core")
+
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation("org.mongodb:mongodb-driver-core")
+    implementation("org.mongodb:mongodb-driver-sync")
+
+    api("org.springframework.boot:spring-boot-starter")
+    api("org.springframework.boot:spring-boot-starter-data-jpa")
+    api("org.springframework.boot:spring-boot-starter-data-mongodb")
+
+    testApi("com.bosch.pt:csm.cloud.common.mongodb:$csmCloudCommonMongoDbVersion:tests")
+    testApi("com.bosch.pt:csm.cloud.common.mysql:$csmCloudCommonMySqlVersion:tests")
+
+    testImplementation("com.ninja-squad:springmockk")
+    testImplementation("io.mockk:mockk")
+    testImplementation("org.assertj:assertj-core")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.testcontainers:testcontainers")
+    testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.testcontainers:mariadb")
+    testImplementation("org.testcontainers:mongodb")
+    testImplementation("org.mariadb.jdbc:mariadb-java-client")
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config = files("config/detekt-config.yml")
+    input = files("src/main/kotlin", "src/test/kotlin")
+}
+
+jacocoTestReport {
+    reports {
+        html.required = true
+        xml.required = true
+    }
+}
+
+licenseReport {
+    excludeGroups = ["com.bosch.pt"]
+    filters = [new LicenseBundleNormalizer()]
+    renderers = [new InventoryHtmlReportRenderer()]
+}
+
+publishing {
+    publications {
+        jar(MavenPublication) {
+            artifact sourcesJar
+            artifact testJar
+            artifactId = "csm.cloud.common.event-consumer"
+            from components.java
+            groupId = "com.bosch.pt"
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+release {
+    buildTasks = []
+    newVersionCommitMessage = "New snapshot version:"
+    preTagCommitMessage = "Release:"
+    versionPropertyFile = "version.txt"
+    git {
+        requireBranch.set("master")
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://packages.confluent.io/maven/" }
+    maven mavenAzureArtifact
+}
+
+sonarqube {
+    def buildReason = project.hasProperty("BuildReason") && !BuildReason.isEmpty() ? BuildReason : "Build"
+    def sourceBranch = project.hasProperty("SourceBranchName") && !SourceBranchName.isEmpty() ? SourceBranchName : "${gitBranch()}-local"
+
+    println "$buildReason for branch $sourceBranch"
+    properties {
+        property "sonar.projectKey", "csm.cloud.common.event-consumer"
+        property "sonar.projectName", "csm.cloud.common.event-consumer"
+        property "sonar.exclusions", "src/test/java/**,**/Key.java"
+        property "sonar.coverage.exclusions", "**/*Configuration.java"
+
+        // Disable some rules on some files
+        property "sonar.issue.ignore.multicriteria", "k1,k2,k3,k4"
+
+        // Kotlin
+        // Cognitive Complexity of functions should not be too high (kotlin:S3776)
+        property "sonar.issue.ignore.multicriteria.k1.ruleKey", "kotlin:S3776"
+        property "sonar.issue.ignore.multicriteria.k1.resourceKey", "**/*.kt"
+        // Track uses of "TO DO" tags (kotlin:S1135)
+        property "sonar.issue.ignore.multicriteria.k2.ruleKey", "kotlin:S1135"
+        property "sonar.issue.ignore.multicriteria.k2.resourceKey", "**/*.kt"
+        // Functions should not have identical implementations (kotlin:S4144)
+        property "sonar.issue.ignore.multicriteria.k3.ruleKey", "kotlin:S4144"
+        property "sonar.issue.ignore.multicriteria.k3.resourceKey", "**/*.kt"
+        // Function has more than 7 parameters
+        property "sonar.issue.ignore.multicriteria.k4.ruleKey", "kotlin:S107"
+        property "sonar.issue.ignore.multicriteria.k4.resourceKey", "**/*.kt"
+
+        if ("merge" != sourceBranch) {
+            property "sonar.branch.name", sourceBranch
+        }
+    }
+}
+
+// Add src/main/kotlin as source set to fix issues with compileJava task.
+// Otherwise no files are found to compile and the the build fails with
+// The error message: > error: no source files
+sourceSets {
+    main.java.srcDirs += "src/main/kotlin/"
+    test.java.srcDirs += "src/test/kotlin/"
+}
+
+test {
+    finalizedBy jacocoTestReport
+    outputs.dir snippetsDir
+    useJUnitPlatform()
+}
+
+static def gitBranch() {
+    def branch = ""
+    def proc = "git rev-parse --abbrev-ref HEAD".execute()
+    proc.in.eachLine { line -> branch = line }
+    proc.err.eachLine { line -> println line }
+    proc.waitFor()
+    branch
+}
+group='com.bosch.pt'

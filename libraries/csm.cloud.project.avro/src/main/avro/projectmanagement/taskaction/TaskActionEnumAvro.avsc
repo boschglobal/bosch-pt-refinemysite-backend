@@ -1,0 +1,19 @@
+{
+  "type": "enum",
+  "name": "TaskActionEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.taskaction.messages",
+  "symbols": [
+    "MATERIAL",
+    "RESOURCES",
+    "INFORMATION",
+    "EQUIPMENT",
+    "PRELIMINARY_WORK",
+    "SAFE_WORKING_ENVIRONMENT",
+    "EXTERNAL_FACTORS",
+    "COMMON_UNDERSTANDING",
+    "CUSTOM1",
+    "CUSTOM2",
+    "CUSTOM3",
+    "CUSTOM4"
+  ]
+}

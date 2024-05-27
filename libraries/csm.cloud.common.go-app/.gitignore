@@ -1,0 +1,13 @@
+# Go specific
+.owasp-nvd/
+dependency-check/
+coverage.html
+coverage.out
+dependency-check-report.html
+test-report.out
+
+# IntelliJ
+bin
+
+# Mac specific
+.DS_Store

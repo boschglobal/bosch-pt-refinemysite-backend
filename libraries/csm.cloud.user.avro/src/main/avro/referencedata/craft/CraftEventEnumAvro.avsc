@@ -1,0 +1,8 @@
+{
+  "type": "enum",
+  "name": "CraftEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.referencedata.craft",
+  "symbols": [
+    "CREATED"
+  ]
+}

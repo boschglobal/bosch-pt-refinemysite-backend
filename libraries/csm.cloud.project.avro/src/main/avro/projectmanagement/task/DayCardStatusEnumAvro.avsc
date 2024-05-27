@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "name": "DayCardStatusEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.task.messages",
+  "symbols": [
+    "OPEN",
+    "DONE",
+    "NOTDONE",
+    "APPROVED"
+  ]
+}

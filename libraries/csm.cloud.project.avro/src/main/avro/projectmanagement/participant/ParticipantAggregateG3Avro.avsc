@@ -1,0 +1,43 @@
+{
+  "type": "record",
+  "name": "ParticipantAggregateG3Avro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.participant.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "project",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "company",
+      "type": [
+        "null",
+        "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+      ],
+      "default": null
+    },
+    {
+      "name": "user",
+      "type": [
+        "null",
+        "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+      ],
+      "default": null
+    },
+    {
+      "name": "role",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.participant.messages.ParticipantRoleEnumAvro"
+    },
+    {
+      "name": "status",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.participant.messages.ParticipantStatusEnumAvro"
+    }
+  ]
+}

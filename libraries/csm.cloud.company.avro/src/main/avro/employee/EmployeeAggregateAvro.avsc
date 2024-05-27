@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "name": "EmployeeAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.companymanagement.employee.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "user",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "roles",
+      "type": {
+        "type": "array",
+        "items": "com.bosch.pt.csm.cloud.companymanagement.employee.messages.EmployeeRoleEnumAvro"
+      }
+    },
+    {
+      "name": "company",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "enum",
+  "name": "DayEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.workday.messages",
+  "symbols": [
+    "MONDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY",
+    "SATURDAY",
+    "SUNDAY"
+  ]
+}

@@ -1,0 +1,98 @@
+/*
+ * ************************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+ *
+ * ************************************************************************
+ */
+
+buildscript {
+    ext {
+        detektVersion = "${externalCatalog.versions.detekt.get()}"
+        kotlinVersion = "${externalCatalog.versions.kotlin.get()}"
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+    }
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+plugins {
+    id "java-gradle-plugin"
+    id "maven-publish"
+
+    alias(externalCatalog.plugins.detekt)
+    alias(externalCatalog.plugins.kotlinJvm)
+    alias(externalCatalog.plugins.kotlinPluginAllOpen)
+    alias(externalCatalog.plugins.release)
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
+//Read version number from version.txt
+String versionFromFile = file("version.txt").text.trim()
+String versionNumber = versionFromFile.substring(versionFromFile.indexOf("=") + 1)
+//If version number is specified by -Pversion=... take it, otherwise take number from file
+version = "unspecified".equals(version) ? versionNumber : version
+
+dependencies {
+    implementation platform("com.bosch.pt:csm.cloud.dependency.bom-external:${gradle.externalBomVersion}")
+
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+
+    implementation("commons-io:commons-io")
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config = files("config/detekt-config.yml")
+    input = files("src/main/kotlin", "src/test/kotlin")
+}
+
+gradlePlugin {
+    automatedPublishing = false
+    plugins {
+        messagesKeyGeneratorPlugin {
+            id = "com.bosch.pt.csm.cloud.translations"
+            implementationClass = "com.bosch.pt.csm.cloud.gradle.plugin.i18n.MessagesKeyGeneratorPlugin"
+        }
+    }
+}
+
+publishing {
+    publications {
+        pluginMaven(MavenPublication) {
+            artifactId = "com.bosch.pt.csm.cloud.translations.gradle.plugin"
+            from components.java
+            groupId = "com.bosch.pt.csm.cloud.translations"
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+release {
+    buildTasks = []
+    newVersionCommitMessage = "New snapshot version:"
+    preTagCommitMessage = "Release:"
+    versionPropertyFile = "version.txt"
+    git {
+        requireBranch.set("master")
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven mavenAzureArtifact
+}
+group='com.bosch.pt'

@@ -1,0 +1,175 @@
+/*
+ * ************************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2023
+ *
+ * ************************************************************************
+ */
+
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+import com.github.jk1.license.render.InventoryHtmlReportRenderer
+
+buildscript {
+    ext {
+        detektVersion = "${externalCatalog.versions.detekt.get()}"
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+        snippetsDir = file("build/generated-snippets")
+        springBootVersion = "${externalCatalog.versions.springBoot.get()}"
+    }
+}
+
+plugins {
+    id "com.bosch.pt.csm.cloud.translations" version "4.0.0"
+    id "java-library"
+    id "maven-publish"
+
+    alias(externalCatalog.plugins.dependencyLicenseReport)
+    alias(externalCatalog.plugins.detekt)
+    alias(externalCatalog.plugins.kotlinJvm)
+    alias(externalCatalog.plugins.kotlinPluginSpring)
+    alias(externalCatalog.plugins.release)
+    alias(externalCatalog.plugins.sonarqube)
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
+//Read version number from version.txt
+String versionFromFile = file("version.txt").text.trim()
+String versionNumber = versionFromFile.substring(versionFromFile.indexOf("=") + 1)
+//If version number is specified by -Pversion=... take it, otherwise take number from file
+version = "unspecified".equals(version) ? versionNumber : version
+
+// Task registrations and definitions
+
+configurations {
+    tests
+}
+
+task testJar(type: Jar) {
+    archiveClassifier = "tests"
+    dependsOn testClasses
+    from sourceSets.test.output.classesDirs
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier = "sources"
+    dependsOn testClasses
+    from sourceSets.main.allSource + sourceSets.test.allSource
+}
+
+tasks.withType(io.gitlab.arturbosch.detekt.Detekt).configureEach {
+    dependsOn generateMessagesKeyKotlin
+}
+
+compileKotlin {
+    dependsOn generateMessagesKeyKotlin
+}
+
+// Configurations in alphabetical order
+
+artifacts {
+    archives testJar
+    archives sourcesJar
+    tests testJar
+}
+
+dependencies {
+    implementation platform("com.bosch.pt:csm.cloud.dependency.bom-external:${gradle.externalBomVersion}")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+
+    implementation("ch.qos.logback:logback-classic")
+    implementation("commons-io:commons-io")
+    implementation("com.datadoghq:dd-trace-api")
+    implementation("com.google.guava:guava")
+    implementation("io.micrometer:micrometer-registry-statsd")
+    implementation("io.opentracing:opentracing-api")
+    implementation("io.opentracing:opentracing-util")
+    implementation("net.logstash.logback:logstash-logback-encoder")
+
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation("org.slf4j:slf4j-api")
+    implementation("org.springframework.boot:spring-boot")
+    implementation("org.springframework.boot:spring-boot-actuator-autoconfigure")
+
+
+    testImplementation("org.testcontainers:testcontainers")
+    testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.testcontainers:mariadb")
+    testImplementation("org.assertj:assertj-core")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.springframework.boot:spring-boot-starter-jdbc")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config = files("config/detekt-config.yml")
+    input = files("src/main/kotlin", "src/test/kotlin")
+}
+
+generateMessagesKeyKotlin {
+    inputFile file("src/main/resources/i18n/common/messages.properties")
+    outputFile file("src/main/kotlin/com/bosch/pt/csm/cloud/common/i18n/CommonKey.kt")
+}
+
+licenseReport {
+    excludeGroups = ["com.bosch.pt"]
+    filters = [new LicenseBundleNormalizer()]
+    renderers = [new InventoryHtmlReportRenderer()]
+}
+
+publishing {
+    publications {
+        jar(MavenPublication) {
+            artifact sourcesJar
+            artifact testJar
+            artifactId = "csm.cloud.common.core"
+            from components.java
+            groupId = "com.bosch.pt"
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+release {
+    buildTasks = []
+    newVersionCommitMessage = "New snapshot version:"
+    preTagCommitMessage = "Release:"
+    versionPropertyFile = "version.txt"
+    git {
+        requireBranch.set("master")
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven mavenAzureArtifact
+}
+
+// Add src/main/kotlin as source set to fix issues with compileJava task.
+// Otherwise no files are found to compile and the the build fails with
+// The error message: > error: no source files
+sourceSets {
+    main.java.srcDirs += "src/main/kotlin/"
+    test.java.srcDirs += "src/test/kotlin/"
+}
+
+test {
+    outputs.dir snippetsDir
+    useJUnitPlatform()
+}
+group='com.bosch.pt'

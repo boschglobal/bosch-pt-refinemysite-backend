@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "CommandMessageKeyAvro",
+  "namespace": "com.bosch.pt.csm.cloud.common.messages",
+  "fields": [
+    {
+      "name": "partitioningIdentifier",
+      "type": "string"
+    }
+  ]
+}

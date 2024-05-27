@@ -1,0 +1,15 @@
+{
+  "type": "enum",
+  "name": "PhoneNumberTypeEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.common.messages",
+  "symbols": [
+    "ASSISTANT",
+    "BUSINESS",
+    "FAX",
+    "HOME",
+    "MOBILE",
+    "ORGANIZATION",
+    "OTHER",
+    "PAGER"
+  ]
+}

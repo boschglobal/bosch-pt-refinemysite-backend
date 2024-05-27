@@ -1,0 +1,20 @@
+{
+  "type": "record",
+  "name": "FeatureDeletedEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.featuretoggle.feature.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "doc": "Identifier of the feature toggle that got deleted",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "featureName",
+      "type": "string"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.EventAuditingInformationAvro"
+    }
+  ]
+}

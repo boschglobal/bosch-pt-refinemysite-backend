@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <springProperty scope="context" name="application" source="spring.application.name"/>
+    <Appender name="JSON" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                <!-- Spring Boot 3 currently has problems parsing the configuration value "short", so I set it to its default value. -->
+                <!-- See: https://github.com/logfellow/logstash-logback-encoder/blob/e83e6666ad072db05d77b46ddbc3b3f7c9ad76af/src/main/java/net/logstash/logback/stacktrace/ShortenedThrowableConverter.java#L97 -->
+                <maxDepthPerThrowable>3</maxDepthPerThrowable>
+                <maxLength>12000</maxLength>
+                <shortenedClassNameLength>20</shortenedClassNameLength>
+                <exclude>org\.springframework\.aop\.framework\.ReflectiveMethodInvocation.*</exclude>
+                <exclude>org\.springframework\.aop\.framework\.CglibAopProxy.*</exclude>
+                <exclude>org\.springframework\.cglib\.proxy\.MethodProxy.*</exclude>
+            </throwableConverter>
+        </encoder>
+        <filter class="com.bosch.pt.csm.cloud.common.logging.KafkaConsumerLoggingFilter" />
+    </Appender>
+    <root>
+        <appender-ref ref="JSON"/>
+    </root>
+</configuration>

@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "ParticipantEventG3Avro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.participant.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.participant.messages.ParticipantEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.participant.messages.ParticipantAggregateG3Avro"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "enum",
+  "name": "TaskActionSelectionEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.taskaction.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "DELETED"
+  ]
+}

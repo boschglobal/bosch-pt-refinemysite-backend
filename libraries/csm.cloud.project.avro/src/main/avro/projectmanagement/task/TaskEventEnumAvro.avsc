@@ -1,0 +1,17 @@
+{
+  "type": "enum",
+  "name": "TaskEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.task.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "ASSIGNED",
+    "UNASSIGNED",
+    "CLOSED",
+    "STARTED",
+    "SENT",
+    "DELETED",
+    "RESET",
+    "ACCEPTED"
+  ]
+}
