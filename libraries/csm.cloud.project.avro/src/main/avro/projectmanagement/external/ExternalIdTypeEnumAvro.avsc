@@ -1,0 +1,10 @@
+{
+  "type": "enum",
+  "name": "ExternalIdTypeEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.external.messages",
+  "symbols": [
+    "P6",
+    "MS_PROJECT",
+    "PP"
+  ]
+}

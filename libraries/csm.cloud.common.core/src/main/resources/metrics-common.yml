@@ -1,0 +1,29 @@
+management:
+  metrics:
+    enable:
+      # we only explicitly enable those metrics we want to collect
+      all: false
+      custom: true
+      hikaricp: true
+      tomcat.threads: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+management:
+  statsd:
+    metrics:
+      export:
+        host: ${DD_AGENT_HOST}
+        flavor: "datadog"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+management.statsd.metrics.export.enabled: false

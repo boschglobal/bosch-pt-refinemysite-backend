@@ -1,0 +1,28 @@
+{
+  "type": "record",
+  "name": "TopicAggregateG2Avro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.topic.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "criticality",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.topic.messages.TopicCriticalityEnumAvro"
+    },
+    {
+      "name": "description",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
+      "name": "task",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    }
+  ]
+}

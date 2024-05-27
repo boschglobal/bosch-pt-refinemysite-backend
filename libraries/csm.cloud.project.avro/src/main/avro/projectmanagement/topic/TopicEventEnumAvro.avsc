@@ -1,0 +1,12 @@
+{
+  "type": "enum",
+  "name": "TopicEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.topic.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "ESCALATED",
+    "DEESCALATED",
+    "DELETED"
+  ]
+}

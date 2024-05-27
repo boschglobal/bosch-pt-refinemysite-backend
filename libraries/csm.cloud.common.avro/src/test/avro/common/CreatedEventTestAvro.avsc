@@ -1,0 +1,32 @@
+{
+  "type": "record",
+  "name": "TestCreatedEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.common.messages",
+  "fields": [
+    {
+      "name": "primitiveShared",
+      "doc": "Field shared with UpdatedEventTestAvro",
+      "type": "string"
+    },
+    {
+      "name": "primitive",
+      "type": "long"
+    },
+    {
+      "name": "primitiveOptional",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "nestedPrimitive",
+      "type": "com.bosch.pt.csm.cloud.common.messages.PrimitiveFieldTestAvro"
+    },
+    {
+      "name": "nestedPrimitiveOptional",
+      "type": "com.bosch.pt.csm.cloud.common.messages.PrimitiveOptionalFieldTestAvro"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "name": "ParticipantStatusEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.participant.messages",
+  "symbols": [
+    "INVITED",
+    "VALIDATION",
+    "ACTIVE",
+    "INACTIVE"
+  ]
+}

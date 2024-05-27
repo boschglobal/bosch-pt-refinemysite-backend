@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "name": "InvitationAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.participant.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "projectIdentifier",
+      "type": "string"
+    },
+    {
+      "name": "participantIdentifier",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "lastSent",
+      "type": "long"
+    }
+  ]
+}

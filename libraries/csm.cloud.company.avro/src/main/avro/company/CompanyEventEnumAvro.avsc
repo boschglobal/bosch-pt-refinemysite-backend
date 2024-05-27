@@ -1,0 +1,10 @@
+{
+  "type": "enum",
+  "name": "CompanyEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.companymanagement.company.messages",
+  "symbols": [
+    "CREATED",
+    "DELETED",
+    "UPDATED"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "type": "record",
+  "name": "AttachmentAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.common.messages",
+  "fields": [
+    {
+      "name": "fullAvailable",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "smallAvailable",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "width",
+      "type": "long"
+    },
+    {
+      "name": "height",
+      "type": "long"
+    },
+    {
+      "name": "fileSize",
+      "type": "long"
+    },
+    {
+      "name": "fileName",
+      "type": "string"
+    },
+    {
+      "name": "captureDate",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    }
+  ]
+}

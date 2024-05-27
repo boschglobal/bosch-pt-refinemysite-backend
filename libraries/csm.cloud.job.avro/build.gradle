@@ -1,0 +1,152 @@
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+import com.github.jk1.license.render.InventoryHtmlReportRenderer
+
+buildscript {
+    ext {
+        csmCloudCommonAvroVersion = "10.0.0"
+        csmCloudCommonCoreVersion = "12.0.0"
+        detektVersion = "${externalCatalog.versions.detekt.get()}"
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+        springBootVersion = "${externalCatalog.versions.springBoot.get()}"
+    }
+}
+
+plugins {
+    id "java-library"
+    id "maven-publish"
+
+    alias(externalCatalog.plugins.avro)
+    alias(externalCatalog.plugins.dependencyLicenseReport)
+    alias(externalCatalog.plugins.detekt)
+    alias(externalCatalog.plugins.kotlinJvm)
+    alias(externalCatalog.plugins.kotlinPluginSpring)
+    alias(externalCatalog.plugins.release)
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
+//Read version number from version.txt
+String versionFromFile = file("version.txt").text.trim()
+String versionNumber = versionFromFile.substring(versionFromFile.indexOf("=") + 1)
+//If version number is specified by -Pversion=... take it, otherwise take number from file
+version = "unspecified".equals(version) ? versionNumber : version
+
+// Task registrations and definitions
+
+configurations {
+    tests
+}
+
+configurations.all {
+    // this avoids a caching snapshot dependencies so that the latest version is always downloaded.
+    resolutionStrategy.cacheChangingModulesFor 0, 'minutes'
+}
+
+task removeCommonAvroClasses(type: Delete) {
+    delete "build/generated-main-avro-java/com/bosch/pt/csm/cloud/common/messages/"
+    dependsOn generateAvroJava
+}
+
+task testJar(type: Jar) {
+    archiveClassifier = "tests"
+    dependsOn testClasses
+    from sourceSets.test.output.classesDirs
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier = "sources"
+    dependsOn testClasses
+    from sourceSets.main.allSource + sourceSets.test.allSource
+}
+
+// Configurations in alphabetical order
+
+artifacts {
+    archives testJar
+    archives sourcesJar
+    tests testJar
+}
+
+compileKotlin {
+    dependsOn removeCommonAvroClasses
+}
+
+compileTestKotlin {
+    dependsOn generateTestAvroJava
+}
+
+dependencies {
+    implementation platform("com.bosch.pt:csm.cloud.dependency.bom-external:${gradle.externalBomVersion}")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+
+    api("com.bosch.pt:csm.cloud.common.avro:$csmCloudCommonAvroVersion")
+    api("com.bosch.pt:csm.cloud.common.core:$csmCloudCommonCoreVersion")
+
+    // Versions can be found here: https://docs.confluent.io/platform/current/app-development/index.html
+    implementation("io.confluent:kafka-avro-serializer")
+    implementation("org.apache.kafka:kafka-clients")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation("org.springframework.kafka:spring-kafka")
+
+    testImplementation("com.bosch.pt:csm.cloud.common.avro:$csmCloudCommonAvroVersion:tests")
+    testImplementation("io.mockk:mockk")
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config = files("config/detekt-config.yml")
+    input = files("src/main/kotlin", "src/test/kotlin")
+}
+
+jar {
+    exclude "**/com/bosch/pt/csm/cloud/common/messages/"
+}
+
+licenseReport {
+    excludeGroups = ["com.bosch.pt"]
+    filters = [new LicenseBundleNormalizer()]
+    renderers = [new InventoryHtmlReportRenderer()]
+}
+
+publishing {
+    publications {
+        jar(MavenPublication) {
+            artifact sourcesJar
+            artifact testJar
+            artifactId = "csm.cloud.job.avro"
+            from components.java
+            groupId = "com.bosch.pt"
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+release {
+    buildTasks = []
+    newVersionCommitMessage = "New snapshot version:"
+    preTagCommitMessage = "Release:"
+    versionPropertyFile = "version.txt"
+    git {
+        requireBranch.set("master")
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://packages.confluent.io/maven/" }
+    maven mavenAzureArtifact
+}
+group='com.bosch.pt'

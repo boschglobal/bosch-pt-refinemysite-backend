@@ -1,0 +1,26 @@
+{
+  "type": "record",
+  "name": "CraftAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.referencedata.craft",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "defaultName",
+      "type": "string"
+    },
+    {
+      "name": "translations",
+      "type": {
+        "type": "array",
+        "items": "com.bosch.pt.csm.cloud.referencedata.craft.CraftTranslationAvro"
+      }
+    }
+  ]
+}

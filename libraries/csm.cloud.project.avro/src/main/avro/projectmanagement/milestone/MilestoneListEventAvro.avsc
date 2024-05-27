@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "MilestoneListEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.milestone.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.milestone.messages.MilestoneListEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.milestone.messages.MilestoneListAggregateAvro"
+    }
+  ]
+}

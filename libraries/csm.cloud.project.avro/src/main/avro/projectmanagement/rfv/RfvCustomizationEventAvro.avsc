@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "RfvCustomizationEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.rfv.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.rfv.messages.RfvCustomizationEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.rfv.messages.RfvCustomizationAggregateAvro"
+    }
+  ]
+}

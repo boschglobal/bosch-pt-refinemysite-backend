@@ -1,0 +1,41 @@
+{
+  "type": "record",
+  "name": "UserPictureAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.user.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "user",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "smallAvailable",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "fullAvailable",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "width",
+      "type": "long"
+    },
+    {
+      "name": "height",
+      "type": "long"
+    },
+    {
+      "name": "fileSize",
+      "type": "long"
+    }
+  ]
+}

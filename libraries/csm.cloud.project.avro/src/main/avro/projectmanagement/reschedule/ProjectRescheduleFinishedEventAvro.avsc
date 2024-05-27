@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "ProjectRescheduleFinishedEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.reschedule.messages",
+  "fields": [
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.EventAuditingInformationAvro"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "enum",
+  "name": "ProjectPictureEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.project.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "DELETED"
+  ]
+}

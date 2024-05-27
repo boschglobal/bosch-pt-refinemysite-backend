@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "TaskConstraintCustomizationEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.taskconstraint.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.taskconstraint.messages.TaskConstraintCustomizationEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.taskconstraint.messages.TaskConstraintCustomizationAggregateAvro"
+    }
+  ]
+}

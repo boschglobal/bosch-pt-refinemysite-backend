@@ -1,0 +1,9 @@
+{
+  "type": "enum",
+  "name": "GenderEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.common.messages",
+  "symbols": [
+    "MALE",
+    "FEMALE"
+  ]
+}

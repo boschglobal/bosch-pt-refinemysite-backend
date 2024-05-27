@@ -1,0 +1,110 @@
+{
+  "type": "record",
+  "name": "UserAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.user.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "userId",
+      "type": "string"
+    },
+    {
+      "name": "gender",
+      "type": [
+        "null",
+        "com.bosch.pt.csm.cloud.usermanagement.common.messages.GenderEnumAvro"
+      ],
+      "default": null
+    },
+    {
+      "name": "firstName",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "lastName",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "email",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "position",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "registered",
+      "type": "boolean"
+    },
+    {
+      "name": "admin",
+      "type": "boolean"
+    },
+    {
+      "name": "phoneNumbers",
+      "type": {
+        "type": "array",
+        "items": "com.bosch.pt.csm.cloud.usermanagement.common.messages.PhoneNumberAvro"
+      }
+    },
+    {
+      "name": "crafts",
+      "type": {
+        "type": "array",
+        "items": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+      }
+    },
+    {
+      "name": "eulaAcceptedDate",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "locked",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "locale",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "country",
+      "type": [
+        "null",
+        "com.bosch.pt.csm.cloud.common.messages.IsoCountryCodeEnumAvro"
+      ],
+      "default": null
+    }
+  ]
+}

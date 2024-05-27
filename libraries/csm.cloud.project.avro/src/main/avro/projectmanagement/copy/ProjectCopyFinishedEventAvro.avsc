@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "ProjectCopyFinishedEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.copy.messages",
+  "fields": [
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.EventAuditingInformationAvro"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "name": "PostBoxAddressAvro",
+  "namespace": "com.bosch.pt.csm.cloud.companymanagement.company.messages",
+  "fields": [
+    {
+      "name": "postBox",
+      "type": "string"
+    },
+    {
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "name": "zipCode",
+      "type": "string"
+    },
+    {
+      "name": "area",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+management:
+  add-application-context-header: false
+  info:
+    git:
+      mode: simple
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: info, health, loggers
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+    loggers:
+      enabled: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+    metrics:
+      enabled: true

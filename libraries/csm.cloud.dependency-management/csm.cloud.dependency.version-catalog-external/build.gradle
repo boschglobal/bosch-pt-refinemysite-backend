@@ -1,0 +1,98 @@
+buildscript {
+    ext {
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+        asciiDoctorVersion = "3.3.2"
+        detektVersion = "1.23.4"
+        kotlinVersion = "1.9.22"
+        springBootVersion = "3.2.2"
+        springCloudVersion = "2023.0.0"
+    }
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+plugins {
+    id "java-library"
+    id "maven-publish"
+    id "net.researchgate.release" version "3.0.2"
+    id "version-catalog"
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
+//Read version number from version.txt
+String versionFromFile = file("../csm.cloud.dependency.bom-external/version.txt").text.trim()
+String versionNumber = versionFromFile.substring(versionFromFile.indexOf("=") + 1)
+//If version number is specified by -Pversion=... take it, otherwise take number from file
+version = "unspecified".equals(version) ? versionNumber : version
+
+catalog {
+    versionCatalog {
+
+        // Plugins
+        plugin("avro", "com.github.davidmc24.gradle.plugin.avro").version("1.9.1")
+        plugin("asciiDoctor", "org.asciidoctor.jvm.convert").version("$asciiDoctorVersion")
+        plugin("dependencyLicenseReport", "com.github.jk1.dependency-license-report").version("2.5")
+        plugin("detekt", "io.gitlab.arturbosch.detekt").version("$detektVersion")
+        plugin("docker", "com.palantir.docker").version("0.35.0")
+        plugin("gitProperties", "com.gorylenko.gradle-git-properties").version("2.4.1")
+        plugin("kotlinJvm", "org.jetbrains.kotlin.jvm").version("$kotlinVersion")
+        plugin("kotlinKapt", "org.jetbrains.kotlin.kapt").version("$kotlinVersion")
+        plugin("kotlinPluginAllOpen", "org.jetbrains.kotlin.plugin.allopen").version("$kotlinVersion")
+        plugin("kotlinPluginJpa", "org.jetbrains.kotlin.plugin.jpa").version("$kotlinVersion")
+        plugin("kotlinPluginSpring", "org.jetbrains.kotlin.plugin.spring").version("$kotlinVersion")
+        plugin("owaspDependencyCheck", "org.owasp.dependencycheck").version("9.0.8")
+        plugin("release", "net.researchgate.release").version("3.0.2")
+        plugin("shadowJar", "com.github.johnrengelman.shadow").version("8.1.1")
+        plugin("sonarqube", "org.sonarqube").version("4.4.1.3373")
+        plugin("springBoot", "org.springframework.boot").version("$springBootVersion")
+
+        // Versions
+        version("asciiDoctor", "$asciiDoctorVersion")
+        version("detekt", "$detektVersion")
+        version("hibernate", "6.4.1.Final")
+        version("kotlin", "$kotlinVersion")
+        version("springBoot", "$springBootVersion")
+        version("springCloud", "$springCloudVersion")
+        version("springRestDocsAsciiDoctorExtension", "3.0.1")
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId = "csm.cloud.dependency.version-catalog-external"
+            groupId = "com.bosch.pt"
+
+            from components.versionCatalog
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+release {
+    buildTasks = []
+    newVersionCommitMessage = "New snapshot version [external: bom + catalog]:"
+    preTagCommitMessage = "Release [external: bom + catalog]:"
+    versionPropertyFile = "version.txt"
+    git {
+        requireBranch.set('master')
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+

@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "EventAuditingInformationAvro",
+  "namespace": "com.bosch.pt.csm.cloud.common.messages",
+  "fields": [
+    {
+      "name": "date",
+      "doc": "The date and time the event happened.",
+      "type": "long"
+    },
+    {
+      "name": "user",
+      "doc": "The user who caused the event.",
+      "type": "string"
+    }
+  ]
+}

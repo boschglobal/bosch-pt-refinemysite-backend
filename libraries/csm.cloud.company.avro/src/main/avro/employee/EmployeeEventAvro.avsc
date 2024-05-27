@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "EmployeeEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.companymanagement.employee.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.companymanagement.employee.messages.EmployeeEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.companymanagement.employee.messages.EmployeeAggregateAvro"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "type": "record",
+  "name": "MilestoneAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.milestone.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "project",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.milestone.messages.MilestoneTypeEnumAvro"
+    },
+    {
+      "name": "date",
+      "type": "long"
+    },
+    {
+      "name": "header",
+      "type": "boolean"
+    },
+    {
+      "name": "description",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "craft",
+      "type": [
+        "null",
+        "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+      ],
+      "default": null
+    },
+    {
+      "name": "workarea",
+      "type": [
+        "null",
+        "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+      ],
+      "default": null
+    }
+  ]
+}

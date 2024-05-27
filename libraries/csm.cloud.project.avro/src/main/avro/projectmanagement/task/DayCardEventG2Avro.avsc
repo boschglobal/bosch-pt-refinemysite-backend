@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "DayCardEventG2Avro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.task.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.task.messages.DayCardEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.task.messages.DayCardAggregateG2Avro"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "type": "record",
+  "name": "DayCardAggregateG2Avro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.task.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "task",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "status",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.task.messages.DayCardStatusEnumAvro"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "manpower",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 4,
+        "scale": 2
+      }
+    },
+    {
+      "name": "notes",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "reason",
+      "type": [
+        "null",
+        "com.bosch.pt.csm.cloud.projectmanagement.task.messages.DayCardReasonNotDoneEnumAvro"
+      ],
+      "default": null
+    }
+  ]
+}

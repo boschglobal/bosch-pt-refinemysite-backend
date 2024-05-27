@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "WorkAreaEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.workarea.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.workarea.messages.WorkAreaEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.workarea.messages.WorkAreaAggregateAvro"
+    }
+  ]
+}

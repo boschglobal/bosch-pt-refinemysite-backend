@@ -1,0 +1,18 @@
+# settings for identity provider @Bosch
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://identity.bosch.com/
+
+admin:
+  user:
+    identifier: 298d4eaa-bc30-4320-89d7-dedcd0a01aa3
+    id: S-1-5-21-1937855695-3964793637-879644401-21025
+
+testadmin:
+  user:
+    identifier: eefc637a-ed01-4354-b737-f200eb13763b
+    id: S-1-5-21-1937855695-3964793637-879644401-31522

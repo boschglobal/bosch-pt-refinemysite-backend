@@ -1,0 +1,12 @@
+{
+  "type": "enum",
+  "name": "TaskStatusEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.task.messages",
+  "symbols": [
+    "DRAFT",
+    "OPEN",
+    "STARTED",
+    "CLOSED",
+    "ACCEPTED"
+  ]
+}

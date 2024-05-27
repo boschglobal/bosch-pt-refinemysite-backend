@@ -1,0 +1,8 @@
+{
+  "type": "enum",
+  "name": "PatTypeEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.pat.messages",
+  "symbols": [
+    "RMSPAT1"
+  ]
+}

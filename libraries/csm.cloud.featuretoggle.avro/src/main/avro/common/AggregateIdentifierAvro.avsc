@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "AggregateIdentifierAvro",
+  "namespace": "com.bosch.pt.csm.cloud.common.messages",
+  "fields": [
+    {
+      "name": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "version",
+      "type": "long"
+    },
+    {
+      "name": "type",
+      "type": "string"
+    }
+  ]
+}

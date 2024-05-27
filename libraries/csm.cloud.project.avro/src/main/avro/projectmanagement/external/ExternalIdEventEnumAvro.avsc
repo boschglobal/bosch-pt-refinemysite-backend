@@ -1,0 +1,10 @@
+{
+  "type": "enum",
+  "name": "ExternalIdEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.external.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "DELETED"
+  ]
+}

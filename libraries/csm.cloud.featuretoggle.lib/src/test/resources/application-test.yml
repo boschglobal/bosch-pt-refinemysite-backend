@@ -1,0 +1,33 @@
+stage: "local-test"
+
+de.flapdoodle.mongodb.embedded.version: 7.1.1
+
+spring:
+  kafka:
+    clientId: "csm-cloud-test-app"
+    consumer:
+      keyDeserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      valueDeserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        auto.offset.reset: earliest
+        isolation.level: read_committed
+        specific.avro.reader: true
+    producer:
+      keySerializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      valueSerializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+
+custom:
+  kafka:
+    bindings:
+      feature:
+        kafkaTopic: "csm.local.featuretogglemanagement.featuretoggle"
+    listener:
+      query:
+        feature-projector:
+          groupId: "csm-cloud-featuretoggle-lib-${stage}-featuretoggle"
+          clientIdPrefix: "csm-cloud-featuretoggle-lib-${stage}-featuretoggle"
+          concurrency: 1
+
+logging:
+  level:
+    de.flapdoodle.embed.mongo.spring.autoconfigure: WARN

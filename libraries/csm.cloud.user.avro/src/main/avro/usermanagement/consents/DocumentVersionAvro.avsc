@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "DocumentVersionAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.consents.messages",
+  "fields": [
+    {
+      "name": "identifier",
+      "doc": "Unique identifier of this document version (referenced by user consents)",
+      "type": "string"
+    },
+    {
+      "name": "lastChanged",
+      "doc": "The date of change for this version",
+      "type": "long"
+    }
+  ]
+}

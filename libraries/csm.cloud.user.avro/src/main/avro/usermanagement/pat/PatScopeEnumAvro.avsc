@@ -1,0 +1,9 @@
+{
+  "type": "enum",
+  "name": "PatScopeEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.pat.messages",
+  "symbols": [
+    "TIMELINE_API_READ",
+    "GRAPHQL_API_READ"
+  ]
+}

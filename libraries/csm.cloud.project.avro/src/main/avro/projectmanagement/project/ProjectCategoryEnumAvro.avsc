@@ -1,0 +1,10 @@
+{
+  "type": "enum",
+  "name": "ProjectCategoryEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.project.messages",
+  "symbols": [
+    "NB",
+    "OB",
+    "RB"
+  ]
+}

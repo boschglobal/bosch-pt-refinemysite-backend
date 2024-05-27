@@ -1,0 +1,10 @@
+{
+  "type": "enum",
+  "name": "WorkAreaEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.workarea.messages",
+  "symbols": [
+    "CREATED",
+    "UPDATED",
+    "DELETED"
+  ]
+}

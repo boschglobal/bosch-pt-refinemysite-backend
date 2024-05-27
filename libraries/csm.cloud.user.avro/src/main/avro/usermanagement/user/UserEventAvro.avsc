@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "UserEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.user.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.usermanagement.user.messages.UserEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.usermanagement.user.messages.UserAggregateAvro"
+    }
+  ]
+}

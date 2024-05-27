@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "name": "RelationEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.relation.messages",
+  "symbols": [
+    "CREATED",
+    "DELETED",
+    "CRITICAL",
+    "UNCRITICAL"
+  ]
+}

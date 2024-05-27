@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "name": "ProjectCraftListEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.craft.messages",
+  "symbols": [
+    "ITEMADDED",
+    "ITEMREMOVED",
+    "REORDERED",
+    "CREATED"
+  ]
+}

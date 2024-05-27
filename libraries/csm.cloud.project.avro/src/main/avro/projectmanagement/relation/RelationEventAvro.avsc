@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "RelationEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.relation.messages",
+  "fields": [
+    {
+      "name": "name",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.relation.messages.RelationEventEnumAvro"
+    },
+    {
+      "name": "aggregate",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.relation.messages.RelationAggregateAvro"
+    }
+  ]
+}

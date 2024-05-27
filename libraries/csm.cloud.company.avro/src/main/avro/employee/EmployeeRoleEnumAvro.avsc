@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "name": "EmployeeRoleEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.companymanagement.employee.messages",
+  "symbols": [
+    "CA",
+    "CR",
+    "CSM",
+    "FM"
+  ]
+}

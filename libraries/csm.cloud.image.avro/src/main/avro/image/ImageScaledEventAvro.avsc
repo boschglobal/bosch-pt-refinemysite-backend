@@ -1,0 +1,28 @@
+{
+  "type": "record",
+  "name": "ImageScaledEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.image.messages",
+  "fields": [
+    {
+      "name": "identifier",
+      "doc": "Identifier of the image",
+      "type": "string"
+    },
+    {
+      "name": "path",
+      "type": "string"
+    },
+    {
+      "name": "filename",
+      "type": "string"
+    },
+    {
+      "name": "contentType",
+      "type": "string"
+    },
+    {
+      "name": "contentLength",
+      "type": "long"
+    }
+  ]
+}

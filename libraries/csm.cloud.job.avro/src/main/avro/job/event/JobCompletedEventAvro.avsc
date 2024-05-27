@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "JobCompletedEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.job.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "serializedResult",
+      "type": "JsonSerializedObjectAvro"
+    }
+  ]
+}

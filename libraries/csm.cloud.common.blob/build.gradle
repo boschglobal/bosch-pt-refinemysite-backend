@@ -1,0 +1,140 @@
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+import com.github.jk1.license.render.InventoryHtmlReportRenderer
+
+buildscript {
+    ext {
+        azuriteVersion = "3.28.0"
+        csmCloudCommonCoreVersion = "12.0.0"
+        kotlinVersion = "${externalCatalog.versions.kotlin.get()}"
+        detektVersion = "${externalCatalog.versions.detekt.get()}"
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+        snippetsDir = file("build/generated-snippets")
+        springBootVersion = "${externalCatalog.versions.springBoot.get()}"
+    }
+}
+
+plugins {
+    id "java-library"
+    id "maven-publish"
+
+    alias(externalCatalog.plugins.dependencyLicenseReport)
+    alias(externalCatalog.plugins.detekt)
+    alias(externalCatalog.plugins.kotlinJvm)
+    alias(externalCatalog.plugins.sonarqube)
+    alias(externalCatalog.plugins.release)
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
+//Read version number from version.txt
+String versionFromFile = file("version.txt").text.trim()
+String versionNumber = versionFromFile.substring(versionFromFile.indexOf("=") + 1)
+//If version number is specified by -Pversion=... take it, otherwise take number from file
+version = "unspecified".equals(version) ? versionNumber : version
+
+// Task registrations and definitions
+
+configurations {
+    tests
+}
+
+task testJar(type: Jar) {
+    archiveClassifier = "tests"
+    dependsOn testClasses
+    from sourceSets.test.output.classesDirs
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier = "sources"
+    dependsOn testClasses
+    from sourceSets.main.allSource + sourceSets.test.allSource
+}
+
+// Configurations in alphabetical order
+
+artifacts {
+    archives testJar
+    archives sourcesJar
+    tests testJar
+}
+
+dependencies {
+    implementation platform("com.bosch.pt:csm.cloud.dependency.bom-external:${gradle.externalBomVersion}")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+
+    implementation("com.bosch.pt:csm.cloud.common.core:$csmCloudCommonCoreVersion")
+
+    implementation("com.azure:azure-storage-blob")
+    implementation("com.google.guava:guava")
+    implementation("io.opentracing:opentracing-util")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation("org.springframework.boot:spring-boot-configuration-processor")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    testImplementation("org.assertj:assertj-core")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-test-autoconfigure")
+    testImplementation("org.testcontainers:testcontainers")
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config = files("config/detekt-config.yml")
+    input = files("src/main/kotlin", "src/test/kotlin")
+}
+
+licenseReport {
+    excludeGroups = ["com.bosch.pt"]
+    filters = [new LicenseBundleNormalizer()]
+    renderers = [new InventoryHtmlReportRenderer()]
+}
+
+publishing {
+    publications {
+        jar(MavenPublication) {
+            artifact sourcesJar
+            artifact testJar
+            artifactId = "csm.cloud.common.blob"
+            from components.java
+            groupId = "com.bosch.pt"
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+release {
+    buildTasks = []
+    newVersionCommitMessage = "New snapshot version:"
+    preTagCommitMessage = "Release:"
+    versionPropertyFile = "version.txt"
+    git {
+        requireBranch.set("master")
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven mavenAzureArtifact
+}
+
+test {
+    outputs.dir snippetsDir
+    systemProperty("azurite.version", "$azuriteVersion")
+    useJUnitPlatform()
+}
+group='com.bosch.pt'

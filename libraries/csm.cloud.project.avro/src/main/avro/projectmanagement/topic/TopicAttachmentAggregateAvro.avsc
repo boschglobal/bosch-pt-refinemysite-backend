@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "TopicAttachmentAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.topic.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "topic",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "attachment",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.common.messages.AttachmentAvro"
+    }
+  ]
+}

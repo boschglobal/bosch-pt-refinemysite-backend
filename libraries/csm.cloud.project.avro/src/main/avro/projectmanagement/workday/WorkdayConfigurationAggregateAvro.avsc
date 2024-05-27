@@ -1,0 +1,50 @@
+{
+  "type": "record",
+  "name": "WorkdayConfigurationAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.workday.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "project",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "startOfWeek",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.workday.messages.DayEnumAvro"
+    },
+    {
+      "name": "workingDays",
+      "type": {
+        "type": "array",
+        "items": "com.bosch.pt.csm.cloud.projectmanagement.workday.messages.DayEnumAvro"
+      },
+      "default": [
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY",
+        "FRIDAY"
+      ]
+    },
+    {
+      "name": "holidays",
+      "type": {
+        "type": "array",
+        "items": "com.bosch.pt.csm.cloud.projectmanagement.workday.messages.HolidayAvro"
+      },
+      "default": []
+    },
+    {
+      "name": "allowWorkOnNonWorkingDays",
+      "type": "boolean",
+      "default": true
+    }
+  ]
+}

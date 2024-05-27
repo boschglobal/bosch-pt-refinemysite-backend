@@ -1,0 +1,9 @@
+{
+  "type": "enum",
+  "name": "MessageEventEnumAvro",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.message.messages",
+  "symbols": [
+    "CREATED",
+    "DELETED"
+  ]
+}

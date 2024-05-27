@@ -1,0 +1,35 @@
+{
+  "type": "record",
+  "name": "CompanyAggregateAvro",
+  "namespace": "com.bosch.pt.csm.cloud.companymanagement.company.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "streetAddress",
+      "type": [
+        "null",
+        "com.bosch.pt.csm.cloud.companymanagement.company.messages.StreetAddressAvro"
+      ],
+      "default": null
+    },
+    {
+      "name": "postBoxAddress",
+      "type": [
+        "null",
+        "com.bosch.pt.csm.cloud.companymanagement.company.messages.PostBoxAddressAvro"
+      ],
+      "default": null
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# settings for identity provider @Bosch
+custom:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uris:
+            - https://stage.key-cloak-one.com/auth/realms/central_profile
+
+admin:
+  user:
+    identifier: 298d4eaa-bc30-4320-89d7-dedcd0a01aa3
+    id: S-1-5-21-3923742794-3248341794-1582090486-12247
+
+testadmin:
+  user:
+    identifier: eefc637a-ed01-4354-b737-f200eb13763b
+    id: 6c306460-2e26-4dda-adb4-1ebc490c51ae

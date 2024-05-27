@@ -1,0 +1,117 @@
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+import com.github.jk1.license.render.InventoryHtmlReportRenderer
+
+buildscript {
+    ext {
+        detektVersion = "${externalCatalog.versions.detekt.get()}"
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+        springBootVersion = "${externalCatalog.versions.springBoot.get()}"
+    }
+}
+
+plugins {
+    id "java"
+    id "maven-publish"
+
+    alias(externalCatalog.plugins.dependencyLicenseReport)
+    alias(externalCatalog.plugins.detekt)
+    alias(externalCatalog.plugins.kotlinJvm)
+    alias(externalCatalog.plugins.kotlinPluginAllOpen)
+    alias(externalCatalog.plugins.release)
+    alias(externalCatalog.plugins.shadowJar)
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
+//Read version number from version.txt
+String versionFromFile = file("version.txt").text.trim()
+String versionNumber = versionFromFile.substring(versionFromFile.indexOf("=") + 1)
+//If version number is specified by -Pversion=... take it, otherwise take number from file
+version = "unspecified".equals(version) ? versionNumber : version
+
+task sourcesJar(type: Jar) {
+    archiveClassifier = "sources"
+    dependsOn testClasses
+    from sourceSets.main.allSource+sourceSets.test.allSource
+}
+
+// Configurations in alphabetical order
+
+artifacts {
+    archives sourcesJar
+}
+
+dependencies {
+    implementation platform("com.bosch.pt:csm.cloud.dependency.bom-external:${gradle.externalBomVersion}")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+
+    implementation("ch.qos.logback:logback-classic")
+    implementation("com.google.code.gson:gson")
+    implementation("com.nimbusds:nimbus-jose-jwt")
+    implementation("org.apache.commons:commons-lang3")
+    implementation("org.apache.httpcomponents.client5:httpclient5")
+    implementation("org.jsoup:jsoup")
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config = files("config/detekt-config.yml")
+    input = files("src/main/kotlin", "src/test/kotlin")
+}
+
+jar {
+    archiveBaseName = project.name
+}
+
+licenseReport {
+    excludeGroups = ["com.bosch.pt"]
+    filters = [new LicenseBundleNormalizer()]
+    renderers = [new InventoryHtmlReportRenderer()]
+}
+
+publishing {
+    publications {
+        jar(MavenPublication) {
+            artifact sourcesJar
+            artifactId = "csm.dev.oauth-utilities"
+            from components.java
+            groupId = "com.bosch.pt"
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+release {
+    buildTasks = []
+    newVersionCommitMessage = "New snapshot version:"
+    preTagCommitMessage = "Release:"
+    versionPropertyFile = "version.txt"
+    git {
+        requireBranch.set("master")
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven mavenAzureArtifact
+}
+
+shadowJar {
+    manifest {
+        attributes "Main-Class": "com.bosch.pt.iot.smartsite.common.oauth.utilities.OAuthUtilitiesApplication"
+    }
+}
+group='com.bosch.pt'

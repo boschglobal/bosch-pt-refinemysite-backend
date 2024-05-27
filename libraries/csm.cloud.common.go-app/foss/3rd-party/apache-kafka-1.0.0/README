@@ -1,0 +1,5 @@
+Murmur2 implementation found in /common/kafka/producer/partitioner/any/key_partitioner.go
+is derived from https://github.com/apache/kafka/blob/1.0.0/clients/src/main/java/org/apache/kafka/common/utils/Utils.java#L353
+
+The component Apache Kafka 1.0.0 is licensed under Apache 2.0.
+Please refer to the LICENSE file within this directory for the original license published with the open source component.‚

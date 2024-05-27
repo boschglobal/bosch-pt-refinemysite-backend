@@ -1,0 +1,83 @@
+trigger:
+  branches:
+    include:
+      - master
+      - SMAR-*
+
+name: "$(Date:yyyyMMdd)$(Rev:.r)"
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+variables:
+  - name: isPullRequest
+    value: ${{ eq(variables['Build.Reason'], 'PullRequest') }}
+  - template: /templates/variables/pipelines.yaml@csm_templates
+
+stages:
+  - stage: build
+    displayName: BUILD
+    pool:
+      vmImage: ${{ variables.ubuntuImage }}
+    jobs:
+      - job: build_excel_zip_staging
+        displayName: Build Excel Export Template - Staging
+        steps:
+          - checkout: self
+
+          - bash: |
+              mkdir -p out
+              cp RefinemySite-Staging.xlsx out/
+              cp RefinemySite-Excel-Export-Tutorial.pdf out/
+            displayName: Copy
+
+          - task: ArchiveFiles@2
+            displayName: Archive RefinemySite Templates
+            condition: and(succeeded(), eq(variables.isPullRequest, false))
+            inputs:
+              rootFolderOrFile: $(System.DefaultWorkingDirectory)/out/
+              includeRootFolder: false
+              archiveType: zip
+              archiveFile: $(System.DefaultWorkingDirectory)/out/RefinemySiteExcelTemplate.zip
+              replaceExistingArchive: true
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish pipeline artifact
+            condition: and(succeeded(), eq(variables.isPullRequest, false))
+            inputs:
+              artifact: csm.cloud.export.excel.staging
+              publishLocation: pipeline
+              targetPath: $(System.DefaultWorkingDirectory)/out/RefinemySiteExcelTemplate.zip
+
+      - job: build_excel_zip_prod
+        displayName: Build Excel Export Template - Prod
+        steps:
+          - checkout: self
+
+          - bash: |
+              mkdir -p out
+              cp RefinemySite.xlsx out/
+              cp RefinemySite-Excel-Export-Tutorial.pdf out/
+            displayName: Copy
+
+          - task: ArchiveFiles@2
+            displayName: Archive RefinemySite Templates
+            condition: and(succeeded(), eq(variables.isPullRequest, false))
+            inputs:
+              rootFolderOrFile: $(System.DefaultWorkingDirectory)/out/
+              includeRootFolder: false
+              archiveType: zip
+              archiveFile: $(System.DefaultWorkingDirectory)/out/RefinemySiteExcelTemplate.zip
+              replaceExistingArchive: true
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish pipeline artifact
+            condition: and(succeeded(), eq(variables.isPullRequest, false))
+            inputs:
+              artifact: csm.cloud.export.excel.prod
+              publishLocation: pipeline
+              targetPath: $(System.DefaultWorkingDirectory)/out/RefinemySiteExcelTemplate.zip

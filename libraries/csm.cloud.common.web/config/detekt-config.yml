@@ -1,0 +1,55 @@
+#A copy of this configuration is located in csm.cloud.dev/config/detekt-config.yml
+build:
+  maxIssues: 0
+
+complexity:
+  active: false
+empty-blocks:
+  EmptyClassBlock:
+    excludes: [ '**/CommonWebKey.kt' ]
+formatting:
+  AnnotationOnSeparateLine:
+    active: false
+  ArgumentListWrapping:
+    active: false
+  ChainWrapping:
+    active: false
+  FinalNewline:
+    active: false
+  ImportOrdering:
+    active: false
+  Indentation:
+    active: false
+  MaximumLineLength:
+    excludes: [ '**/CommonWebKey.kt' ]
+  MultiLineIfElse:
+    active: false
+  NoBlankLineBeforeRbrace:
+    excludes: [ '**/CommonWebKey.kt' ]
+  NoEmptyClassBody:
+    excludes: [ '**/CommonWebKey.kt' ]
+  NoEmptyFirstLineInMethodBlock:
+    active: false
+  Wrapping:
+    active: false
+naming:
+  ClassNaming:
+    excludes: [ '**/test/**' ]
+  MemberNameEqualsClassName:
+    excludes: [ '**/CommonWebKey.kt' ]
+performance:
+  SpreadOperator:
+    active: false
+style:
+  ForbiddenComment:
+    active: false
+  MagicNumber:
+    active: false
+  MaxLineLength:
+    excludes: [ '**/CommonWebKey.kt' ]
+  NewLineAtEndOfFile:
+    active: false
+  ReturnCount:
+    active: false
+  UnusedImports:
+    active: true

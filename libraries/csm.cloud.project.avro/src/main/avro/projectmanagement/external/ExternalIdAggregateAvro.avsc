@@ -1,0 +1,78 @@
+{
+  "type": "record",
+  "name": "ExternalIdAggregateAvro",
+  "doc": "Id mapping of internal to external identifiers of other systems",
+  "namespace": "com.bosch.pt.csm.cloud.projectmanagement.external.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro",
+      "doc": "Identifier of the external id mapping"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AuditingInformationAvro",
+      "doc": "Information about the creator / last editor"
+    },
+    {
+      "name": "project",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro",
+      "doc": "Reference to the project the id mapping refers to"
+    },
+    {
+      "name": "type",
+      "type": "com.bosch.pt.csm.cloud.projectmanagement.external.messages.ExternalIdTypeEnumAvro",
+      "doc": "The source where the external id comes from / belongs to"
+    },
+    {
+      "name": "objectIdentifier",
+      "doc": "Identifier of the object the external ID refers to",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "guid",
+      "doc": "UUID that is provided by external systems, imported files, etc.",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "fileUniqueId",
+      "doc": "Unique ID in MS Project / Object ID in P6 of tasks, resources, etc. It is not unique in our system as tasks, working areas and crafts can be extracted from the same row.",
+      "type": [
+        "null",
+        "int"
+      ],
+      "default": null
+    },
+    {
+      "name": "fileId",
+      "doc": "Automatically assigned numbers of tasks, resources, etc. The numbers can change when data is imported or exported",
+      "type": [
+        "null",
+        "int"
+      ],
+      "default": null
+    },
+    {
+      "name": "activityId",
+      "doc": "Identifier to uniquely identify activities in P6",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "wbs",
+      "doc": "Work breakdown structure information",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    }
+  ]
+}

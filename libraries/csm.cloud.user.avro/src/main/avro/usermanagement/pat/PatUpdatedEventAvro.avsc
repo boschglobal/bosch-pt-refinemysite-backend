@@ -1,0 +1,34 @@
+{
+  "type": "record",
+  "name": "PatUpdatedEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.usermanagement.pat.messages",
+  "fields": [
+    {
+      "name": "aggregateIdentifier",
+      "doc": "Identifier of the Personal Access Token (PAT)",
+      "type": "com.bosch.pt.csm.cloud.common.messages.AggregateIdentifierAvro"
+    },
+    {
+      "name": "description",
+      "doc": "Description the user has given for the token",
+      "type": "string"
+    },
+    {
+      "name": "scopes",
+      "doc": "Scope that the token grants access to",
+      "type": {
+        "type": "array",
+        "items": "com.bosch.pt.csm.cloud.usermanagement.pat.messages.PatScopeEnumAvro"
+      }
+    },
+    {
+      "name": "expiresAt",
+      "doc": "Timestamp when the token expires",
+      "type": "long"
+    },
+    {
+      "name": "auditingInformation",
+      "type": "com.bosch.pt.csm.cloud.common.messages.EventAuditingInformationAvro"
+    }
+  ]
+}
