@@ -1,0 +1,288 @@
+[
+  {
+    "id": "company-b1",
+    "name": "Company B1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company B1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-b2",
+    "name": "Company B2",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company B2 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-b3",
+    "name": "Company B3",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company B3 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-d1",
+    "name": "Company D1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company D1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-e1",
+    "name": "Company E1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company E1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-f1",
+    "name": "Company F1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company F1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-f2",
+    "name": "Company F2",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company F2 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-g1",
+    "name": "Company G1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company G1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-g2",
+    "name": "Company G2",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company G2 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-h1",
+    "name": "Company H1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company H1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-h2",
+    "name": "Company H2",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company H2 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-k1",
+    "name": "Company K1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company K1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-l1",
+    "name": "Company L1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company L1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-m1",
+    "name": "Company M1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company M1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-m2",
+    "name": "Company M2",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company M2 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-o1",
+    "name": "Company O1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company O1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-o2",
+    "name": "Company O2",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company O2 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-p1",
+    "name": "Company P1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company P1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-p2",
+    "name": "Company P2",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company P2 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-p3",
+    "name": "Company P3",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company P3 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-r1",
+    "name": "Company R1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company R1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-s1",
+    "name": "Company S1",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company S1 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-s2",
+    "name": "Company S2",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company S2 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-s3",
+    "name": "Company S3",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company S3 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-s4",
+    "name": "Company S4",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company S4 Street.",
+      "houseNumber": "1"
+    }
+  },
+  {
+    "id": "company-s5",
+    "name": "Company S5",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Company S5 Street.",
+      "houseNumber": "1"
+    }
+  }
+]

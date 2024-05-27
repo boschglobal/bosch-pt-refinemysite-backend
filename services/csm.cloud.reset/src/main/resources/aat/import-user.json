@@ -1,0 +1,180 @@
+[
+  {
+    "id": "ali",
+    "email": "smartsiteapp+ali@gmail.com",
+    "password": "Smartali#1",
+    "gender": "MALE",
+    "firstName": "Ali",
+    "lastName": "Albatros",
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "OTHER",
+        "phoneNumber": "12345678"
+      },
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "87654321"
+      }
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "bob",
+    "email": "smartsiteapp+bob@gmail.com",
+    "password": "Smartbob#1",
+    "gender": "MALE",
+    "firstName": "Bob",
+    "lastName": "West",
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "hannah",
+    "email": "smartsiteapp+hannah@gmail.com",
+    "password": "Smarthan#1",
+    "gender": "FEMALE",
+    "firstName": "Hannah",
+    "lastName": "Top",
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "carlos",
+    "email": "smartsiteapp+carlos@gmail.com",
+    "password": "Smartcar#1",
+    "gender": "MALE",
+    "firstName": "Carlos",
+    "lastName": "Caracho",
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "87654321"
+      },
+      {
+        "countryCode": "+43",
+        "phoneNumberType": "PAGER",
+        "phoneNumber": "701113231312"
+      }
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "daniel",
+    "email": "smartsiteapp+daniel@gmail.com",
+    "password": "Smartdan#1",
+    "gender": "MALE",
+    "firstName": "Daniel",
+    "lastName": "Düsentrieb",
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "eddie",
+    "email": "smartsiteapp+eddie@gmail.com",
+    "password": "Smartedd#1",
+    "gender": "MALE",
+    "firstName": "Eddie",
+    "lastName": "Meister",
+    "position": "Worker",
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "ingo",
+    "email": "smartsiteapp+ingo@gmail.com",
+    "password": "Smarting#1",
+    "gender": "MALE",
+    "firstName": "Ingo",
+    "lastName": "Star",
+    "position": "worker",
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "frank",
+    "email": "smartsiteapp+frank@gmail.com",
+    "password": "Smartfra#1",
+    "gender": "MALE",
+    "firstName": "Frank",
+    "lastName": "Further",
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "gustav",
+    "email": "smartsiteapp+gustav@gmail.com",
+    "password": "Smartgus#1",
+    "gender": "MALE",
+    "firstName": "Gustav",
+    "lastName": "Mayer",
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "cindy",
+    "email": "smartsiteapp+cindy@gmail.com",
+    "password": "Smartcin#1",
+    "gender": "FEMALE",
+    "firstName": "Cindy",
+    "lastName": "Russo",
+    "position": "worker",
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "113344685"
+      }
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "armin",
+    "email": "smartsiteapp+armin@gmail.com",
+    "password": "Smartarm#1",
+    "gender": "MALE",
+    "firstName": "Armin",
+    "lastName": "Baum",
+    "position": "worker",
+    "phoneNumbers": [
+      {
+        "countryCode": "+49",
+        "phoneNumberType": "MOBILE",
+        "phoneNumber": "19537845"
+      }
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "groot",
+    "email": "smartsiteapp+groot@gmail.com",
+    "password": "Smartgro#1",
+    "gender": "MALE",
+    "firstName": "I am",
+    "lastName": "groot",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  },
+  {
+    "id": "vandelay",
+    "email": "smartsiteapp+vandelay@gmail.com",
+    "password": "Smartvan#1",
+    "gender": "MALE",
+    "firstName": "Art",
+    "lastName": "Vandelay",
+    "roles": [
+      "USER"
+    ],
+    "locale": "en_GB",
+    "country": "GB"
+  }
+]

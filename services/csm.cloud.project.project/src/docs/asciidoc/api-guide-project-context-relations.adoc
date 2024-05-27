@@ -1,0 +1,288 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[relations]]
+== Relations
+
+Relations allow to express that two resources (tasks or milestones) are related in a certain way.
+This could be a predecessor/successor dependency (`FINISH_TO_START`), or a subtask relation between a task and a milestone (`PART_OF`).
+
+A relation is directed.
+The resource on the left side is called `source`, the resource on the right side is called `target`.
+
+Supported relation types:
+
+* The `FINISH_TO_START` relation is a dependency well known in project management.
+It means that the `source` must be finished before work on the `target` can start.
+Therefore, the `source` is a predecessor of the `target`, and the `target` is a successor of the source.
+This relation can be created between any combination of tasks and milestones:
+** task ->  task
+** task -> milestone
+** milestone -> milestone
+** milestone -> task.
+* The `PART_OF` relation can be used to establish a subtask relation between a task and a milestone.
+The `source` must be a task, and the `target` must be a milestone.
+Other combinations of tasks and milestones are not allowed.
+Therefore, the only valid combination is:
+** task -> milestone
+
+
+
+[[create-relation]]
+=== Create relation
+
+Creates a relation of the specified `type` between a `source` and a `target`.
+
+[[create-relation-latest]]
+==== Latest API Version
+
+[[create-relation-request-latest]]
+===== Request
+
+A new relation is created with a `POST` request.
+
+The combination of relation `type`, `source` and `target` must be unique to avoid the creation of duplicates.
+
+====== Request fields
+
+include::{snippets}/relations/document-create-relation/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/relations/document-create-relation/http-request.adoc[]
+include::{snippets}/relations/document-create-relation/curl-request.adoc[]
+
+[[create-relation-response-latest]]
+===== Response
+
+Returns `201 Created` if the relation was created successfully.
+The created relation is returned as response body.
+
+Returns `400 Bad Request` if the client tried to create a duplicate relation, or if the request was malformed.
+
+====== Response fields
+
+include::{snippets}/relations/document-create-relation/response-fields.adoc[]
+
+====== Links
+
+include::{snippets}/relations/document-create-relation/links.adoc[]
+
+====== Example response
+
+include::{snippets}/relations/document-create-relation/http-response.adoc[]
+
+
+
+[[batch-create-relations]]
+=== Create multiple relations (Batch)
+
+Creates multiple relations at once.
+This operation is executed as a batch in a single, atomic transaction, i.e. either all creates succeed or none at all.
+
+[[batch-create-relation-latest]]
+==== Latest API Version
+
+[[batch-create-relation-request-latest]]
+===== Request
+
+A `POST` request is used to create the relations.
+
+The combination of relation `type`, `source` and `target` must be unique to avoid the creation of duplicates.
+
+====== Request fields
+
+include::{snippets}/relations/document-batch-create-relations/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/relations/document-batch-create-relations/http-request.adoc[]
+include::{snippets}/relations/document-batch-create-relations/curl-request.adoc[]
+
+[[batch-create-relation-response-latest]]
+===== Response
+
+The created relations are returned as response body.
+
+Returns `400 Bad Request` if the client tried to create a duplicate relation.
+
+====== Response fields
+
+include::{snippets}/relations/document-batch-create-relations/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/relations/document-batch-create-relations/http-response.adoc[]
+
+
+
+[[get-relation]]
+=== Get relation
+
+Retrieves the relation for the given id.
+
+[[get-relation-latest]]
+==== Latest API Version
+
+[[get-relation-request-latest]]
+===== Request
+
+A `GET` request is used to retrieve a relation.
+
+====== Path parameters
+
+include::{snippets}/relations/document-get-relation/path-parameters.adoc[]
+
+====== Example request
+
+include::{snippets}/relations/document-get-relation/http-request.adoc[]
+include::{snippets}/relations/document-get-relation/curl-request.adoc[]
+
+===== Response
+
+Returns the requested relation.
+
+====== Response fields
+
+include::{snippets}/relations/document-get-relation/response-fields.adoc[]
+
+====== Links
+
+include::{snippets}/relations/document-get-relation/links.adoc[]
+
+====== Example response
+
+include::{snippets}/relations/document-get-relation/http-response.adoc[]
+
+
+
+[[batch-get-relations]]
+=== Get multiple relations (Batch)
+
+Retrieves multiple relations for the given ids.
+
+[[batch-get-relations-latest]]
+==== Latest API Version
+
+[[batch-get-relations-request-latest]]
+===== Request
+
+A `POST` request is used to retrieve multiple relations.
+
+====== Path parameters
+
+include::{snippets}/relations/document-batch-get-relations/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/relations/document-batch-get-relations/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/relations/document-batch-get-relations/http-request.adoc[]
+include::{snippets}/relations/document-batch-get-relations/curl-request.adoc[]
+
+===== Response
+
+Returns the requested relations.
+
+====== Response fields
+
+include::{snippets}/relations/document-batch-get-relations/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/relations/document-batch-get-relations/http-response.adoc[]
+
+
+
+[[delete-relation]]
+=== Delete relation
+
+Deletes the relation with the given id.
+
+[[delete-relation-latest]]
+==== Latest API Version
+
+[[delete-relation-request-latest]]
+===== Request
+
+A `DELETE` request is used to delete a relation.
+
+====== Path parameters
+
+include::{snippets}/relations/document-delete-relation/path-parameters.adoc[]
+
+====== Example request
+
+include::{snippets}/relations/document-delete-relation/http-request.adoc[]
+include::{snippets}/relations/document-delete-relation/curl-request.adoc[]
+
+[[delete-relation-response-latest]]
+===== Response
+
+Returns `204 No Content`.
+
+====== Example response
+
+include::{snippets}/relations/document-delete-relation/http-response.adoc[]
+
+
+
+[[search-relations]]
+=== Search relations
+
+Search relations that satisfy given criteria.
+
+[[search-relations-latest]]
+==== Latest API Version
+
+[[search-relations-request-latest]]
+===== Request
+
+Use a `POST` request to get a page of relations.
+You can specify a set of (optional) filter criteria to only retrieve a subset of relations.
+
+A relation `r` will match the given filter criteria if:
+
+* the type of `r` is included in `types` (or if `types` is empty)
+* *and* if
+** the source of `r` is included in `sources`, *or*
+** the target of `r` is included in  `targets`.
+
+If both `sources` and `targets` are empty, all relations of the specified type will be returned.
+
+====== Path parameters
+
+include::{snippets}/relations/document-search-relations/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/relations/document-search-relations/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/relations/document-search-relations/http-request.adoc[]
+include::{snippets}/relations/document-search-relations/curl-request.adoc[]
+
+[[search-relations-response-latest]]
+===== Response
+
+The requested page is returned.
+
+====== Response fields
+
+include::{snippets}/relations/document-search-relations/response-fields.adoc[]
+
+====== Links
+
+include::{snippets}/relations/document-search-relations/links.adoc[]
+
+====== Example response
+
+include::{snippets}/relations/document-search-relations/http-response.adoc[]

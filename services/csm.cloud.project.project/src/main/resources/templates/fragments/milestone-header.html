@@ -1,0 +1,23 @@
+<!--
+  ~ *************************************************************************
+  ~  
+  ~  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+  ~  
+  ~ *************************************************************************
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<!--/*@thymesVar id="calendarCell" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.layout.CalendarCell"*/-->
+<td th:fragment="milestone-header-cell (calendarCell)" class="milestone-header"
+    th:colspan="${calendarCell.width} * 2"
+    th:rowspan="${calendarCell.height}">
+
+    <div th:text="${calendarCell.content.name}" class="milestone-header-name"></div>
+
+</td>
+
+</body>

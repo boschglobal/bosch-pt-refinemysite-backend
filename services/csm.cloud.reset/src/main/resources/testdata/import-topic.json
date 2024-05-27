@@ -1,0 +1,16 @@
+[
+  {
+    "id": "topic1",
+    "taskId": "task2",
+    "description": "Freie Beschreibung des 1. Problems der 2. Aufgabe",
+    "criticality": "CRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "topic2",
+    "taskId": "task2",
+    "description": "Freie Beschreibung des 2. Problems der 2. Aufgabe",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "ali"
+  }
+]

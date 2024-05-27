@@ -1,0 +1,147 @@
+"""
+Representation of a project in RefinemySite
+"""
+type ProjectPayloadV1 {
+
+    """
+    Unique identifier of the project
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    The name of the project
+    """
+    title: String!,
+
+    """
+    The date when the project starts
+    """
+    start: Date!,
+
+    """
+    The date when the project ends
+    """
+    end: Date!,
+
+    """
+    A number that can be assigned to the project
+    """
+    projectNumber: String!,
+
+    """
+    Optional client information
+    """
+    client: String,
+
+    """
+    Optional description
+    """
+    description: String,
+
+    """
+    Optional category
+    """
+    category: ProjectCategoryEnumPayloadV1,
+
+    """
+    Address where the project is planned/realized
+    """
+    projectAddress: ProjectAddressPayloadV1!,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+
+    """
+    Project crafts / disciplines
+    """
+    crafts: [ProjectCraftPayloadV1],
+
+    """
+    Project participants
+    """
+    participants: [ParticipantPayloadV1],
+
+    """
+    Optional work area list
+    """
+    workAreas: WorkAreaListPayloadV1,
+
+    """
+    Tasks
+    """
+    tasks: [TaskPayloadV1],
+
+    """
+    Header milestones
+    """
+    milestones: [MilestonePayloadV1],
+
+    """
+    Rfvs
+    """
+    rfvs: [RfvPayloadV1],
+
+    """
+    Constraints
+    """
+    constraints: [TaskConstraintPayloadV1],
+
+    """
+    Optional working day configuration
+    """
+    workDayConfiguration: WorkDayConfigurationPayloadV1
+}
+
+"""
+Project categories
+"""
+enum ProjectCategoryEnumPayloadV1 {
+
+    """
+    New Building
+    """
+    NEW_BUILDING,
+
+    """
+    Renovation
+    """
+    RENOVATION,
+
+    """
+    Reconstruction
+    """
+    RECONSTRUCTION,
+}
+
+"""
+Project address
+"""
+type ProjectAddressPayloadV1 {
+
+    """
+    Optional city name
+    """
+    city: String,
+
+    """
+    Optional house number
+    """
+    houseNumber: String,
+
+    """
+    Optional street name
+    """
+    street: String,
+
+    """
+    Optional zip code
+    """
+    zipCode: String,
+}

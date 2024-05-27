@@ -1,0 +1,93 @@
+[
+  {
+    "id": "project1-participant-ali",
+    "projectId": "project1",
+    "email": "smartsiteapp+ali@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-carlos",
+    "projectId": "project1",
+    "email": "smartsiteapp+carlos@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-eddie",
+    "projectId": "project1",
+    "email": "smartsiteapp+eddie@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-frank",
+    "projectId": "project1",
+    "role": "CR",
+    "email": "smartsiteapp+frank@gmail.com",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-jenny",
+    "projectId": "project1",
+    "email": "smartsiteapp+jenny@gmail.com",
+    "role": "CSM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4-participant-ali",
+    "projectId": "project4",
+    "email": "smartsiteapp+ali@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4-participant-carlos",
+    "projectId": "project4",
+    "email": "smartsiteapp+carlos@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4-participant-eddie",
+    "projectId": "project4",
+    "email": "smartsiteapp+eddie@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4-participant-frank",
+    "projectId": "project4",
+    "email": "smartsiteapp+frank@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4-participant-gustav",
+    "projectId": "project4",
+    "email": "smartsiteapp+gustav@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4-participant-hannah",
+    "projectId": "project4",
+    "email": "smartsiteapp+hannah@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4-participant-ingo",
+    "projectId": "project4",
+    "email": "smartsiteapp+ingo@gmail.com",
+    "role": "CSM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4-participant-jenny",
+    "projectId": "project4",
+    "email": "smartsiteapp+jenny@gmail.com",
+    "role": "CSM",
+    "createWithUserId": "daniel"
+  }
+]

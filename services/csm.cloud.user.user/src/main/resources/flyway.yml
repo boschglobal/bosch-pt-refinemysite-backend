@@ -1,0 +1,18 @@
+spring:
+  config:
+    activate:
+      on-profile: "!test"
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    generate-ddl: false
+  flyway:
+    enabled: true
+    validate-on-migrate: true
+    clean-on-validation-error: false
+    fail-on-missing-locations: true
+    encoding: UTF-8
+    sql-migration-prefix: V
+    sql-migration-separator: __
+    sql-migration-suffixes: .sql

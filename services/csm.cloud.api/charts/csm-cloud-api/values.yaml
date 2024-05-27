@@ -1,0 +1,39 @@
+# Default values for csm-cloud-api.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicas: 2
+maxStartUpTime: 120
+
+# Container resources
+resources:
+  requests:
+    memory: 1400Mi
+  limits:
+    memory: 2000Mi
+
+# Configuration for default ingress
+ingress:
+  proxyBodySize: 201m
+
+apiIngressPaths:
+- /graphql
+- /graphiql
+- /internal
+- /swagger
+- /swagger-ui
+- /timeline
+- /v1/versions
+- /login
+- /logout
+- /change-password
+- /oauth2
+- /profile
+- /signup
+- /health
+- /mobile
+- /favicon.ico
+appIngressPaths:
+- /api
+- /login
+- /oauth2

@@ -1,0 +1,81 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+See link:/internal/docs/projects/api-guide-project-context.html#_project_metrics[Project Documentation]
+
+[[project-statistics]]
+== Project Metrics
+Statistics and metrics for a given project.
+
+
+
+[[ungrouped-statistics]]
+=== Get ungrouped statistics
+Retrieves the statistics for the project with the given id.
+
+
+[[ungrouped-statistics-latest]]
+==== Latest API Version
+
+[[ungrouped-statistics-request-latest]]
+===== Request
+A `GET` request is used to retrieve project statistics for a given project identifier for the given date and duration.
+
+====== Path parameters
+include::{snippets}/project-statistics/document-get-project-statistics/path-parameters.adoc[]
+
+====== Query parameters
+include::{snippets}/project-statistics/document-get-project-statistics/query-parameters.adoc[]
+
+====== Example request
+include::{snippets}/project-statistics/document-get-project-statistics/http-request.adoc[]
+include::{snippets}/project-statistics/document-get-project-statistics/curl-request.adoc[]
+
+[[ungrouped-statistics-response-latest]]
+===== Response
+The ungrouped statistics are returned.
+
+====== Response fields
+include::{snippets}/project-statistics/document-get-project-statistics/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/project-statistics/document-get-project-statistics/http-response.adoc[]
+
+
+
+[[grouped-statistics]]
+=== Get statistics grouped by company and craft
+
+
+[[grouped-statistics-latest]]
+==== Latest API Version
+Retrieves the statistics grouped by company and craft for the project with the given id.
+
+[[grouped-statistics-request-latest]]
+===== Request
+A `GET` request is used to retrieve project statistics for a given project identifier for the given date and duration.
+
+====== Path parameters
+include::{snippets}/project-statistics/document-get-project-statistics-grouped/path-parameters.adoc[]
+
+====== Query parameters
+include::{snippets}/project-statistics/document-get-project-statistics-grouped/query-parameters.adoc[]
+
+====== Example request
+include::{snippets}/project-statistics/document-get-project-statistics-grouped/http-request.adoc[]
+include::{snippets}/project-statistics/document-get-project-statistics-grouped/curl-request.adoc[]
+
+[[grouped-statistics-response-latest]]
+===== Response
+The grouped statistics are returned.
+
+====== Response fields
+include::{snippets}/project-statistics/document-get-project-statistics-grouped/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/project-statistics/document-get-project-statistics-grouped/http-response.adoc[]

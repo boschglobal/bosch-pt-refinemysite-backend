@@ -1,0 +1,66 @@
+"""
+Representation of a working day configuration in RefinemySite
+"""
+type WorkDayConfigurationPayloadV1 {
+
+    """
+    Unique identifier of the project
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    Start of week
+    """
+    startOfWeek: DayEnumPayloadV1!,
+
+    """
+    List of working days
+    """
+    workingDays: [DayEnumPayloadV1],
+
+    """
+    List of holidays
+    """
+    holidays: [HolidayPayloadV1],
+
+    """
+    Allow work on non working days
+    """
+    allowWorkOnNonWorkingDays: Boolean,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}
+
+type HolidayPayloadV1 {
+
+    """
+    The name of the holiday
+    """
+    name: String!,
+
+    """
+    The date
+    """
+    date: Date!
+}
+
+"""
+Week day representation in RefinemySite
+"""
+enum DayEnumPayloadV1 {
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
+}

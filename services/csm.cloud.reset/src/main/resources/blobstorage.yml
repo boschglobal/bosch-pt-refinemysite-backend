@@ -1,0 +1,34 @@
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+custom:
+  blob-storage-user-images:
+    connection-string: ${csm-cloud-user-storage-account-connection-string}
+  blob-storage-project-images:
+    connection-string: ${csm-cloud-project-storage-account-connection-string}
+  blob-storage-project-downloads:
+    connection-string: ${csm-cloud-project-downloads-storage-account-connection-string}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: azure-blob-download
+custom:
+  blob-storage-test-data-download:
+    # this is being set as an environment variable locally
+    connection-string: ${csm-cloud-reset-storage-account-connection-string}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+custom:
+  blob-storage-user-images:
+    connection-string: "DefaultEndpointsProtocol=http;AccountName=userimagesaccount;AccountKey=dXNlcmltYWdlc2tleQ==;BlobEndpoint=http://127.0.0.1:10000/userimagesaccount;QueueEndpoint=http://127.0.0.1:10001/userimagesaccount;"
+  blob-storage-project-images:
+    connection-string: "DefaultEndpointsProtocol=http;AccountName=projectimagesaccount;AccountKey=cHJvamVjdGltYWdlc2tleQ==;BlobEndpoint=http://127.0.0.1:10000/projectimagesaccount;QueueEndpoint=http://127.0.0.1:10001/projectimagesaccount;"
+  blob-storage-project-downloads:
+    connection-string: "DefaultEndpointsProtocol=http;AccountName=projectdownloadsaccount;AccountKey=cHJvamVjdGRvd25sb2Fkc2tleQ==;BlobEndpoint=http://127.0.0.1:10000/projectdownloadsaccount;"

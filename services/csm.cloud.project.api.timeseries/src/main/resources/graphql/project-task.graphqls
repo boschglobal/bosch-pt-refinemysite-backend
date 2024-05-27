@@ -1,0 +1,188 @@
+"""
+Task
+"""
+type TaskPayloadV1 {
+
+    """
+    Unique identifier of the task
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    The name of the task
+    """
+    name: String!,
+
+    """
+    Optional description
+    """
+    description: String,
+
+    """
+    Optional location
+    """
+    location: String,
+
+    """
+    The craft who's working on the task
+    """
+    craft: ProjectCraftPayloadV1,
+
+    """
+    Optional task assignee
+    """
+    assignee: ParticipantPayloadV1,
+
+    """
+    Status
+    """
+    status: TaskStatusEnumPayloadV1!,
+
+    """
+    Last edit date
+    """
+    editDate: DateTime,
+
+    """
+    Optional working area
+    """
+    workArea: WorkAreaPayloadV1,
+
+    """
+    Optional schedule
+    """
+    schedule: TaskSchedulePayloadV1,
+
+    """
+    Day cards
+    """
+    dayCards: [DayCardPayloadV1],
+
+    """
+    Topics
+    """
+    topics: [TopicPayloadV1],
+
+    """
+    Optionally selected constraints by the user
+    """
+    constraints: TaskConstraintSelectionPayloadV1
+
+    """
+    List of predecessors of type milestone
+    """
+    predecessorMilestones: [ReferencedMilestonePayloadV1],
+
+    """
+    List of successors of type milestone
+    """
+    successorMilestones: [ReferencedMilestonePayloadV1],
+
+    """
+    List of predecessors of type task
+    """
+    predecessorTasks: [ReferencedTaskPayloadV1],
+
+    """
+    List of successors of type task
+    """
+    successorTasks: [ReferencedTaskPayloadV1],
+
+    """
+    List of milestones, the tasks is part of
+    """
+    milestones: [ReferencedMilestonePayloadV1],
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}
+
+"""
+A referenced task
+"""
+type ReferencedTaskPayloadV1 {
+
+    """
+    Unique identifier of the task
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    The name of the task
+    """
+    name: String!,
+
+    """
+    Optional description
+    """
+    description: String,
+
+    """
+    Optional location
+    """
+    location: String,
+
+    """
+    Status
+    """
+    status: TaskStatusEnumPayloadV1!,
+
+    """
+    Last edit date
+    """
+    editDate: DateTime,
+
+    """
+    The schedule between the referenced object and this task is critical
+    """
+    critical: Boolean,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}
+
+"""
+Task status
+"""
+enum TaskStatusEnumPayloadV1 {
+
+    """
+    Task is in status draft. Can be assigned or not.
+    """
+    DRAFT,
+
+    """
+    Task is assigned but not send
+    """
+    OPEN,
+
+    """
+    Task is assigned and in progress
+    """
+    IN_PROGRESS,
+
+    """
+    Task is finished by the craft / discipline,
+    but not yet accepted by the CSM / superintendent.
+    """
+    DONE,
+
+    """
+    The task is accepted by the CSM / superintendent
+    """
+    ACCEPTED,
+}

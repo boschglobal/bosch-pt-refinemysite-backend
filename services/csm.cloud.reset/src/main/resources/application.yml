@@ -1,0 +1,165 @@
+skip-invalid: false
+
+info:
+  app:
+    name: ${spring.application.name}
+
+spring:
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+  config:
+    import:
+      - classpath:actuator-common.yml
+      - classpath:blobstorage.yml
+      - classpath:datasource.yml
+      - classpath:kafka.yml
+      - classpath:logging.yml
+      - classpath:metrics-common.yml
+      - classpath:profiles.yml
+      - classpath:reset.yml
+      - classpath:server.yml
+      - classpath:topics.yml
+  threads:
+    virtual:
+      enabled: true
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+csm-cloud-company:
+  url: http://csm-cloud-company:8080/
+csm-cloud-project:
+  url: http://csm-cloud-project:8080/
+csm-cloud-user:
+  url: http://csm-cloud-user:8080/
+csm-cloud-feature-toggle:
+  url: http://csm-cloud-featuretoggle-core:8080/
+
+import.threads.max: 80
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+csm-app-admin-user: smartsiteapp+testadmin@gmail.com
+csm-app-admin-password: Smarttes#1
+skid-captcha-bypass-client-id: 18BB7808-C855-4970-AEE4-3CE6C54DD17D
+
+#You have to copy this information from Azure-Keyvault, eg. run the following command.
+#az keyvault secret show --vault-name ptcsmteamkv --name SingleKeyId-STAGE-ClientCredentials-Client | jq ".value"
+skid-captcha-bypass-client-secret:
+
+csm-cloud-company:
+  url: http://localhost:9030/
+csm-cloud-project:
+  url: http://localhost:8080/
+csm-cloud-user:
+  url: http://localhost:8010/
+csm-cloud-feature-toggle:
+  url: http://localhost:8083/
+
+import.threads.max: 40
+
+stage: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: idp-bosch-dev
+
+system:
+  users:
+    - id: 1
+      admin: false
+      announcement: false
+      identifier: c37da613-8e70-4003-9106-12412c9d2496
+      userId: SYSTEM
+      email: smartsiteapp+system@gmail.com
+      firstName: Smartsite
+      lastName: System
+      createdBy: c37da613-8e70-4003-9106-12412c9d2496
+      lastModifiedBy: c37da613-8e70-4003-9106-12412c9d2496
+      locale: en_GB
+      country: GB
+    - id: 2
+      admin: true
+      announcement: false
+      identifier: eefc637a-ed01-4354-b737-f200eb13763b
+      userId: 6c306460-2e26-4dda-adb4-1ebc490c51ae
+      email: smartsiteapp+testadmin@gmail.com
+      firstName: Smartsite
+      lastName: Admin
+      createdBy: eefc637a-ed01-4354-b737-f200eb13763b
+      lastModifiedBy: eefc637a-ed01-4354-b737-f200eb13763b
+      locale: en_GB
+      country: DE
+    - id: 3
+      admin: false
+      announcement: true
+      identifier: 35fa5881-d75f-ecd2-feac-72ee564542a9
+      userId: b9df0cee-f46c-4e9e-90f7-eef5d0ebae57
+      email: smartsiteapp+announcement@gmail.com
+      firstName: Smartsite
+      lastName: Announcement
+      createdBy: c37da613-8e70-4003-9106-12412c9d2496
+      lastModifiedBy: c37da613-8e70-4003-9106-12412c9d2496
+      locale: en_GB
+      country: DE
+
+---
+spring:
+  config:
+    activate:
+      on-profile: idp-bosch-prod
+
+system:
+  users:
+    - id: 1
+      admin: false
+      announcement: false
+      identifier: c37da613-8e70-4003-9106-12412c9d2496
+      userId: SYSTEM
+      email: smartsiteapp+system@gmail.com
+      firstName: Smartsite
+      lastName: System
+      createdBy: c37da613-8e70-4003-9106-12412c9d2496
+      lastModifiedBy: c37da613-8e70-4003-9106-12412c9d2496
+      locale: en_GB
+      country: GB
+    - id: 2
+      admin: true
+      announcement: false
+      identifier: 298d4eaa-bc30-4320-89d7-dedcd0a01aa3
+      userId: S-1-5-21-1937855695-3964793637-879644401-21025
+      email: smartsiteapp+admin@gmail.com
+      firstName: Smartsite
+      lastName: Admin
+      createdBy: 298d4eaa-bc30-4320-89d7-dedcd0a01aa3
+      lastModifiedBy: 298d4eaa-bc30-4320-89d7-dedcd0a01aa3
+      locale: en_GB
+      country: DE
+    - id: 3
+      admin: false
+      announcement: true
+      identifier: 35fa5881-d75f-ecd2-feac-72ee564542a9
+      userId: 5c24e3af-3779-476a-a08a-2c0ef9dae197
+      email: smartsiteapp+announcement@gmail.com
+      firstName: Smartsite
+      lastName: Announcement
+      createdBy: c37da613-8e70-4003-9106-12412c9d2496
+      lastModifiedBy: c37da613-8e70-4003-9106-12412c9d2496
+      locale: en_GB
+      country: DE

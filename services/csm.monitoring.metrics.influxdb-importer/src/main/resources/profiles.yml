@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    group:
+      local:
+      # no included profiles required
+      kubernetes:
+        - log-json
+      kafka-listener-disabled:
+        - kafka-bim-model-listener-disabled
+        - kafka-company-listener-disabled
+        - kafka-job-listener-disabled
+        - kafka-project-listener-disabled
+        - kafka-user-listener-disabled

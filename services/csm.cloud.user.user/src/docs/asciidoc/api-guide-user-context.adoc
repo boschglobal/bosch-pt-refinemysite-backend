@@ -1,0 +1,700 @@
+//////////////////////////////////////////
+ *****************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+ * *****************************************************************
+//////////////////////////////////////////
+
+= SmartSite User Context API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+A user in RefinemySite represents a person, who signed-up to work with RefinemySite.
+Since we are using Bosch CIAM for authentication, a user (in the sense of a person) first logs in at the Bosch CIAM server to get a valid OAuth2 token.
+This token is then used for further sign-up at RefinemySite.
+As long as the user has not signed-up with a valid token for RefinemySite, he cannot use RefinemySite.
+Therefore, all requests to our API will fail with a 403.
+
+We distinguish between the regular representation of the user resource and the current user representation.
+The latter one is used for the currently logged-in úser and restricts access to the general one is used by administration users.
+
+
+
+== Current User
+The current user endpoint is used to interact with the user in RefinemySite that corresponds to the user identified by the OAuth2 token retrieved from the Bosch CIAM server.
+It provides endpoints for sign-up / registration, for updates and to retrieve the current user.
+
+
+
+[[register-current-user]]
+=== Register current user
+
+[[register-current-user-latest]]
+==== Latest API version
+
+[[register-current-user-request-latest]]
+===== Request
+A `POST` request is used to register the current user for RefinemySite.
+If you try to register a user that already exists in RefinemySite, you will retrieve a 409.
+
+====== Request fields
+include::{snippets}/users/document-register-current-user/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/users/document-register-current-user/http-request.adoc[]
+include::{snippets}/users/document-register-current-user/curl-request.adoc[]
+
+[[register-current-user-response-latest]]
+===== Response
+The registered user is returned.
+
+====== Response fields
+include::{snippets}/users/document-register-current-user/response-fields.adoc[]
+
+====== Links
+include::{snippets}/users/document-register-current-user/links.adoc[]
+
+====== Example response
+include::{snippets}/users/document-register-current-user/http-response.adoc[]
+
+
+
+[[update-current-user]]
+=== Update current user
+
+[[update-current-user-latest]]
+==== Latest API version
+
+[[update-current-user-request-latest]]
+===== Request
+A `PUT` request is used to update the current user.
+
+====== Request fields
+include::{snippets}/users/document-update-current-user/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/users/document-update-current-user/http-request.adoc[]
+include::{snippets}/users/document-update-current-user/curl-request.adoc[]
+
+[[update-current-user-response-latest]]
+===== Response
+The updated user resource is returned.
+
+====== Response fields
+include::{snippets}/users/document-update-current-user/response-fields.adoc[]
+
+====== Links
+include::{snippets}/users/document-update-current-user/links.adoc[]
+
+====== Example response
+include::{snippets}/users/document-update-current-user/http-response.adoc[]
+
+
+
+[[get-current-user]]
+=== Get current user
+
+[[get-current-user-latest]]
+==== Latest API version
+
+[[get-current-user-request-latest]]
+===== Request
+A `GET` request is used to retrieve the current user.
+
+====== Example request
+include::{snippets}/users/document-get-current-user/http-request.adoc[]
+include::{snippets}/users/document-get-current-user/curl-request.adoc[]
+
+[[get-current-user-response-latest]]
+===== Response
+The current user resource is returned.
+
+====== Response fields
+include::{snippets}/users/document-get-current-user/response-fields.adoc[]
+
+====== Links
+include::{snippets}/users/document-get-current-user/links.adoc[]
+
+====== Example response
+include::{snippets}/users/document-get-current-user/http-response.adoc[]
+
+
+
+[[get-current-user-as-admin]]
+=== Get current user (when user is admin)
+
+[[get-current-user-as-admin-latest]]
+==== Latest API version
+
+[[get-current-user-as-admin-request-latest]]
+===== Request
+When a user is an admin user, the response contains two additional fields used by the admin UI.
+
+====== Example Request
+include::{snippets}/users/document-get-current-admin-user/http-request.adoc[]
+include::{snippets}/users/document-get-current-admin-user/curl-request.adoc[]
+
+[[get-current-user-as-admin-response-latest]]
+===== Response
+The user resource with the additional fields is returned.
+
+====== Response fields
+include::{snippets}/users/document-get-current-admin-user/response-fields.adoc[]
+
+====== Links
+include::{snippets}/users/document-get-current-admin-user/links.adoc[]
+
+==== Example response
+include::{snippets}/users/document-get-current-admin-user/http-response.adoc[]
+
+== Legal documents of current user
+
+[[get-documents]]
+=== List legal documents
+
+[[get-documents-latest]]
+==== Latest API version
+
+[[get-documents-request-latest]]
+===== Request
+
+A `GET` request is used to retrieve the latest version of legal documents for the specified client.
+
+====== Query parameters
+
+include::{snippets}/documents/document-get-documents/query-parameters.adoc[]
+
+====== Example request
+
+include::{snippets}/documents/document-get-documents/http-request.adoc[]
+include::{snippets}/documents/document-get-documents/curl-request.adoc[]
+
+[[get-documents-response-latest]]
+===== Response
+
+The latest version of legal documents for the specified client of the users country and locale is returned
+(country and locale as set in users profile).
+If no document for country and locale combination exists, the document of germany in english language is returned.
+
+====== Response fields
+
+include::{snippets}/documents/document-get-documents/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/documents/document-get-documents/http-response.adoc[]
+
+
+
+[[get-signup-documents]]
+=== List legal documents for registration
+
+[[get-signup-documents-latest]]
+==== Latest API version
+
+[[get-signup-documents-request-latest]]
+===== Request
+
+A `GET` request is used to retrieve the latest version of legal documents by country and locale for the specified client.
+
+====== Query parameters
+
+include::{snippets}/documents/document-get-signup-documents/query-parameters.adoc[]
+
+====== Example request
+
+include::{snippets}/documents/document-get-signup-documents/http-request.adoc[]
+include::{snippets}/documents/document-get-signup-documents/curl-request.adoc[]
+
+[[get-signup-documents-response-latest]]
+===== Response
+
+The latest version of legal documents for the specified client of the specified country and locale is returned.
+If no document for country and locale combination exists, the document of germany in english language is returned.
+
+====== Response fields
+
+include::{snippets}/documents/document-get-signup-documents/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/documents/document-get-signup-documents/http-response.adoc[]
+
+
+
+[[consent]]
+=== Consent to documents
+
+[[consent-latest]]
+==== Latest API version
+
+[[consent-request-latest]]
+===== Request
+
+A `POST` request is used to consent to one or more documents.
+
+====== Request fields
+
+include::{snippets}/documents/document-consent/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/documents/document-consent/http-request.adoc[]
+include::{snippets}/documents/document-consent/curl-request.adoc[]
+
+[[consent-response-latest]]
+===== Response
+
+Just status code 200 is returned if consenting succeeded.
+
+====== Example response
+
+include::{snippets}/documents/document-consent/http-response.adoc[]
+
+
+
+[[delay-consent]]
+=== Delay consent to document
+
+[[delay-consent-latest]]
+==== Latest API version
+
+[[delay-consent-request-latest]]
+===== Request
+
+A `POST` request is used to delay consent to all documents.
+
+====== Example request
+
+include::{snippets}/documents/document-delay-consent/http-request.adoc[]
+include::{snippets}/documents/document-delay-consent/curl-request.adoc[]
+
+[[delay-consent-response-latest]]
+===== Response
+
+Just status code 200 is returned if delaying consent succeeded.
+
+====== Example response
+
+include::{snippets}/documents/document-delay-consent/http-response.adoc[]
+
+
+
+== Users
+
+User resources are only accessible for admin users.
+
+[[set-user-roles]]
+=== Set user roles
+Admin permission can be granted / revoked to / from users to manage users, companies and projects.
+A separate user should be used as admin user because project permissions of an admin are restricted.
+
+[[set-user-roles-latest]]
+==== Latest API version
+
+[[set-user-roles-request-latest]]
+===== Request
+A `POST` request is used to set a user role.
+
+====== Path parameters
+include::{snippets}/users/document-set-user-roles/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/users/document-set-user-roles/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/users/document-set-user-roles/http-request.adoc[]
+include::{snippets}/users/document-set-user-roles/curl-request.adoc[]
+
+[[set-user-roles-response-latest]]
+===== Response
+The updated user is returned.
+
+====== Response fields
+include::{snippets}/users/document-set-user-roles/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/users/document-set-user-roles/http-response.adoc[]
+
+
+
+[[lock-user]]
+=== Lock user
+
+A user can be locked to deny access.
+
+[[lock-user-latest]]
+==== Latest API version
+
+[[lock-user-request-latest]]
+===== Request
+A `POST` request is used to lock a user.
+
+====== Path parameters
+include::{snippets}/users/document-lock-user/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/users/document-lock-user/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/users/document-lock-user/http-request.adoc[]
+include::{snippets}/users/document-lock-user/curl-request.adoc[]
+
+[[lock-user-response-latest]]
+===== Response
+The locked user is returned.
+
+====== Response fields
+include::{snippets}/users/document-lock-user/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/users/document-lock-user/http-response.adoc[]
+
+
+
+[[delete-user]]
+=== Delete user
+A user can be deletion by calling the delete endpoint with the user's identifier.
+
+[[delete-user-latest]]
+==== Latest API version
+
+[[delete-user-request-latest]]
+===== Request
+A `DELETE` request is used to delete a user.
+
+====== Path parameters
+include::{snippets}/users/document-delete-user/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/users/document-delete-user/http-request.adoc[]
+include::{snippets}/users/document-delete-user/curl-request.adoc[]
+
+[[delete-user-response-latest]]
+===== Response
+HTTP-Status 204 (No Content) is returned.
+
+====== Example response
+include::{snippets}/users/document-delete-user/http-response.adoc[]
+
+
+
+[[list-all-users]]
+=== List all users
+A list of users can be retrieved by the admin user.
+
+[[list-all-users-latest]]
+==== Latest API version
+
+[[list-all-users-request-latest]]
+===== Request
+A `GET` request is used to get the list of users.
+
+====== Example request
+include::{snippets}/users/document-get-users/http-request.adoc[]
+include::{snippets}/users/document-get-users/curl-request.adoc[]
+
+[[list-all-users-response-latest]]
+===== Response
+The list of users is returned.
+
+====== Response fields
+include::{snippets}/users/document-get-users/response-fields.adoc[]
+
+====== Links
+include::{snippets}/users/document-get-users/links.adoc[]
+
+====== Example response
+include::{snippets}/users/document-get-users/http-response.adoc[]
+
+
+
+[[get-user]]
+=== Get user
+A single user can be retrieved by calling this endpoint with the user's identifier.
+
+[[get-user-latest]]
+==== Latest API version
+
+[[get-user-request-latest]]
+===== Request
+A `GET` request is used to get the user by its user id.
+
+====== Path parameters
+include::{snippets}/users/document-get-user/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/users/document-get-user/http-request.adoc[]
+include::{snippets}/users/document-get-user/curl-request.adoc[]
+
+[[get-user-response-latest]]
+===== Response
+The user resource is returned.
+
+====== Response fields
+include::{snippets}/users/document-get-user/response-fields.adoc[]
+
+====== Links
+include::{snippets}/users/document-get-user/links.adoc[]
+
+====== Example response
+include::{snippets}/users/document-get-user/http-response.adoc[]
+
+
+
+[[user-suggestions]]
+=== User suggestions
+A list of user suggestions can be retrieved for a given search term.
+It is searched within the email, first and last name of the user.
+
+[[user-suggestions-latest]]
+==== Latest API version
+
+[[user-suggestions-request-latest]]
+===== Request
+A `POST` request is used to get suggestions.
+
+====== Query parameters
+include::{snippets}/users/document-suggest-users-latest/query-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/users/document-suggest-users-latest/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/users/document-suggest-users-latest/http-request.adoc[]
+include::{snippets}/users/document-suggest-users-latest/curl-request.adoc[]
+
+[[user-suggestions-response-latest]]
+===== Response
+The list of user suggestions is returned.
+
+====== Response fields
+include::{snippets}/users/document-suggest-users-latest/response-fields.adoc[]
+
+====== Links
+include::{snippets}/users/document-suggest-users-latest/links.adoc[]
+
+====== Example response
+include::{snippets}/users/document-suggest-users-latest/http-response.adoc[]
+
+
+
+== Profile Pictures
+Profile pictures can be accessed via the users endpoint.
+For each user there can be at most one profile picture stored.
+They are uploaded using HTTP multipart form-data with a POST request.
+In case the target user already has a profile picture, it will be replaced.
+
+
+
+[[save-own-profile-picture]]
+=== Save own picture
+Instead of using the endpoint above, one can set their own profile picture by using the "special user id" "current".
+
+[[save-own-profile-picture-latest]]
+==== Latest API version
+
+[[save-own-profile-picture-request-latest]]
+===== Request
+A `POST` request is used to store the profile picture of the current user.
+
+====== Request parts
+include::{snippets}/users/document-save-own-profile-picture/request-parts.adoc[]
+
+====== Example request
+include::{snippets}/users/document-save-own-profile-picture/http-request.adoc[]
+include::{snippets}/users/document-save-own-profile-picture/curl-request.adoc[]
+
+[[save-own-profile-picture-response-latest]]
+===== Response
+The saved profile picture resource is returned.
+
+====== Example response
+include::{snippets}/users/document-save-own-profile-picture/http-response.adoc[]
+
+
+
+[[save-own-profile-picture-with-identifier]]
+=== Save own picture with identifier
+This additional endpoint can be used to set the profile picture identifier client-side.
+Response fields and links are identical to the other endpoints.
+
+[[save-own-profile-picture-with-identifier-latest]]
+==== Latest API version
+
+[[save-own-profile-picture-with-identifier-request-latest]]
+===== Request
+A `POST` request is used to store the profile picture of the current user.
+
+====== Path parameters
+include::{snippets}/users/document-save-own-profile-picture-with-identifier/path-parameters.adoc[]
+
+====== Request parts
+include::{snippets}/users/document-save-own-profile-picture-with-identifier/request-parts.adoc[]
+
+====== Example request
+include::{snippets}/users/document-save-own-profile-picture-with-identifier/http-request.adoc[]
+include::{snippets}/users/document-save-own-profile-picture-with-identifier/curl-request.adoc[]
+
+[[save-own-profile-picture-with-identifier-response-latest]]
+===== Response
+The saved profile picture resource is returned.
+
+====== Example response
+include::{snippets}/users/document-save-own-profile-picture-with-identifier/http-response.adoc[]
+
+
+
+[[delete-profile-picture]]
+=== Delete picture
+DELETE request to delete a profile picture.
+One can either specify the user's identifier or the special value "current", which refers to the authenticated user.
+
+[[delete-profile-picture-latest]]
+==== Latest API version
+
+[[delete-profile-picture-request-latest]]
+===== Request
+A `DELETE` request is used to delete the profile picture of the user.
+
+====== Path parameters
+include::{snippets}/users/document-delete-profile-picture/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/users/document-delete-profile-picture/http-request.adoc[]
+include::{snippets}/users/document-delete-profile-picture/curl-request.adoc[]
+
+[[delete-profile-picture-response-latest]]
+===== Response
+
+====== Example response
+include::{snippets}/users/document-delete-profile-picture/http-response.adoc[]
+
+
+
+[[get-profile-picture-meta-data]]
+=== Get meta data
+Retrieving a profile picture's meta data can be done with a GET request.
+
+[[get-profile-picture-meta-data-latest]]
+==== Latest API version
+
+[[get-profile-picture-meta-data-request-latest]]
+===== Request
+A `GET` request is used to retrieve the meta data of the profile picture of the user.
+
+====== Path parameters
+include::{snippets}/users/document-find-someones-profile-picture/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/users/document-find-someones-profile-picture/http-request.adoc[]
+include::{snippets}/users/document-find-someones-profile-picture/curl-request.adoc[]
+
+[[get-profile-picture-meta-data-response-latest]]
+===== Response
+Profile picture's meta data is returned.
+
+====== Response fields
+include::{snippets}/users/document-find-someones-profile-picture/response-fields.adoc[]
+
+====== Links
+include::{snippets}/users/document-find-someones-profile-picture/links.adoc[]
+
+====== Example response
+include::{snippets}/users/document-find-someones-profile-picture/http-response.adoc[]
+
+
+
+[[get-own-profile-picture-meta-data]]
+=== Get own picture's meta data
+Retrieving the own picture's meta data can be done with a GET request, using the "special user identifier" "current".
+
+[[get-own-profile-picture-meta-data-latest]]
+==== Latest API version
+
+[[get-own-profile-picture-meta-data-request-latest]]
+===== Request
+A `GET` request is used to retrieve the meta data of the profile picture of the user.
+
+====== Example request
+include::{snippets}/users/document-find-own-profile-picture/http-request.adoc[]
+include::{snippets}/users/document-find-own-profile-picture/curl-request.adoc[]
+
+[[get-own-profile-picture-meta-data-response-latest]]
+===== Response
+Profile picture's meta data is returned.
+
+==== Response fields
+include::{snippets}/users/document-find-own-profile-picture/response-fields.adoc[]
+
+==== Links
+include::{snippets}/users/document-find-own-profile-picture/links.adoc[]
+
+==== Example response
+include::{snippets}/users/document-find-own-profile-picture/http-response.adoc[]
+
+
+
+[[get-own-profile-picture]]
+=== Get own picture (full/small)
+Retrieving own profile picture via GET request.
+Instead of "small" you can also retrieve "full", which is the maximum resolution.
+The profile picture identifier is part of the URL to facilitate caching.
+
+[[get-own-profile-picture-latest]]
+==== Latest API version
+
+[[get-own-profile-picture-request-latest]]
+===== Request
+A `GET` request is used to retrieve the data of the profile picture of the current user.
+
+====== Path parameters
+include::{snippets}/users/document-find-profile-picture-data/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/users/document-find-profile-picture-data/http-request.adoc[]
+include::{snippets}/users/document-find-profile-picture-data/curl-request.adoc[]
+
+[[get-own-profile-picture-response-latest]]
+===== Response
+HTTP-Status 302 (redirect) to the blob storage is returned.
+
+====== Example response
+include::{snippets}/users/document-find-profile-picture-data/http-response.adoc[]
+
+
+
+[[get-profile-picture]]
+=== Get picture (full/small)
+Retrieving full profile picture via GET request.
+Instead of "full" you can also retrieve "small", which is returns a scaled down resolution.
+
+[[get-profile-picture-latest]]
+==== Latest API version
+
+[[get-profile-picture-request-latest]]
+===== Request
+A `GET` request is used to retrieve the data of the profile picture of the user.
+
+====== Path parameters
+include::{snippets}/users/document-find-someones-profile-picture-data/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/users/document-find-someones-profile-picture-data/http-request.adoc[]
+include::{snippets}/users/document-find-someones-profile-picture-data/curl-request.adoc[]
+
+[[get-profile-picture-response-latest]]
+===== Response
+HTTP-Status 302 (redirect) to the blob storage is returned.
+
+==== Example response
+include::{snippets}/users/document-find-someones-profile-picture-data/http-response.adoc[]

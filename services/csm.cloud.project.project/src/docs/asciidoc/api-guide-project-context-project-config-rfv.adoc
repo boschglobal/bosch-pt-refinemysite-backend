@@ -1,0 +1,82 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[project-rfv]]
+== Reason for variance (Configuration)
+The following endpoints can be used to configure allowed reason for variance (rfv) that can be selected by users
+to indicate that a planned day card was not finished because of a specific reason.
+There are 10 default RFVs and 4 customizable ones. The default RFVs are activated by default,
+can be deactivated and re-activated.
+The 4 customizable RFVs can be renamed, activated, deactivated and reactivated.
+At least one RFV must be active.
+
+
+
+[[update-reason-for-variance]]
+=== Update reason for variance
+This endpoint can be used to customize reason for variance (RFV) of day cards and in the KPI section.
+
+[[update-reason-for-variance-latest]]
+==== Latest API Version
+
+[[update-reason-for-variance-request-latest]]
+===== Request
+A `PUT` request is used to update a RFV.
+
+====== Path parameters
+include::{snippets}/rfvs/document-update-rfv/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/rfvs/document-update-rfv/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/rfvs/document-update-rfv/http-request.adoc[]
+include::{snippets}/rfvs/document-update-rfv/curl-request.adoc[]
+
+[[update-reason-for-variance-response-latest]]
+===== Response
+The updated rfv resource is returned.
+
+====== Response fields
+include::{snippets}/rfvs/document-update-rfv/response-fields.adoc[]
+
+====== Links
+include::{snippets}/rfvs/document-update-rfv/links.adoc[]
+
+==== Example response
+include::{snippets}/rfvs/document-update-rfv/http-response.adoc[]
+
+
+
+[[get-reason-for-variances]]
+=== Get a list of reason for variances
+Get the list of reason for variances of the project with the specified identifier.
+
+[[get-reason-for-variances-latest]]
+==== Latest API Version
+
+[[get-reason-for-variances-request-latest]]
+===== Request
+A `GET` request is used to get a list of reasons for variance.
+
+====== Path parameters
+include::{snippets}/rfvs/document-find-rfvs/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/rfvs/document-find-rfvs/http-request.adoc[]
+include::{snippets}/rfvs/document-find-rfvs/curl-request.adoc[]
+
+[[get-reason-for-variances-response-latest]]
+===== Response
+A list of RFVs is returned.
+
+====== Response fields
+include::{snippets}/rfvs/document-find-rfvs/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/rfvs/document-find-rfvs/http-response.adoc[]

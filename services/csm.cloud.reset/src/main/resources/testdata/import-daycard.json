@@ -1,0 +1,47 @@
+[
+  {
+    "id": "daycard1",
+    "taskId": "task1",
+    "title": "Day Card Title",
+    "manpower": 5.5,
+    "date": 0,
+    "notes": "Day card notes",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "daycard4",
+    "taskId": "project4-task179",
+    "title": "Day Card Title",
+    "manpower": 2,
+    "date": 0,
+    "notes": "Day card notes",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "daycard2",
+    "taskId": "project4-task0",
+    "title": "Day Card Title",
+    "manpower": 3.5,
+    "date": 0,
+    "notes": "Day card notes",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "daycard5",
+    "taskId": "project4-task219",
+    "title": "Day Card Title",
+    "manpower": 5,
+    "date": 0,
+    "notes": "Day card notes",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "daycard3",
+    "taskId": "project4-task160",
+    "title": "Day Card Title",
+    "manpower": 1,
+    "date": 0,
+    "notes": "Day card notes",
+    "createWithUserId": "daniel"
+  }
+]

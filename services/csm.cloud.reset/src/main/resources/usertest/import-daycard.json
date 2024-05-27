@@ -1,0 +1,2577 @@
+[
+    {
+        "id": "project1_daycard31",
+        "taskId": "project1-task6",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 1,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard32",
+        "taskId": "project1-task6",
+        "title": "Schritt 1",
+        "manpower": 3,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard33",
+        "taskId": "project1-task6",
+        "title": "Schritt 2",
+        "manpower": 3,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard34",
+        "taskId": "project1-task6",
+        "title": "Schritt 3",
+        "manpower": 1,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard35",
+        "taskId": "project1-task6",
+        "title": "Schritt 4",
+        "manpower": 1,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard36",
+        "taskId": "project1-task6",
+        "title": "Schritt 5",
+        "manpower": 1,
+        "date": 7,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard37",
+        "taskId": "project1-task6",
+        "title": "Schritt 6",
+        "manpower": 1,
+        "date": 8,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard38",
+        "taskId": "project1-task6",
+        "title": "Schritt 7",
+        "manpower": 6,
+        "date": 9,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard39",
+        "taskId": "project1-task6",
+        "title": "Schritt 8",
+        "manpower": 4,
+        "date": 10,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard40",
+        "taskId": "project1-task6",
+        "title": "Schritt 9",
+        "manpower": 4,
+        "date": 11,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard11",
+        "taskId": "project4-task3",
+        "title": "prep + check",
+        "manpower": 17,
+        "date": 0,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard12",
+        "taskId": "project4-task3",
+        "title": "step 1",
+        "manpower": 20,
+        "date": 1,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard13",
+        "taskId": "project4-task3",
+        "title": "step 2",
+        "manpower": 30,
+        "date": 2,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard14",
+        "taskId": "project4-task3",
+        "title": "step 3",
+        "manpower": 50,
+        "date": 3,
+        "notes": "Notes",
+        "status": "NOTDONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard15",
+        "taskId": "project4-task3",
+        "title": "step 4",
+        "manpower": 4.5,
+        "date": 4,
+        "notes": "Notes",
+        "status": "NOTDONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project1_daycard56",
+        "taskId": "project1-task9",
+        "title": "Vorbereiten + Pr\u00fcfen",
+        "manpower": 2,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard57",
+        "taskId": "project1-task9",
+        "title": "Schritt 1",
+        "manpower": 5,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard58",
+        "taskId": "project1-task9",
+        "title": "Schritt 2",
+        "manpower": 7,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard59",
+        "taskId": "project1-task9",
+        "title": "Schritt 3",
+        "manpower": 7,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard60",
+        "taskId": "project1-task9",
+        "title": "Schritt 4",
+        "manpower": 7,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard21",
+        "taskId": "project4-task5",
+        "title": "prep + check",
+        "manpower": 24,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard22",
+        "taskId": "project4-task5",
+        "title": "step 1",
+        "manpower": 50,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard23",
+        "taskId": "project4-task5",
+        "title": "step 2",
+        "manpower": 44,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard24",
+        "taskId": "project4-task5",
+        "title": "step 3",
+        "manpower": 43,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard25",
+        "taskId": "project4-task5",
+        "title": "step 4",
+        "manpower": 12,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard65",
+        "taskId": "project4-task12",
+        "title": "prep + check",
+        "manpower": 0.5,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard66",
+        "taskId": "project4-task12",
+        "title": "step 1",
+        "manpower": 22.5,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard67",
+        "taskId": "project4-task12",
+        "title": "step 2",
+        "manpower": 34.5,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard68",
+        "taskId": "project4-task12",
+        "title": "step 3",
+        "manpower": 85.5,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard69",
+        "taskId": "project4-task12",
+        "title": "step 4",
+        "manpower": 23.5,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard1",
+        "taskId": "project2-task1",
+        "title": "prep + check",
+        "manpower": 33.5,
+        "date": 0,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard2",
+        "taskId": "project2-task1",
+        "title": "step 1",
+        "manpower": 20,
+        "date": 1,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard3",
+        "taskId": "project2-task1",
+        "title": "step 2",
+        "manpower": 20,
+        "date": 2,
+        "notes": "Notes",
+        "status": "NOTDONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard4",
+        "taskId": "project2-task1",
+        "title": "step 3",
+        "manpower": 23,
+        "date": 3,
+        "notes": "Notes",
+        "status": "NOTDONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard5",
+        "taskId": "project2-task1",
+        "title": "step 4",
+        "manpower": 13,
+        "date": 4,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project1_daycard41",
+        "taskId": "project1-task7",
+        "title": "Vorbereiten + Pr\u00fcfen",
+        "manpower": 2,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard42",
+        "taskId": "project1-task7",
+        "title": "Schritt 1",
+        "manpower": 2,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard43",
+        "taskId": "project1-task7",
+        "title": "Schritt 2",
+        "manpower": 1,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard44",
+        "taskId": "project1-task7",
+        "title": "Schritt 3",
+        "manpower": 1,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard45",
+        "taskId": "project1-task7",
+        "title": "Schritt 4",
+        "manpower": 1,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard60",
+        "taskId": "project4-task11",
+        "title": "step 1",
+        "manpower": 30.5,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard61",
+        "taskId": "project4-task11",
+        "title": "step 2",
+        "manpower": 20.5,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard62",
+        "taskId": "project4-task11",
+        "title": "step 3",
+        "manpower": 0.5,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard63",
+        "taskId": "project4-task11",
+        "title": "step 4",
+        "manpower": 33.5,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard64",
+        "taskId": "project4-task11",
+        "title": "step 5",
+        "manpower": 0.5,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project1_daycard6",
+        "taskId": "project1-task2",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 1,
+        "date": 0,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard7",
+        "taskId": "project1-task2",
+        "title": "Schritt 1",
+        "manpower": 3,
+        "date": 1,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard8",
+        "taskId": "project1-task2",
+        "title": "Schritt 2",
+        "manpower": 3,
+        "date": 2,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard9",
+        "taskId": "project1-task2",
+        "title": "Schritt 3",
+        "manpower": 1,
+        "date": 3,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard10",
+        "taskId": "project1-task2",
+        "title": "Schritt 4",
+        "manpower": 1,
+        "date": 4,
+        "notes": "Notiz",
+        "status": "NOTDONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard11",
+        "taskId": "project1-task2",
+        "title": "Schritt 5",
+        "manpower": 1,
+        "date": 7,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard12",
+        "taskId": "project1-task2",
+        "title": "Schritt 6",
+        "manpower": 2,
+        "date": 8,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard13",
+        "taskId": "project1-task2",
+        "title": "Schritt 7",
+        "manpower": 4,
+        "date": 9,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard14",
+        "taskId": "project1-task2",
+        "title": "Schritt 8",
+        "manpower": 1,
+        "date": 10,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard15",
+        "taskId": "project1-task2",
+        "title": "Schritt 9",
+        "manpower": 1,
+        "date": 11,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project2_daycard56",
+        "taskId": "project2-task9",
+        "title": "prep + check",
+        "manpower": 37,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard57",
+        "taskId": "project2-task9",
+        "title": "step 1",
+        "manpower": 35,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard58",
+        "taskId": "project2-task9",
+        "title": "step 2",
+        "manpower": 35,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard59",
+        "taskId": "project2-task9",
+        "title": "step 3",
+        "manpower": 35,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard60",
+        "taskId": "project2-task9",
+        "title": "step 4",
+        "manpower": 35,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard31",
+        "taskId": "project4-task7",
+        "title": "prep + check",
+        "manpower": 22,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard32",
+        "taskId": "project4-task7",
+        "title": "step 1",
+        "manpower": 12.5,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard33",
+        "taskId": "project4-task7",
+        "title": "step 2",
+        "manpower": 2,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard34",
+        "taskId": "project4-task7",
+        "title": "step 3",
+        "manpower": 3.5,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard35",
+        "taskId": "project4-task7",
+        "title": "step 4",
+        "manpower": 23,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard6",
+        "taskId": "project2-task2",
+        "title": "prep + check",
+        "manpower": 3,
+        "date": 0,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard7",
+        "taskId": "project2-task2",
+        "title": "step 1",
+        "manpower": 3,
+        "date": 1,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard8",
+        "taskId": "project2-task2",
+        "title": "step 2",
+        "manpower": 1,
+        "date": 2,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard9",
+        "taskId": "project2-task2",
+        "title": "step 3",
+        "manpower": 6,
+        "date": 3,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard10",
+        "taskId": "project2-task2",
+        "title": "step 4",
+        "manpower": 6,
+        "date": 4,
+        "notes": "Notes",
+        "status": "NOTDONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard11",
+        "taskId": "project2-task2",
+        "title": "step 5",
+        "manpower": 4,
+        "date": 7,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard12",
+        "taskId": "project2-task2",
+        "title": "step 6",
+        "manpower": 8,
+        "date": 8,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard13",
+        "taskId": "project2-task2",
+        "title": "step 7",
+        "manpower": 8,
+        "date": 9,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard14",
+        "taskId": "project2-task2",
+        "title": "step 8",
+        "manpower": 4,
+        "date": 10,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard15",
+        "taskId": "project2-task2",
+        "title": "step 9",
+        "manpower": 6,
+        "date": 11,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project3_daycard26",
+        "taskId": "project3-task6",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 2,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard27",
+        "taskId": "project3-task6",
+        "title": "Schritt 1",
+        "manpower": 2.5,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard28",
+        "taskId": "project3-task6",
+        "title": "Schritt 2",
+        "manpower": 2.5,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard29",
+        "taskId": "project3-task6",
+        "title": "Schritt 3",
+        "manpower": 3,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard30",
+        "taskId": "project3-task6",
+        "title": "Schritt 4",
+        "manpower": 4.5,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project2_daycard21",
+        "taskId": "project2-task4",
+        "title": "prep + check",
+        "manpower": 10,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard22",
+        "taskId": "project2-task4",
+        "title": "step 1",
+        "manpower": 9,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard23",
+        "taskId": "project2-task4",
+        "title": "step 2",
+        "manpower": 9,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard24",
+        "taskId": "project2-task4",
+        "title": "step 3",
+        "manpower": 2,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard25",
+        "taskId": "project2-task4",
+        "title": "step 4",
+        "manpower": 6,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project3_daycard6",
+        "taskId": "project3-task2",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 2,
+        "date": 0,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard7",
+        "taskId": "project3-task2",
+        "title": "Schritt 1",
+        "manpower": 4.5,
+        "date": 1,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard8",
+        "taskId": "project3-task2",
+        "title": "Schritt 2",
+        "manpower": 2,
+        "date": 2,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard9",
+        "taskId": "project3-task2",
+        "title": "Schritt 3",
+        "manpower": 2.5,
+        "date": 3,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard10",
+        "taskId": "project3-task2",
+        "title": "Schritt 4",
+        "manpower": 3,
+        "date": 4,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard1",
+        "taskId": "project4-task1",
+        "title": "prep + check",
+        "manpower": 4,
+        "date": 0,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard2",
+        "taskId": "project4-task1",
+        "title": "step 1",
+        "manpower": 2,
+        "date": 1,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard3",
+        "taskId": "project4-task1",
+        "title": "step 2",
+        "manpower": 8,
+        "date": 2,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard4",
+        "taskId": "project4-task1",
+        "title": "step 3",
+        "manpower": 9.5,
+        "date": 3,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard5",
+        "taskId": "project4-task1",
+        "title": "step 4",
+        "manpower": 11,
+        "date": 4,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project3_daycard63",
+        "taskId": "project3-task12",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 1.5,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard64",
+        "taskId": "project3-task12",
+        "title": "Schritt 1",
+        "manpower": 2.5,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard65",
+        "taskId": "project3-task12",
+        "title": "Schritt 2",
+        "manpower": 5,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard66",
+        "taskId": "project3-task12",
+        "title": "Schritt 3",
+        "manpower": 5,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard67",
+        "taskId": "project3-task12",
+        "title": "Schritt 4",
+        "manpower": 8,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard46",
+        "taskId": "project1-task8",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 2,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard47",
+        "taskId": "project1-task8",
+        "title": "Schritt 1",
+        "manpower": 3,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard48",
+        "taskId": "project1-task8",
+        "title": "Schritt 2",
+        "manpower": 1,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard49",
+        "taskId": "project1-task8",
+        "title": "Schritt 3",
+        "manpower": 1,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard50",
+        "taskId": "project1-task8",
+        "title": "Schritt 4",
+        "manpower": 4,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard51",
+        "taskId": "project1-task8",
+        "title": "Schritt 5",
+        "manpower": 1,
+        "date": 7,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard52",
+        "taskId": "project1-task8",
+        "title": "Schritt 6",
+        "manpower": 1,
+        "date": 8,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard53",
+        "taskId": "project1-task8",
+        "title": "Schritt 7",
+        "manpower": 1,
+        "date": 9,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard54",
+        "taskId": "project1-task8",
+        "title": "Schritt 8",
+        "manpower": 2,
+        "date": 10,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard55",
+        "taskId": "project1-task8",
+        "title": "Schritt 9",
+        "manpower": 2,
+        "date": 11,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard31",
+        "taskId": "project3-task7",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 1,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard32",
+        "taskId": "project3-task7",
+        "title": "Schritt 1",
+        "manpower": 1,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard33",
+        "taskId": "project3-task7",
+        "title": "Schritt 2",
+        "manpower": 4.5,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard34",
+        "taskId": "project3-task7",
+        "title": "Schritt 3",
+        "manpower": 2,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard35",
+        "taskId": "project3-task7",
+        "title": "Schritt 4",
+        "manpower": 1.5,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard46",
+        "taskId": "project4-task10",
+        "title": "prep + check",
+        "manpower": 1.5,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard47",
+        "taskId": "project4-task10",
+        "title": "step 1",
+        "manpower": 11.5,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard48",
+        "taskId": "project4-task10",
+        "title": "step 2",
+        "manpower": 11.5,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard49",
+        "taskId": "project4-task10",
+        "title": "step 3",
+        "manpower": 17.5,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard50",
+        "taskId": "project4-task10",
+        "title": "step 4",
+        "manpower": 17,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard51",
+        "taskId": "project4-task10",
+        "title": "step 5",
+        "manpower": 11,
+        "date": 5,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard53",
+        "taskId": "project4-task10",
+        "title": "step 7",
+        "manpower": 18,
+        "date": 7,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard54",
+        "taskId": "project4-task10",
+        "title": "step 8",
+        "manpower": 22,
+        "date": 8,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard55",
+        "taskId": "project4-task10",
+        "title": "step 9",
+        "manpower": 1.5,
+        "date": 9,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard56",
+        "taskId": "project4-task10",
+        "title": "step 10",
+        "manpower": 36,
+        "date": 10,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard57",
+        "taskId": "project4-task10",
+        "title": "step 11",
+        "manpower": 74.5,
+        "date": 11,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project3_daycard16",
+        "taskId": "project3-task4",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 2,
+        "date": 0,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard17",
+        "taskId": "project3-task4",
+        "title": "Schritt 1",
+        "manpower": 2,
+        "date": 1,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard18",
+        "taskId": "project3-task4",
+        "title": "Schritt 2",
+        "manpower": 1,
+        "date": 2,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard19",
+        "taskId": "project3-task4",
+        "title": "Schritt 3",
+        "manpower": 2.5,
+        "date": 3,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard20",
+        "taskId": "project3-task4",
+        "title": "Schritt 4",
+        "manpower": 4,
+        "date": 4,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard26",
+        "taskId": "project4-task6",
+        "title": "prep + check",
+        "manpower": 23.5,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard27",
+        "taskId": "project4-task6",
+        "title": "step 1",
+        "manpower": 23.5,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard28",
+        "taskId": "project4-task6",
+        "title": "step 2",
+        "manpower": 4,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard29",
+        "taskId": "project4-task6",
+        "title": "step 3",
+        "manpower": 5.5,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard30",
+        "taskId": "project4-task6",
+        "title": "step 4",
+        "manpower": 34,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project1_daycard26",
+        "taskId": "project1-task5",
+        "title": "Vorbereiten + Pr\u00fcfen",
+        "manpower": 3,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard27",
+        "taskId": "project1-task5",
+        "title": "Schritt 1",
+        "manpower": 1,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard28",
+        "taskId": "project1-task5",
+        "title": "Schritt 2",
+        "manpower": 1,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard29",
+        "taskId": "project1-task5",
+        "title": "Schritt 3",
+        "manpower": 1,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard30",
+        "taskId": "project1-task5",
+        "title": "Schritt 4",
+        "manpower": 1,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard68",
+        "taskId": "project3-task13",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 9,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard86",
+        "taskId": "project4-task16",
+        "title": "prep + check",
+        "manpower": 2.5,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard87",
+        "taskId": "project4-task16",
+        "title": "step 1",
+        "manpower": 4.5,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard88",
+        "taskId": "project4-task16",
+        "title": "step 2",
+        "manpower": 12.5,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard31",
+        "taskId": "project2-task6",
+        "title": "prep + check",
+        "manpower": 24,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard32",
+        "taskId": "project2-task6",
+        "title": "step 1",
+        "manpower": 20,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard33",
+        "taskId": "project2-task6",
+        "title": "step 2",
+        "manpower": 20,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard34",
+        "taskId": "project2-task6",
+        "title": "step 3",
+        "manpower": 20,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard35",
+        "taskId": "project2-task6",
+        "title": "step 4",
+        "manpower": 20,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard36",
+        "taskId": "project2-task6",
+        "title": "step 5",
+        "manpower": 17,
+        "date": 7,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard37",
+        "taskId": "project2-task6",
+        "title": "step 6",
+        "manpower": 17,
+        "date": 8,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard38",
+        "taskId": "project2-task6",
+        "title": "step 7",
+        "manpower": 15,
+        "date": 9,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard39",
+        "taskId": "project2-task6",
+        "title": "step 8",
+        "manpower": 15,
+        "date": 10,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard40",
+        "taskId": "project2-task6",
+        "title": "step 9",
+        "manpower": 15,
+        "date": 11,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project3_daycard36",
+        "taskId": "project3-task8",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 1,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard37",
+        "taskId": "project3-task8",
+        "title": "Schritt 1",
+        "manpower": 1,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard38",
+        "taskId": "project3-task8",
+        "title": "Schritt 2",
+        "manpower": 2,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard39",
+        "taskId": "project3-task8",
+        "title": "Schritt 3",
+        "manpower": 3,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard40",
+        "taskId": "project3-task8",
+        "title": "Schritt 4",
+        "manpower": 1.5,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard1",
+        "taskId": "project3-task1",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 1,
+        "date": 0,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard2",
+        "taskId": "project3-task1",
+        "title": "Schritt 1",
+        "manpower": 2.5,
+        "date": 1,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard3",
+        "taskId": "project3-task1",
+        "title": "Schritt 2",
+        "manpower": 2,
+        "date": 2,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard4",
+        "taskId": "project3-task1",
+        "title": "Schritt 3",
+        "manpower": 3,
+        "date": 3,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard5",
+        "taskId": "project3-task1",
+        "title": "Schritt 4",
+        "manpower": 1,
+        "date": 4,
+        "notes": "Notiz",
+        "status": "APPROVED",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project2_daycard16",
+        "taskId": "project2-task3",
+        "title": "prep + check",
+        "manpower": 17,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard17",
+        "taskId": "project2-task3",
+        "title": "step 1",
+        "manpower": 15,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard18",
+        "taskId": "project2-task3",
+        "title": "step 2",
+        "manpower": 13,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard19",
+        "taskId": "project2-task3",
+        "title": "step 3",
+        "manpower": 19,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard20",
+        "taskId": "project2-task3",
+        "title": "step 4",
+        "manpower": 15,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project3_daycard21",
+        "taskId": "project3-task5",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 1,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard22",
+        "taskId": "project3-task5",
+        "title": "Schritt 1",
+        "manpower": 1.5,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard23",
+        "taskId": "project3-task5",
+        "title": "Schritt 2",
+        "manpower": 3.5,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard24",
+        "taskId": "project3-task5",
+        "title": "Schritt 3",
+        "manpower": 2,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard80",
+        "taskId": "project3-task14",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 0.5,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard81",
+        "taskId": "project3-task14",
+        "title": "Schritt 1",
+        "manpower": 0.5,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard82",
+        "taskId": "project3-task14",
+        "title": "Schritt 2",
+        "manpower": 0.5,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard83",
+        "taskId": "project3-task14",
+        "title": "Schritt 3",
+        "manpower": 0.5,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard82",
+        "taskId": "project4-task14",
+        "title": "prep + check",
+        "manpower": 1.5,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard83",
+        "taskId": "project4-task14",
+        "title": "step 1",
+        "manpower": 5.5,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard84",
+        "taskId": "project4-task14",
+        "title": "step 2",
+        "manpower": 2.5,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard85",
+        "taskId": "project4-task14",
+        "title": "step 3",
+        "manpower": 10.5,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard6",
+        "taskId": "project4-task2",
+        "title": "prep + check",
+        "manpower": 19.5,
+        "date": 0,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard7",
+        "taskId": "project4-task2",
+        "title": "step 1",
+        "manpower": 2.5,
+        "date": 1,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard8",
+        "taskId": "project4-task2",
+        "title": "step 2",
+        "manpower": 7,
+        "date": 2,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard9",
+        "taskId": "project4-task2",
+        "title": "step 3",
+        "manpower": 9.5,
+        "date": 3,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard10",
+        "taskId": "project4-task2",
+        "title": "step 4",
+        "manpower": 10,
+        "date": 4,
+        "notes": "Notes",
+        "status": "APPROVED",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard41",
+        "taskId": "project2-task7",
+        "title": "prep + check",
+        "manpower": 38,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard42",
+        "taskId": "project2-task7",
+        "title": "step 1",
+        "manpower": 34,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard43",
+        "taskId": "project2-task7",
+        "title": "step 2",
+        "manpower": 34,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard44",
+        "taskId": "project2-task7",
+        "title": "step 3",
+        "manpower": 30,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard45",
+        "taskId": "project2-task7",
+        "title": "step 4",
+        "manpower": 30,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project1_daycard21",
+        "taskId": "project1-task4",
+        "title": "Vorbereiten + Pr\u00fcfen",
+        "manpower": 2,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard22",
+        "taskId": "project1-task4",
+        "title": "Schritt 1",
+        "manpower": 2,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard23",
+        "taskId": "project1-task4",
+        "title": "Schritt 2",
+        "manpower": 2,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard24",
+        "taskId": "project1-task4",
+        "title": "Schritt 3",
+        "manpower": 2,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard25",
+        "taskId": "project1-task4",
+        "title": "Schritt 4",
+        "manpower": 2,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard46",
+        "taskId": "project3-task10",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 1.5,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard47",
+        "taskId": "project3-task10",
+        "title": "Schritt 1",
+        "manpower": 1,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard48",
+        "taskId": "project3-task10",
+        "title": "Schritt 2",
+        "manpower": 2,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard49",
+        "taskId": "project3-task10",
+        "title": "Schritt 3",
+        "manpower": 4,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard50",
+        "taskId": "project3-task10",
+        "title": "Schritt 4",
+        "manpower": 6,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard51",
+        "taskId": "project3-task10",
+        "title": "Schritt 5",
+        "manpower": 8,
+        "date": 5,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard52",
+        "taskId": "project3-task10",
+        "title": "Schritt 6",
+        "manpower": 10,
+        "date": 7,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard53",
+        "taskId": "project3-task10",
+        "title": "Schritt 7",
+        "manpower": 10.5,
+        "date": 8,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard54",
+        "taskId": "project3-task10",
+        "title": "Schritt 8",
+        "manpower": 2,
+        "date": 9,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard55",
+        "taskId": "project3-task10",
+        "title": "Schritt 9",
+        "manpower": 20,
+        "date": 10,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard56",
+        "taskId": "project3-task10",
+        "title": "Schritt 10",
+        "manpower": 2.5,
+        "date": 11,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard57",
+        "taskId": "project3-task10",
+        "title": "Schritt 11",
+        "manpower": 5,
+        "date": 6,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard16",
+        "taskId": "project1-task3",
+        "title": "Vorbereiten + Pr\u00fcfen",
+        "manpower": 2,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard17",
+        "taskId": "project1-task3",
+        "title": "Schritt 1",
+        "manpower": 1,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard18",
+        "taskId": "project1-task3",
+        "title": "Schritt 2",
+        "manpower": 1,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard19",
+        "taskId": "project1-task3",
+        "title": "Schritt 3",
+        "manpower": 2,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard20",
+        "taskId": "project1-task3",
+        "title": "Schritt 4",
+        "manpower": 4,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard41",
+        "taskId": "project3-task9",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 2,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard42",
+        "taskId": "project3-task9",
+        "title": "Schritt 1",
+        "manpower": 2.5,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard43",
+        "taskId": "project3-task9",
+        "title": "Schritt 2",
+        "manpower": 2.5,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard44",
+        "taskId": "project3-task9",
+        "title": "Schritt 3",
+        "manpower": 3,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard45",
+        "taskId": "project3-task9",
+        "title": "Schritt 4",
+        "manpower": 1,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard41",
+        "taskId": "project4-task9",
+        "title": "prep + check",
+        "manpower": 33.5,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard42",
+        "taskId": "project4-task9",
+        "title": "step 1",
+        "manpower": 2,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard43",
+        "taskId": "project4-task9",
+        "title": "step 2",
+        "manpower": 2.5,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard44",
+        "taskId": "project4-task9",
+        "title": "step 3",
+        "manpower": 1.5,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard45",
+        "taskId": "project4-task9",
+        "title": "step 4",
+        "manpower": 34,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard26",
+        "taskId": "project2-task5",
+        "title": "prep + check",
+        "manpower": 19,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard27",
+        "taskId": "project2-task5",
+        "title": "step 1",
+        "manpower": 19,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard28",
+        "taskId": "project2-task5",
+        "title": "step 2",
+        "manpower": 10,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard29",
+        "taskId": "project2-task5",
+        "title": "step 3",
+        "manpower": 23,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard30",
+        "taskId": "project2-task5",
+        "title": "step 4",
+        "manpower": 20,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project3_daycard58",
+        "taskId": "project3-task11",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 4.5,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard59",
+        "taskId": "project3-task11",
+        "title": "Schritt 1",
+        "manpower": 4,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard60",
+        "taskId": "project3-task11",
+        "title": "Schritt 2",
+        "manpower": 4,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard61",
+        "taskId": "project3-task11",
+        "title": "Schritt 3",
+        "manpower": 6,
+        "date": 3,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard62",
+        "taskId": "project3-task11",
+        "title": "Schritt 4",
+        "manpower": 18,
+        "date": 4,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard1",
+        "taskId": "project1-task1",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 1,
+        "date": 0,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard2",
+        "taskId": "project1-task1",
+        "title": "Schritt 1",
+        "manpower": 2,
+        "date": 1,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard3",
+        "taskId": "project1-task1",
+        "title": "Schritt 2",
+        "manpower": 2,
+        "date": 2,
+        "notes": "Notiz",
+        "status": "NOTDONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard4",
+        "taskId": "project1-task1",
+        "title": "Schritt 3",
+        "manpower": 1,
+        "date": 3,
+        "notes": "Notiz",
+        "status": "NOTDONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project1_daycard5",
+        "taskId": "project1-task1",
+        "title": "Schritt 4",
+        "manpower": 1,
+        "date": 4,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project4_daycard70",
+        "taskId": "project4-task13",
+        "title": "prep + check",
+        "manpower": 55.5,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard71",
+        "taskId": "project4-task13",
+        "title": "step 1",
+        "manpower": 38.5,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard72",
+        "taskId": "project4-task13",
+        "title": "step 2",
+        "manpower": 39,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard73",
+        "taskId": "project4-task13",
+        "title": "step 3",
+        "manpower": 2,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard74",
+        "taskId": "project4-task13",
+        "title": "step 4",
+        "manpower": 1,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard75",
+        "taskId": "project4-task13",
+        "title": "step 5",
+        "manpower": 0.5,
+        "date": 5,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard76",
+        "taskId": "project4-task13",
+        "title": "step 6",
+        "manpower": 3.5,
+        "date": 6,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard77",
+        "taskId": "project4-task13",
+        "title": "step 7",
+        "manpower": 1.5,
+        "date": 7,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard78",
+        "taskId": "project4-task13",
+        "title": "step 8",
+        "manpower": 4.5,
+        "date": 8,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard79",
+        "taskId": "project4-task13",
+        "title": "step 9",
+        "manpower": 9,
+        "date": 9,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard80",
+        "taskId": "project4-task13",
+        "title": "step 10",
+        "manpower": 25,
+        "date": 10,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard81",
+        "taskId": "project4-task13",
+        "title": "step 11",
+        "manpower": 12.5,
+        "date": 11,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard36",
+        "taskId": "project4-task8",
+        "title": "prep + check",
+        "manpower": 11.5,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard37",
+        "taskId": "project4-task8",
+        "title": "step 1",
+        "manpower": 2,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard38",
+        "taskId": "project4-task8",
+        "title": "step 2",
+        "manpower": 1,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard39",
+        "taskId": "project4-task8",
+        "title": "step 3",
+        "manpower": 16,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard40",
+        "taskId": "project4-task8",
+        "title": "step 4",
+        "manpower": 27,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard16",
+        "taskId": "project4-task4",
+        "title": "prep + check",
+        "manpower": 11,
+        "date": 0,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard17",
+        "taskId": "project4-task4",
+        "title": "step 1",
+        "manpower": 11.5,
+        "date": 1,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard18",
+        "taskId": "project4-task4",
+        "title": "step 2",
+        "manpower": 30,
+        "date": 2,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard19",
+        "taskId": "project4-task4",
+        "title": "step 3",
+        "manpower": 13,
+        "date": 3,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project4_daycard20",
+        "taskId": "project4-task4",
+        "title": "step 4",
+        "manpower": 20,
+        "date": 4,
+        "notes": "Notes",
+        "status": "DONE",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project3_daycard11",
+        "taskId": "project3-task3",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 4,
+        "date": 0,
+        "notes": "Notiz",
+        "status": "DONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard12",
+        "taskId": "project3-task3",
+        "title": "Schritt 1",
+        "manpower": 2.5,
+        "date": 1,
+        "notes": "Notiz",
+        "status": "NOTDONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard13",
+        "taskId": "project3-task3",
+        "title": "Schritt 2",
+        "manpower": 3,
+        "date": 2,
+        "notes": "Notiz",
+        "status": "NOTDONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard14",
+        "taskId": "project3-task3",
+        "title": "Schritt 3",
+        "manpower": 1.5,
+        "date": 3,
+        "notes": "Notiz",
+        "status": "NOTDONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard15",
+        "taskId": "project3-task3",
+        "title": "Schritt 4",
+        "manpower": 1,
+        "date": 4,
+        "notes": "Notiz",
+        "status": "NOTDONE",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard84",
+        "taskId": "project3-task16",
+        "title": "Pr\u00fcfen + Vorbereiten",
+        "manpower": 4,
+        "date": 0,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard85",
+        "taskId": "project3-task16",
+        "title": "Schritt 1",
+        "manpower": 10.5,
+        "date": 1,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project3_daycard86",
+        "taskId": "project3-task16",
+        "title": "Schritt 2",
+        "manpower": 18,
+        "date": 2,
+        "notes": "Notiz",
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "project2_daycard46",
+        "taskId": "project2-task8",
+        "title": "prep + check",
+        "manpower": 10,
+        "date": 0,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard47",
+        "taskId": "project2-task8",
+        "title": "step 1",
+        "manpower": 12,
+        "date": 1,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard48",
+        "taskId": "project2-task8",
+        "title": "step 2",
+        "manpower": 14,
+        "date": 2,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard49",
+        "taskId": "project2-task8",
+        "title": "step 3",
+        "manpower": 14,
+        "date": 3,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard50",
+        "taskId": "project2-task8",
+        "title": "step 4",
+        "manpower": 10,
+        "date": 4,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard51",
+        "taskId": "project2-task8",
+        "title": "step 6",
+        "manpower": 10,
+        "date": 7,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard52",
+        "taskId": "project2-task8",
+        "title": "step 7",
+        "manpower": 10,
+        "date": 8,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard53",
+        "taskId": "project2-task8",
+        "title": "step 8",
+        "manpower": 10,
+        "date": 9,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard54",
+        "taskId": "project2-task8",
+        "title": "step 9",
+        "manpower": 10,
+        "date": 10,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "project2_daycard55",
+        "taskId": "project2-task8",
+        "title": "step 10",
+        "manpower": 10,
+        "date": 11,
+        "notes": "Notes",
+        "createWithUserId": "anne"
+    }
+]

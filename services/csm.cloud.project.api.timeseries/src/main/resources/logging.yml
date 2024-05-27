@@ -1,0 +1,37 @@
+logging:
+  level:
+    ROOT: warn
+    # Log save and materialization events
+    # com.bosch.pt.csm: debug
+    com.bosch.pt.csm.cloud:
+      common.security.CustomAuthenticationEntryPoint: info
+      projectmanagement:
+        ProjectTimeSeriesApplication: info
+        ProjectTimeSeriesApplicationKt: info
+        # application.config.CacheEventLogger: debug
+        application.security.SmartsiteWebResponseExceptionTranslator: info
+        common.facade.rest.ErrorController: info
+    org:
+      apache.kafka.clients.consumer.internals.Fetcher: error
+      springframework:
+        boot:
+          context: info
+          web.embedded.tomcat.GracefulShutdown: info
+        cloud.config: debug
+        kafka.core.KafkaAdmin: info
+        web.filter.CommonsRequestLoggingFilter: debug
+        web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: error
+        # Log mongo db queries
+        # data.mongodb.core.MongoTemplate: DEBUG
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  level:
+    org:
+      mongodb.driver.protocol: info

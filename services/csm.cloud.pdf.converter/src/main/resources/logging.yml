@@ -1,0 +1,23 @@
+logging:
+  level:
+    ROOT: warn
+    com.bosch.pt.csm.cloud.pdf:
+      PdfConverterApplicationKt: info
+      application.config.ShutdownConfig: info
+      common.facade.rest.ErrorController: info
+    org:
+      apache.kafka.clients.consumer.internals.Fetcher: error
+      springframework:
+        boot:
+          context: info
+        web.filter.CommonsRequestLoggingFilter: debug
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  level:
+    com.bosch.pt.csm.cloud.pdf.converter.service.ConversionService: trace

@@ -1,0 +1,62 @@
+server:
+  tomcat:
+    threads:
+      max: 20
+    mbeanregistry:
+      enabled: true # enable the mbean registry to get tomcat metrics via micrometer
+
+custom:
+  shutdown:
+    timeout-seconds: 10
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local-user
+
+custom:
+  shutdown:
+    timeout-seconds: 0
+
+server:
+  port: 8040
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local-company
+
+custom:
+  shutdown:
+    timeout-seconds: 0
+
+server:
+  port: 8042
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local-project
+
+custom:
+  shutdown:
+    timeout-seconds: 0
+
+server:
+  port: 8041
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local-featuretoggle
+
+custom:
+  shutdown:
+    timeout-seconds: 0
+
+server:
+  port: 8043

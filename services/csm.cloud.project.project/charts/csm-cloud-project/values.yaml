@@ -1,0 +1,12 @@
+# Default values for csm-cloud-project.
+# Declare variables to be passed into your templates.
+
+replicas: 2
+maxStartUpTime: 500
+
+# container resources
+resources:
+  requests:
+    memory: "2250Mi"
+  limits:
+    memory: "2750Mi"

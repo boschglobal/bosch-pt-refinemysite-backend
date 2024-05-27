@@ -1,0 +1,7 @@
+kafka:
+  broker:
+    saslMechanism: PLAIN
+    securityProtocol: SASL_SSL
+  topic:
+    upload:
+      replicationFactor: 2

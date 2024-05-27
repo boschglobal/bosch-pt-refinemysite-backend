@@ -1,0 +1,201 @@
+/*
+ * ************************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+ *
+ * ************************************************************************
+ */
+
+
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+import com.github.jk1.license.render.InventoryHtmlReportRenderer
+
+buildscript {
+    ext {
+        csmCloudBimAvroVersion = "2.1.0"
+        csmCloudCommonCoreVersion = "12.0.0"
+        csmCloudCommonKafkaVersion = "4.0.0"
+        csmCloudCompanyAvroVersion = "10.0.0"
+        csmCloudJobAvroVersion = "6.0.0"
+        csmCloudProjectAvroVersion = "15.0.0"
+        csmCloudUserAvroVersion = "11.0.0"
+        detektVersion = "${externalCatalog.versions.detekt.get()}"
+        mavenAzureArtifact = {
+            credentials {
+                username "AZURE_ARTIFACTS"
+                password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "$azureArtifactsGradleAccessToken"
+            }
+            url "https://pkgs.dev.azure.com/pt-iot/_packaging/Artifacts/maven/v1"
+        }
+        springBootVersion = "${externalCatalog.versions.springBoot.get()}"
+        springCloudVersion = "${externalCatalog.versions.springCloud.get()}"
+    }
+}
+
+plugins {
+    id "java"
+    id "maven-publish"
+
+    alias(externalCatalog.plugins.dependencyLicenseReport)
+    alias(externalCatalog.plugins.detekt)
+    alias(externalCatalog.plugins.docker)
+    alias(externalCatalog.plugins.gitProperties)
+    alias(externalCatalog.plugins.kotlinJvm)
+    alias(externalCatalog.plugins.kotlinPluginSpring)
+    alias(externalCatalog.plugins.owaspDependencyCheck)
+    alias(externalCatalog.plugins.springBoot)
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
+// Configurations in alphabetical order
+
+bootJar {
+    archiveBaseName = project.name
+}
+
+bootRun {
+    systemProperties = System.properties
+}
+
+dependencies {
+    implementation platform("com.bosch.pt:csm.cloud.dependency.bom-external:${gradle.externalBomVersion}")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+    implementation platform("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
+
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+
+    implementation("com.bosch.pt:csm.cloud.bim.avro:$csmCloudBimAvroVersion")
+    implementation("com.bosch.pt:csm.cloud.common.core:$csmCloudCommonCoreVersion")
+    implementation("com.bosch.pt:csm.cloud.common.kafka:$csmCloudCommonKafkaVersion")
+    implementation("com.bosch.pt:csm.cloud.company.avro:$csmCloudCompanyAvroVersion")
+    implementation("com.bosch.pt:csm.cloud.job.avro:$csmCloudJobAvroVersion")
+    implementation("com.bosch.pt:csm.cloud.project.avro:$csmCloudProjectAvroVersion")
+    implementation("com.bosch.pt:csm.cloud.user.avro:$csmCloudUserAvroVersion")
+
+    implementation("com.datadoghq:dd-trace-api")
+
+    implementation("io.confluent:kafka-avro-serializer")
+    implementation("io.micrometer:micrometer-core")
+    implementation("io.micrometer:micrometer-registry-statsd")
+    implementation("org.apache.kafka:kafka-clients")
+    implementation("org.flywaydb:flyway-core")
+
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation("org.postgresql:postgresql")
+
+    implementation("org.springframework.boot:spring-boot-configuration-processor")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc") {
+        exclude group: "org.apache.tomcat", module: "tomcat-jdbc"
+    }
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.cloud:spring-cloud-starter-bootstrap")
+    implementation("org.springframework.cloud:spring-cloud-starter-kubernetes-client-config") {
+        exclude group: "com.vaadin.external.google", module: "android-json"
+    }
+    implementation("org.springframework.kafka:spring-kafka")
+    implementation("org.springframework.retry:spring-retry")
+}
+
+dependencyCheck {
+    analyzers {
+        assemblyEnabled = false
+        nugetconfEnabled = false
+        nuspecEnabled = false
+    }
+    failBuildOnCVSS = 11
+    formats = ["HTML", "XML"]
+    // A list of configurations to exclude
+    // configurations.each { println it.name }
+    skipConfigurations = [
+            "asciidoctor",
+            "compileOnly",
+            "compileClasspath",
+            "detekt",
+            "detektPlugins",
+            "developmentOnly",
+            "docker",
+            "jacocoAgent",
+            "jacocoAnt",
+            "kaptTest",
+            "testAnnotationProcessor",
+            "testApi",
+            "testApiDependenciesMetadata",
+            "testCompile",
+            "testCompileClasspath",
+            "testCompileOnly",
+            "testCompileOnlyDependenciesMetadata",
+            "testImplementation",
+            "testImplementationDependenciesMetadata",
+            "testKotlinScriptDef",
+            "testKotlinScriptDefExtensions",
+            "testRuntime",
+            "testRuntimeClasspath",
+            "testRuntimeOnly",
+            "testRuntimeOnlyDependenciesMetadata"
+    ]
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config = files("config/detekt-config.yml")
+    input = files("src/main/kotlin", "src/test/kotlin")
+}
+
+dockerPrepare {
+    dependsOn bootJar
+}
+
+docker {
+    buildArgs(["JAR_FILE": "${bootJar.archiveFileName.get()}"])
+    files bootJar.archiveFile.get()
+    name "ptcsmacr.azurecr.io/com.bosch.pt/csm.monitoring.metrics.influxdb-importer:$version"
+}
+
+jar {
+    // Disable plain jar creation
+    enabled = false
+}
+
+licenseReport {
+    excludeGroups = ["com.bosch.pt"]
+    filters = [new LicenseBundleNormalizer()]
+    renderers = [new InventoryHtmlReportRenderer()]
+}
+
+publishing {
+    publications {
+        jar(MavenPublication) {
+            artifact bootJar
+            artifactId = "csm.monitoring.metrics.influxdb-importer"
+            from components.java
+            groupId = "com.bosch.pt"
+        }
+    }
+
+    repositories {
+        maven mavenAzureArtifact
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://packages.confluent.io/maven/" }
+    maven mavenAzureArtifact
+}
+
+springBoot {
+    buildInfo()
+}
+
+def isLocal = !project.hasProperty("BuildReason") || BuildReason.isEmpty()
+def isMergeBranch = project.hasProperty("SourceBranchName") && !SourceBranchName.isEmpty() && "merge" == SourceBranchName
+def isIntegrationBranch = project.hasProperty("SourceBranchName") && !SourceBranchName.isEmpty() && "integration" == SourceBranchName
+if (isLocal || isMergeBranch || isIntegrationBranch) {
+    check.dependsOn dependencyCheckAnalyze
+}
+version='1.0.0'
+group='com.bosch.pt'

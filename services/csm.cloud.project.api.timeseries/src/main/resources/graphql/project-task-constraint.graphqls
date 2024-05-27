@@ -1,0 +1,36 @@
+"""
+Task constraint
+"""
+type TaskConstraintPayloadV1 {
+
+    """
+    Unique identifier of the constraint
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    The key type (i.e. technical identifier)
+    """
+    key: String!,
+
+    """
+    Name translated to the language requested
+    in the `Accept-Language` HTTP-Header (default: English)
+    """
+    name: String!,
+
+    """
+    Constraint is activated in the current project
+    """
+    active: Boolean!,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime
+}

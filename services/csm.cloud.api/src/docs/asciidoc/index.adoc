@@ -1,0 +1,234 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2022
+*
+**************************************************************************
+//////////////////////////////////////////
+
+= RefinemySite API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+:sectlinks:
+:numbered: ''
+:docinfo: shared
+
+
+[[overview]]
+== Overview
+
+The RefinemySite API provides a versioned RESTFul service.
+The API uses level 3 (hypermedia controls) of the
+http://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model].
+
+All body payloads (requests and responses) are in JSON format.
+
+[[overview-versioning]]
+We version the API using prefixes on the routes like /v1 or /v2. Every context has its own API in the sense that it is versioned on its own.
+Therefore, we have the following main APIs:
+
+- User API
+- Company API
+- Project API
+
+We further have the following, smaller APIs.
+They are subject for restructuring going forward:
+
+- Announcement API
+- Craft API
+- Event API
+
+Whenever we introduce a breaking change on a route of the APIs, we create a new version.
+In other words, a new API version means a breaking change.
+Non-breaking (and therewith compatible changes) are introduced with the current version.
+This includes, for example additional fields in responses, additional, optional fields in requests etc.
+
+When introducing a new version, all routes that have not changed, are also available in this new version.
+Clients can and should therefore upgrade to a new version of an API for all routes they are using of this API.
+
+[[overview-http-verbs]]
+=== HTTP verbs
+
+The RefinemySite REST API tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource or trigger one time actions. This is also used for some search endpoints in case that many parameters are required for the search.
+
+| `PUT`
+| Used to update an existing resource, excluding partial updates
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+=== HTTP status codes
+
+The RefinemySite REST API tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `204 No Content`
+| An update to an existing resource has been applied successfully
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+| `401 Unauthorized`
+| The request requires authentication.
+
+| `403 Forbidden`
+| The request requires an authorized role/permission.
+
+| `404 Not Found`
+| The requested resource did not exist
+
+| `405 Method Not Allowed`
+| API called with invalid HTTP verb (e.g. 'GET' instead of 'PUT')
+
+| `409 Conflict`
+| Update of resource not possible as resource was already updated or deleted by another transaction.
+
+| `412 Precondition Failed`
+| Resource can not be updated because the provided version is outdated.
+
+| `500 Internal Server Error`
+| Server reported an internal error during processing of API call. For security reasons no further details are
+provided here
+|===
+
+[[overview-headers]]
+=== Headers
+
+Every request must include the following request header(s):
+
+|===
+| Name | Description
+
+| Accept
+| The MIME Types of the media that the client is willing to process. Supported values are currently 'application/hal+json;charset=UTF-8' or 'application/json;charset=UTF-8' and sometimes 'application/pdf' for pdf exporting endpoints.
+
+| Accept-Language
+| Indicates the language preference of the user. Supported values are currently 'en' or 'de'.
+
+| Authorization
+| Required for authentication to backend services. Must contain a bearer token in JWT format.
+|===
+
+Every response has the following response header(s):
+
+|===
+| Name | Description
+
+| Content-Type
+| The Content-Type of the payload, 'application/hal+json;charset=UTF-8', 'application/json;charset=UTF-8' or 'application/pdf'
+|===
+
+[[overview-pagination-and-sorting]]
+=== Pagination and Sorting
+
+Various list / search endpoints return a list of items.
+These lists are typically paged.
+As a consumer of the API, you can specify certain parameters to control the page request.
+The following table describes the standard query parameters used for pagination and sorting.
+These are not explicitly described again in the further documentation.
+
+|===
+| Query Parameter Name | Description | Example
+
+| Size
+| The number of items returned in one page
+| ...&size=50
+
+| Page
+| The number of the page to be returned. Used to browse from page to page.
+| ...&page=3
+
+| Sort
+| A list of attributes used to sort the result. Each operation specifies a list of supported attributes for sorting.
+Not supported attributes are ignored by the API. To specify the sorting direction, you can add "asc" or "desc" for each
+attribute.
+| ...&sort=name,asc (sorting by attribute name ascending)
+
+...&sort=name,asc&sort=email,desc (sorting by attribute name ascending first and email descending secon)
+|===
+
+[[overview-hypermedia]]
+=== Hypermedia
+
+The RefinemySite REST API uses hypermedia and resources include links to other resources in their responses.
+Responses are in http://stateless.co/hal_specification.html[Hypertext Application
+from resource to resource.
+Language (HAL)] format.
+Links can be found beneath the `_links` key.
+Users of the API should not create URIs themselves, instead they should use the above-described links to navigate
+
+All provided primary and sub resources of RefinemySite REST API are described in the following sections.
+
+[[resources]]
+== Resources
+
+=== link:/internal/docs/bim-model/api-guide-bim-model.html[BIM model API]
+
+Refer to link:/internal/docs/bim-model/api-guide-bim-model.html[BIM model API Guide] for more information.
+
+=== link:/internal/docs/companies/api-guide-company-context.html[Company API]
+
+Refer to link:/internal/docs/companies/api-guide-company-context.html[Company API Guide] for more information.
+
+=== link:/internal/docs/features/api-guide-feature-context.html[Feature Toggle API]
+
+Refer to link:/internal/docs/features/api-guide-feature-context.html[Feature Toggle API Guide] for more information.
+
+=== link:/internal/docs/users/api-guide-crafts.html[Craft API]
+
+Refer to link:/internal/docs/users/api-guide-crafts.html[Craft API Guide] for more information.
+
+=== link:/internal/docs/events/api-guide-events.html[Events API]
+
+Refer to link:/internal/docs/events/api-guide-events.html[Events API Guide] for more information.
+
+=== link:/internal/docs/projects/api-guide-project-context.html[Project API]
+
+Refer to link:/internal/docs/projects/api-guide-project-context.html[Project API Guide] for more information.
+
+=== link:/internal/docs/users/api-guide-user-context.html[User API]
+
+Refer to link:/internal/docs/users/api-guide-user-context.html[User API Guide] for more information.
+
+=== link:/internal/docs/users/api-guide-documents.html[Legal documents administration API]
+
+Refer to link:/internal/docs/users/api-guide-documents.html[Legal documents administration API Guide] for more information.
+
+=== link:/internal/docs/users/api-guide-announcements.html[Announcement API]
+
+Refer to link:/internal/docs/users/api-guide-announcements.html[Announcement API Guide] for more information.
+
+=== link:/internal/docs/jobs/api-guide-jobs.html[Jobs API]
+
+Refer to link:/internal/docs/jobs/api-guide-jobs.html[Job API Guide] for more information.
+
+=== link:/internal/docs/supported-api-versions.html[Supported API versions]
+
+Refer to link:/internal/docs/supported-api-versions.html[Supported API Versions] for more information.
+
+=== link:/internal/docs/mobile-version.html[Mobile version]
+
+Refer to link:/internal/docs/mobile-version.html[Mobile Version] for more information.

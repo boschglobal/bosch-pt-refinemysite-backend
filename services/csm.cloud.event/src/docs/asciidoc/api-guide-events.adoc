@@ -1,0 +1,65 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2017
+*
+**************************************************************************
+//////////////////////////////////////////
+
+Refer to link:/internal/docs/index.html[Smartsite API Guide Overview] for general API information.
+
+== Events
+
+Smartsite keeps track of events that are changing an object (like a project, task, topic, etc.) A client can
+subscribe to these events to be informed about modifications.
+
+There are currently two types of live-updates - modification and notification events. Modification events are events
+that are generated for all project participants when project related objects (like a project, task, topic, etc.) are
+modified.
+Notification live-updates are events that are generated for directly referenced users, for example an event for an
+assigned participant of a task.
+
+To subscribe to live-updates a Server-Sent-Event (SSE) HTTP endpoint is available. Only one connection from a client is
+necessary since all events are sent through the same connection. It is possible to connect with multiple devices of the
+same user.
+
+For notifications, there are live-updates and the notifications itself. Notifications are opposed to their live-updates
+persistent with a limited life time (~30 days) and can be repeatedly loaded separately via
+link:/internal/docs/projects/notifications/api-guide-notifications.html[REST].
+
+[[resources-live-updates]]
+=== Subscribe to live-update events
+
+Server-Sent-Events can be received with a normal HTTP connection. The connection is endless and heartbeat events are
+sent every 5 seconds by the server to keep the connection open and test if the client is still online.
+
+When the connection terminates because of connection issues, the client has to ensure that the connection is
+re-established to continue receiving data.
+
+At the moment live-update events for modifications and notifications are sent through the connection. Live update
+events are not stored on the backend. All events that occur while a client is disconnected are dropped and will not be
+delivered after (re-) connecting.
+
+A live update event consists of an event type and event data: +
+`event:<event-type>` where the value `<event-type>` specifies that the type of the event. Possible values are:
+`update` and `notification` currently. +
+`data:<event-data>` where the value `<event-data>` consists of a json object.
+Modification events are messages with references to the modified object (e.g. a day card), the project (the day card
+belongs to) and the event cause.
+Notification events contain a timestamp representing the time new notifications were added the last time for the
+requesting user.
+
+==== Request
+
+A `GET` request is used to subscribe to the event endpoint.
+
+include::{snippets}/events/get-events/http-request.adoc[]
+
+include::{snippets}/events/get-events/curl-request.adoc[]
+
+==== Example response
+
+The example response shows a heartbeat event (event:hb) a modification live-update event for a topic that was
+created (event:update) and a notification live-update (event:notification).
+
+include::{snippets}/events/get-events/http-response.adoc[]

@@ -1,0 +1,127 @@
+[
+  {
+    "id": "userAttachment1",
+    "userId": "ali",
+    "path": "attachments/profile-picture-ali.jpg"
+  },
+  {
+    "id": "userAttachment2",
+    "userId": "anne",
+    "path": "attachments/profile-picture-anne.jpg"
+  },
+  {
+    "id": "userAttachment3",
+    "userId": "armin",
+    "path": "attachments/profile-picture-armin.jpg"
+  },
+  {
+    "id": "userAttachment4",
+    "userId": "bob",
+    "path": "attachments/profile-picture-bob.png"
+  },
+  {
+    "id": "userAttachment5",
+    "userId": "bruno",
+    "path": "attachments/profile-picture-bruno.jpeg"
+  },
+  {
+    "id": "userAttachment6",
+    "userId": "carlos",
+    "path": "attachments/profile-picture-carlos.jpg"
+  },
+  {
+    "id": "userAttachment7",
+    "userId": "cindy",
+    "path": "attachments/profile-picture-cindy.jpg"
+  },
+  {
+    "id": "userAttachment8",
+    "userId": "daniel",
+    "path": "attachments/profile-picture-daniel.jpg"
+  },
+  {
+    "id": "userAttachment9",
+    "userId": "eddie",
+    "path": "attachments/profile-picture-eddie.jpg"
+  },
+  {
+    "id": "userAttachment10",
+    "userId": "frank",
+    "path": "attachments/profile-picture-frank.jpg"
+  },
+  {
+    "id": "userAttachment11",
+    "userId": "groot",
+    "path": "attachments/profile-picture-groot.jpeg"
+  },
+  {
+    "id": "userAttachment12",
+    "userId": "gustav",
+    "path": "attachments/profile-picture-gustav.jpg"
+  },
+  {
+    "id": "userAttachment13",
+    "userId": "hannah",
+    "path": "attachments/profile-picture-hannah.jpg"
+  },
+  {
+    "id": "userAttachment14",
+    "userId": "ingo",
+    "path": "attachments/profile-picture-ingo.jpg"
+  },
+  {
+    "id": "userAttachment15",
+    "userId": "jenny",
+    "path": "attachments/profile-picture-jenny.jpg"
+  },
+  {
+    "id": "userAttachment16",
+    "userId": "jong",
+    "path": "attachments/profile-picture-jong.png"
+  },
+  {
+    "id": "userAttachment17",
+    "userId": "leal",
+    "path": "attachments/profile-picture-leal.png"
+  },
+  {
+    "id": "userAttachment18",
+    "userId": "leonardo",
+    "path": "attachments/profile-picture-leonardo.jpeg"
+  },
+  {
+    "id": "userAttachment19",
+    "userId": "maduro",
+    "path": "attachments/profile-picture-maduro.png"
+  },
+  {
+    "id": "userAttachment20",
+    "userId": "pablo",
+    "path": "attachments/profile-picture-pablo.jpeg"
+  },
+  {
+    "id": "userAttachment21",
+    "userId": "pinto",
+    "path": "attachments/profile-picture-pinto.jpeg"
+  },
+  {
+    "id": "userAttachment22",
+    "userId": "roberto",
+    "path": "attachments/profile-picture-roberto.png"
+  },
+  {
+    "id": "userAttachment23",
+    "userId": "sheila",
+    "path": "attachments/profile-picture-sheila.png"
+  },
+  {
+    "id": "userAttachment24",
+    "userId": "vandelay",
+    "path": "attachments/profile-picture-vandelay.png"
+  },
+  {
+    "id": "userAttachment25",
+    "userId": "vieira",
+    "path": "attachments/profile-picture-vieira.png"
+  }
+]

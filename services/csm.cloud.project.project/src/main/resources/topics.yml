@@ -1,0 +1,153 @@
+custom:
+  kafka:
+    bindings:
+      job-command:
+        configuration:
+          partitions: 2
+      project:
+        configuration:
+          properties:
+            retention.ms: -1
+      project-delete:
+        configuration:
+          properties:
+            # 7 days
+            retention.ms: 604800000
+      project-invitation:
+        configuration:
+          properties:
+            retention.ms: -1
+            cleanup.policy: compact
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  kafka:
+    bindings:
+      company:
+        kafkaTopic: ${kafka-topic-company}
+      craft:
+        kafkaTopic: ${kafka-topic-craft}
+      feature:
+        kafkaTopic: ${kafka-topic-featuretoggle}
+      image:
+        kafkaTopic: ${kafka-topic-image-scale}
+      job-command:
+        kafkaTopic: ${kafka-topic-job-command}
+      job-event:
+        kafkaTopic: ${kafka-topic-job-event}
+      project:
+        kafkaTopic: ${kafka-topic-project}
+        configuration:
+          properties:
+            min.insync.replicas: 2
+      project-delete:
+        kafkaTopic: ${kafka-topic-project-delete}
+        configuration:
+          properties:
+            min.insync.replicas: 2
+      project-invitation:
+        kafkaTopic: ${kafka-topic-project-invitation}
+        configuration:
+          properties:
+            delete.retention.ms: 604800000
+            max.compaction.lag.ms: 604800000
+            min.compaction.lag.ms: 0
+            min.insync.replicas: 2
+            segment.ms: 604800000
+      user:
+        kafkaTopic: ${kafka-topic-user}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: staging
+
+custom:
+  kafka:
+    bindings:
+      project:
+        configuration:
+          partitions: 2
+      project-delete:
+        configuration:
+          partitions: 1
+      project-invitation:
+        configuration:
+          partitions: 1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+
+custom:
+  kafka:
+    bindings:
+      project:
+        configuration:
+          partitions: 18
+      project-delete:
+        configuration:
+          partitions: 3
+      project-invitation:
+        configuration:
+          partitions: 6
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local || test
+
+custom:
+  kafka:
+    bindings:
+      feature:
+        kafkaTopic: "csm.local.featuretogglemanagement.featuretoggle"
+      image:
+        kafkaTopic: "csm.local.image.scale"
+      job-command:
+        kafkaTopic: "csm.local.job.command"
+      job-event:
+        kafkaTopic: "csm.local.job.event"
+      company:
+        kafkaTopic: "csm.local.companymanagement.company"
+      craft:
+        kafkaTopic: "csm.local.referencedata.craft"
+      project:
+        kafkaTopic: "csm.local.projectmanagement.project"
+        configuration:
+          partitions: 2
+          # The local kafka cluster has only one broker node at the moment.
+          replication: 1
+          properties:
+            min.insync.replicas: 1
+      project-delete:
+        kafkaTopic: "csm.local.projectmanagement.project.delete"
+        configuration:
+          partitions: 2
+          # The local kafka cluster has only one broker node at the moment.
+          replication: 1
+          properties:
+            min.insync.replicas: 1
+      project-invitation:
+        kafkaTopic: "csm.local.projectmanagement.project.invitation"
+        configuration:
+          partitions: 1
+          # The local kafka cluster has only one broker node at the moment.
+          replication: 1
+          properties:
+            delete.retention.ms: 10000
+            max.compaction.lag.ms: 10000
+            min.compaction.lag.ms: 0
+            min.insync.replicas: 1
+            segment.ms: 10000
+      user:
+        kafkaTopic: "csm.local.usermanagement.user"

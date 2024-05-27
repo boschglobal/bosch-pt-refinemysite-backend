@@ -1,0 +1,62 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        # Debug GlobalCorsProperties to check properties
+        # Available when the method is entered the second time
+        corsConfigurations:
+          '[/**]':
+            allowCredentials: true
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - "accept"
+              - "accept-encoding"
+              - "accept-language"
+              - "authorization"
+              - "cache-control"
+              - "cookie"
+              - "content-type"
+              - "connection"
+              - "dnt"
+              - "if-match"
+              - "host"
+              - "origin"
+              - "pragma"
+              - "referer"
+              - "upgrade-insecure-requests"
+              - "user-agent"
+---
+spring:
+  config:
+    activate:
+      on-profile: "cors-origin-all"
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "${web.ui.url}"
+              - "${admin.web.ui.url}"
+              - "https://localhost:8000"
+              - "http://localhost:8000"
+              - "https://localhost:8001"
+              - "http://localhost:8001"
+---
+spring:
+  config:
+    activate:
+      on-profile: "cors-origin-restricted"
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "${web.ui.url}"
+              - "${admin.web.ui.url}"

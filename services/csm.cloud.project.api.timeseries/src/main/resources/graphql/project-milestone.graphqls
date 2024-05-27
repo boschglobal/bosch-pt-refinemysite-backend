@@ -1,0 +1,153 @@
+"""
+Milestone
+"""
+type MilestonePayloadV1 {
+
+    """
+    Unique identifier of the milestone
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    Name
+    """
+    name: String!,
+
+    """
+    The type of the milestone
+    """
+    type: MilestoneTypeEnumPayloadV1!,
+
+    """
+    The date of the milestone
+    """
+    date: Date!,
+
+    """
+    The milestone is global (displayed in the top row)
+    """
+    global: Boolean!,
+
+    """
+    Optional description
+    """
+    description: String,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+
+    """
+    Optional craft
+    """
+    craft: ProjectCraftPayloadV1,
+
+    """
+    Optional working area
+    """
+    workArea: WorkAreaPayloadV1,
+
+    """
+    List of tasks that need to be finished before the milestone is reached
+    """
+    requiredTasks: [ReferencedTaskPayloadV1],
+
+    """
+    List of predecessors of type milestone
+    """
+    predecessorMilestones: [ReferencedMilestonePayloadV1],
+
+    """
+    List of successors of type milestone
+    """
+    successorMilestones: [ReferencedMilestonePayloadV1],
+
+    """
+    List of predecessors of type task
+    """
+    predecessorTasks: [ReferencedTaskPayloadV1],
+
+    """
+    List of successors of type task
+    """
+    successorTasks: [ReferencedTaskPayloadV1],
+}
+
+"""
+A referenced milestone
+"""
+type ReferencedMilestonePayloadV1 {
+
+    """
+    Unique identifier of the milestone
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    Name
+    """
+    name: String!,
+
+    """
+    The type of the milestone
+    """
+    type: MilestoneTypeEnumPayloadV1!,
+
+    """
+    The date of the milestone
+    """
+    date: Date!,
+
+    """
+    The milestone is global (displayed in the top row)
+    """
+    global: Boolean!,
+
+    """
+    Optional description
+    """
+    description: String,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+
+    """
+    The schedule between the referenced object and this task is critical
+    """
+    critical: Boolean,
+}
+
+"""
+Enumeration of milestone types
+"""
+enum MilestoneTypeEnumPayloadV1 {
+
+    """
+    The milestone is associated with a craft
+    """
+    CRAFT,
+
+    """
+    Investors milestone
+    """
+    INVESTOR,
+
+    """
+    Project milestone
+    """
+    PROJECT
+
+}

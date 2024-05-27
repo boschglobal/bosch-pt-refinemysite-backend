@@ -1,0 +1,354 @@
+[
+  {
+    "id": "21a2c2d3-791b-a68a-32cc-d803ecc59196",
+    "projectId": "bosch",
+    "name": "ALG",
+    "color": "#8901a2",
+    "etag": 0,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "eff72150-bc67-673b-9187-3cf90442c1e3",
+    "projectId": "bosch",
+    "name": "Aufzug",
+    "color": "#f87f0a",
+    "etag": 1,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "5f859442-a5af-c331-b8a6-d8ed3c07c7e6",
+    "projectId": "bosch",
+    "name": "BMA, ELA",
+    "color": "#868686",
+    "etag": 2,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "6abb3094-d58b-49c4-170f-24a32e2703ac",
+    "projectId": "bosch",
+    "name": "Bauheizung",
+    "color": "#006249",
+    "etag": 3,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "3065a0bd-3fc1-a214-9039-771676cbcfc9",
+    "projectId": "bosch",
+    "name": "Baustrom",
+    "color": "#c96819",
+    "etag": 4,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "0897b696-ac87-2bc0-bb39-1ffb347399fc",
+    "projectId": "bosch",
+    "name": "Beschichtung",
+    "color": "#50237f",
+    "etag": 5,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "826ef621-6fdd-4697-a7a9-11335711a3b0",
+    "projectId": "bosch",
+    "name": "Blechfassade",
+    "color": "#c384a1",
+    "etag": 6,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "64157b5f-07b1-7da7-0e23-8883cff6c628",
+    "projectId": "bosch",
+    "name": "Bodenbeläge",
+    "color": "#b90276",
+    "etag": 7,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "586af89a-ff30-be64-7feb-0934122a4c5d",
+    "projectId": "bosch",
+    "name": "Brandschutz",
+    "color": "#896a43",
+    "etag": 8,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "09fffb79-6132-c051-99c2-bdc1df0ca532",
+    "projectId": "bosch",
+    "name": "Dachabdichtung",
+    "color": "#859425",
+    "etag": 9,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "f8baa9f7-2fee-3bfb-d439-34c689ae8795",
+    "projectId": "bosch",
+    "name": "Druckluft",
+    "color": "#b90276",
+    "etag": 10,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "eb160de1-de89-d905-8fcb-0b968dbbbd68",
+    "projectId": "bosch",
+    "name": "Elektro",
+    "color": "#d9c200",
+    "etag": 11,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "65b9eea6-e1cc-6bb9-f0cd-2a47751a186f",
+    "projectId": "bosch",
+    "name": "Erdbauarbeiten",
+    "color": "#a05de7",
+    "etag": 12,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "a3566d63-32ee-6dc7-3c82-9c6bb6d2b6b9",
+    "projectId": "bosch",
+    "name": "Estrich",
+    "color": "#9d4461",
+    "etag": 13,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "a39caeac-ef76-c41c-fcb7-51d0b8b796d0",
+    "projectId": "bosch",
+    "name": "FB Brandschutz",
+    "color": "#f87f0a",
+    "etag": 14,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "eebc6a70-4a88-135b-3270-531a626cc01b",
+    "projectId": "bosch",
+    "name": "Fassadenbau",
+    "color": "#b99363",
+    "etag": 15,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "1df9c33e-e816-e62d-487b-8d21e76abd0a",
+    "projectId": "bosch",
+    "name": "Fliesen",
+    "color": "#f5a100",
+    "etag": 16,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "dc13ae10-d947-b28b-1c58-528318689793",
+    "projectId": "bosch",
+    "name": "Gerüstbau",
+    "color": "#0bd3d1",
+    "etag": 17,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "422a68e0-8b90-9aad-5d1c-ba44ac818507",
+    "projectId": "bosch",
+    "name": "Heizung",
+    "color": "#779ef5",
+    "etag": 18,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "20b63a05-1ae2-a927-7d60-94622ea460d7",
+    "projectId": "bosch",
+    "name": "Inbetriebnahmen",
+    "color": "#ea0016",
+    "etag": 19,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "e895385d-3477-9d50-7ec4-3836e25d1549",
+    "projectId": "bosch",
+    "name": "Kälte",
+    "color": "#5275a1",
+    "etag": 20,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "d35c2963-ca18-9d19-8b29-1dbd16508506",
+    "projectId": "bosch",
+    "name": "Kälteanlagen",
+    "color": "#7769ff",
+    "etag": 21,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "1c882aec-519c-6ab9-64d9-c88108f350fa",
+    "projectId": "bosch",
+    "name": "Kältemaschine",
+    "color": "#50237f",
+    "etag": 22,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "9318ee57-40a7-b08a-ea1e-68657c6785a5",
+    "projectId": "bosch",
+    "name": "Labor",
+    "color": "#3d464f",
+    "etag": 23,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "ee8edb84-98e7-a113-8819-fbf2e4e5579c",
+    "projectId": "bosch",
+    "name": "MSR",
+    "color": "#2fb858",
+    "etag": 24,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "93a5e917-e698-d11f-cd5b-6b62fad5e240",
+    "projectId": "bosch",
+    "name": "Malerarbeiten",
+    "color": "#ff998e",
+    "etag": 25,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "af0c7ff4-5eb4-32e2-084d-6b3af0e8ad98",
+    "projectId": "bosch",
+    "name": "NEA",
+    "color": "#606a1b",
+    "etag": 26,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "fa45cf76-b294-1b18-c0ad-8387b186a5b0",
+    "projectId": "bosch",
+    "name": "NSHV (Niederspannungshauptverteilung) Niederspannung",
+    "color": "#b99363",
+    "etag": 27,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "ab24a730-a449-2668-5432-5d59b40dc9e6",
+    "projectId": "bosch",
+    "name": "Nutzer",
+    "color": "#78be20",
+    "etag": 28,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "2c99ad5b-d78f-5d1b-d173-ff64fb76e5e7",
+    "projectId": "bosch",
+    "name": "Pfosten-Riegel-Fassade",
+    "color": "#bf00c1",
+    "etag": 29,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "bd467b18-4202-b05c-717a-8835835b9dc4",
+    "projectId": "bosch",
+    "name": "RLT",
+    "color": "#5641c3",
+    "etag": 30,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "23ef4126-0e92-5271-5847-026b779df599",
+    "projectId": "bosch",
+    "name": "Reinigung",
+    "color": "#7769ff",
+    "etag": 31,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "5f93f983-524d-ef3d-ca46-4469d2cf9f3e",
+    "projectId": "bosch",
+    "name": "Rohbauarbeiten",
+    "color": "#ff998e",
+    "etag": 32,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "86144f72-6507-1fb2-2d35-ef9c5adfe243",
+    "projectId": "bosch",
+    "name": "Rohbauarbeiten Terminplan 16.10.2019",
+    "color": "#ff998e",
+    "etag": 33,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "b02bffbf-496e-908f-5492-07aac8a58a6a",
+    "projectId": "bosch",
+    "name": "Sanitär",
+    "color": "#005691",
+    "etag": 34,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "1ce9638f-29b0-e892-b693-16ef5a78c2fb",
+    "projectId": "bosch",
+    "name": "Schlosserarbeiten",
+    "color": "#b93516",
+    "etag": 35,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "835c2cc1-e8af-92e5-cf53-b4f93bc736e9",
+    "projectId": "bosch",
+    "name": "Schreiner",
+    "color": "#f87f0a",
+    "etag": 36,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "06abb676-5b75-9f82-3982-74fe669d60dd",
+    "projectId": "bosch",
+    "name": "Stahltüren",
+    "color": "#2fb858",
+    "etag": 37,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "f90165db-01f4-b537-9967-ca32215f9be6",
+    "projectId": "bosch",
+    "name": "Systemtrennwände",
+    "color": "#868686",
+    "etag": 38,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "0f858374-35fe-bddc-b9f9-408e6a8fc7f4",
+    "projectId": "bosch",
+    "name": "Trafos",
+    "color": "#3d464f",
+    "etag": 39,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "41f44629-a221-4b55-2afb-40c87d4e367a",
+    "projectId": "bosch",
+    "name": "Trockenbau",
+    "color": "#0bd3d1",
+    "etag": 40,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "f0935e4c-d592-0aa6-c7c9-96a5ee53a70f",
+    "projectId": "bosch",
+    "name": "Verbauarbeiten",
+    "color": "#8901a2",
+    "etag": 41,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "c45147de-e729-311e-f5b5-c3003946c48f",
+    "projectId": "bosch",
+    "name": "Vermesser",
+    "color": "#00a8b0",
+    "etag": 42,
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "eaceb910-a824-b9a0-6b9c-b8b4bb2fb35b",
+    "projectId": "bosch",
+    "name": "WDVS",
+    "color": "#ea0016",
+    "etag": 43,
+    "createWithUserId": "daniel"
+  }
+]

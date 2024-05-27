@@ -1,0 +1,115 @@
+event:
+  batch-size: 500
+  table-pattern: .*_kafka_event$
+  polling-delay: 1000
+  query:
+    next-batch: "select * from %s order by id limit ?"
+    remove-batch: "delete from %s where id = ?"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+event:
+  database-name: application
+  query:
+    table-names: "SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes-user
+custom:
+  table-mapping:
+    consents_kafka_event: ${kafka-topic-consents}
+    craft_kafka_event: ${kafka-topic-craft}
+    pat_kafka_event: ${kafka-topic-pat}
+    user_kafka_event: ${kafka-topic-user}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes-company
+custom:
+  table-mapping:
+    company_kafka_event: ${kafka-topic-company}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes-project
+custom:
+  table-mapping:
+    project_kafka_event: ${kafka-topic-project}
+    invitation_kafka_event: ${kafka-topic-project-invitation}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes-featuretoggle
+custom:
+  table-mapping:
+    featuretoggle_kafka_event: ${kafka-topic-featuretoggle}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+event:
+  query:
+    table-names: "SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA = '%s'"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local-user
+event:
+  database-name: csm-user
+custom:
+  table-mapping:
+    consents_kafka_event: "csm.local.usermanagement.consents"
+    craft_kafka_event: "csm.local.referencedata.craft"
+    pat_kafka_event: "csm.local.usermanagement.pat"
+    user_kafka_event: "csm.local.usermanagement.user"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local-company
+event:
+  database-name: csm-company
+custom:
+  table-mapping:
+    company_kafka_event: "csm.local.companymanagement.company"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local-project
+event:
+  database-name: csm-project
+custom:
+  table-mapping:
+    project_kafka_event: "csm.local.projectmanagement.project"
+    invitation_kafka_event: "csm.local.projectmanagement.project.invitation"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local-featuretoggle
+event:
+  database-name: csm-featuretoggle
+custom:
+  table-mapping:
+    featuretoggle_kafka_event: "csm.local.featuretogglemanagement.featuretoggle"

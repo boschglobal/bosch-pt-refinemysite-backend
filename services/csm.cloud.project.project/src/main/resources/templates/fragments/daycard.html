@@ -1,0 +1,37 @@
+<!--
+  ~ *************************************************************************
+  ~
+  ~  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+  ~
+  ~ *************************************************************************
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<!--/*@thymesVar id="dayCardCell" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.layout.DayCardCell"*/-->
+<th:block th:fragment="daycard (dayCardCell)">
+    <div th:if="${dayCardCell.type.isOutOfSchedule()}" class="task-slot-out-of-schedule"></div>
+
+    <div th:if="${dayCardCell.type.isBlank()}"></div>
+
+    <div th:if="${dayCardCell.type.isDayCard()}">
+        <span class="daycard-name" th:text="${dayCardCell.name}"></span>
+        <div class="daycard-details">
+                        <span class="man-power">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+                                <use xlink:href="#manpower"/>
+                            </svg>
+                            <span th:text="${dayCardCell.manpower}"></span>
+                        </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" class="daycard-status">
+                <use th:attr="'xlink:href'=${dayCardCell.getStatusIcon()}"/>
+            </svg>
+        </div>
+    </div>
+</th:block>
+
+
+</body>

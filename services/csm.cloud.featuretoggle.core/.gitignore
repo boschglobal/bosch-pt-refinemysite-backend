@@ -1,0 +1,14 @@
+**/.gradle
+**/build
+**/out
+**/bin
+
+.vscode/*
+.settings/*
+.project
+.classpath
+
+# Ignore all ...
+.idea/*
+.DS_Store
+*.iml

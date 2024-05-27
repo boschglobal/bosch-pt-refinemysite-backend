@@ -1,0 +1,90 @@
+[
+  {
+    "id": "employee1",
+    "userId": "daniel",
+    "companyId": "company1",
+    "roles": [
+      "CSM"
+    ]
+  },
+  {
+    "id": "employee2",
+    "userId": "bob",
+    "companyId": "company2",
+    "roles": [
+      "CSM"
+    ]
+  },
+  {
+    "id": "employee3",
+    "userId": "ali",
+    "companyId": "company1",
+    "roles": [
+      "FM"
+    ]
+  },
+  {
+    "id": "employee4",
+    "userId": "carlos",
+    "companyId": "company3",
+    "roles": [
+      "FM"
+    ]
+  },
+  {
+    "id": "employee5",
+    "userId": "eddie",
+    "companyId": "company1",
+    "roles": [
+      "FM"
+    ]
+  },
+  {
+    "id": "employee6",
+    "userId": "hannah",
+    "companyId": "company3",
+    "roles": [
+      "FM"
+    ]
+  },
+  {
+    "id": "employee7",
+    "userId": "gustav",
+    "companyId": "company5",
+    "roles": [
+      "CSM"
+    ]
+  },
+  {
+    "id": "employee8",
+    "userId": "frank",
+    "companyId": "company5",
+    "roles": [
+      "FM"
+    ]
+  },
+  {
+    "id": "employee9",
+    "userId": "armin",
+    "companyId": "company5",
+    "roles": [
+      "FM"
+    ]
+  },
+  {
+    "id": "employee10",
+    "userId": "groot",
+    "companyId": "company5",
+    "roles": [
+      "FM"
+    ]
+  },
+  {
+    "id": "employee11",
+    "userId": "vandelay",
+    "companyId": "company5",
+    "roles": [
+      "FM"
+    ]
+  }
+]

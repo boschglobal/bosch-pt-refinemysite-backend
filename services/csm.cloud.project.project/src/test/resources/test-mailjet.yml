@@ -1,0 +1,21 @@
+custom:
+  mail:
+    job:
+      expire-invitations:
+        enabled: false
+      resend-invitation:
+        enabled: false
+    templates:
+      test-template:
+        countries:
+          DE: 100
+          US: 200
+        default: 300
+  mailjet:
+    bcc:
+      email: bcc@example.com
+    template-error-reporting:
+      email: errors@example.com
+    redirect-mails:
+      recipient-email-pattern: "smartsiteapp\\+.*@gmail.com"
+      redirect-to-email: redirect@example.com

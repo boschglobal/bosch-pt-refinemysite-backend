@@ -1,0 +1,25 @@
+"""
+Representation of a working area in RefinemySite
+"""
+type WorkAreaPayloadV1 {
+
+    """
+    Unique identifier of the project
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    Name
+    """
+    name: String!,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}

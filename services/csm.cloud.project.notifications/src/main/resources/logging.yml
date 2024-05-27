@@ -1,0 +1,32 @@
+logging:
+  level:
+    ROOT: warn
+    com.bosch.pt.csm.cloud.common.security.CustomAuthenticationEntryPoint: info
+    com.bosch.pt.csm.cloud.projectmanagement:
+      NotificationServiceApplicationKt: info
+      application:
+        config: info
+    org:
+      apache.kafka.clients.consumer.internals.Fetcher: error
+      springframework:
+        boot:
+          context: info
+        cloud:
+          config: debug
+        retry: info
+        web.filter.CommonsRequestLoggingFilter: debug
+        web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: error
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  level:
+    com.bosch.pt.csm.cloud.projectmanagement:
+      notification:
+        facade.listener: debug
+    org:
+      mongodb.driver.protocol: info

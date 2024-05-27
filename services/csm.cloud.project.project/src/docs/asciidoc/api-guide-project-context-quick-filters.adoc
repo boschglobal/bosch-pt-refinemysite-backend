@@ -1,0 +1,141 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2023
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[quick-filters]]
+== Quick filters
+Quick filters represent a list of specific settings for the filters to use on the task and milestone search for the project,
+that are stored so the user can apply them multiple time and swap between filters. Each filter has a name,
+so the user can identify each filter and by which they are ordered.
+
+
+
+[[create-quick-filter]]
+=== Create quick filters
+This endpoint can be used to create a quick filter. A name needs to be provided as well as a criteria object compatible with
+the filters for the task and milestone search endpoint.
+
+[[create-quick-filter-latest]]
+==== Latest API Version
+
+[[create-quick-filter-request-latest]]
+===== Request
+A new quick filter is created with a `POST` request.
+
+====== Path parameters
+include::{snippets}/quick-filters/document-create-quick-filter/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/quick-filters/document-create-quick-filter/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/quick-filters/document-create-quick-filter/http-request.adoc[]
+include::{snippets}/quick-filters/document-create-quick-filter/curl-request.adoc[]
+
+[[create-quick-filter-response-latest]]
+===== Response
+The created quick filter is returned.
+
+====== Response fields
+include::{snippets}/quick-filters/document-create-quick-filter/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/quick-filters/document-create-quick-filter/http-response.adoc[]
+
+
+
+[[update-quick-filter]]
+=== Update quick filters
+This endpoint can be used to update a quick filter. The quick filter identifier needs to be provided as well
+as a criteria object compatible with the filters for the task and milestone search endpoint.
+
+[[update-quick-filter-latest]]
+==== Latest API Version
+
+[[update-quick-filter-request-latest]]
+===== Request
+A new quick filter is created with a `POST` request.
+
+====== Path parameters
+include::{snippets}/quick-filters/document-update-quick-filter/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/quick-filters/document-update-quick-filter/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/quick-filters/document-update-quick-filter/http-request.adoc[]
+include::{snippets}/quick-filters/document-update-quick-filter/curl-request.adoc[]
+
+[[update-quick-filter-response-latest]]
+===== Response
+The updated quick filter is returned.
+
+====== Response fields
+include::{snippets}/quick-filters/document-update-quick-filter/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/quick-filters/document-update-quick-filter/http-response.adoc[]
+
+
+
+[[get-quick-filters]]
+=== Get quick filters
+Retrieves the list of the quick filters for the user's participant in the project.
+
+[[get-quick-filters-latest]]
+==== Latest API Version
+
+[[get-quick-filters-request-latest]]
+===== Request
+Retrieve the list of quick filters with a `GET` request.
+
+====== Path parameters
+include::{snippets}/quick-filters/document-get-quick-filters/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/quick-filters/document-get-quick-filters/http-request.adoc[]
+include::{snippets}/quick-filters/document-get-quick-filters/curl-request.adoc[]
+
+[[get-quick-filters-response-latest]]
+===== Response
+The requested list of quick filters is returned.
+
+====== Response fields
+include::{snippets}/quick-filters/document-get-quick-filters/response-fields.adoc[]
+
+====== Links
+include::{snippets}/quick-filters/document-get-quick-filters/links.adoc[]
+
+====== Example response
+include::{snippets}/quick-filters/document-get-quick-filters/http-response.adoc[]
+
+
+
+[[delete-quick-filters]]
+=== Delete quick filters
+Delete a single quick filter with a specified identifier for the user's participant in a project.
+
+[[delete-quick-filters-latest]]
+==== Latest API Version
+
+[[delete-quick-filters-request-latest]]
+===== Request
+A `DELETE` request is used to delete a quick filter.
+
+====== Path parameters
+include::{snippets}/quick-filters/document-delete-quick-filter/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/quick-filters/document-delete-quick-filter/http-request.adoc[]
+include::{snippets}/quick-filters/document-delete-quick-filter/curl-request.adoc[]
+
+[[delete-quick-filters-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/quick-filters/document-delete-quick-filter/http-response.adoc[]

@@ -1,0 +1,30 @@
+spring:
+  cache:
+    type: none
+  config:
+    import:
+      - classpath:application-idp-bosch-dev.yml
+  datasource:
+    url: # Set on startup by Testcontainers
+    username: test
+    password: test
+custom:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uris:
+            - https://jwtcreator.example.com
+
+logging:
+  level:
+    org:
+      springframework:
+        test:
+          context:
+            # change to debug to get infos about testcontext caching and reusing
+            cache: info
+
+system:
+  user:
+    identifier: c37da613-8e70-4003-9106-12412c9d2496

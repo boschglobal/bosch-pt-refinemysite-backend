@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "doc": "Identifier of the image",
+      "name": "identifier",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "path",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "filename",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "contentType",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "contentLength",
+      "type": "long"
+    }
+  ],
+  "name": "ImageDeletedEventAvro",
+  "namespace": "com.bosch.pt.csm.cloud.image.messages",
+  "type": "record"
+}

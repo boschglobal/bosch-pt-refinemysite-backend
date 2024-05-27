@@ -1,0 +1,48 @@
+//////////////////////////////////////////
+ *****************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2022
+ * *****************************************************************
+//////////////////////////////////////////
+
+= Supported API Versions
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+== Supported API Versions
+The different APIs of RefinemySite are versioned. Each API has a supported min and max version
+which can be increased over time.
+
+This page and the endpoint described below can be used to keep informed about the versions.
+
+
+[[get-supported-versions]]
+=== Get supported versions
+To get the list of APIs with their supported min and max version, this endpoint can be used.
+
+[[get-supported-versions-latest]]
+==== Latest API version
+
+[[get-supported-versions-request-latest]]
+===== Request
+A `GET` request is used get the supported versions.
+
+====== Example request
+include::{snippets}/supported-versions/get-supported-api-versions/http-request.adoc[]
+include::{snippets}/supported-versions/get-supported-api-versions/curl-request.adoc[]
+
+[[get-supported-versions-response-latest]]
+===== Response
+The supported versions by API are returned.
+
+====== Example response
+include::{snippets}/supported-versions/get-supported-api-versions/http-response.adoc[]

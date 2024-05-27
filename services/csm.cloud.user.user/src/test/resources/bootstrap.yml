@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    kubernetes:
+      enabled: false
+  profiles:
+    group:
+      test:
+        - skid-deleted-user-propagation
+kubernetes:
+  manifests:
+    enabled: false
+  informer:
+    enabled: false
+

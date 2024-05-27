@@ -1,0 +1,17 @@
+**/.gradle
+**/build
+**/out
+**/bin
+
+.DS_Store
+.vscode/*
+.settings/*
+.project
+.classpath
+
+# Ignore all binary files in datasets
+src/main/resources/**/attachments/*
+
+# IntelliJ
+.idea
+*.iml

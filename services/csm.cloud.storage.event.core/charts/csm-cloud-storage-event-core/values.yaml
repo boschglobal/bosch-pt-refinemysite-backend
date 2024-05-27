@@ -1,0 +1,6 @@
+# Default values for csm-cloud-storage-event-core.
+# Declare variables to be passed into your templates.
+
+maxStartUpTime: 15
+replicas: 2
+logLevel: info

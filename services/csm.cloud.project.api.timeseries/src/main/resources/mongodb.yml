@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  data:
+    mongodb:
+      uri: ${csm-cloud-project-api-timeseries-mongodbatlas-connection-string}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/csm-pm-project-api-timeseries-service

@@ -1,0 +1,175 @@
+//////////////////////////////////////////
+*****************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2023
+ * *****************************************************************
+//////////////////////////////////////////
+
+= RefinemySite Personal Access Token (PAT) Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+== PATs
+
+PATs are Personal Access Tokens.
+They can be used to authenticate and authorize as a user (impersonatedUser) with the public API.
+
+[[list-pat]]
+=== List all PATs
+
+In order to retrieve a list of the current user's PATs, a `GET` on the PAT resource can be performed.
+
+[[list-pat-latest]]
+==== Latest API version
+
+[[list-pat-request-latest]]
+===== Request
+
+A `GET` request is used to retrieve the list of the current user's PATs.
+
+====== Example request
+
+include::{snippets}/pat/document-list-pat/http-request.adoc[]
+include::{snippets}/pat/document-list-pat/curl-request.adoc[]
+
+[[list-pat-response-latest]]
+===== Response
+
+The list of PATs is returned.
+
+====== Response fields
+
+include::{snippets}/pat/document-list-pat/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/pat/document-list-pat/http-response.adoc[]
+
+[[create-pat]]
+=== Create a PAT
+
+Used to create a new Personal Access Token (PAT).
+A PAT can be created for one or more than one scope.
+Currently, Personal Access Tokens can be used to access the two branches of the public API only:
+_GRAPHQL_API_READ_ grants read access to the GraphQL API,
+_TIMELINE_API_READ_ grants read access to the Timeline API.
+
+[[create-pat-latest]]
+==== Latest API version
+
+[[create-pat-request-latest]]
+===== Request
+
+A `POST` request is used to create a new PAT.
+
+====== Request fields
+
+include::{snippets}/pat/document-create-pat/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/pat/document-create-pat/http-request.adoc[]
+include::{snippets}/pat/document-create-pat/curl-request.adoc[]
+
+[[create-pat-response-latest]]
+===== Response
+
+The created PAT is returned.
+It includes the secret token value which cannot be retrieved later (as it will not be stored in the system).
+The token value is composed as follows:
+{type}.{identifier}.{secret-value}
+
+- The type indicates how the token is composed i.e. which hashing algorithm is used.
+- The identifier of the token allows to retrieve the token's stored data (hashed value, scopes).
+- The secret value is the actual secret. For _RMSPAT1_-type tokens it is a 32-character random string
+of characters and digits as well as a few selected special characters.
+
+For _RMSPAT1_-type tokens the hashed value is derived using BCrypt algorithm (Spring standard).
+Verification can be done like so:
+```
+org.springframework.security.crypto.bcrypt.BCrypt.checkpw("{secret-value}", "{hashed-value}")
+```
+
+==== Response Fields
+
+include::{snippets}/pat/document-create-pat/response-fields.adoc[]
+
+==== Example response
+
+include::{snippets}/pat/document-create-pat/http-response.adoc[]
+
+[[update-pat]]
+=== Update PAT
+
+A PAT can be updated changing its description, scope and expiry.
+
+[[update-pat-latest]]
+==== Latest API version
+
+[[update-pat-request-latest]]
+===== Request
+
+A `PUT` request is used to update an exiting PAT.
+
+====== Request body
+
+include::{snippets}/pat/document-update-pat/request-body.adoc[]
+
+====== Example request
+
+include::{snippets}/pat/document-update-pat/http-request.adoc[]
+include::{snippets}/pat/document-update-pat/curl-request.adoc[]
+
+[[update-pat-response-latest]]
+===== Response
+
+The updated PAT is returned.
+Please note that the secret token value is not included in the response as it is not stored in our system.
+
+==== Response body
+
+include::{snippets}/pat/document-update-pat/response-body.adoc[]
+
+==== Example response
+
+include::{snippets}/pat/document-update-pat/http-response.adoc[]
+
+[[delete-pat]]
+=== Delete PAT
+
+A PAT can be deleted thereby revoking its privileges.
+
+[[delete-pat-latest]]
+==== Latest API version
+
+[[delete-pat-request-latest]]
+===== Request
+
+A `DELETE` request is used to delete an existing PAT.
+
+====== Example request
+
+include::{snippets}/pat/document-delete-pat/http-request.adoc[]
+include::{snippets}/pat/document-delete-pat/curl-request.adoc[]
+
+[[delete-pat-response-latest]]
+===== Response
+
+A simple response containing the identifier of the deleted PAT is returned.
+
+==== Response body
+
+include::{snippets}/pat/document-delete-pat/response-body.adoc[]
+
+==== Example response
+
+include::{snippets}/pat/document-delete-pat/http-response.adoc[]

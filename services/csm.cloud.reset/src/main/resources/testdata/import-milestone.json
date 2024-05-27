@@ -1,0 +1,57 @@
+[
+  {
+    "id": "project_milestone_1",
+    "projectId": "project1",
+    "name": "Project Milestone 1",
+    "type": "PROJECT",
+    "header": true,
+    "date": 3,
+    "description": "This is the fist milestone of the project to finish",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project_milestone_1_1",
+    "projectId": "project1",
+    "name": "Project Milestone 2",
+    "type": "PROJECT",
+    "header": true,
+    "date": 15,
+    "description": "This is the second milestone of the project to finish",
+    "createWithUserId": "daniel"
+  },
+
+  {
+    "id": "project_milestone_1_2",
+    "projectId": "project1",
+    "name": "Craft Milestone 1",
+    "type": "CRAFT",
+    "header": true,
+    "date": 10,
+    "description": "This is the first craft milestone of the project to finish",
+    "createWithUserId": "daniel",
+    "craftId": "project_craft_1"
+  },
+  {
+    "id": "project_milestone_1_3",
+    "projectId": "project1",
+    "name": "Craft Milestone 2",
+    "type": "CRAFT",
+    "header": false,
+    "date": 12,
+    "description": "This is the second craft milestone of the project to finish",
+    "createWithUserId": "daniel",
+    "craftId": "project_craft_1",
+    "workAreaId": "work_area_1_1"
+  },
+  {
+    "id": "project_milestone_1_4",
+    "projectId": "project1",
+    "name": "Investor Milestone 1",
+    "type": "INVESTOR",
+    "header": false,
+    "date": 5,
+    "description": "This is the first investor milestone of the project to finish",
+    "createWithUserId": "daniel",
+    "craftId": "project_craft_1"
+  }
+]

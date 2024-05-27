@@ -1,0 +1,501 @@
+[
+  {
+    "id": "e18dc412-af63-43e0-a334-ce6a16e23d8b",
+    "taskId": "4e0cb6fb-5fb4-46d1-c92e-de2ed8780188",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "a201dc77-7493-93d0-e0a4-bfda1a5cf69d",
+    "taskId": "9c01802d-db98-1e6b-cfbe-c0f0516b8e35",
+    "description": "Georadar wird frühestens durchgeführt wenn die Aushubtiefe in der gesamten Baugrube auf -3,50m ist. Laut Herr Brehm, IB Vees wird der Luftschutzstollen erst unter der Baugubensohle vermutet, daher können die Messungen auch zu einem späteren Zeitpunkt stattfinden",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "c64c1018-09ba-1c8d-6e04-8f352403c631",
+    "taskId": "89fcd07f-20b6-785b-9213-4bd6c1d0fa42",
+    "description": "Die Aushub- und Verbauarbeiten wurden durch das Prüfamt für Baustatik im Bereich des Fluchttreppenturms (Achse P/6) gestoppt. Die Arbeiten dürfen erst fortgeführt werden, wenn Fa Moser der BL die Freigabe vom Prüfamt vorgelegt hat.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "f8cbed5a-34cd-9a6d-be29-f37b69792c71",
+    "taskId": "2ab56412-b116-3ee1-31e1-246da0955bd1",
+    "description": "Die Aushub- und Verbauarbeiten wurden durch das Prüfamt für Baustatik im Bereich des Fluchttreppenturms (Achse P/6) gestoppt. Die Arbeiten dürfen erst fortgeführt werden, wenn Fa Moser der BL die Freigabe vom Prüfamt vorgelegt hat.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "38f238f0-482b-05b9-10a0-4c0e4291a30c",
+    "taskId": "cc1aa436-2771-38f6-1cda-703991069eaf",
+    "description": "Die Aushub- und Verbauarbeiten wurden durch das Prüfamt für Baustatik im Bereich des Fluchttreppenturms (Achse P/6) gestoppt. Die Arbeiten dürfen erst fortgeführt werden, wenn Fa Moser der BL die Freigabe vom Prüfamt vorgelegt hat.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "78081ec4-8f88-37d1-f732-5692f2231eca",
+    "taskId": "dbc3fe09-3813-4632-4027-ab4a98c05bcf",
+    "description": "Die Aushub- und Verbauarbeiten wurden durch das Prüfamt für Baustatik im Bereich des Fluchttreppenturms (Achse P/6) gestoppt. Die Arbeiten dürfen erst fortgeführt werden, wenn Fa Moser der BL die Freigabe vom Prüfamt vorgelegt hat.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "0ed790bd-75b3-75ab-070f-3db972e88bfb",
+    "taskId": "4b41aac6-3516-7087-c964-acc37f202200",
+    "description": "Die Aushub- und Verbauarbeiten wurden durch das Prüfamt für Baustatik im Bereich des Fluchttreppenturms (Achse P/6) gestoppt. Die Arbeiten dürfen erst fortgeführt werden, wenn Fa Moser der BL die Freigabe vom Prüfamt vorgelegt hat.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "80f7476d-3bc7-bff1-cc65-12a4d36aa8d3",
+    "taskId": "2ab56412-b116-3ee1-31e1-246da0955bd1",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "eea02c3f-6319-82cc-1193-28a3534dda4d",
+    "taskId": "cc1aa436-2771-38f6-1cda-703991069eaf",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "faddad90-7367-69a9-9485-412b051de3ea",
+    "taskId": "dbc3fe09-3813-4632-4027-ab4a98c05bcf",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "eae712d8-5d30-f51a-2ae9-da1b7c2e7f9e",
+    "taskId": "4b41aac6-3516-7087-c964-acc37f202200",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "39820318-78ee-1999-773c-5c557959e631",
+    "taskId": "cc1aa436-2771-38f6-1cda-703991069eaf",
+    "description": "Freigabe für Bohrarbeiten im Bereich Fluchttreppenturm liegt vor. Aushubarbeiten etc. dürfen erst nach Vorlage weiterer Unterlagen und danach erfolgter Freigabe durch das Prüfamt ausgeführt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "32cde46e-8037-23ae-4c98-7682ec7cd9ee",
+    "taskId": "dbc3fe09-3813-4632-4027-ab4a98c05bcf",
+    "description": "Freigabe für Bohrarbeiten im Bereich Fluchttreppenturm liegt vor. Aushubarbeiten etc. dürfen erst nach Vorlage weiterer Unterlagen und danach erfolgter Freigabe durch das Prüfamt ausgeführt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "fb8c3be2-3c7d-46fc-553f-b815b53e8bb0",
+    "taskId": "4b41aac6-3516-7087-c964-acc37f202200",
+    "description": "Freigabe für Bohrarbeiten im Bereich Fluchttreppenturm liegt vor. Aushubarbeiten etc. dürfen erst nach Vorlage weiterer Unterlagen und danach erfolgter Freigabe durch das Prüfamt ausgeführt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "8291e17f-5dce-a132-81a6-aed32145f314",
+    "taskId": "2ab56412-b116-3ee1-31e1-246da0955bd1",
+    "description": "Freigabe für Bohrarbeiten im Bereich Fluchttreppenturm liegt vor. Aushubarbeiten etc. dürfen erst nach Vorlage weiterer Unterlagen und danach erfolgter Freigabe durch das Prüfamt ausgeführt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "35241cfd-1767-ec5d-17e2-948733139e3b",
+    "taskId": "89fcd07f-20b6-785b-9213-4bd6c1d0fa42",
+    "description": "Freigabe für Bohrarbeiten im Bereich Fluchttreppenturm liegt vor. Aushubarbeiten etc. dürfen erst nach Vorlage weiterer Unterlagen und danach erfolgter Freigabe durch das Prüfamt ausgeführt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "eb2583eb-30bf-0681-59ef-9f6ea6edd0c2",
+    "taskId": "fec8d47d-412b-cbee-ce3d-9128ae855a7a",
+    "description": "Freigabe für Bohrarbeiten im Bereich Fluchttreppenturm liegt vor. Aushubarbeiten etc. dürfen erst nach Vorlage weiterer Unterlagen und danach erfolgter Freigabe durch das Prüfamt ausgeführt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "b5c31b87-9b11-4d55-52fc-f68176f14aa6",
+    "taskId": "cc1aa436-2771-38f6-1cda-703991069eaf",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "c6a6da75-c877-98af-7849-8d325201f8a0",
+    "taskId": "cc1aa436-2771-38f6-1cda-703991069eaf",
+    "description": "Es finden keine Arbeiten auf der Baustelle statt, da die Freigabe für das Setzen der Anker im Bereich Fluchttreppenturm und für die Verabauarbeiten im Bereich provisorischer Leitungsgraben nicht vorliegt. Die Statikpläne und Berechnungen müssen dringend sofort beim Prüfamt zur Freigabe vorgelegt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "b6cbf6a6-2075-01ba-7fdd-a9f665a61ae7",
+    "taskId": "dbc3fe09-3813-4632-4027-ab4a98c05bcf",
+    "description": "Es finden keine Arbeiten auf der Baustelle statt, da die Freigabe für das Setzen der Anker im Bereich Fluchttreppenturm und für die Verabauarbeiten im Bereich provisorischer Leitungsgraben nicht vorliegt. Die Statikpläne und Berechnungen müssen dringend sofort beim Prüfamt zur Freigabe vorgelegt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "a1cc62c8-48b2-457f-ed38-5d8d3ef53f76",
+    "taskId": "4b41aac6-3516-7087-c964-acc37f202200",
+    "description": "Es finden keine Arbeiten auf der Baustelle statt, da die Freigabe für das Setzen der Anker im Bereich Fluchttreppenturm und für die Verabauarbeiten im Bereich provisorischer Leitungsgraben nicht vorliegt. Die Statikpläne und Berechnungen müssen dringend sofort beim Prüfamt zur Freigabe vorgelegt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "11b7faad-0c6c-cdfb-305c-e2d66ab236d3",
+    "taskId": "dbc3fe09-3813-4632-4027-ab4a98c05bcf",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "6b449ecd-71f4-b1db-a4f8-298d8b065a3f",
+    "taskId": "fec8d47d-412b-cbee-ce3d-9128ae855a7a",
+    "description": "Es finden keine Arbeiten auf der Baustelle statt, da die Freigabe für das Setzen der Anker im Bereich Fluchttreppenturm und für die Verabauarbeiten im Bereich provisorischer Leitungsgraben nicht vorliegt. Die Statikpläne und Berechnungen müssen dringend sofort beim Prüfamt zur Freigabe vorgelegt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "3d08b84e-e188-62b8-5a6f-c21e924c361c",
+    "taskId": "fec8d47d-412b-cbee-ce3d-9128ae855a7a",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "3ab8d329-bca8-96dc-fd2b-6b12e015d0f5",
+    "taskId": "d93ed5b6-db83-be78-efb0-d05ae420158e",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "4df1fd90-145f-c13e-7e40-630e7caaff6c",
+    "taskId": "d93ed5b6-db83-be78-efb0-d05ae420158e",
+    "description": "Es finden keine Arbeiten auf der Baustelle statt, da die Freigabe für das Setzen der Anker im Bereich Fluchttreppenturm und für die Verabauarbeiten im Bereich provisorischer Leitungsgraben nicht vorliegt. Die Statikpläne und Berechnungen müssen dringend sofort beim Prüfamt zur Freigabe vorgelegt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "0978f812-b823-d741-da10-793ff0e833f9",
+    "taskId": "cc1aa436-2771-38f6-1cda-703991069eaf",
+    "description": "Das Prüfamt für Baustatik hat am 27.02.2019 die Freigabe für die Fortführung der Arbeiten erteilt. Die Arbeiten können somit sofort wieder aufgenommen werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "099853e4-085f-8dd1-17f8-860ba5abd411",
+    "taskId": "cc1aa436-2771-38f6-1cda-703991069eaf",
+    "description": "Firma Moser befindet sich durch die Unterbrechung der Erd- und Verbauarbeiten in Verzug und wurde erneut aufgefordert, Vorschläge für Beschleunigungsmaßnahmen zu ergreifen. Termin für die Vorlage der Vorschläge ist die LCM-Wochenplanung am Mittwoch, 06.03.2019",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "d8f86b24-ee17-2e88-b5f0-28d0c2dbcff6",
+    "taskId": "dbc3fe09-3813-4632-4027-ab4a98c05bcf",
+    "description": "Das Prüfamt für Baustatik hat am 27.02.2019 die Freigabe für die Fortführung der Arbeiten erteilt. Die Arbeiten können somit sofort wieder aufgenommen werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "a6d77ae9-c140-f0fb-911a-b7ff2e854c9c",
+    "taskId": "fc2129f2-51ab-84e7-2d61-3137b9042da6",
+    "description": "Das Prüfamt für Baustatik hat am 27.02.2019 die Freigabe für die Fortführung der Arbeiten erteilt. Die Arbeiten können somit sofort wieder aufgenommen werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "6e2fb35d-e8c5-4e25-6c8d-07be9506bd7c",
+    "taskId": "fec8d47d-412b-cbee-ce3d-9128ae855a7a",
+    "description": "Das Prüfamt für Baustatik hat am 27.02.2019 die Freigabe für die Fortführung der Arbeiten erteilt. Die Arbeiten können somit sofort wieder aufgenommen werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "71d5a2ab-f864-725c-346d-f5827a758211",
+    "taskId": "60a5b11d-c984-5491-8386-1c8b166e73fb",
+    "description": "Entsprechend der Vorgaben müssen die Gehwegplatten unter den Standfüßen des Fluchttreppenturms durch Fundamente ersetzt werden. Des Weiteren muss eine Unterfangung des Eckpfostens des FTT hergestellt werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "475ffb2a-d1ea-5977-0ed3-4f190ac4faab",
+    "taskId": "dbc3fe09-3813-4632-4027-ab4a98c05bcf",
+    "description": "Firma Moser befindet sich durch die Unterbrechung der Erd- und Verbauarbeiten in Verzug und wurde erneut aufgefordert, Vorschläge für Beschleunigungsmaßnahmen zu ergreifen. Termin für die Vorlage der Vorschläge ist die LCM-Wochenplanung am Mittwoch, 06.03.2019",
+    "criticality": "CRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "a1e79143-2a53-5a04-2d0b-e41cc84d8b8e",
+    "taskId": "fc2129f2-51ab-84e7-2d61-3137b9042da6",
+    "description": "Firma Moser befindet sich durch die Unterbrechung der Erd- und Verbauarbeiten in Verzug und wurde erneut aufgefordert, Vorschläge für Beschleunigungsmaßnahmen zu ergreifen. Termin für die Vorlage der Vorschläge ist die LCM-Wochenplanung am Mittwoch, 06.03.2019",
+    "criticality": "CRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "83d0024a-20bc-3375-8ecc-4ddfcd9570d3",
+    "taskId": "fec8d47d-412b-cbee-ce3d-9128ae855a7a",
+    "description": "Firma Moser befindet sich durch die Unterbrechung der Erd- und Verbauarbeiten in Verzug und wurde erneut aufgefordert, Vorschläge für Beschleunigungsmaßnahmen zu ergreifen. Termin für die Vorlage der Vorschläge ist die LCM-Wochenplanung am Mittwoch, 06.03.2019",
+    "criticality": "CRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "38833ffb-154f-bef7-58f5-2f4623d5f92a",
+    "taskId": "d93ed5b6-db83-be78-efb0-d05ae420158e",
+    "description": "Das Prüfamt für Baustatik hat am 27.02.2019 die Freigabe für die Fortführung der Arbeiten erteilt. Die Arbeiten können somit sofort wieder aufgenommen werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "fe59403e-c7ca-013a-0131-cb31ff42320a",
+    "taskId": "d93ed5b6-db83-be78-efb0-d05ae420158e",
+    "description": "Bitte Rückmeldung durch Fa. Moser bezüglich Ausführung",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "b668b84e-88a5-d3dc-0aba-77f40277de15",
+    "taskId": "d93ed5b6-db83-be78-efb0-d05ae420158e",
+    "description": "Laut Frau Glas, IB Weber, ist die kleinstmögliche Schachtinnengröße 70 x 100 cm. Zur statischen Berechnung durch Herrn Albrecht, IGB, muss Fa Moser noch eine Angabe zur Anzahl der Betonierabschnitte (1 oder 2?) machen. Angabe muss bis zum 12.03.2019 erfolgen.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "edb2ec90-7421-4242-a09b-af8f37178852",
+    "taskId": "cc1aa436-2771-38f6-1cda-703991069eaf",
+    "description": "Bitte Rückmeldung bis 03.04.2019 zu den in dem Protokoll von Herrn Bosch genannten Punkten:\n1. zu kleine Anschweißplatten, Schweißnaht zu kurz\n2. Geländer im Bereich Fluchtweg ertüchtigen\n3. Vorlage Bohrprotokolle",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "c595634c-76ca-1fcc-03af-eb4455b16f93",
+    "taskId": "d7f210b9-e653-3b08-2306-1578442bf58a",
+    "description": "Bitte Rückmeldung bis 03.04.2019 zu den in dem Protokoll von Herrn Bosch genannten Punkten:\n1. zu kleine Anschweißplatten, Schweißnaht zu kurz\n2. Geländer im Bereich Fluchtweg ertüchtigen\n3. Vorlage Bohrprotokolle",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "573118b5-c91b-eb7b-8501-2e935d5972f4",
+    "taskId": "fec8d47d-412b-cbee-ce3d-9128ae855a7a",
+    "description": "Bitte Rückmeldung bis 03.04.2019 zu den in dem Protokoll von Herrn Bosch genannten Punkten:\n1. zu kleine Anschweißplatten, Schweißnaht zu kurz\n2. Geländer im Bereich Fluchtweg ertüchtigen\n3. Vorlage Bohrprotokolle",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "fb66c854-5ccf-e04d-358c-9c7fa683fdaf",
+    "taskId": "d93ed5b6-db83-be78-efb0-d05ae420158e",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "a97f7981-ea48-401b-bd0b-7c1f8fb71a75",
+    "taskId": "cc1aa436-2771-38f6-1cda-703991069eaf",
+    "description": "Bitte lassen Sie die Standsicherheit des Verbaus bestätigen und nehmen Stellung wie es zu der Änderung im Bereich der Traverse kam.\nDes Weiteren bitte ich Sie darum, den Korrosionsschutz wie gefordert bei Träger 23.1 Anker anzubringen und uns wie besprochen die Protokolle für die Erdnagelprüfungen zukommen zu lassen.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "d969e00d-cab2-69c2-eac6-6456b7c0c1e7",
+    "taskId": "d7f210b9-e653-3b08-2306-1578442bf58a",
+    "description": "Bitte lassen Sie die Standsicherheit des Verbaus bestätigen und nehmen Stellung wie es zu der Änderung im Bereich der Traverse kam.\nDes Weiteren bitte ich Sie darum, den Korrosionsschutz wie gefordert bei Träger 23.1 Anker anzubringen und uns wie besprochen die Protokolle für die Erdnagelprüfungen zukommen zu lassen.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "b8b26430-34c1-fcb9-c282-b3beb94b71bb",
+    "taskId": "e53ed3bc-fafd-8c23-f4b8-4f50130aff17",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "df653069-f183-2e2b-4e91-a4018f547089",
+    "taskId": "d5a68265-6249-683c-2ed3-16bcdc42eb3d",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "5bb6df18-a42f-01ea-4df2-7d39999d00f7",
+    "taskId": "7b00b906-f16f-5047-0c21-fea19de2cd7e",
+    "description": "Herstellung Kernbohrung D-125, MWD \u003d 80 UKD im Bereich Einbringschacht Biobanking für Kraftstoffbefüllleitung",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "cindy"
+  },
+  {
+    "id": "cfa5d9fb-5901-8627-2d6a-8849c98ddf29",
+    "taskId": "7b00b906-f16f-5047-0c21-fea19de2cd7e",
+    "description": "Ort u. Lage v. Brandschutzdurchführungen und/oder Wanddurchführungen für Kraftstoffbefüllleitung",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "cindy"
+  },
+  {
+    "id": "b18056bd-3299-d904-1a85-d96292be83d4",
+    "taskId": "7b00b906-f16f-5047-0c21-fea19de2cd7e",
+    "description": "Ort u. Lage des Befüllstutzen + Tankwagendose (Kabelweg?) am Einbringschacht Biobanking",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "cindy"
+  },
+  {
+    "id": "0210be07-cabe-90b0-7224-c02a33a28506",
+    "taskId": "35b9ce3c-69d4-0603-ac3c-754260d06ee8",
+    "description": "Einbringung Abgasrohr soll nach Fertigstellung Geschossdecke 3. OG mit Baukran stattfinden. \nKlärung Höhe Kranflasche/-haken bis OK Geschossdecke OG 3.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "cindy"
+  },
+  {
+    "id": "36fcc3e2-df1d-e623-2d0b-7ab874d2a007",
+    "taskId": "35b9ce3c-69d4-0603-ac3c-754260d06ee8",
+    "description": "Klärung Abgasführung in Technikzentrale: Unter Decke oder auf dem Boden?",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "cindy"
+  },
+  {
+    "id": "f8ea4d91-7a7d-9166-d598-b47ed9f2b4d9",
+    "taskId": "5f75e6d5-add9-1799-4f6e-9e60fbc66422",
+    "description": "Schachtbelegung unklar. Keine Zeichnungen vorhanden.\nZeichnungen / Schachtzuordnung werden für die Leitungsverlegung benötigt.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "groot"
+  },
+  {
+    "id": "6811944f-b5a7-066c-30b4-bd4ee7d75900",
+    "taskId": "b997a16f-b6e8-e421-9e0f-3ad3a313d7c7",
+    "description": "UG1 Druckprobe \"Stickstoff\" muss \"Druckluft\" sein\nStickstoff wird nur im UG2 verbaut.\nBitte die restlichen Geschosse ebenfalls korrekt bezeichnen.\nVielen Dank.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "groot"
+  },
+  {
+    "id": "d88bd461-72f3-3d6e-016d-b0a7ced01f2e",
+    "taskId": "ca3a5e44-cbcc-a1ae-5646-55b833d9d649",
+    "description": "Ich kann keine Tageskarten sehen.\n17.01. Projektabsprache mit Herr Mannhardt.\n20.01. 2 Mann -\u003e Baustelleneinrichtung\n\nMontage Rohrhalterung + Verrohrung in Ebene UG1\nFür UG2 wird morgen, Dienstag 21.01. ein Gerüstaufbau besorgt, sodass in UG2 ebenfalls montiert werden kann.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "groot"
+  },
+  {
+    "id": "293a84f9-04fd-794b-9d56-cfb32083f420",
+    "taskId": "ca3a5e44-cbcc-a1ae-5646-55b833d9d649",
+    "description": "Leitungsführung in UG2 nicht ganz eindeutig. \nPositionen der Versprünge müssen noch definiert werden.\nIn Klärung mit unserer CAD Abteilung",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "groot"
+  },
+  {
+    "id": "bdbf3a29-74c8-bb14-060a-b4e4d0affaa8",
+    "taskId": "9b098a0f-0aa4-17cc-684d-40994011fb1a",
+    "description": "Durchgängigkeit durch Fa. Moser bestätigen.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "0c721a1f-55a7-75dc-664a-fb8193574204",
+    "taskId": "a4baf520-c55a-3e45-522e-02e2f5d45a9c",
+    "description": "Es liegen keine Schachtpläne vor!",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "bruno"
+  },
+  {
+    "id": "0739103d-d10d-ace2-6e84-1663bc9da65b",
+    "taskId": "0e1d7f92-3768-56e9-7063-7ae5769fe4c0",
+    "description": "Druckprobe muss im weiteren Verlauf der Anbindung nochmals Erfolgen. Auf Grund durch zu langer Leitungsführung musste die Druckluftleitung verkürzt und abgestopft werden.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "frank"
+  },
+  {
+    "id": "be720749-c2a2-d954-0823-aa578f7dfea9",
+    "taskId": "5f75e6d5-add9-1799-4f6e-9e60fbc66422",
+    "description": "Nach Klärung mit PGMM bezüglich Schachtbelegung, sollte es KW6/KW7 zur einsicht vorliegen.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "frank"
+  },
+  {
+    "id": "58a4985f-7f6d-3ab1-4cca-d0934975edd3",
+    "taskId": "a4baf520-c55a-3e45-522e-02e2f5d45a9c",
+    "description": "Nach Klärung mit PGMM bezüglich Schachtbelegung, sollte es KW6/KW7 zur einsicht vorliegen.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "frank"
+  },
+  {
+    "id": "714e799b-d6fa-1314-fe88-9d13e41e3b54",
+    "taskId": "09b52328-6398-08fa-dca6-e384f0b3d40f",
+    "description": "Sehr geehrte Frau Harr,\ndie Anlieferung und Einbringung wird am Donnerstag, 13.02.20, ab 07:00Uhr erfolgen. Die Baulogistik (Hr. Parra) hat uns grünes Licht gegeben.\n\nFreundliche Grüße\nTobias Escher",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "eddie"
+  },
+  {
+    "id": "8e9c9317-1d93-8bc1-b122-78b9a8d0de5f",
+    "taskId": "8b038531-f726-2f90-0fa5-2ed38e073230",
+    "description": "Sehr geehrte Frau Harr,\ndie Baustelle wird unsererseits ab KW8 (ab 17.02.20) durchgängig besetzt sein. Dementsprechend beginnt die Montage der Schaltschränke ab 17.02. und dauert voraussichtlich bis 12.03.20. \n\nUnser Obermonteur wird ab der KW8 an den Tagesmeetings teilnehmen. \n\nFreundliche Grüße\nTobias Escher",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "eddie"
+  },
+  {
+    "id": "27df42c7-f2a4-1825-cfae-1ee5547c773c",
+    "taskId": "9b098a0f-0aa4-17cc-684d-40994011fb1a",
+    "description": "Es liegt bis dato noch nichts vor.",
+    "criticality": "CRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "70ad3568-9151-6e09-66da-28cbe80cef14",
+    "taskId": "3245e7f9-82af-338d-af08-17d1362c852a",
+    "description": "Kollision mit Schellen u. Durckluftleitung.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "45880154-993d-5ff8-016b-f222ec0d0549",
+    "taskId": "d07e1772-f964-5b2e-aa25-9abbc53a53c5",
+    "description": "Kollision mit prov. Fassade",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "43671f9c-2dfb-7ae0-aae3-cb3c0c42a8de",
+    "taskId": "76038395-b022-a271-e965-2dbc34a9e4df",
+    "description": "nur EG",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "ingo"
+  },
+  {
+    "id": "4983db4e-4345-570e-50ee-c15ae85904d1",
+    "taskId": "d2566b04-0b4f-14e8-eff0-194be53d6676",
+    "description": "nur EG",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "ingo"
+  },
+  {
+    "id": "e419b862-036d-0aab-0801-e6f938c366dc",
+    "taskId": "7b7f6d1c-a2ac-8ada-8768-f385fe00ef08",
+    "description": "Lichtschalter positon ?",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "ingo"
+  },
+  {
+    "id": "8dfc4dd8-205d-9516-ed6f-07247115c6c6",
+    "taskId": "291c6595-ffd5-12ef-bc66-6de69b3bc1e1",
+    "description": "3 Wo. nach hinten verschoben, aufgrund fehlender Planung",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "f6517706-9f6c-72e6-e0ae-c4c2d9c03d56",
+    "taskId": "e937363a-30c1-7254-9513-5d8dd5a21b98",
+    "description": "Einkleben der Gewindestangen am Kaminfuß derzeit nicht möglich, da Wassereintritt von oben.\nDes Weiteren setzt der Blechmantel bei Kontakt mit Wasser Weißrost an.\nBitte schnellstmöglich Wassereintritt beseitigen. Danke :-)",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "cindy"
+  },
+  {
+    "id": "54c50ad9-4b9c-bade-5f1c-f28d28ba621f",
+    "taskId": "e1e17498-1996-1e09-eedc-2964dca35d80",
+    "description": "Baustopp - Klärungsbedarf übers ganze Stockwerk",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "cesar"
+  },
+  {
+    "id": "84070e53-ceeb-cb97-1114-7476f8db7118",
+    "taskId": "f98e6f5e-0893-c629-dd21-af57e279ab7b",
+    "description": "Freigabe Bodenbeläge",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "sheila"
+  },
+  {
+    "id": "108c7bc3-e8ac-fd28-458d-ae58a10aa0a9",
+    "taskId": "a6a7cc3e-1faa-f607-1cc6-7c9648c99b0f",
+    "description": "Nach Rücksprache mit Herr Mannhardt werden weitere Arbeiten im 2.UG in KW 11 durchgeführt.",
+    "criticality": "UNCRITICAL",
+    "createWithUserId": "groot"
+  }
+]

@@ -1,0 +1,39 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[task-statistics]]
+== Task Statistics
+Task Statistics are used to show the number of critical and uncritical topics of a task.
+
+[[get-task-statistics]]
+=== Get Task Statistics
+This endpoint can be used to get the statistics of a task.
+
+[[get-task-statistics-latest]]
+==== Latest API Version
+
+[[get-task-statistics-request-latest]]
+===== Request
+A `GET` request is used get the statistics of a single task.
+
+====== Path parameters
+include::{snippets}/tasks/document-get-task-statistics/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-get-task-statistics/http-request.adoc[]
+include::{snippets}/tasks/document-get-task-statistics/curl-request.adoc[]
+
+[[get-task-statistics-response-latest]]
+===== Response
+The task statistics is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-get-task-statistics/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-get-task-statistics/http-response.adoc[]

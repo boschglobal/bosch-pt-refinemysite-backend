@@ -1,0 +1,62 @@
+logging:
+  level:
+    ROOT: warn
+    com.bosch.pt.csm.cloud:
+      FeatureToggleApplication: info
+      FeatureToggleApplicationKt: info
+      application:
+        config: info
+        lifecycle: info
+      common:
+        facade.rest.ErrorController: info
+        security.CustomAuthenticationEntryPoint: info
+    org:
+      #Configure logging for sql parameters
+      # hibernate:
+      # type.descriptor.sql.BasicBinder: TRACE
+      # SQL: debug
+      apache.kafka.clients.consumer.internals.Fetcher: error
+      flywaydb.core.internal.command: info
+      springframework:
+        boot:
+          context: info
+          web.embedded.tomcat.GracefulShutdown: info
+        cloud.config: debug
+        kafka.core.KafkaAdmin: info
+        retry: info
+        web.filter.CommonsRequestLoggingFilter: debug
+        web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: error
+
+---
+spring:
+  config:
+    activate:
+      on-profile: log-jpa
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        event: debug
+        persister:
+          collection: debug
+        internal:
+          util:
+            EntityPrinter: debug
+        type:
+          EnumType: trace
+          CollectionType: trace
+          descriptor:
+            sql: trace
+      springframework:
+        transaction:
+          support:
+            AbstractPlatformTransactionManager: debug
+        orm:
+          jpa:
+            JpaTransactionManager: debug

@@ -1,0 +1,28 @@
+kafka:
+  schema:
+    autoRegisterSchemas: false
+    key:
+      schemaFile: resources/avro/StringMessageKeyAvro.avsc
+      schemaSubject: com.bosch.pt.csm.cloud.common.messages.StringMessageKeyAvro
+    upload:
+      schemaFile: resources/avro/FileCreatedEventAvro.avsc
+      schemaSubject: com.bosch.pt.csm.cloud.storage.event.messages.FileCreatedEventAvro
+  topic:
+    autoCreateTopics: false
+    upload:
+      partitions: 1
+      replicationFactor: 2
+
+server:
+  port: 8080
+
+storage:
+  # blob content larger than 500MB (content length in bytes) will be discarded
+  maxAllowedContentLength: 524_288_000
+  queueName: quarantineuploads
+  queueBatchNumberOfMessages: 1
+  queueMessageVisibilityTimeoutInSeconds: 60
+  queuePollingInterval: 500ms
+  # with 5 retries and an initial retry backoff of 5s the app will fatally fail after about 80 seconds
+  queuePollingRetryBackoff: 5s
+  queuePollingRetryAttempts: 5

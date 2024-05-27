@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: csm-cloud-pdf-converter
+  cloud:
+    kubernetes:
+      # kubernetes config maps
+      config:
+        enabled: false
+        enable-api: false
+        namespace: default
+        sources:
+          - name: ${spring.application.name}
+      # automatic reloading of config props
+      reload:
+        enabled: false
+        mode: polling
+        period: 5000
+        strategy: refresh
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          kubernetes: info

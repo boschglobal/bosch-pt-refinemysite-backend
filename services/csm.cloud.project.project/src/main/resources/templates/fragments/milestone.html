@@ -1,0 +1,35 @@
+<!--
+  ~ *************************************************************************
+  ~
+  ~  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+  ~
+  ~ *************************************************************************
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<!--/*@thymesVar id="calendarCell" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.layout.CalendarCell"*/-->
+<td th:fragment="milestone-cell (calendarCell)" class="milestone"
+    th:colspan="${calendarCell.width}">
+    <div class="milestone-container"
+         th:classappend="${calendarCell.content.inverted ? 'milestone--inverted' : ''}">
+        <div class="milestone-marker"
+             th:classappend="'milestone-marker--' + ${calendarCell.content.typeName} + ${calendarCell.content.critical ? ' milestone-marker--critical' : ''}"
+             th:style="${calendarCell.content.hasColor ? 'background-color:' + calendarCell.color + ';': ''}">
+            <svg th:if="${calendarCell.content.critical}"
+                 xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 16 16"
+                 class="milestone-marker__critical-icon">
+                <use xlink:href="#milestone-critical"/>
+            </svg>
+        </div>
+        <span class="milestone-name"
+              th:text="${calendarCell.content.name}">
+        </span>
+    </div>
+</td>
+
+</body>

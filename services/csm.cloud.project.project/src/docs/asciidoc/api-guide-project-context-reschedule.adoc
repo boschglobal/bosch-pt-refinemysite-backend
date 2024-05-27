@@ -1,0 +1,91 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2022
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[reschedule]]
+== Reschedule
+
+The reschedule functionality is used to move milestones and tasks a number of days forward or backward.
+
+[[validate-reschedule]]
+=== Validate reschedule
+
+Validate a reschedule operation returning the milestones and tasks that would be moved and the ones that would not moved.
+
+[[validate-reschedule-latest]]
+==== Latest API Version
+
+[[validate-reschedule-request-latest]]
+===== Request
+
+Does a request to validate, for a specific filter milestones and tasks, the possible end result.
+
+====== Path parameters
+
+include::{snippets}/reschedule/document-validation-reschedule/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/reschedule/document-validation-reschedule/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/reschedule/document-validation-reschedule/http-request.adoc[]
+include::{snippets}/reschedule/document-validation-reschedule/curl-request.adoc[]
+
+[[validate-reschedule-response-latest]]
+===== Response
+
+The result of the validation of the reschedule
+
+====== Response fields
+
+include::{snippets}/reschedule/document-validation-reschedule/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/reschedule/document-validation-reschedule/http-response.adoc[]
+
+[[job-reschedule]]
+=== Job reschedule
+
+Reschedule operation returning the identifier of the job enqueued.
+
+[[job-reschedule-latest]]
+==== Latest API Version
+
+[[job-reschedule-request-latest]]
+===== Request
+
+Does a request to reschedule, for a specific filter milestones and tasks.
+
+====== Path parameters
+
+include::{snippets}/reschedule/document-job-reschedule/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/reschedule/document-job-reschedule/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/reschedule/document-job-reschedule/http-request.adoc[]
+include::{snippets}/reschedule/document-job-reschedule/curl-request.adoc[]
+
+[[job-reschedule-response-latest]]
+===== Response
+
+The result identifier of the job that will do the reschedule
+
+====== Response fields
+
+include::{snippets}/reschedule/document-job-reschedule/response-fields.adoc[]
+
+====== Example response
+
+include::{snippets}/reschedule/document-job-reschedule/http-response.adoc[]
+

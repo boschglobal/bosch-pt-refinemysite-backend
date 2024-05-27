@@ -1,0 +1,152 @@
+[
+  {
+    "identifier": "8e262164-69de-4f65-a35f-32d840d179a0",
+    "type": "TERMS_AND_CONDITIONS",
+    "country": "DE",
+    "locale": "en",
+    "client": "ALL",
+    "displayName": "Terms of Use",
+    "url": "https://www.bosch-pt.com/ptlegalpages/de/ptde/en/refinemysiteweb/termsofuse/",
+    "versions": [
+      {
+        "identifier": "96e491fb-f794-4f99-8a7b-c4b1f6f4952c",
+        "lastChanged": "2015-01-01T00:00:00.123Z"
+      }
+    ]
+  },
+  {
+    "identifier": "8f0c4073-c096-4b71-8973-de2b543a1a42",
+    "type": "TERMS_AND_CONDITIONS",
+    "country": "DE",
+    "locale": "de",
+    "client": "ALL",
+    "displayName": "Nutzungsbedingungen",
+    "url": "https://www.bosch-pt.com/ptlegalpages/de/ptde/de/refinemysiteweb/termsofuse/",
+    "versions": [
+      {
+        "identifier": "7bd8c710-e82b-4744-8ab7-42ab208a1c2d",
+        "lastChanged": "2015-01-01T00:00:00.123Z"
+      }
+    ]
+  },
+  {
+    "identifier": "88584e13-a1e7-49d0-bb5c-4f067dc94c0c",
+    "type": "TERMS_AND_CONDITIONS",
+    "country": "DE",
+    "locale": "fr",
+    "client": "ALL",
+    "displayName": "Conditions d’utilisation",
+    "url": "https://www.bosch-pt.com/ptlegalpages/de/ptde/fr/refinemysitemobile/termsofuse/",
+    "versions": [
+      {
+        "identifier": "d28d118b-15bf-4232-94c9-a43c65b0a485",
+        "lastChanged": "2015-01-01T00:00:00.123Z"
+      }
+    ]
+  },
+  {
+    "identifier": "f1b7536a-f183-4fa2-960c-f5eb511061ce",
+    "type": "TERMS_AND_CONDITIONS",
+    "country": "DE",
+    "locale": "es",
+    "client": "ALL",
+    "displayName": "Condiciones de uso",
+    "url": "https://www.bosch-pt.com/ptlegalpages/de/ptde/es/refinemysitemobile/termsofuse/",
+    "versions": [
+      {
+        "identifier": "33a01f8d-2338-4f77-ba63-ac62ab44cd59",
+        "lastChanged": "2015-01-01T00:00:00.123Z"
+      }
+    ]
+  },
+  {
+    "identifier": "4fe0b318-de70-4962-8caa-8caab07423df",
+    "type": "TERMS_AND_CONDITIONS",
+    "country": "DE",
+    "locale": "pt",
+    "client": "ALL",
+    "displayName": "Condições de utilização",
+    "url": "https://www.bosch-pt.com/ptlegalpages/de/ptde/pt/refinemysitemobile/termsofuse/",
+    "versions": [
+      {
+        "identifier": "cf7d21a7-e4a7-45c3-afe2-6458b2ff61f3",
+        "lastChanged": "2015-01-01T00:00:00.123Z"
+      }
+    ]
+  },
+  {
+    "identifier": "c4e1a0b0-6027-4630-8b50-72e635a6e304",
+    "type": "TERMS_AND_CONDITIONS",
+    "country": "US",
+    "locale": "en",
+    "client": "ALL",
+    "displayName": "Terms and Conditions",
+    "url": "https://www.bosch-pt.com/ptlegalpages/us/ptna/en/refinemysiteweb/termsofuse/",
+    "versions": [
+      {
+        "identifier": "73bd97a3-d330-4236-955b-e6c3b351e8d0",
+        "lastChanged": "2021-04-01T00:00:00.123Z"
+      }
+    ]
+  },
+  {
+    "identifier": "517314c0-1a31-42a9-834f-bcd6ac16d816",
+    "type": "EULA",
+    "country": "US",
+    "locale": "en",
+    "client": "WEB",
+    "displayName": "End User License Agreement",
+    "url": "https://www.bosch-pt.com/ptlegalpages/us/ptna/en/refinemysiteweb/eula/",
+    "versions": [
+      {
+        "identifier": "480da40c-f160-4a3b-b0eb-734a8069dcdb",
+        "lastChanged": "2020-02-28T00:00:00.123Z"
+      }
+    ]
+  },
+  {
+    "identifier": "70797147-f4db-4d30-9eb1-5b8907642e68",
+    "type": "EULA",
+    "country": "US",
+    "locale": "en",
+    "client": "MOBILE",
+    "displayName": "End User License Agreement",
+    "url": "https://www.bosch-pt.com/ptlegalpages/us/ptna/en/refinemysitemobile/eula/",
+    "versions": [
+      {
+        "identifier": "0f3a04bb-8cb1-402f-8d6d-242475bc27a2",
+        "lastChanged": "2022-07-07T00:00:00.123Z"
+      }
+    ]
+  },
+  {
+    "identifier": "492f2190-dc5f-48d8-8b34-8bfbfcf4e851",
+    "type": "TERMS_AND_CONDITIONS",
+    "country": "CA",
+    "locale": "en",
+    "client": "ALL",
+    "displayName": "Terms and Conditions",
+    "url": "https://www.bosch-pt.com/ptlegalpages/ca/rbca/en/refinemysiteweb/termsofuse/",
+    "versions": [
+      {
+        "identifier": "7e0341f3-04f7-4eff-b432-0fe61fe28090",
+        "lastChanged": "2020-01-22T00:00:00.123Z"
+      }
+    ]
+  },
+  {
+    "identifier": "c476ee35-9eeb-4fa3-a8fc-81359ae73276",
+    "type": "EULA",
+    "country": "CA",
+    "locale": "en",
+    "client": "WEB",
+    "displayName": "End User License Agreement",
+    "url": "https://www.bosch-pt.com/ptlegalpages/ca/rbca/en/refinemysiteweb/eula/",
+    "versions": [
+      {
+        "identifier": "bde5c1f7-8b65-41d7-886c-a376894dffa3",
+        "lastChanged": "2020-01-22T00:00:00.123Z"
+      }
+    ]
+  }
+]

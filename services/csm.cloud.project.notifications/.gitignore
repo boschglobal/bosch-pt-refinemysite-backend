@@ -1,0 +1,16 @@
+**/.gradle
+**/build
+**/out
+**/bin
+
+.vscode/*
+.settings/*
+.project
+.classpath
+
+# Ignore all ...
+.idea/*
+*.iml
+
+# just used for local development connected to azure
+src/main/resources/application-mongodb-local-azure.yml

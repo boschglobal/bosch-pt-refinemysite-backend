@@ -1,0 +1,14 @@
+[
+  {
+    "id": "projectPicture1",
+    "projectId": "project1",
+    "path": "attachments/project1_picture.jpg",
+    "createWithUserId": "leonardo"
+  },
+  {
+    "id": "projectPicture2",
+    "projectId": "project2",
+    "path": "attachments/project2_picture.jpeg",
+    "createWithUserId": "pinto"
+  }
+]

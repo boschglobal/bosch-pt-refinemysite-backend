@@ -1,0 +1,44 @@
+<!--
+  ~ *************************************************************************
+  ~
+  ~  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+  ~
+  ~ *************************************************************************
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<!--/*@thymesVar id="calendarCell" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.layout.CalendarCell"*/-->
+<td th:fragment="task-cell (calendarCell, includeDayCards)" class="task"
+    th:colspan="${calendarCell.width}"
+    th:rowspan="${calendarCell.height}">
+    <div class="task-container">
+
+        <div class="task-details" th:style="'background-color:' + ${calendarCell.color} + ';'">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" class="task-status">
+                <use th:attr="'xlink:href'=${calendarCell.content.getStatusIcon()}"/>
+            </svg>
+            <div class="task-name" th:text="${calendarCell.content.name}"></div>
+            <div class="task-company ellipsis" th:text="${calendarCell.content.company}"></div>
+            <svg th:if="${calendarCell.content.hasTaskConstraint}" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 96 96"
+                 class="task-constraint">
+                <use xlink:href="#task-constraint-icon"/>
+            </svg>
+
+        </div>
+
+        <div th:if="${includeDayCards}" class="task-slots">
+            <th:block th:each="dayCard : ${calendarCell.content.dayCards}">
+                <th:block th:replace="~{fragments/daycard :: daycard (${dayCard})}"></th:block>
+            </th:block>
+        </div>
+
+    </div>
+
+</td>
+
+</body>

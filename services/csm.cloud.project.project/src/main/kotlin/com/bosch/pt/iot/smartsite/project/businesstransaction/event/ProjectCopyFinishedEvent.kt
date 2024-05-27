@@ -1,0 +1,37 @@
+/*
+ * ************************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2022
+ *
+ * ************************************************************************
+ */
+
+package com.bosch.pt.iot.smartsite.project.businesstransaction.event
+
+import com.bosch.pt.csm.cloud.common.model.key.BusinessTransactionFinishedMessageKey
+import com.bosch.pt.csm.cloud.projectmanagement.copy.messages.ProjectCopyFinishedEventAvro
+import com.bosch.pt.iot.smartsite.application.security.AuthorizationUtils.getCurrentUser
+import com.bosch.pt.iot.smartsite.common.businesstransaction.BusinessTransactionContextHolder.currentBusinessTransactionId
+import com.bosch.pt.iot.smartsite.project.project.ProjectId
+import com.bosch.pt.iot.smartsite.user.model.User
+import java.time.LocalDateTime
+import java.time.LocalDateTime.now
+
+class ProjectCopyFinishedEvent(
+    projectIdentifier: ProjectId,
+    val createdDate: LocalDateTime = now(),
+    val createdBy: User = getCurrentUser()
+) : AbstractProjectBusinessTransactionEvent(projectIdentifier) {
+
+  override fun toAvroMessage(): ProjectCopyFinishedEventAvro =
+      ProjectCopyFinishedEventAvro.newBuilder()
+          .setAuditingInformation(buildEventAuditingInformation(createdDate, createdBy))
+          .build()
+
+  override fun toMessageKey() =
+      BusinessTransactionFinishedMessageKey(
+          currentBusinessTransactionId()
+              ?: error(
+                  "Cannot create message key because no active business transaction was found."),
+          projectIdentifier.toUuid())
+}

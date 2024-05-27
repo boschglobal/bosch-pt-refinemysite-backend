@@ -1,0 +1,333 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[project-participants]]
+== Project Participants
+
+
+
+[[assign-project-participant]]
+=== Add participant
+This endpoint is used to add a user as a participant to a project. The user to be added is identified by the email
+address.
+
+In case the user is not registered yet, the user is invited and receives an email to signup. The participant is added
+in status "INVITED". When the user signs up, the status is automatically changed to "VALIDATION". Once the user is
+assigned as an employee to a company, the status changed to "ACTIVE".
+
+In case the user is already registered and assigned to a company, it is directly added as an active participant.
+If the user is registered, and not yet assigned to a company, the user is added as a participant in status
+"VALIDATION".
+
+This operation is only permitted to CSMs of the project.
+
+Invitations are valid for a timespan of 30 days. After 30 days, pending invitations and therewith invited
+participants are automatically removed.
+
+[[assign-project-participant-latest]]
+==== Latest API Version
+
+[[assign-project-participant-requst-latest]]
+===== Request
+A `POST` request is used to assign a user to a project.
+
+====== Path parameters
+include::{snippets}/projects/document-assign-project-participant/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/projects/document-assign-project-participant/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-assign-project-participant/http-request.adoc[]
+include::{snippets}/projects/document-assign-project-participant/curl-request.adoc[]
+
+[[assign-project-participant-response-latest]]
+===== Response
+The created participant is returned.
+
+====== Response fields
+include::{snippets}/projects/document-assign-project-participant/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-assign-project-participant/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-assign-project-participant/http-response.adoc[]
+
+
+
+[[assign-project-participant-with-identifier]]
+=== Add participant with identifier
+Same as the previous request, but choose the participant identifier client-side.
+
+[[assign-project-participant-with-identifier-latest]]
+==== Latest API Version
+
+[[assign-project-participant-with-identifier-request-latest]]
+===== Request
+A `POST` request is used to assign a user to a project.
+
+====== Path parameters
+include::{snippets}/projects/document-assign-project-participant-with-identifier/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/projects/document-assign-project-participant-with-identifier/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-assign-project-participant-with-identifier/http-request.adoc[]
+include::{snippets}/projects/document-assign-project-participant-with-identifier/curl-request.adoc[]
+
+[[assign-project-participant-with-identifier-response-latest]]
+===== Response
+The created project participant is returned.
+
+====== Response fields
+include::{snippets}/projects/document-assign-project-participant-with-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-assign-project-participant-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-assign-project-participant-with-identifier/http-response.adoc[]
+
+
+
+[[update-project-participant]]
+=== Update participant
+Updates the role of the project participant with the specified identifier for the role sent in the
+request body.
+
+[[update-project-participant-latest]]
+==== Latest API Version
+
+[[update-project-participant-request-latest]]
+===== Request
+A `PUT` request is used to update the role of a project participant.
+
+====== Path parameters
+include::{snippets}/projects/document-update-project-participant/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/projects/document-update-project-participant/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/projects/document-update-project-participant/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-update-project-participant/http-request.adoc[]
+include::{snippets}/projects/document-update-project-participant/curl-request.adoc[]
+
+===== Response
+The updated participant is returned.
+
+====== Response fields
+include::{snippets}/projects/document-update-project-participant/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-update-project-participant/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-update-project-participant/http-response.adoc[]
+
+
+
+[[get-project-participant]]
+=== Get participant
+This endpoint can be used to get a single project participant.
+
+[[get-project-participant-latest]]
+==== Latest API Version
+
+[[get-project-participant-request-latest]]
+===== Request
+A `GET` request is used to load a single project participant.
+
+====== Path parameters
+include::{snippets}/projects/document-single-project-participant/path-parameters.adoc[]
+
+====== Example request:
+include::{snippets}/projects/document-single-project-participant/http-request.adoc[]
+include::{snippets}/projects/document-single-project-participant/curl-request.adoc[]
+
+[[get-project-participant-response-latest]]
+===== Response
+The participant resource is returned.
+
+====== Response fields
+include::{snippets}/projects/document-single-project-participant/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-single-project-participant/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-single-project-participant/http-response.adoc[]
+
+
+
+[[list-project-participants]]
+=== List all participants
+This endpoint can be used to get a list of participants of a project.
+
+[[list-project-participants-latest]]
+==== Latest API Version
+
+[[list-project-participants-request-latest]]
+===== Request
+A `POST` request is used to load a page of project participants filtered by a set of criteria.
+
+====== Path parameters
+include::{snippets}/projects/document-search-project-participants/path-parameters.adoc[]
+
+====== Request parameters
+include::{snippets}/projects/document-search-project-participants/query-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/projects/document-search-project-participants/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-search-project-participants/http-request.adoc[]
+include::{snippets}/projects/document-search-project-participants/curl-request.adoc[]
+
+===== Response
+A page of project participants is returned.
+
+====== Response fields
+include::{snippets}/projects/document-search-project-participants/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-search-project-participants/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-search-project-participants/http-response.adoc[]
+
+
+
+[[list-assignable-project-participants]]
+=== List all assignable participants
+The projects participants list that contains all assignable participants of a project.
+
+[[list-assignable-project-participants-latest]]
+==== Latest API Version
+
+[[list-assignable-project-participants-request-latest]]
+===== Request
+A `GET` request is used to get a page of assignable project participants.
+
+====== Path parameters
+include::{snippets}/projects/document-assignable-list-project-participants/path-parameters.adoc[]
+
+====== Request parameters
+include::{snippets}/projects/document-assignable-list-project-participants/query-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-assignable-list-project-participants/http-request.adoc[]
+include::{snippets}/projects/document-assignable-list-project-participants/curl-request.adoc[]
+
+[[list-assignable-project-participants-response-latest]]
+===== Response
+A page of project participants is returned.
+
+====== Response fields
+include::{snippets}/projects/document-assignable-list-project-participants/response-fields.adoc[]
+
+====== Links
+include::{snippets}/projects/document-assignable-list-project-participants/links.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-assignable-list-project-participants/http-response.adoc[]
+
+
+
+[[list-project-participant-companies]]
+=== List all participant's companies
+The projects participant companies list contains all companies of participants of a project.
+
+[[list-project-participant-companies-latest]]
+==== Latest API Version
+
+[[list-project-participant-companies-request-latest]]
+===== Request
+A `GET` request  is used to get a page of the project participant's companies.
+
+====== Path parameters
+include::{snippets}/projects/document-get-project-companies/path-parameters.adoc[]
+
+====== Request parameters
+include::{snippets}/projects/document-get-project-companies/query-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-get-project-companies/http-request.adoc[]
+include::{snippets}/projects/document-get-project-companies/curl-request.adoc[]
+
+[[list-project-participant-companies-response-latest]]
+===== Response
+A page of companies resource references is returned.
+
+====== Response fields
+include::{snippets}/projects/document-get-project-companies/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/projects/document-get-project-companies/http-response.adoc[]
+
+
+
+[[delete-participant]]
+=== Delete one participant
+This operation deactivates the project participant with the specified identifier if the participant is assigned to a
+company. Participants in status "INVITED" or "VALIDATION" are physically deleted. Deactivated participants remain
+referenced in other resources but cannot be referenced any longer. A participant can be reactivated by reassigning
+a user to the project again.
+
+[[delete-participant-latest]]
+==== Latest API Version
+
+[[delete-participant-request-latest]]
+===== Request
+A `DELETE` request is used delete a project participant.
+
+====== Path parameters
+include::{snippets}/projects/document-delete-participant/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-delete-participant/http-request.adoc[]
+include::{snippets}/projects/document-delete-participant/curl-request.adoc[]
+
+[[delete-participant-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/projects/document-delete-participant/http-response.adoc[]
+
+
+
+[[resend-invitation]]
+=== Resend invitation
+This operation resends the invitation for an already invited participant
+who has not registered yet.
+
+[[resend-invitation-latest]]
+==== Latest API Version
+
+[[resend-invitation-request-latest]]
+===== Request
+A `POST` request is used to resend an invitation.
+
+====== Path parameters
+include::{snippets}/projects/document-resend-invitation/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/projects/document-resend-invitation/http-request.adoc[]
+include::{snippets}/projects/document-resend-invitation/curl-request.adoc[]
+
+[[resend-invitation-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/projects/document-resend-invitation/http-response.adoc[]

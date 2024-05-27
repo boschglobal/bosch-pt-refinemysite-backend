@@ -1,0 +1,74 @@
+spring:
+  security.oauth2.client.registration:
+    skid:
+      authorization-grant-type: client_credentials
+      client-authentication-method: post
+      client-id: ${csm-cloud-user-skid-client-id}
+      client-secret: ${csm-cloud-user-skid-client-secret}
+      scope: user_deletion
+
+---
+spring:
+  config:
+    activate:
+      on-profile: staging
+
+  security.oauth2.client:
+    provider:
+      skid:
+        token-uri: "https://stage.singlekey-id.com/auth/connect/token"
+    registration:
+      skid:
+        client-id: ${csm-cloud-user-skid-client-id}
+        client-secret: ${csm-cloud-user-skid-client-secret}
+
+custom:
+  skid:
+    dryRun: false
+    baseUrl: https://stage.singlekey-id.com
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  security.oauth2.client:
+    provider:
+      skid:
+        # for debugging, you can use the following token-uri and run netcat -l 5555 in the terminal.
+        #token-uri: "http://localhost:5555"
+        token-uri: "https://stage.singlekey-id.com/auth/connect/token"
+    registration:
+      skid:
+        client-id: ${csm-cloud-user-skid-client-id}
+        client-secret: ${csm-cloud-user-skid-client-secret}
+
+custom:
+  skid:
+    baseUrl: https://stage.singlekey-id.com
+    dryRun: false
+    delete-users-job:
+      # when enabled, don't forget to set the skid OAuth credentials above or (better) in your run config
+      enabled: false
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+
+  security.oauth2.client:
+    provider:
+      skid:
+        token-uri: "https://singlekey-id.com/auth/connect/token"
+    registration:
+      skid:
+        client-id: ${csm-cloud-user-skid-client-id}
+        client-secret: ${csm-cloud-user-skid-client-secret}
+
+custom:
+  skid:
+    baseUrl: https://singlekey-id.com
+    dryRun: false

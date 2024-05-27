@@ -1,0 +1,8 @@
+custom:
+  blob-storage:
+    scaling-processor:
+      retry:
+        max-attempts: 1
+        initial-backoff-ms: 0
+        multiplier: 0
+        max-backoff-ms: 0

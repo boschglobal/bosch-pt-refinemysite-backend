@@ -1,0 +1,95 @@
+"""
+Day card
+"""
+type DayCardPayloadV1 {
+
+    """
+    Unique identifier of the day card
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    The date of the day card
+    """
+    date: Date!,
+
+    """
+    Status
+    """
+    status: DayCardStatusEnumPayloadV1!,
+
+    """
+    Title
+    """
+    title: String!,
+
+    """
+    Manpower
+    """
+    manpower: Decimal!,
+
+    """
+    Optional notes
+    """
+    notes: String,
+
+    """
+    Optional reason
+    """
+    reason: DayCardReasonPayloadV1,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}
+
+"""
+Enumeration of day card status.
+
+Flow of status is:
+OPEN -> APPROVED (-> OPEN)
+OPEN -> DONE -> APPROVED (-> OPEN)
+OPEN -> NOT_DONE (-> OPEN)
+"""
+enum DayCardStatusEnumPayloadV1 {
+
+    """
+    Day card was created, but it is not marked as completed
+    """
+    OPEN,
+
+    """
+    Day card was open, but work couldn't be done (contains reason)
+    """
+    NOT_DONE,
+
+    """
+    Work is finished, card is ready to be approved
+    """
+    DONE,
+
+    """
+    Day card is done and is approved
+    """
+    APPROVED
+}
+
+type DayCardReasonPayloadV1 {
+
+    """
+    Technical identifier of the reason
+    """
+    key: String!,
+
+    """
+    Display value translated to the language requested
+    in the `Accept-Language` HTTP-Header (default: English)
+    """
+    displayName: String!
+}

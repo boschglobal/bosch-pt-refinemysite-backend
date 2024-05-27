@@ -1,0 +1,9 @@
+spring:
+  config:
+    import:
+      - classpath:metrics-common.yml
+
+management:
+  metrics:
+    enable:
+      kafka.producer: true

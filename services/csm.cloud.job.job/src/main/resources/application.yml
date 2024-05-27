@@ -1,0 +1,76 @@
+info:
+  app:
+    name: ${spring.application.name}
+
+spring:
+  config:
+    import:
+      - classpath:actuator-common.yml
+      - classpath:apiversion.yml
+      - classpath:kafka.yml
+      - classpath:kafka-listeners.yml
+      - classpath:kafka-topics.yml
+      - classpath:logging.yml
+      - classpath:metrics-common.yml
+      - classpath:mongodb.yml
+      - classpath:profiles.yml
+      - classpath:server.yml
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+  aop:
+    auto: true
+  data:
+    web:
+      pageable:
+        max-page-size: 100
+        default-page-size: 20
+  jackson:
+    default-property-inclusion: non_null
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+  threads:
+    virtual:
+      enabled: true
+
+locale:
+  default: en_GB
+  supported: en_GB, de_DE, es_ES, pt_PT, fr_FR
+
+system:
+  user:
+    identifier: c37da613-8e70-4003-9106-12412c9d2496
+
+custom.job:
+  max-active-per-user: 10
+  # The TTL should be equal or shorter than the storage account expiration
+  # period.  (see: csm.azurerm.infrastructure.project/storageaccount.tf)
+  ttl.days: 3
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+custom:
+  swagger:
+    url: /
+
+csm.user.url: http://localhost:8010
+
+stage: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: swagger
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /swagger/jobs/api-definition
+  writer-with-order-by-keys: true

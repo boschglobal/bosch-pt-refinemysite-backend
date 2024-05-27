@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+  flyway:
+    locations: classpath:db/migration/postgres
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+  datasource:
+    url: ${csm-monitoring-event-postgresql-flexible-url}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bam?user=postgres&password=smartsite

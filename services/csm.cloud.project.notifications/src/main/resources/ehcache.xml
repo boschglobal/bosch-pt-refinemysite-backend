@@ -1,0 +1,43 @@
+<config
+        xmlns:jsr107='http://www.ehcache.org/v3/jsr107'
+        xmlns='http://www.ehcache.org/v3'>
+    <service>
+        <jsr107:defaults enable-management="true" enable-statistics="true"/>
+    </service>
+
+    <cache-template name="default">
+        <expiry>
+            <ttl unit="seconds">30</ttl>
+        </expiry>
+
+        <listeners>
+            <listener>
+                <class>com.bosch.pt.csm.cloud.projectmanagement.application.config.CacheEventLogger</class>
+                <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+                <event-ordering-mode>UNORDERED</event-ordering-mode>
+                <events-to-fire-on>CREATED</events-to-fire-on>
+                <events-to-fire-on>EXPIRED</events-to-fire-on>
+            </listener>
+        </listeners>
+
+        <resources>
+            <!-- At least one of heap, offheap or disk is required. If heap and offheap is configured, heap has to be
+             smaller than offheap. There seems to be no default - it has to be set explicitly.
+             Since we cache data only for 30 seconds it might be the better choice to use heap as the effect of garbage
+             collection might be small than serializing/deserializing entries
+             https://www.ehcache.org/documentation/3.8/caching-concepts.html#storage-tiers
+             -->
+            <heap unit="MB">4</heap>
+        </resources>
+    </cache-template>
+
+    <cache alias="user" uses-template="default"></cache>
+    <cache alias="user-display-name" uses-template="default"></cache>
+    <cache alias="employee" uses-template="default"></cache>
+    <cache alias="participant" uses-template="default"></cache>
+    <cache alias="participant-user" uses-template="default"></cache>
+    <cache alias="project-display-name" uses-template="default"></cache>
+    <cache alias="task-display-name" uses-template="default"></cache>
+    <cache alias="rfv-customization" uses-template="default"></cache>
+
+</config>

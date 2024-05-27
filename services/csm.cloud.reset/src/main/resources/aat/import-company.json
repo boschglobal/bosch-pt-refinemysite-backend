@@ -1,0 +1,65 @@
+[
+  {
+    "id": "company1",
+    "name": "Acme",
+    "streetAddress": {
+      "city": "Leinfelden-Echterdingen",
+      "zipCode": "70771",
+      "country": "Germany",
+      "street": "Hauptstraße",
+      "houseNumber": "30-33"
+    },
+    "postBoxAddress": {
+      "city": "Leinfelden-Echterdingen",
+      "zipCode": "70771",
+      "country": "Germany",
+      "postBox": "Postfach 0815"
+    }
+  },
+  {
+    "id": "company2",
+    "name": "Kurz",
+    "streetAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70188",
+      "country": "Germany",
+      "street": "Hackstr.",
+      "houseNumber": "58"
+    }
+  },
+  {
+    "id": "company3",
+    "name": "Meister",
+    "postBoxAddress": {
+      "city": "Stuttgart",
+      "zipCode": "70173",
+      "area": "Baden-Württemberg",
+      "country": "Germany",
+      "postBox": "Postfach 4711"
+    }
+  },
+  {
+    "id": "company4",
+    "name": "Porzellan",
+    "streetAddress": {
+      "city": "Böblingen",
+      "zipCode": "71034",
+      "area": "Baden-Württemberg",
+      "country": "Germany",
+      "street": "Graf-Zeppelin-Platz",
+      "houseNumber": "8"
+    }
+  },
+  {
+    "id": "company5",
+    "name": "ESPRESSO",
+    "streetAddress": {
+      "city": "Böblingen",
+      "zipCode": "71034",
+      "area": "Baden-Württemberg",
+      "country": "Germany",
+      "street": "Graf-Zeppelin-Platz",
+      "houseNumber": "8"
+    }
+  }
+]

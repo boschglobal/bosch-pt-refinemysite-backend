@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    group:
+      local:
+        - idp-bosch-dev
+        - init-topics
+        - swagger
+      staging:
+        - idp-bosch-dev
+        - init-topics
+        - kubernetes
+        - log-json
+        - docs
+        - swagger
+      production:
+        # - idp-bosch-prod (controlled by helm chart since production profile is used on review, too
+        - kubernetes
+        - log-json

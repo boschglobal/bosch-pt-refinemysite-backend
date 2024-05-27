@@ -1,0 +1,97 @@
+custom:
+  mail:
+    job:
+      expire-invitations:
+        enabled: true
+      resend-invitation:
+        enabled: true
+        first-reminder-period-days: 7
+        second-reminder-period-days: 21
+    templates:
+      # Mail A
+      participant-added:
+        countries:
+          CA: 2816866
+          DE: 2783793
+          US: 2783647
+        default: 2785659
+      # Mail: B2
+      participant-invited:
+        countries:
+          CA: 2832885
+          DE: 2839914
+          US: 2825992
+        default: 2839889
+      # Mail: B2
+      participant-activated:
+        countries:
+          CA: 2840014
+          DE: 2840034
+          US: 2826160
+        default: 2840072
+    locale:
+      supported: en_GB, de_DE, fr_CA
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes && !restore-db
+
+custom:
+  mailjet:
+    api:
+      key: ${mailjet-api-key}
+      secret: ${mailjet-api-secret}
+    bcc:
+      email: ${mailjet-bcc-email}
+    templateErrorReporting:
+      email: ${mailjet-error-reporting-email}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: redirect-mails
+
+custom:
+  mailjet:
+    redirect-mails:
+      recipient-email-pattern: ${mailjet-redirect-pattern}
+      redirect-to-email: ${mailjet-redirect-email}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local && !restore-db
+
+domain.name: localhost
+
+custom:
+  mailjet:
+    api:
+      key: ""
+      secret: ""
+    enabled: false
+
+---
+spring:
+  config:
+    activate:
+      on-profile: restore-db
+
+domain.name: ""
+
+custom:
+  mail:
+    job:
+      expire-invitations:
+        enabled: false
+      resend-invitation:
+        enabled: false
+  mailjet:
+    api:
+      key: ""
+      secret: ""
+    enabled: false

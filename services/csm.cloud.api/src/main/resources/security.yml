@@ -1,0 +1,18 @@
+custom.redirects.whitelisted:
+  - ${web.ui.url}
+  - ${admin.web.ui.url}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: staging-open
+
+custom.redirects.whitelisted:
+  - ${web.ui.url}
+  - ${admin.web.ui.url}
+  # web.ui during local development
+  - http://localhost:8000
+  # admin.web.ui during local development
+  - http://localhost:8001
+

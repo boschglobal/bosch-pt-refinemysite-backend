@@ -1,0 +1,7 @@
+custom:
+  kafka:
+    listener:
+      user-projector:
+        groupId: "csm-fm-${stage}-projector-user"
+        clientIdPrefix: "csm-cloud-featuretoggle-user-projector"
+        concurrency: 2

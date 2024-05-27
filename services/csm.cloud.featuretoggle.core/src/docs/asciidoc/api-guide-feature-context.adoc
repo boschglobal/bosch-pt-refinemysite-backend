@@ -1,0 +1,281 @@
+//////////////////////////////////////////
+ *****************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2022
+ * *****************************************************************
+//////////////////////////////////////////
+
+= RefinemySite Feature Toggle Context API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+The feature toggle API in RefinemySite is an API for administrators to enable and disable features for companies and
+/ or users. The API is not meant to be used by normal application users - the toggles effect the availability and
+functionality of other endpoints.
+
+
+
+== Feature
+A feature can be used to not release functionality immediately to all users. A feature has a name and a status.
+The name of the feature has to be clarified with the the backend developers as it has to match the implemented
+name in the code to have any effect.
+
+A feature can be in state:
+
+* `WHITELIST_ACTIVATED`: Feature is only enabled for subjects on a whitelist (i.e. Companies, Projects, etc.) `[DEFAULT]`
+* `ENABLED`: Feature is enabled globally for all users on the platform
+* `DISABLED`: Feature is disabled globally for all users on the platform (whitelist is not lost)
+
+Subjects (i.e. Companies, Projects, etc) can be added to and removed from a whitelist to enable or disable the feature.
+
+
+
+[[feature-create]]
+=== Create new feature
+
+[[feature-create-latest]]
+==== Latest API version
+
+[[feature-create-request-latest]]
+===== Request
+A `POST` request is used to create a new feature.
+
+====== Request fields
+include::{snippets}/features/document-create-feature/request-fields.adoc[]
+
+====== Request body
+include::{snippets}/features/document-create-feature/request-body.adoc[]
+
+====== Example request
+include::{snippets}/features/document-create-feature/http-request.adoc[]
+include::{snippets}/features/document-create-feature/curl-request.adoc[]
+
+[[feature-create-response-latest]]
+===== Response
+The created feature is returned.
+
+====== Response fields
+include::{snippets}/features/document-create-feature/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/features/document-create-feature/http-response.adoc[]
+
+
+
+[[feature-enable]]
+=== Enable feature
+
+[[feature-enable-latest]]
+==== Latest API version
+
+[[feature-enable-request-latest]]
+===== Request
+A `POST` request is used enable a feature for all users (whitelist is not modified).
+
+====== Example request
+include::{snippets}/features/document-enable-feature/http-request.adoc[]
+include::{snippets}/features/document-enable-feature/curl-request.adoc[]
+
+[[feature-enable-response-latest]]
+===== Response
+The updated feature resource is returned.
+
+====== Response fields
+include::{snippets}/features/document-enable-feature/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/features/document-enable-feature/http-response.adoc[]
+
+
+
+[[feature-disable]]
+=== Disable feature
+
+[[feature-disable-latest]]
+==== Latest API version
+
+[[feature-disable-request-latest]]
+===== Request
+A `POST` request is used disable a feature for all users  (whitelist is not modified).
+
+====== Example request
+include::{snippets}/features/document-disable-feature/http-request.adoc[]
+include::{snippets}/features/document-disable-feature/curl-request.adoc[]
+
+[[feature-disable-response-latest]]
+===== Response
+The updated feature resource is returned.
+
+====== Response fields
+include::{snippets}/features/document-disable-feature/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/features/document-disable-feature/http-response.adoc[]
+
+
+
+[[feature-activate-whitelist]]
+=== Activate the whitelist for a feature
+
+[[feature-activate-whitelist-latest]]
+==== Latest API version
+
+[[feature-activate-whitelist-request-latest]]
+===== Request
+A `POST` request is used to activate the whitelist for a feature.
+
+====== Example request
+include::{snippets}/features/document-activate-whitelist-for-feature/http-request.adoc[]
+include::{snippets}/features/document-activate-whitelist-for-feature/curl-request.adoc[]
+
+[[feature-activate-whitelist-response-latest]]
+===== Response
+The updated feature resource is returned.
+
+====== Response fields
+include::{snippets}/features/document-activate-whitelist-for-feature/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/features/document-activate-whitelist-for-feature/http-response.adoc[]
+
+
+
+[[feature-delete]]
+=== Delete feature
+
+[[feature-delete-latest]]
+==== Latest API version
+
+[[feature-delete-request-latest]]
+===== Request
+A `DELETE` request is used to delete a feature.
+
+====== Example request
+include::{snippets}/features/document-delete-feature/http-request.adoc[]
+include::{snippets}/features/document-delete-feature/curl-request.adoc[]
+
+[[feature-delete-response-latest]]
+===== Response
+An empty feature resource is returned.
+
+====== Response fields
+include::{snippets}/features/document-delete-feature/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/features/document-delete-feature/http-response.adoc[]
+
+
+
+[[feature-add-subject-to-whitelist]]
+=== Add subject to whitelist
+
+[[feature-add-subject-to-whitelist-latest]]
+==== Latest API version
+
+[[feature-add-subject-to-whitelist-request-latest]]
+===== Request
+A `PUT` request is used to add a subject to a feature whitelist.
+
+====== Request Body
+include::{snippets}/features/add-subject-to-whitelist/request-body.adoc[]
+
+====== Example request
+include::{snippets}/features/add-subject-to-whitelist/http-request.adoc[]
+include::{snippets}/features/add-subject-to-whitelist/curl-request.adoc[]
+
+[[feature-add-subject-to-whitelist-response-latest]]
+===== Response
+A whitelist entry resource is returned.
+
+====== Response fields
+include::{snippets}/features/add-subject-to-whitelist/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/features/add-subject-to-whitelist/http-response.adoc[]
+
+
+
+[[feature-remove-subject-from-whitelist]]
+=== Remove subject from whitelist
+
+[[feature-remove-subject-from-whitelist-latest]]
+==== Latest API version
+
+[[feature-remove-subject-from-whitelist-request-latest]]
+===== Request
+A `DELETE` request is used to remove a subject from a feature whitelist.
+
+====== Example request
+include::{snippets}/features/delete-subject-from-whitelist/http-request.adoc[]
+include::{snippets}/features/delete-subject-from-whitelist/curl-request.adoc[]
+
+[[feature-remove-subject-from-whitelist-response-latest]]
+===== Response
+An tuple with `featureId` and `subjectId` is returned.
+
+====== Response fields
+include::{snippets}/features/delete-subject-from-whitelist/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/features/delete-subject-from-whitelist/http-response.adoc[]
+
+
+
+[[feature-get-list]]
+=== Get list of all features
+
+[[feature-get-list-latest]]
+==== Latest API version
+
+[[feature-get-list-request-latest]]
+===== Request
+A `GET` request is used to get the list of features with their states.
+
+====== Example request
+include::{snippets}/features/document-get-features/http-request.adoc[]
+include::{snippets}/features/document-get-features/curl-request.adoc[]
+
+[[feature-get-list-response-latest]]
+===== Response
+A list of feature resources is returned.
+
+====== Response fields
+include::{snippets}/features/document-get-features/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/features/document-get-features/http-response.adoc[]
+
+
+
+[[feature-get-list-for-subject]]
+=== Get list of features for a subject
+
+[[feature-get-list-for-subject-latest]]
+==== Latest API version
+
+[[feature-get-list-for-subject-request-latest]]
+===== Request
+A `GET` request is used to get the list of features with their states for a subject.
+
+====== Example request
+include::{snippets}/features/document-get-features-for-subject/http-request.adoc[]
+include::{snippets}/features/document-get-features-for-subject/curl-request.adoc[]
+
+[[feature-get-list-for-subject-response-latest]]
+===== Response
+A list of feature resources is returned.
+
+====== Response fields
+include::{snippets}/features/document-get-features-for-subject/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/features/document-get-features-for-subject/http-response.adoc[]

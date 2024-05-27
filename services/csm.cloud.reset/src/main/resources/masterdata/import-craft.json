@@ -1,0 +1,665 @@
+[
+  {
+    "id": "craft_1",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Preparatory steps"
+      },
+      {
+        "locale": "de",
+        "value": "Vorbereitende Maßnahmen"
+      }
+    ]
+  },
+  {
+    "id": "craft_2",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Wrecking work"
+      },
+      {
+        "locale": "de",
+        "value": "Abbrucharbeiten"
+      }
+    ]
+  },
+  {
+    "id": "craft_3",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Adaptions infrastructure"
+      },
+      {
+        "locale": "de",
+        "value": "Anpassungen Infrastruktur"
+      }
+    ]
+  },
+  {
+    "id": "craft_4",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Groundwork"
+      },
+      {
+        "locale": "de",
+        "value": "Erdarbeiten"
+      }
+    ]
+  },
+  {
+    "id": "craft_5",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Foundation"
+      },
+      {
+        "locale": "de",
+        "value": "Gründung (Bohrpfahlgründung)"
+      }
+    ]
+  },
+  {
+    "id": "craft_6",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Drainage system"
+      },
+      {
+        "locale": "de",
+        "value": "Grundleitungen"
+      }
+    ]
+  },
+  {
+    "id": "craft_7",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Carcass work"
+      },
+      {
+        "locale": "de",
+        "value": "Rohbauarbeiten (inkl. Bodenplatte)"
+      }
+    ]
+  },
+  {
+    "id": "craft_8",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Masonry"
+      },
+      {
+        "locale": "de",
+        "value": "Mauerwerksarbeiten"
+      }
+    ]
+  },
+  {
+    "id": "craft_9",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Constructional steelwork"
+      },
+      {
+        "locale": "de",
+        "value": "Stahlbauarbeiten"
+      }
+    ]
+  },
+  {
+    "id": "craft_10",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Roof insulation"
+      },
+      {
+        "locale": "de",
+        "value": "Dachabdichtung und -dämmung"
+      }
+    ]
+  },
+  {
+    "id": "craft_11",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Roof cladding"
+      },
+      {
+        "locale": "de",
+        "value": "Dacheindeckung"
+      }
+    ]
+  },
+  {
+    "id": "craft_12",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Site office, portable toilet"
+      },
+      {
+        "locale": "de",
+        "value": "Bauleitungscontainer / Sanitärcontainer"
+      }
+    ]
+  },
+  {
+    "id": "craft_13",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Maintenance cleaning"
+      },
+      {
+        "locale": "de",
+        "value": "Baureinigung (Unterhaltsreinigung)"
+      }
+    ]
+  },
+  {
+    "id": "craft_14",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Dry lining"
+      },
+      {
+        "locale": "de",
+        "value": "Trockenbau (inkl. Zargen+Türblätter Holz)"
+      }
+    ]
+  },
+  {
+    "id": "craft_15",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "System partition wall"
+      },
+      {
+        "locale": "de",
+        "value": "Systemtrennwände"
+      }
+    ]
+  },
+  {
+    "id": "craft_16",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Flexible partition wall"
+      },
+      {
+        "locale": "de",
+        "value": "Mobile Trennwände"
+      }
+    ]
+  },
+  {
+    "id": "craft_17",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "rest room partition wall"
+      },
+      {
+        "locale": "de",
+        "value": "WC - Trennwände"
+      }
+    ]
+  },
+  {
+    "id": "craft_18",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Suspended ceiling"
+      },
+      {
+        "locale": "de",
+        "value": "Abgehängte Decken, Metallraster"
+      }
+    ]
+  },
+  {
+    "id": "craft_19",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Screed work"
+      },
+      {
+        "locale": "de",
+        "value": "Estricharbeiten"
+      }
+    ]
+  },
+  {
+    "id": "craft_20",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Double bottom"
+      },
+      {
+        "locale": "de",
+        "value": "Doppelboden (Belag appliziert)"
+      }
+    ]
+  },
+  {
+    "id": "craft_21",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Floor covering"
+      },
+      {
+        "locale": "de",
+        "value": "Bodenbelag (Teppich, Lino)"
+      }
+    ]
+  },
+  {
+    "id": "craft_22",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Coating"
+      },
+      {
+        "locale": "de",
+        "value": "Beschichtung"
+      }
+    ]
+  },
+  {
+    "id": "craft_23",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Artificial stone / natural stone"
+      },
+      {
+        "locale": "de",
+        "value": "Betonwerkstein / Naturstein"
+      }
+    ]
+  },
+  {
+    "id": "craft_24",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Steel-glass door (fire-resistant door)"
+      },
+      {
+        "locale": "de",
+        "value": "Stahl-Glas-Türen (Brandschutztüren)"
+      }
+    ]
+  },
+  {
+    "id": "craft_25",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Steel door, steel gate"
+      },
+      {
+        "locale": "de",
+        "value": "Stahltüren, -tore"
+      }
+    ]
+  },
+  {
+    "id": "craft_26",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Locksmith"
+      },
+      {
+        "locale": "de",
+        "value": "Schlosserarbeiten"
+      }
+    ]
+  },
+  {
+    "id": "craft_27",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Window, sun control"
+      },
+      {
+        "locale": "de",
+        "value": "Fenster, Sonnenschutz"
+      }
+    ]
+  },
+  {
+    "id": "craft_28",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Scaffold erection"
+      },
+      {
+        "locale": "de",
+        "value": "Gerüstbau"
+      }
+    ]
+  },
+  {
+    "id": "craft_29",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Painting work, interior plastering work"
+      },
+      {
+        "locale": "de",
+        "value": "Malerarbeiten, Putz innen, Trennwände"
+      }
+    ]
+  },
+  {
+    "id": "craft_30",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Metal sheet facade"
+      },
+      {
+        "locale": "de",
+        "value": "Blechfassade"
+      }
+    ]
+  },
+  {
+    "id": "craft_31",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Plastering work (exterior, interior)"
+      },
+      {
+        "locale": "de",
+        "value": "Putzarbeiten (außen+innen)"
+      }
+    ]
+  },
+  {
+    "id": "craft_32",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Final cleaning"
+      },
+      {
+        "locale": "de",
+        "value": "Endreinigung"
+      }
+    ]
+  },
+  {
+    "id": "craft_33",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Ventilation system"
+      },
+      {
+        "locale": "de",
+        "value": "Lüftungstechnische Anlagen"
+      }
+    ]
+  },
+  {
+    "id": "craft_34",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Heating"
+      },
+      {
+        "locale": "de",
+        "value": "Heizung"
+      }
+    ]
+  },
+  {
+    "id": "craft_35",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Cold water"
+      },
+      {
+        "locale": "de",
+        "value": "Kälte, Kaltwasser"
+      }
+    ]
+  },
+  {
+    "id": "craft_36",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Sanitation"
+      },
+      {
+        "locale": "de",
+        "value": "Sanitär"
+      }
+    ]
+  },
+  {
+    "id": "craft_37",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Heat-/cold insulation"
+      },
+      {
+        "locale": "de",
+        "value": "Wärme-/Kältedämmung"
+      }
+    ]
+  },
+  {
+    "id": "craft_38",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Task across the disciplines"
+      },
+      {
+        "locale": "de",
+        "value": "Gewerkeübergreifende Positionen"
+      }
+    ]
+  },
+  {
+    "id": "craft_39",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Constructional fire protection"
+      },
+      {
+        "locale": "de",
+        "value": "Baulicher Brandschutz"
+      }
+    ]
+  },
+  {
+    "id": "craft_40",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Smoke and heat exhaust system"
+      },
+      {
+        "locale": "de",
+        "value": "RWA (Rauch- und Wärmeabzugsanlagen)"
+      }
+    ]
+  },
+  {
+    "id": "craft_41",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Electrical installation & lighting"
+      },
+      {
+        "locale": "de",
+        "value": "Elektroinstallation u. Beleuchtung"
+      }
+    ]
+  },
+  {
+    "id": "craft_42",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Site power supply"
+      },
+      {
+        "locale": "de",
+        "value": "Baustromversorgung"
+      }
+    ]
+  },
+  {
+    "id": "craft_43",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Lightning protection"
+      },
+      {
+        "locale": "de",
+        "value": "Blitzschutz"
+      }
+    ]
+  },
+  {
+    "id": "craft_44",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Transformers"
+      },
+      {
+        "locale": "de",
+        "value": "Trafos"
+      }
+    ]
+  },
+  {
+    "id": "craft_45",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Low voltage main distribution board"
+      },
+      {
+        "locale": "de",
+        "value": "NSHV (Niederspannungshauptverteilung) Niederspannung"
+      }
+    ]
+  },
+  {
+    "id": "craft_46",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Medium voltage"
+      },
+      {
+        "locale": "de",
+        "value": "MS Mittelspannung"
+      }
+    ]
+  },
+  {
+    "id": "craft_47",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Safety technology/fire alarm system"
+      },
+      {
+        "locale": "de",
+        "value": "Sicherheitstechnik/Brandmeldeanlage"
+      }
+    ]
+  },
+  {
+    "id": "craft_48",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "ICA (instrumentation control and automation)"
+      },
+      {
+        "locale": "de",
+        "value": "MSR (Gebäudeautomation)"
+      }
+    ]
+  },
+  {
+    "id": "craft_49",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Conveyor equipment / lift"
+      },
+      {
+        "locale": "de",
+        "value": "Förderanlagen / Aufzug"
+      }
+    ]
+  },
+  {
+    "id": "craft_50",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Outdoor facilities"
+      },
+      {
+        "locale": "de",
+        "value": "Außenanlagen"
+      }
+    ]
+  },
+  {
+    "id": "craft_51",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Other"
+      },
+      {
+        "locale": "de",
+        "value": "Sonstiges"
+      }
+    ]
+  }
+]

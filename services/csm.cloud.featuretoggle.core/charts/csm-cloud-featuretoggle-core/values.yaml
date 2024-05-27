@@ -1,0 +1,5 @@
+# Default values for csm-cloud-featuretoggle-core.
+# Declare variables to be passed into your templates.
+
+maxStartUpTime: 500
+replicas: 2

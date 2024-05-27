@@ -1,0 +1,144 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+    custom/kafkaClient: "true"
+    custom/tier: backend
+    tags.datadoghq.com/service: {{ .Chart.Name }}
+    tags.datadoghq.com/version: {{ .Chart.Version }}
+  annotations:
+    ad.datadoghq.com/tags: '{"layer":"backend"}'
+    custom/targetReplicas: "1"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: {{ .Chart.Name }}
+      labels:
+        app: {{ .Chart.Name }}
+        kafkaClient: "true"
+        tags.datadoghq.com/service: {{ .Chart.Name }}
+        tags.datadoghq.com/version: {{ .Chart.Version }}
+      annotations:
+        ad.datadoghq.com/tags: '{"layer":"backend"}'
+        ad.datadoghq.com/{{ .Chart.Name }}.logs: '[{"source":"csm-backend-spring-boot"}]'
+    spec:
+      serviceAccountName: {{ .Chart.Name }}
+      securityContext:
+        runAsNonRoot: true
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: smartsite/reservered-for
+                operator: DoesNotExist
+      containers:
+      - name: {{ .Chart.Name }}
+        image: ptcsmacr.azurecr.io/com.bosch.pt/csm.cloud.project.kafka.connector:{{ .Chart.Version }}
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "600Mi"
+          limits:
+            memory: "800Mi"
+        ports:
+        - containerPort: 8080
+          name: server
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL  
+        volumeMounts:
+          - name: kv-volume-env
+            mountPath: /kvmnt/env
+            readOnly: true
+        env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: DD_SERVICE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['tags.datadoghq.com/service']
+        - name: DD_VERSION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['tags.datadoghq.com/version']
+        - name: DD_LOGS_INJECTION
+          value: "true"
+        - name: DD_TRACE_SAMPLE_RATE
+          value: "1"
+        - name: DD_PROFILING_ENABLED
+          value: "false"
+        - name: DD_SERVICE_MAPPING
+          value: mysql:csm-cloud-user-mysql
+          # The following two env variables are used to enable origin detection
+          # of the underlying dogstatsd client. This is required to add the pod name
+          # as a tag to runtime metrics etc. PLEASE NOTE: This is a workaround
+          # suggested by datadog support but it is not officially supported!
+        - name: DD_ENTITY_ID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.uid
+        - name: DD_TAGS
+          value: "dd.internal.entity_id:$(DD_ENTITY_ID)"
+          # End of tags for the workaround
+        - name: JAVA_TOOL_OPTIONS
+          value: >
+            -Xmx224m
+            -XX:+UseG1GC
+            -Djava.security.egd=file:/dev/./urandom
+            -javaagent:/datadog/dd-java-agent.jar
+            -Xshare:off
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: STAGE
+          value: {{ quote .Values.stage }}
+        - name: SPRING_PROFILES_ACTIVE
+          value: {{ quote .Values.profiles }}
+        startupProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: server
+          # calculate failureThreshold by dividing max startup Time by periodSeconds
+          failureThreshold: {{ div .Values.maxStartUpTime 5 }}
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: server
+          failureThreshold: 2
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: server
+          initialDelaySeconds: 15
+          failureThreshold: 1
+          periodSeconds: 5
+      dnsConfig:
+        options:
+        - name: ndots
+          value: "1"
+      restartPolicy: Always
+      volumes:
+      - name: kv-volume-env
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "{{ .Chart.Name }}-env-aks-kv"
+          nodePublishSecretRef:
+            name: kvcreds
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}

@@ -1,0 +1,92 @@
+custom:
+  kafka:
+    bindings:
+      job-command:
+        configuration:
+          partitions: 2
+          properties:
+            # set retention period to 7 days
+            retention.ms: 604800000
+      job-event:
+        configuration:
+          properties:
+            retention.ms: -1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  kafka:
+    bindings:
+      event:
+        kafkaTopic: ${kafka-topic-event}
+      job-command:
+        kafkaTopic: ${kafka-topic-job-command}
+        configuration:
+          properties:
+            min.insync.replicas: 2
+      job-event:
+        kafkaTopic: ${kafka-topic-job-event}
+        configuration:
+          properties:
+            min.insync.replicas: 2
+      user:
+        kafkaTopic: ${kafka-topic-user}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local || test
+
+custom:
+  kafka:
+    bindings:
+      event:
+        kafkaTopic: "csm.local.event"
+      job-command:
+        kafkaTopic: "csm.local.job.command"
+        configuration:
+          # The local kafka cluster has only one broker node at the moment.
+          replication: 1
+          properties:
+            min.insync.replicas: 1
+      job-event:
+        kafkaTopic: "csm.local.job.event"
+        configuration:
+          partitions: 2
+          # The local kafka cluster has only one broker node at the moment.
+          replication: 1
+          properties:
+            min.insync.replicas: 1
+      user:
+        kafkaTopic: "csm.local.usermanagement.user"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: staging
+
+custom:
+  kafka:
+    bindings:
+      job-event:
+        configuration:
+          partitions: 8
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+
+custom:
+  kafka:
+    bindings:
+      job-event:
+        configuration:
+          partitions: 16

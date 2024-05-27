@@ -1,0 +1,16 @@
+spring:
+  cache:
+    type: NONE
+  config:
+    import:
+      - classpath:application-idp-bosch-dev.yml
+
+logging:
+  level:
+    org:
+      springframework:
+        test:
+          context:
+            # change to debug to get infos about testcontext caching and reusing
+            cache: info
+      mongodb.driver.protocol: info

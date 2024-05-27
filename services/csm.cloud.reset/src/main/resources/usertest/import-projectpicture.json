@@ -1,0 +1,26 @@
+[
+  {
+    "id": "projectPicture1",
+    "projectId": "project1",
+    "path": "attachments/projectPicture1.jpg",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "projectPicture2",
+    "projectId": "project2",
+    "path": "attachments/projectPicture2.jpg",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "projectPicture3",
+    "projectId": "project3",
+    "path": "attachments/projectPicture3.jpg",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "projectPicture4",
+    "projectId": "project4",
+    "path": "attachments/projectPicture4.jpg",
+    "createWithUserId": "anne"
+  }
+]
