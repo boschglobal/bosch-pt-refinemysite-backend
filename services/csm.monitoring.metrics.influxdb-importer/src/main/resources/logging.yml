@@ -1,0 +1,23 @@
+logging:
+  level:
+    ROOT: warn
+    com.bosch.pt.csm.monitoring.bam.importer:
+      config: info
+      SmartsiteBamImporterApplicationKt: info
+    org:
+      apache.kafka.clients.consumer.internals.Fetcher: error
+    springframework:
+      boot:
+        context: info
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+      
+logging:
+  level:
+    com.bosch.pt.csm.monitoring.bam.importer:
+      EventListener: debug
+      JobEventListener: debug

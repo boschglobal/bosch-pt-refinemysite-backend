@@ -1,0 +1,19 @@
+custom:
+  kafka:
+    listener:
+      remove-employee-on-user-deleted:
+        groupId: "csm-cm-${stage}-remove-employee-on-user-deleted"
+        clientIdPrefix: "csm-cloud-company-remove-employee-on-user-deleted"
+        concurrency: 2
+      user-projector:
+        groupId: "csm-cm-${stage}-projector-user"
+        clientIdPrefix: "csm-cloud-company-user-projector"
+        concurrency: 2
+      employable-user-projector:
+        groupId: "csm-cm-${stage}-projector-employable-user"
+        userTopic:
+          clientIdPrefix: "csm-cloud-company-projector-employable-user-user"
+          concurrency: 3
+        companyTopic:
+          clientIdPrefix: "csm-cloud-company-projector-employable-user-company"
+          concurrency: 3

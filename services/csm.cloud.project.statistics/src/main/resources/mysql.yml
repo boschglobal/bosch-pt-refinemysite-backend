@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    hikari:
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+  flyway:
+    locations: classpath:db/migration/mysql
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "!test"
+  datasource:
+    hikari:
+      minimum-idle: 15
+      maximum-pool-size: 45
+      idle-timeout: 120000
+      max-lifetime: 840000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  datasource:
+    url: ${csm-cloud-project-statistics-mysql-flexible-url}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/csm-project-statistics?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval

@@ -1,0 +1,34 @@
+spring.security.oauth2:
+  client:
+    registration:
+      keycloak1:
+        client-id: refinemysite-prod
+        client-secret: ${keycloak1-client-secret}
+        client-authentication-method: client_secret_post
+        authorization-grant-type: authorization_code
+        scope:
+          - openid
+          - profile
+          - KEYCLOAK1_identifier
+          - email
+          - offline_access
+        redirect-uri: "{baseScheme}://{baseHost}{basePort}/login/oauth2/code/{registrationId}"
+    # Note: provider issuer-uri need to be set exactly as defined in the provider's OIDC configuration
+    provider:
+      keycloak1:
+        issuer-uri: https://prod.key-cloak-one.com/auth/realms/central_profile
+
+---
+spring:
+  config:
+    activate:
+      on-profile: keycloak1
+custom:
+  auth:
+    idp:
+      client-registration: keycloak1
+      style-id-parameter: style_id
+      style-id: pt_bsch_rms_01
+      logout-url: ${spring.security.oauth2.client.provider.keycloak1.issuer-uri}/protocol/openid-connect/logout
+    myidp1:
+      user-profile-url: https://my-idp-one.com/myprofile/

@@ -1,0 +1,88 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2023
+*
+**************************************************************************
+//////////////////////////////////////////
+
+= RefinemySite Project Context API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+include::src/docs/asciidoc/api-guide-project-context-projects.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-project-pictures.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-project-statistics.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-project-config-constraints.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-project-config-rfv.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-crafts.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-workareas.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-workday-configuration.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-participants.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-calendar.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-milestones.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-quick-filters.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-tasks.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-task-schedules.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-day-cards.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-task-statistics.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-task-attachments.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-task-constraints.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-relations.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-reschedule.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-task-copy.adoc[]
+
+[[task-activities]]
+== Task Activities
+
+See link:/internal/docs/projects/activities/api-guide-activities.html[Task Activities Documentation]
+
+[[task-news]]
+== Task News
+
+See link:/internal/docs/projects/news/api-guide-project-context-tasks-news.html[Task News Documentation]
+
+include::src/docs/asciidoc/api-guide-project-context-topics.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-topics-attachments.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-messages.adoc[]
+
+include::src/docs/asciidoc/api-guide-project-context-message-attachments.adoc[]
+
+== Project Metrics
+
+See link:/internal/docs/projects/statistics/api-guide-project-context-project-statistics.html[Project Metrics Documentation]
+
+== Project Notifications
+
+See link:/internal/docs/projects/notifications/api-guide-notifications.html[Project Notifications Documentation]

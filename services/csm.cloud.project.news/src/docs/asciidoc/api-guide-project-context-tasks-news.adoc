@@ -1,0 +1,103 @@
+See link:/internal/docs/projects/api-guide-project-context.html#_task_news[Task Documentation]
+
+== Task News
+
+Smartsite keeps track of events that are changing a task or a nested object (like a topic, a comment for a topic,
+various attachments etc.) and it provides user-specific information if something is "new" (meaning something has
+changed) on a task (or a nested object of the task). So whenever a user changes something on an object like a task, a
+topic, a message etc. this is recorded as news for all other users that have access to this object.
+
+The task news resource provides this information for the current user (user information is taken from the access
+token).
+
+[[resources-search-task-news]]
+=== Search for task news
+
+To get news for a list of tasks (to enrich a task list with news markers, for example) a search endpoint is provided
+that can be accessed with a `POST` method call and that accepts a list of task identifiers. The result will contain all
+existing news for the requested tasks but not for nested objects like topics, messages etc.
+
+==== Request
+
+A `POST` request is used to search for news for a list of given tasks.
+
+include::{snippets}/task-news/document-search-task-news/http-request.adoc[]
+
+include::{snippets}/task-news/document-search-task-news/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/task-news/document-search-task-news/http-response.adoc[]
+
+==== Response fields
+
+include::{snippets}/task-news/document-search-task-news/response-fields.adoc[]
+
+
+[[resources-get-task-news]]
+=== List all news for a single task
+
+To get the news for a single task including all of its nested objects, a `GET` request can be done to the task
+news resource. This also includes news for all nested objects (topics, messages etc.)
+
+==== Request
+
+A `GET` request is used to retrieve all news for a single task and its nested objects.
+
+Path parameters:
+include::{snippets}/task-news/document-get-task-news/path-parameters.adoc[]
+
+include::{snippets}/task-news/document-get-task-news/http-request.adoc[]
+
+include::{snippets}/task-news/document-get-task-news/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/task-news/document-get-task-news/http-response.adoc[]
+
+==== Response fields
+
+include::{snippets}/task-news/document-get-task-news/response-fields.adoc[]
+
+
+[[resources-delete-task-news]]
+=== Delete all news for a single task
+
+To delete the news for a task and its nested objects, a `DELETE` request can be done. This removes all news for the
+task as well as for its nested objects.
+
+==== Request
+
+A `DELETE` request is used to remove all news for a single task and its nested objects.
+
+Path parameters:
+include::{snippets}/task-news/document-delete-task-news/path-parameters.adoc[]
+
+include::{snippets}/task-news/document-delete-task-news/http-request.adoc[]
+
+include::{snippets}/task-news/document-delete-task-news/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/task-news/document-delete-task-news/http-response.adoc[]
+
+[[resources-delete-project-news]]
+=== Delete all news for a single project
+
+To delete the news for a project and its nested objects, a `DELETE` request can be done. This removes all news for the
+tasks of that project as well as for its nested objects.
+
+==== Request
+
+A `DELETE` request is used to remove all news for a single project and its nested objects.
+
+Path parameters:
+include::{snippets}/task-news/document-delete-project-news/path-parameters.adoc[]
+
+include::{snippets}/task-news/document-delete-project-news/http-request.adoc[]
+
+include::{snippets}/task-news/document-delete-project-news/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/task-news/document-delete-project-news/http-response.adoc[]

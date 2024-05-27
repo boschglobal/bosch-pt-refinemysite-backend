@@ -1,0 +1,102 @@
+"""
+Company
+"""
+type CompanyPayloadV1 {
+
+    """
+    Unique identifier of the user
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    The name of the company
+    """
+    name: String!,
+
+    """
+    Optional street address
+    """
+    streetAddress: StreetAddressPayloadV1,
+
+    """
+    Optional post box address
+    """
+    postBoxAddress: PostBoxAddressPayloadV1,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}
+
+"""
+Street address
+"""
+type StreetAddressPayloadV1 {
+
+    """
+    Street name
+    """
+    street: String!,
+
+    """
+    House number
+    """
+    houseNumber: String!,
+
+    """
+    City name
+    """
+    city: String!,
+
+    """
+    Zip code
+    """
+    zipCode: String!,
+
+    """
+    Optional area name
+    """
+    area: String,
+
+    """
+    Country name
+    """
+    country: String!,
+}
+
+"""
+Post box address
+"""
+type PostBoxAddressPayloadV1 {
+
+    """
+    The post box
+    """
+    postBox: String!
+
+    """
+    City name
+    """
+    city: String!,
+
+    """
+    Zip code
+    """
+    zipCode: String!,
+
+    """
+    Optional area name
+    """
+    area: String,
+
+    """
+    Country name
+    """
+    country: String!,
+}

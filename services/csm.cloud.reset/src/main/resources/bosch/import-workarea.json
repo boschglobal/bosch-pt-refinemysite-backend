@@ -1,0 +1,205 @@
+[
+  {
+    "id": "44f683a8-4163-b352-3afe-57c2e008bc8c",
+    "projectId": "bosch",
+    "name": "Erdbau -3,50m",
+    "etag": "0",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "3295c76a-cbf4-caae-d33c-36b1b5fc2cb1",
+    "projectId": "bosch",
+    "name": "Verbau",
+    "etag": "1",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "14bfa6bb-1487-5e45-bba0-28a21ed38046",
+    "projectId": "bosch",
+    "name": "Erdarbeiten Baugrubensohle",
+    "etag": "2",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "6e51c5af-b188-4147-5cc5-d93155a52287",
+    "projectId": "bosch",
+    "name": "Rohbau",
+    "etag": "3",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "198289aa-839c-c8f5-d278-f9d98aa5b0aa",
+    "projectId": "bosch",
+    "name": "Rohbau Terminplan 16.10.2019",
+    "etag": "4",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "bb224a2c-9269-4526-05f9-62eb578105ff",
+    "projectId": "bosch",
+    "name": "Fassade Süd-Ost",
+    "etag": "5",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "a411ec6b-67b8-e853-7b8b-c832be7b7f76",
+    "projectId": "bosch",
+    "name": "Ansicht Nord-West (Straße)",
+    "etag": "6",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "5a2c3ea1-64a4-97f4-bec4-1fd6f2702a79",
+    "projectId": "bosch",
+    "name": "Ansicht Nord-Ost (IKP)",
+    "etag": "7",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "f5433f51-b093-5a90-80cf-9690beb7a484",
+    "projectId": "bosch",
+    "name": "Ansicht Süd-West",
+    "etag": "8",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "94e28198-6b83-e3b7-c46b-3c9a76439b55",
+    "projectId": "bosch",
+    "name": "Treppenhaus UG2 - OG3",
+    "etag": "9",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "3a332858-095f-00f6-34f1-ce40f60d2389",
+    "projectId": "bosch",
+    "name": "Aufzug",
+    "etag": "10",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "4dd3aa1d-35eb-c91c-61e4-0fc0d9b313a9",
+    "projectId": "bosch",
+    "name": "UG2 Labor / Büro / KoZo / Flur",
+    "etag": "11",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "78c0fc9d-9554-aaea-a487-0715e58c0c6d",
+    "projectId": "bosch",
+    "name": "UG1 Labor / Büro / KoZo / Flur",
+    "etag": "12",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "c77b3ebf-1a7f-3386-5e73-65a5a482b61d",
+    "projectId": "bosch",
+    "name": "EG Labor / Büro / KoZo / Flur",
+    "etag": "13",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "1904c706-2601-032b-d01e-babc6724cb4b",
+    "projectId": "bosch",
+    "name": "OG1 Labor / Büro / KoZo / Flur",
+    "etag": "14",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "b5172e77-c0ea-71e7-9863-93d099f0df13",
+    "projectId": "bosch",
+    "name": "OG2 Labor / Büro / KoZo / Flur",
+    "etag": "15",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "34afa1f3-099d-ff5d-f9ae-a90b3573b6eb",
+    "projectId": "bosch",
+    "name": "OG3 Labor / Büro / KoZo / Flur",
+    "etag": "16",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "6b7affcb-4524-6a3f-90ff-ea59acacadcb",
+    "projectId": "bosch",
+    "name": "EG Sanitärbereich",
+    "etag": "17",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "d91d7f63-243f-d0af-c5a7-04bbc2d02964",
+    "projectId": "bosch",
+    "name": "OG1 Sanitärbereich",
+    "etag": "18",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "7d4636bc-a15c-9797-92e6-a771f527d9f8",
+    "projectId": "bosch",
+    "name": "OG2 Sanitärbereich",
+    "etag": "19",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "ca066d3f-3b8e-1674-36a8-5e69cc19edff",
+    "projectId": "bosch",
+    "name": "OG3 Sanitärbereich",
+    "etag": "20",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "439b42e0-ec9f-e861-7558-a510a5044ee8",
+    "projectId": "bosch",
+    "name": "UG2 Heizungs- und Sanitärzentrale",
+    "etag": "21",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "f2e28f1a-d2f5-942d-34fa-07cc35765b49",
+    "projectId": "bosch",
+    "name": "Elektroräume DV + EV",
+    "etag": "22",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "e34c91cb-71f0-04f0-d512-8463a3a5e280",
+    "projectId": "bosch",
+    "name": "NSHV",
+    "etag": "23",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "40ea51d8-ad24-27aa-a3d4-84f576125750",
+    "projectId": "bosch",
+    "name": "Traforäume",
+    "etag": "24",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "f6c9b105-a0b8-29a9-161d-937e8edfe21f",
+    "projectId": "bosch",
+    "name": "NEA",
+    "etag": "25",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "97ea03a9-ad39-3d57-5693-107b58692d92",
+    "projectId": "bosch",
+    "name": "Dachtechnikzentrale",
+    "etag": "26",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "81e67e8e-d53f-667d-fdaa-a7af3c8b3803",
+    "projectId": "bosch",
+    "name": "OG2 Lüftungszentrale",
+    "etag": "27",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "40bec968-4872-758c-218f-729f5a48c8ed",
+    "projectId": "bosch",
+    "name": "Technikschächte",
+    "etag": "28",
+    "createWithUserId": "daniel"
+  }
+]

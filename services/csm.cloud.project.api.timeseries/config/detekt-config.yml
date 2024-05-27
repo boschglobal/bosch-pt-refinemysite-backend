@@ -1,0 +1,72 @@
+#A copy of this configuration is located in csm.cloud.dev/config/detekt-config.yml
+build:
+  maxIssues: 0
+
+complexity:
+  active: false
+formatting:
+  AnnotationOnSeparateLine:
+    active: false
+  ArgumentListWrapping:
+    active: false
+  BlockCommentInitialStarAlignment:
+    active: false
+  ChainWrapping:
+    active: false
+  CommentWrapping:
+    active: false
+  FinalNewline:
+    active: false
+  FunctionReturnTypeSpacing:
+    active: false
+  FunctionTypeReferenceSpacing:
+    active: false
+  ImportOrdering:
+    active: false
+  Indentation:
+    active: false
+  MaximumLineLength:
+    excludes: ['**/Key.kt']
+  MultiLineIfElse:
+    active: false
+  NoBlankLineBeforeRbrace:
+    excludes: ['**/Key.kt']
+  NoEmptyFirstLineInMethodBlock:
+    active: false
+  ParameterListWrapping:
+    active: false
+  SpacingAroundDoubleColon:
+    active: false
+  SpacingBetweenDeclarationsWithAnnotations:
+    active: false
+  SpacingBetweenDeclarationsWithComments:
+    active: false
+  UnnecessaryParenthesesBeforeTrailingLambda:
+    active: false
+  Wrapping:
+    active: false
+naming:
+  ClassNaming:
+    excludes: ["**/test/**"]
+  MemberNameEqualsClassName:
+    excludes: ['**/Key.kt']
+performance:
+  SpreadOperator:
+    active: false
+style:
+  DestructuringDeclarationWithTooManyEntries:
+    active: false
+  ForbiddenComment:
+    active: false
+  MagicNumber:
+    active: false
+  MaxLineLength:
+    excludes: ['**/Key.kt']
+  NewLineAtEndOfFile:
+    active: false
+  ReturnCount:
+    active: false
+  UseCheckOrError:
+    active: false
+  UseRequire:
+    active: false

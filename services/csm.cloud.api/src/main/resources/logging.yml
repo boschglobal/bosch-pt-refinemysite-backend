@@ -1,0 +1,19 @@
+logging:
+  level:
+    ROOT: WARN
+    com.bosch.pt.iot.smartsite.api:
+      #uncomment to log unrouted routes (404 from gateway)
+      #errors.CustomErrorWebExceptionHandler: INFO
+      shutdown.ShutdownConfig: INFO
+      logging.RequestLoggingFilter: INFO
+      ApiApplicationKt: INFO
+    org.springframework:
+      boot:
+        context: INFO
+        web.embedded.netty.GracefulShutdown: INFO
+      web:
+        cors: INFO
+        server.adapter.HttpWebHandlerAdapter: OFF
+    reactor.netty.http:
+      server.HttpServerOperations: OFF
+      client.HttpClientConnect: OFF

@@ -1,0 +1,15 @@
+custom:
+  kafka:
+    listener:
+      job-command:
+        groupId: "csm-cloud-job-${stage}-command-listener"
+        clientIdPrefix: "csm-cloud-job-${stage}-command-listener"
+        concurrency: 2
+      job-event:
+        groupId: "csm-cloud-job-${stage}-event-listener"
+        clientIdPrefix: "csm-cloud-job-${stage}-event-listener"
+        concurrency: 2
+      user:
+        groupId: "csm-cloud-job-${stage}-user-listener"
+        clientIdPrefix: "csm-cloud-job-${stage}-user-listener"
+        concurrency: 3

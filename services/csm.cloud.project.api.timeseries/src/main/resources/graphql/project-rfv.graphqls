@@ -1,0 +1,36 @@
+"""
+Reason for variance
+"""
+type RfvPayloadV1 {
+
+    """
+    Unique identifier of the rfv
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    The reason type (i.e. technical identifier)
+    """
+    reason: String!,
+
+    """
+    Name translated to the language requested
+    in the `Accept-Language` HTTP-Header (default: English)
+    """
+    name: String!,
+
+    """
+    Reason is activated in the current project
+    """
+    active: Boolean!,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime
+}

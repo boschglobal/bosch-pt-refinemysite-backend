@@ -1,0 +1,133 @@
+trigger:
+  - integration
+  - production
+  - SMAR-*
+  - sandbox*
+
+name: "1.0.0-$(Date:yyyyMMdd)-$(Build.SourceBranchName)$(Rev:.r)"
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+variables:
+  - name: isIntegration
+    value: ${{ eq(variables['Build.SourceBranchName'], 'integration') }}
+  - name: isSandbox
+    value: ${{ startsWith(variables['Build.SourceBranchName'], 'sandbox') }}
+  - name: isPullRequest
+    value: ${{ eq(variables['Build.Reason'], 'PullRequest') }}
+  - template: /templates/variables/pipelines.yaml@csm_templates
+
+stages:
+  - stage: build
+    displayName: BUILD
+    variables:
+      - group: Build Pipelines
+    jobs:
+      - job: build_and_push
+        pool:
+          vmImage: ${{ variables.ubuntuImage }}
+        steps:
+          - checkout: self
+            persistCredentials: true
+
+          - task: Cache@2
+            displayName: Gradle build cache
+            inputs:
+              key: '"csm.cloud.project.statistics.v1"'
+              path: ../../../.gradle
+
+          - task: Docker@2
+            displayName: Login to ACR
+            inputs:
+              command: login
+              containerRegistry: ptcsmacr
+
+          - ${{ if eq(variables.isSandbox, false) }}:
+              - template: /templates/sonarqube/sonarqube-vpn.yaml@csm_templates
+                parameters:
+                  sonarQubeRunAnalysisSteps:
+                    - task: Gradle@2
+                      condition: and(succeeded(), eq(variables.isPullRequest, true))
+                      displayName: Build pull request
+                      inputs:
+                        jdkVersionOption: "1.21"
+                        tasks: clean build sonarqube
+                        options: -Pversion=$(Build.BuildNumber) -PSourceBranchName=$(Build.SourceBranchName) -PBuildReason=$(Build.Reason) --no-daemon -x dependencyCheckAnalyze
+                        sonarQubeRunAnalysis: true
+                    - task: Gradle@2
+                      condition: and(succeeded(), eq(variables.isPullRequest, false))
+                      displayName: Build and publish
+                      inputs:
+                        jdkVersionOption: "1.21"
+                        tasks: clean build docker sonarqube publish
+                        options: -Pversion=$(Build.BuildNumber) -PSourceBranchName=$(Build.SourceBranchName) -PBuildReason=$(Build.Reason) --no-daemon -x dependencyCheckAnalyze
+                        sonarQubeRunAnalysis: true
+
+          - ${{ if eq(variables.isSandbox, true) }}:
+              - task: Gradle@2
+                condition: and(succeeded(), eq(variables.isPullRequest, false))
+                displayName: Express build for sandbox deployment
+                inputs:
+                  jdkVersionOption: "1.21"
+                  tasks: clean build docker
+                  options: -Pversion=$(Build.BuildNumber) -PSourceBranchName=$(Build.SourceBranchName) -PBuildReason=$(Build.Reason) --no-daemon -x test -x detekt -x dependencyCheckAnalyze -x asciiDoctor
+
+          - task: Docker@2
+            displayName: Logout from ACR
+            condition: always()
+            inputs:
+              command: logout
+              containerRegistry: ptcsmacr
+
+          - template: /templates/docker/docker.yaml@csm_templates
+            parameters:
+              condition: and(succeeded(), eq(variables.isPullRequest, false))
+              command: push
+              repository: csm.cloud.project.statistics
+              pushTag: $(Build.BuildNumber)
+
+          - template: /templates/docker/docker.yaml@csm_templates
+            parameters:
+              condition: and(succeeded(), eq(variables.isIntegration, true))
+              command: tagAndPush
+              repository: csm.cloud.project.statistics
+              existingTag: $(Build.BuildNumber)
+              pushTag: latest
+
+          - template: /templates/helm/helm-package.yaml@csm_templates
+            parameters:
+              condition: and(succeeded(), eq(variables.isPullRequest, false))
+              chartPath: charts/csm-cloud-project-statistics
+              chartName: csm-cloud-project-statistics
+              chartVersion: $(Build.BuildNumber)
+
+          - bash: git push origin HEAD:master
+            displayName: Push integration to master
+            condition: and(succeeded(), eq(variables.isIntegration, true))
+
+  - ${{ if eq(variables.isSandbox, true) }}:
+      - stage: sandbox
+        displayName: ${{ upper(variables['Build.SourceBranchName']) }}
+        dependsOn: build
+        condition: and(succeeded(), eq(variables.isSandbox, true))
+        pool:
+          name: Azure-selfhosted Ubuntu
+          demands:
+            - SMARTSITE_ENV -equals ${{ lower(variables['Build.SourceBranchName']) }}
+        variables:
+          - group: ${{ replace(lower(variables['Build.SourceBranchName']), 's', 'S') }}
+        jobs:
+          - template: /templates/helm/helm-deploy-blue-green.yaml@csm_templates
+            parameters:
+              environment: NO_APPROVAL
+              azureSubscription: sandbox
+              aksEnv: ${{ lower(variables['Build.SourceBranchName']) }}
+              chartName: csm-cloud-project-statistics
+              chartVersion: $(Build.BuildNumber)
+              releaseName: csm-cloud-project-statistics
+              helmValuesFile: charts/csm-cloud-project-statistics/values-${{ lower(variables['Build.SourceBranchName']) }}.yaml

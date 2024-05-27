@@ -1,0 +1,18 @@
+server:
+  shutdown: graceful
+  tomcat:
+    connection-timeout: 500s
+    mbeanregistry:
+      enabled: true # enable the mbean registry to get tomcat metrics via micrometer
+    threads:
+      max: 20
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+server:
+  port: 9000
+

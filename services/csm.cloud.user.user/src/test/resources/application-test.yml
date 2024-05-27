@@ -1,0 +1,58 @@
+spring:
+  cache:
+    type: none
+  datasource:
+    url: # Set by TestContainers on container start
+    username: test
+    password: test
+    driverClassName: org.mariadb.jdbc.Driver
+  flyway:
+    locations: classpath:db/migration/mysql
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  kafka:
+    properties:
+      auto.register.schemas: true
+      schema.registry.url: mock://localhost:8081
+  security.oauth2.client:
+    provider:
+      skid:
+        token-uri: http://localhost:9999
+    registration:
+      skid:
+        client-id: test
+        client-secret: test
+
+csm.project.pdf.url: http://example.com
+
+logging:
+  level:
+    org:
+      springframework:
+        test:
+          context:
+            # change to debug to get infos about testcontext caching and reusing
+            cache: info
+
+
+custom:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uris:
+            - https://jwtcreator.example.com
+            - https://test-issuer.com
+  scheduling:
+    enabled: false
+  skid:
+    baseUrl: http://localhost:5678
+  blob-storage:
+    scaling-processor:
+      retry:
+        max-attempts: 1
+        initial-backoff-ms: 0
+        multiplier: 0
+        max-backoff-ms: 0

@@ -1,0 +1,159 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[message-attachments]]
+== Message Attachments
+
+[[create-message-attachment]]
+=== Create attachment
+This endpoint can be used to upload an attachment for a message.
+Attachment must be provided as multipart file upload with mime-type 'multipart/form-data'.
+
+[[create-message-attachment-latest]]
+==== Latest API Version
+
+[[create-message-attachment-request-latest]]
+===== Request
+A `POST` request is used to upload a message attachment.
+
+====== Path parameters
+include::{snippets}/messages/document-save-message-attachment/path-parameters.adoc[]
+
+====== Request parts
+include::{snippets}/messages/document-save-message-attachment/request-parts.adoc[]
+
+====== Example request
+include::{snippets}/messages/document-save-message-attachment/http-request.adoc[]
+include::{snippets}/messages/document-save-message-attachment/curl-request.adoc[]
+
+[[create-message-attachment-response-latest]]
+===== Response
+Response has either HTTP-Status 201 (CREATED) if valid or 400 (BAD_REQUEST) if the attachment is not a valid or processable image file.
+
+====== Response fields
+include::{snippets}/messages/document-save-message-attachment/response-fields.adoc[]
+
+====== Links
+include::{snippets}/messages/document-save-message-attachment/links.adoc[]
+
+====== Example response
+include::{snippets}/messages/document-save-message-attachment/http-response.adoc[]
+
+
+
+[[list-message-attachments]]
+=== List all attachments
+This endpoint can be used to get a list of attachments.
+
+[[list-message-attachments-latest]]
+==== Latest API Version
+
+[[list-message-attachments-request-latest]]
+===== Request
+A `GET` request is used to get a list of message attachments.
+
+====== Path parameters
+include::{snippets}/messages/document-get-message-attachments/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/messages/document-get-message-attachments/http-request.adoc[]
+include::{snippets}/messages/document-get-message-attachments/curl-request.adoc[]
+
+[[list-message-attachments-response-latest]]
+===== Response
+The list of message attachments is returned.
+
+====== Response fields
+include::{snippets}/messages/document-get-message-attachments/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/messages/document-get-message-attachments/http-response.adoc[]
+
+
+
+[[download-message-attachment-preview]]
+=== Download preview
+The following section describes how to download an attachment preview image.
+Attachment resources are provided as byte-array binary data with mime-type 'image/jpeg'.
+
+[[download-message-attachment-preview-latest]]
+==== Latest API Version
+
+[[download-message-attachment-preview-request-latest]]
+===== Request
+A `GET` request is used to get the attachment binary data.
+
+====== Path parameters
+include::{snippets}/messages/document-get-message-attachment-preview/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/messages/document-get-message-attachment-preview/http-request.adoc[]
+include::{snippets}/messages/document-get-message-attachment-preview/curl-request.adoc[]
+
+[[download-message-attachment-preview-response-latest]]
+===== Response
+HTTP-Status 302 is returned to get the binary data from the blob storage.
+
+====== Example response
+include::{snippets}/messages/document-get-message-attachment-preview/http-response.adoc[]
+
+
+
+[[download-message-attachment-scaled]]
+=== Download scaled image
+The following section describes how to download a medium size scaled image.
+Attachment resources are provided as byte-array binary data.
+
+[[download-message-attachment-scaled-latest]]
+==== Latest API Version
+
+[[download-message-attachment-scaled-request-latest]]
+===== Request
+A `GET` request is used to get the attachment binary data.
+
+====== Path parameters
+include::{snippets}/messages/document-get-message-attachment-data/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/messages/document-get-message-attachment-data/http-request.adoc[]
+include::{snippets}/messages/document-get-message-attachment-data/curl-request.adoc[]
+
+[[download-message-attachment-scaled-response-latest]]
+===== Response
+HTTP-Status 302 is returned to get the binary data from the blob storage.
+
+==== Example response
+include::{snippets}/messages/document-get-message-attachment-data/http-response.adoc[]
+
+
+
+[[download-message-attachment-original]]
+=== Download original
+The following section describes how to download the original image.
+Attachment resources are provided as byte-array binary data.
+
+[[download-message-attachment-original-latest]]
+==== Latest API Version
+
+[[download-message-attachment-original-request-latest]]
+===== Request
+A `GET` request is used to get the attachment binary data.
+
+====== Path parameters
+include::{snippets}/messages/document-get-message-attachment-original/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/messages/document-get-message-attachment-original/http-request.adoc[]
+include::{snippets}/messages/document-get-message-attachment-original/curl-request.adoc[]
+
+[[download-message-attachment-original-response-latest]]
+===== Response
+HTTP-Status 302 is returned to get the binary data from the blob storage.
+
+====== Example response
+include::{snippets}/messages/document-get-message-attachment-original/http-response.adoc[]

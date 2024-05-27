@@ -1,0 +1,77 @@
+"""
+Representation of a project participant in RefinemySite
+"""
+type ParticipantPayloadV1 {
+
+    """
+    Unique identifier of the project
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    The company, the participant/user belongs to
+    """
+    company: CompanyPayloadV1,
+
+    """
+    The user, the participant refers to
+    """
+    user: UserPayloadV1,
+
+    """
+    Role / permission
+    """
+    role: ParticipantRoleEnumPayloadV1!,
+
+    """
+    Status
+    """
+    status: ParticipantStatusEnumPayloadV1!,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}
+
+"""
+Role / permission of the participant
+"""
+enum ParticipantRoleEnumPayloadV1 {
+
+    """
+    Company representative
+    """
+    COMPANY_REPRESENTATIVE,
+
+    """
+    Construction site manager / Superintendent
+    """
+    SUPERINTENDENT,
+
+    """
+    Foreman
+    """
+    FOREMAN,
+}
+
+"""
+Participant status
+"""
+enum ParticipantStatusEnumPayloadV1 {
+
+    """
+    The participant is active
+    """
+    ACTIVE,
+
+    """
+    The participant is inactive
+    """
+    INACTIVE
+}

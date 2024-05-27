@@ -1,0 +1,22 @@
+kafka:
+  broker:
+    urls: localhost:9092
+  schemaRegistry:
+    urls: http://localhost:8081
+  schema:
+    autoRegisterSchemas: true
+  topic:
+    autoCreateTopics: true
+    upload:
+      name: csm.test.storagemanagement.upload
+      replicationFactor: 1
+
+server:
+  port: 9040
+
+storage:
+  connectionString: test
+  queuePollingInterval: 50ms
+  # 5 retries result in about 300ms with 10ms initial polling
+  queuePollingRetryBackoff: 10ms
+  queuePollingRetryAttempts: 5

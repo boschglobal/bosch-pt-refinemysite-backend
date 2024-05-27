@@ -1,0 +1,8 @@
+# Due to a bug in spring boot, we had to prefix the files with "test-" instead of using a suffix "-test"
+# https://github.com/spring-projects/spring-boot/issues/26147
+
+spring:
+  config:
+    import:
+      - test-db.yml
+      - test-event.yml

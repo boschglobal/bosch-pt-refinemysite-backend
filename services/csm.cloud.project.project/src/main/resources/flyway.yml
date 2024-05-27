@@ -1,0 +1,7 @@
+spring:
+  config:
+    activate:
+      on-profile: "!test"
+  jpa:
+    hibernate:
+      ddl-auto: validate

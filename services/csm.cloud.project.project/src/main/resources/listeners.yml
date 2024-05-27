@@ -1,0 +1,15 @@
+custom:
+  kafka:
+    listener:
+      query:
+        feature-projector:
+          groupId: "csm-pm-${stage}-featuretoggle"
+          clientIdPrefix: "csm-cloud-project-featuretoggle"
+      relation-criticality:
+        groupId: "csm-pm-${stage}-relation-criticality"
+        clientIdPrefix: "csm-cloud-project-relation-criticality"
+        concurrency: 3
+      job-event:
+        groupId: "csm-pm-${stage}-job-event"
+        clientIdPrefix: "csm-cloud-project-job-event"
+        concurrency: 2

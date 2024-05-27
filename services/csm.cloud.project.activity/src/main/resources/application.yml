@@ -1,0 +1,62 @@
+info:
+  app:
+    name: ${spring.application.name}
+
+spring:
+  config:
+    import:
+      - classpath:actuator-common.yml
+      - classpath:apiversion.yml
+      - classpath:blobstorage.yml
+      - classpath:kafka.yml
+      - classpath:logging.yml
+      - classpath:metrics-common.yml
+      - classpath:mongodb.yml
+      - classpath:profiles.yml
+      - classpath:server.yml
+      - classpath:topics.yml
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+  jackson:
+    default-property-inclusion: non_null
+  jmx:
+    enabled: true # enable jmx to get kafka metrics via micrometer
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+  threads:
+    virtual:
+      enabled: true
+
+locale:
+  default: en_GB
+  supported: en_GB, de_DE, es_ES, pt_PT, fr_FR
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+custom:
+  swagger:
+    url: /
+
+stage: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: swagger
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /swagger/activities/api-definition
+  writer-with-order-by-keys: true

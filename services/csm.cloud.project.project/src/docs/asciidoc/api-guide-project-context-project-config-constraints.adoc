@@ -1,0 +1,82 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[project-task-constraints]]
+== Task Constraints (Configuration)
+The following endpoints can be used to configure reasons (constraints) that can be selected by users to indicate
+that necessary preconditions of tasks have not been met in order to start them on time.
+There are 8 default constraints and 4 customizable ones. The default constraints are activated by default,
+can be deactivated and re-activated.
+The 4 customizable constraints can be renamed, activated, deactivated and reactivated.
+At least one constraint must be active.
+
+
+
+[[update-task-constraint]]
+=== Update task constraint
+This endpoint can be used to customize constraints settable for tasks.
+
+[[update-task-constraint-latest]]
+==== Latest API Version
+
+[[update-task-constraint-request-latest]]
+===== Request
+A `PUT` request is used to update a constraint.
+
+====== Path parameters
+include::{snippets}/task-constraints/document-update-constraint/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/task-constraints/document-update-constraint/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/task-constraints/document-update-constraint/http-request.adoc[]
+include::{snippets}/task-constraints/document-update-constraint/curl-request.adoc[]
+
+[[update-task-constraint-response-latest]]
+===== Response
+The updated constraint resource is returned.
+
+====== Response fields
+include::{snippets}/task-constraints/document-update-constraint/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-constraints/document-update-constraint/links.adoc[]
+
+==== Example response
+include::{snippets}/task-constraints/document-update-constraint/http-response.adoc[]
+
+
+
+[[get-task-constraints]]
+=== Get a list of task constraints
+Get the list of task constraints of the project with the specified identifier.
+
+[[get-task-constraints-latest]]
+==== Latest API Version
+
+[[get-task-constraints-request-latest]]
+===== Request
+A `GET` request is used to get a list of task constraints.
+
+====== Path parameters
+include::{snippets}/task-constraints/document-find-constraints/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/task-constraints/document-find-constraints/http-request.adoc[]
+include::{snippets}/task-constraints/document-find-constraints/curl-request.adoc[]
+
+[[get-task-constraints-response-latest]]
+===== Response
+A list of task constraints is returned.
+
+====== Response fields
+include::{snippets}/task-constraints/document-find-constraints/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/task-constraints/document-find-constraints/http-response.adoc[]

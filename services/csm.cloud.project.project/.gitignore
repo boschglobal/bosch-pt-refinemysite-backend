@@ -1,0 +1,24 @@
+**/.gradle
+**/build
+**/out
+**/bin
+
+.vscode/*
+.settings/*
+.project
+.classpath
+.DS_Store
+
+# IntelliJ
+.idea
+*.iml
+
+# Project import
+*.mpp
+*.mpx
+*.xer
+*.pp
+src/test/resources/project-import-testdata/*.xml
+
+src/main/generated/**
+src/generated/**

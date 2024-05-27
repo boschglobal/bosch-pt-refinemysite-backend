@@ -1,0 +1,125 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[project-calendar]]
+== Project Calendar
+
+Project data from the calendar can be exported in various formats.
+The calendar can be exported as a PDF (which is more or less the same graphical representation as shown in the Web UI), as JSON or CVS.
+JSON and CSV export contain task and day card information represented in a flat structure.
+Those exports are still BETA.
+
+The endpoints trigger the export which is executed asynchronously as a job.
+The status of the export job can be retrieved from the jobs endpoint.
+The resulting file is available as part of the job resource once it is completed.
+
+[[export-calendar-job-pdf]]
+=== Export Calendar as PDF (Async)
+
+This endpoint triggers the export as PDF.
+
+[[export-calendar-pdf-latest]]
+==== Latest API Version
+
+[[export-calendar-pdf-request-latest]]
+===== Request
+
+A `POST` request is used to trigger the export job of the project calendar as a PDF.
+The filter criteria is part of the body.
+
+====== Path parameters
+
+include::{snippets}/exports/document-calendar-export-pdf/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/exports/document-calendar-export-pdf/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/exports/document-calendar-export-pdf/http-request.adoc[]
+include::{snippets}/exports/document-calendar-export-pdf/curl-request.adoc[]
+
+[[export-calendar-pdf-response-latest]]
+===== Response
+
+The service returns HTTP status 202 ACCEPTED with the identifier of the export Job.
+
+include::{snippets}/exports/document-calendar-export-pdf/http-response.adoc[]
+include::{snippets}/exports/document-calendar-export-pdf/response-fields.adoc[]
+
+
+[[export-calendar-json]]
+=== Export Calendar as JSON (Async)
+
+This endpoint triggers the export as PDF.
+
+[[export-calendar-json-latest]]
+==== Latest API Version
+
+[[export-calendar-json-request-latest]]
+===== Request
+
+A `POST` request is used to trigger the export job of the project calendar as a JSON file.
+The filter criteria is part of the body.
+
+====== Path parameters
+
+include::{snippets}/exports/document-calendar-export-json/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/exports/document-calendar-export-json/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/exports/document-calendar-export-json/http-request.adoc[]
+include::{snippets}/exports/document-calendar-export-json/curl-request.adoc[]
+
+[[export-calendar-json-response-latest]]
+===== Response
+
+The service returns HTTP status 202 ACCEPTED with the identifier of the export Job.
+
+include::{snippets}/exports/document-calendar-export-json/http-response.adoc[]
+include::{snippets}/exports/document-calendar-export-json/response-fields.adoc[]
+
+[[export-calendar-csv]]
+=== Export Calendar as JSON (Async)
+
+This endpoint triggers the export as PDF.
+
+[[export-calendar-csv-latest]]
+==== Latest API Version
+
+[[export-calendar-csv-request-latest]]
+===== Request
+
+A `POST` request is used to trigger the export job of the project calendar as a CSV file.
+The filter criteria is part of the body.
+
+====== Path parameters
+
+include::{snippets}/exports/document-calendar-export-csv/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/exports/document-calendar-export-csv/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/exports/document-calendar-export-csv/http-request.adoc[]
+include::{snippets}/exports/document-calendar-export-csv/curl-request.adoc[]
+
+[[export-calendar-csv-response-latest]]
+===== Response
+
+The service returns HTTP status 202 ACCEPTED with the identifier of the export Job.
+
+include::{snippets}/exports/document-calendar-export-csv/http-response.adoc[]
+include::{snippets}/exports/document-calendar-export-csv/response-fields.adoc[]

@@ -1,0 +1,154 @@
+custom:
+  kafka:
+    bindings:
+      consents:
+        configuration:
+          properties:
+            retention.ms: -1
+      craft:
+        configuration:
+          properties:
+            retention.ms: -1
+      pat:
+        configuration:
+          properties:
+            retention.ms: -1
+            cleanup.policy: compact
+      user:
+        configuration:
+          properties:
+            retention.ms: -1
+            cleanup.policy: compact
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  kafka:
+    bindings:
+      consents:
+        kafkaTopic: ${kafka-topic-consents}
+        configuration:
+          properties:
+            min.insync.replicas: 2
+      craft:
+        kafkaTopic: ${kafka-topic-craft}
+        configuration:
+          properties:
+            min.insync.replicas: 2
+      image:
+        kafkaTopic: ${kafka-topic-image-scale}
+      pat:
+        kafkaTopic: ${kafka-topic-pat}
+        configuration:
+          properties:
+            delete.retention.ms: 604800000
+            max.compaction.lag.ms: 604800000
+            min.compaction.lag.ms: 0
+            min.insync.replicas: 2
+            segment.ms: 604800000
+      user:
+        kafkaTopic: ${kafka-topic-user}
+        configuration:
+          properties:
+            delete.retention.ms: 604800000
+            max.compaction.lag.ms: 604800000
+            min.compaction.lag.ms: 0
+            min.insync.replicas: 2
+            segment.ms: 604800000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: staging
+
+custom:
+  kafka:
+    bindings:
+      consents:
+        configuration:
+          partitions: 1
+      craft:
+        configuration:
+          partitions: 1
+      pat:
+        configuration:
+          partitions: 2
+      user:
+        configuration:
+          partitions: 2
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+
+custom:
+  kafka:
+    bindings:
+      consents:
+        configuration:
+          partitions: 1
+      craft:
+        configuration:
+          partitions: 1
+      pat:
+        configuration:
+          partitions: 2
+      user:
+        configuration:
+          partitions: 6
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local || test
+
+custom:
+  kafka:
+    bindings:
+      consents:
+        kafkaTopic: "csm.local.usermanagement.consents"
+        configuration:
+          partitions: 1
+          replication: 1
+      craft:
+        kafkaTopic: "csm.local.referencedata.craft"
+        configuration:
+          partitions: 1
+          # The local kafka cluster has only one broker node at the moment.
+          replication: 1
+          properties:
+            min.insync.replicas: 1
+      image:
+        kafkaTopic: "csm.local.image.scale"
+      pat:
+        kafkaTopic: "csm.local.usermanagement.pat"
+        configuration:
+          partitions: 1
+          # The local kafka cluster has only one broker node at the moment.
+          replication: 1
+          properties:
+            delete.retention.ms: 10000
+            max.compaction.lag.ms: 10000
+            min.compaction.lag.ms: 0
+            min.insync.replicas: 1
+            segment.ms: 10000
+      user:
+        kafkaTopic: "csm.local.usermanagement.user"
+        configuration:
+          partitions: 1
+          # The local kafka cluster has only one broker node at the moment.
+          replication: 1
+          properties:
+            delete.retention.ms: 10000
+            max.compaction.lag.ms: 10000
+            min.compaction.lag.ms: 0
+            min.insync.replicas: 1
+            segment.ms: 10000

@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    group:
+      staging:
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes
+      production:
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes

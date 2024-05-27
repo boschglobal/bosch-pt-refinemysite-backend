@@ -1,0 +1,45 @@
+<!--
+  ~ *************************************************************************
+  ~
+  ~  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+  ~
+  ~ *************************************************************************
+  -->
+
+<!DOCTYPE html>
+<!--/*@thymesVar id="page" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.Page"*/-->
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+    <title>Calendar</title>
+    <!-- for pdf-kit -->
+    <meta name="pdfkit-orientation" content="Landscape"/>
+    <meta charset="UTF-8"/>
+    <!-- end for pdf-kit -->
+    <style th:replace="~{fragments/style :: styles}"></style>
+    <style th:replace="${page.calendar.expandedSmall } ? ~{fragments/style :: styles-expanded-small} : ~{}"></style>
+    <style th:replace="${page.calendar.expandedLarge } ? ~{fragments/style :: styles-expanded-large} : ~{}"></style>
+</head>
+<body th:class="${page.calendar.expandedLarge}? 'expanded-large' : 'collapsed'">
+<th:block th:replace="~{fragments/icons :: icons}"></th:block>
+<div id="canvas">
+    <header>
+        <h1 th:text="${page.calendar.projectName}"></h1>
+        <p th:text="${page.calendar.exportDate}"></p>
+        <ul th:replace="~{fragments/legends :: legends (${page.calendar.legendRow})}"></ul>
+    </header>
+    <table>
+        <thead>
+        <tr th:replace="~{fragments/header :: month-header (${page.calendar.monthRow}, ${page.calendar.expanded})}"></tr>
+        <tr th:replace="~{fragments/header :: week-header (${page.calendar.weekRow}, ${page.calendar.expanded})}"></tr>
+        </thead>
+        <tbody th:each="calendarRow : ${page.calendar.rows}">
+        <tr th:replace="${calendarRow.getType().isWeekRow()} ? ~{fragments/header :: week-header (${page.calendar.weekRow}, ${page.calendar.expanded})} : ~{fragments/layout :: layout (${calendarRow}, ${page.calendar.includeDayCards})}"></tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

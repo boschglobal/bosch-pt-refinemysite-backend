@@ -1,0 +1,46 @@
+//////////////////////////////////////////
+ *****************************************************************
+ *
+ *  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2022
+ * *****************************************************************
+//////////////////////////////////////////
+
+= Mobile Version
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+== Mobile Version
+Mobile API endpoint to fetch the latest supported version for the mobile application.
+This page and the endpoint described below can be used to keep informed about the latest supported mobile version.
+
+
+[[get-last-supported-version]]
+=== Get last supported version
+To get the latest supported mobile version, this endpoint can be used.
+
+[[get-last-supported-version-latest]]
+==== Latest API version
+
+[[get-last-supported-version-request-latest]]
+===== Request
+A `GET` request is used get the last supported version.
+
+====== Example request
+include::{snippets}/mobile-version/get-last-supported-version/http-request.adoc[]
+include::{snippets}/mobile-version/get-last-supported-version/curl-request.adoc[]
+
+[[get-last-supported-version-response-latest]]
+===== Response
+The last supported version by API are returned.
+
+====== Example response
+include::{snippets}/mobile-version/get-last-supported-version/http-response.adoc[]

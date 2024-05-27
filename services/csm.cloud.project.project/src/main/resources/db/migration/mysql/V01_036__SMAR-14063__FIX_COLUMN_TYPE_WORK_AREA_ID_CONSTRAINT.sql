@@ -1,0 +1,1 @@
+alter table milestone_list modify work_area_id_constraint bigint not null;

@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    group:
+      local:
+        - idp-bosch-dev
+        - company-restore-db
+        - project-restore-db
+        - user-restore-db
+      staging:
+        - idp-bosch-dev
+        - kubernetes
+        - log-json
+        - azure-blob-download
+        - reset-bam
+      production:
+        # - idp-bosch-prod (controlled by helm chart since production profile is used on review, too
+        - kubernetes
+        - log-json
+        - azure-blob-download
+        - reset-bam

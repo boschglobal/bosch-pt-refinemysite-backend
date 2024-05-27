@@ -1,0 +1,54 @@
+[
+  {
+    "id": "craft_1",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Other"
+      },
+      {
+        "locale": "de",
+        "value": "Sonstiges"
+      }
+    ]
+  },
+  {
+    "id": "craft_2",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Groundwork"
+      },
+      {
+        "locale": "de",
+        "value": "Erdarbeiten"
+      }
+    ]
+  },
+  {
+    "id": "craft_3",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Transformers"
+      },
+      {
+        "locale": "de",
+        "value": "Trafos"
+      }
+    ]
+  },
+  {
+    "id": "craft_4",
+    "translations": [
+      {
+        "locale": "en",
+        "value": "Coating"
+      },
+      {
+        "locale": "de",
+        "value": "Beschichtung"
+      }
+    ]
+  }
+]

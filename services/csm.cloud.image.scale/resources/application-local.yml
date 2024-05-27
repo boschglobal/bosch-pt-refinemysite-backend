@@ -1,0 +1,33 @@
+kafka:
+  broker:
+    address:
+      family: v4
+    urls: 127.0.0.1:9092
+  consumer:
+    groupId: csm-im-local-scale
+  schemaRegistry:
+    urls: http://127.0.0.1:8081
+  schema:
+    autoRegisterSchemas: true
+  topic:
+    autoCreateTopics: true
+    uploaded:
+      name: csm.local.storage.event
+      replicationFactor: 1
+    scaled:
+      name: csm.local.image.scale
+      replicationFactor: 1
+
+server:
+  port: 9041
+
+storage:
+  quarantine:
+    containerName: csm-quarantine-container
+    connectionString: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://localhost:10000/devstoreaccount1;QueueEndpoint=http://localhost:10001/devstoreaccount1
+  project:
+    containerName: csm
+    connectionString: DefaultEndpointsProtocol=http;AccountName=projectimagesaccount;AccountKey=cHJvamVjdGltYWdlc2tleQ==;BlobEndpoint=http://127.0.0.1:10000/projectimagesaccount;QueueEndpoint=http://127.0.0.1:10001/projectimagesaccount;
+  user:
+    containerName: csm
+    connectionString: DefaultEndpointsProtocol=http;AccountName=userimagesaccount;AccountKey=dXNlcmltYWdlc2tleQ==;BlobEndpoint=http://127.0.0.1:10000/userimagesaccount;QueueEndpoint=http://127.0.0.1:10001/userimagesaccount;

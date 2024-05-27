@@ -1,0 +1,253 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[work-areas]]
+== Work Areas
+Work areas can be used to group tasks (in the calendar).
+
+
+
+[[create-workarea]]
+=== Create work area
+This endpoint can be used to create work areas.
+
+[[create-workarea-latest]]
+==== Latest API Version
+
+[[create-workarea-request-latest]]
+===== Request
+A `POST` request is used to create a new work area.
+
+====== Request headers
+include::{snippets}/project-workareas/document-create-project-workarea/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/project-workareas/document-create-project-workarea/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/project-workareas/document-create-project-workarea/http-request.adoc[]
+include::{snippets}/project-workareas/document-create-project-workarea/curl-request.adoc[]
+
+[[create-workarea-response-latest]]
+===== Response
+The created work area is returned.
+
+====== Response fields
+include::{snippets}/project-workareas/document-create-project-workarea/response-fields.adoc[]
+
+====== Links
+include::{snippets}/project-workareas/document-create-project-workarea/links.adoc[]
+
+====== Example response
+include::{snippets}/project-workareas/document-create-project-workarea/http-response.adoc[]
+
+
+
+[[create-workarea-with-identifier]]
+=== Create work area with identifier
+Same as the previous request, but choose the work area identifier client-side.
+
+[[create-workarea-with-identifier-latest]]
+==== Latest API Version
+
+[[create-workarea-with-identifier-request-latest]]
+===== Request
+A `POST` request is used to create a new work area.
+
+====== Path parameters
+include::{snippets}/project-workareas/document-create-project-workarea-with-identifier/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/project-workareas/document-create-project-workarea-with-identifier/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/project-workareas/document-create-project-workarea-with-identifier/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/project-workareas/document-create-project-workarea-with-identifier/http-request.adoc[]
+include::{snippets}/project-workareas/document-create-project-workarea-with-identifier/curl-request.adoc[]
+
+[[create-workarea-with-identifier-response-latest]]
+===== Response
+A list of all work areas of the project, including the new one is returned.
+
+====== Response fields
+include::{snippets}/project-workareas/document-create-project-workarea-with-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/project-workareas/document-create-project-workarea-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/project-workareas/document-create-project-workarea-with-identifier/http-response.adoc[]
+
+
+
+[[update-workarea]]
+=== Update work area
+Update a work area for a given id with a provided name.
+
+[[update-workarea-latest]]
+==== Latest API Version
+
+[[update-workarea-request-latest]]
+===== Request
+A `PUT` request is used to update a work area.
+
+====== Path parameters
+include::{snippets}/project-workareas/document-update-project-workarea/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/project-workareas/document-update-project-workarea/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/project-workareas/document-update-project-workarea/http-request.adoc[]
+include::{snippets}/project-workareas/document-update-project-workarea/curl-request.adoc[]
+
+[[update-workarea-response-latest]]
+===== Response
+The updated work area is returned.
+
+====== Response fields
+include::{snippets}/project-workareas/document-update-project-workarea/response-fields.adoc[]
+
+====== Links
+include::{snippets}/project-workareas/document-update-project-workarea/links.adoc[]
+
+====== Example response
+include::{snippets}/project-workareas/document-update-project-workarea/http-response.adoc[]
+
+
+
+[[get-workarea]]
+=== Get work area
+Retrieves a work area for a given id.
+
+[[get-workarea-latest]]
+==== Latest API Version
+
+[[get-workarea-request-latest]]
+===== Request
+A `GET` request is used to retrieve a single work area.
+
+====== Path parameters
+include::{snippets}/project-workareas/document-get-project-workarea/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/project-workareas/document-get-project-workarea/http-request.adoc[]
+include::{snippets}/project-workareas/document-get-project-workarea/curl-request.adoc[]
+
+[[get-workarea-response-latest]]
+===== Response
+The work area is returned.
+
+====== Response fields
+include::{snippets}/project-workareas/document-get-project-workarea/response-fields.adoc[]
+
+====== Links
+include::{snippets}/project-workareas/document-get-project-workarea/links.adoc[]
+
+====== Example response
+include::{snippets}/project-workareas/document-get-project-workarea/http-response.adoc[]
+
+
+
+[[delete-workarea]]
+=== Delete work area
+Delete a work area for a given id.
+
+[[delete-workarea-latest]]
+==== Latest API Version
+
+[[delete-workarea-request-latest]]
+===== Request
+A `DELETE` request is used to delete a work area.
+
+====== Path parameters
+include::{snippets}/project-workareas/document-delete-project-workarea/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/project-workareas/document-delete-project-workarea/request-headers.adoc[]
+
+====== Example request
+include::{snippets}/project-workareas/document-delete-project-workarea/http-request.adoc[]
+include::{snippets}/project-workareas/document-delete-project-workarea/curl-request.adoc[]
+
+===== Response
+A list of all work areas of the project, without the deleted one is returned.
+
+====== Example response
+include::{snippets}/project-workareas/document-delete-project-workarea/http-response.adoc[]
+
+
+
+[[update-workarealist]]
+=== Update work area list
+Update the work area list with the given work area order.
+
+[[update-workarealist-latest]]
+==== Latest API Version
+
+[[update-workarealist-request-latest]]
+===== Request
+A `PUT` request is used to update a work area list.
+
+====== Request headers
+include::{snippets}/project-workareas/document-update-project-workarealist/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/project-workareas/document-update-project-workarealist/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/project-workareas/document-update-project-workarealist/http-request.adoc[]
+include::{snippets}/project-workareas/document-update-project-workarealist/curl-request.adoc[]
+
+[[update-workarealist-response-latest]]
+===== Response
+The list of work areas with the updated order is returned.
+
+====== Response fields
+include::{snippets}/project-workareas/document-update-project-workarealist/response-fields.adoc[]
+
+====== Links
+include::{snippets}/project-workareas/document-update-project-workarealist/links.adoc[]
+
+====== Example response
+include::{snippets}/project-workareas/document-update-project-workarealist/http-response.adoc[]
+
+
+
+[[get-workarea-list]]
+=== List all work areas
+Retrieves the list of work areas for a specific project sorted by position.
+
+[[get-workarea-list-latest]]
+==== Latest API Version
+
+[[get-workarea-list-request-latest]]
+===== Request
+A `GET` request is used to get the list of work areas of a specific project.
+
+====== Path parameters
+include::{snippets}/project-workareas/document-get-project-workareas/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/project-workareas/document-get-project-workareas/http-request.adoc[]
+include::{snippets}/project-workareas/document-get-project-workareas/curl-request.adoc[]
+
+[[get-workarea-list-response-latest]]
+===== Response
+The list of work areas is returned.
+
+====== Response fields
+include::{snippets}/project-workareas/document-get-project-workareas/response-fields.adoc[]
+
+====== Links
+include::{snippets}/project-workareas/document-get-project-workareas/links.adoc[]
+
+====== Example response
+include::{snippets}/project-workareas/document-get-project-workareas/http-response.adoc[]

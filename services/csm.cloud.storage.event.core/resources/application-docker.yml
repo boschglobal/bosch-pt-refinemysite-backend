@@ -1,0 +1,27 @@
+httpClient:
+  requestHostRewrites:
+    - from: 127.0.0.1:10001
+      to: storage-emulator:10001
+    - from: localhost:10001
+      to: storage-emulator:10001
+    - from: 127.0.0.1:10000
+      to: storage-emulator:10000
+    - from: localhost:10000
+      to: storage-emulator:10000
+
+kafka:
+  schemaRegistry:
+    urls: http://schema-registry:8081
+  broker:
+    urls: broker:29092
+  schema:
+    autoRegisterSchemas: true
+  topic:
+    autoCreateTopics: true
+    upload:
+      name: csm.local.storage.event
+      replicationFactor: 1
+
+storage:
+  queueName: csm-quarantine-queue
+  connectionString: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://storage-emulator:10000/devstoreaccount1;QueueEndpoint=http://storage-emulator:10001/devstoreaccount1

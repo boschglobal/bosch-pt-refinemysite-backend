@@ -1,0 +1,8 @@
+# settings for identity provider
+custom:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uris:
+            - https://stage.key-cloak-one.com/auth/realms/central_profile

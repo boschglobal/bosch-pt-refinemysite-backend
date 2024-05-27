@@ -1,0 +1,42 @@
+logging:
+  level:
+    ROOT: warn
+    # Log save and materialization events
+    # com.bosch.pt.csm: debug
+    com.bosch.pt.csm.cloud.common:
+      config.AzureStorageBlobAutoConfiguration: error
+      security.CustomAuthenticationEntryPoint: info
+    com.bosch.pt.csm.cloud.projectmanagement:
+      ActivityServiceApplicationKt: info
+      # application.config.CacheEventLogger: debug
+      application.security.SmartsiteWebResponseExceptionTranslator: info
+      common.facade.rest.ErrorController: info
+    org:
+      apache.kafka.clients.consumer.internals.Fetcher: error
+      springframework:
+        boot:
+          context: info
+        web.filter.CommonsRequestLoggingFilter: debug
+        # Log mongo db queries
+        # data.mongodb.core.MongoTemplate: DEBUG
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  level:
+    com.bosch.pt.csm.cloud:
+      projectmanagement:
+        activity:
+          facade:
+            listener: debug
+        common:
+          facade:
+            listener:
+              strategies.activity.AbstractActivityStrategy: debug
+    org:
+      mongodb.driver.protocol: info

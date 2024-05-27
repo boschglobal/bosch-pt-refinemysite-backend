@@ -1,0 +1,27 @@
+**/.gradle
+**/build
+**/out
+**/bin
+
+.vscode/*
+.settings/*
+.project
+.classpath
+
+# Ignore all ...
+.idea/*
+# ... except:
+!.idea/checkstyle-idea.xml
+!.idea/codeStyles/
+!.idea/compiler.xml
+!.idea/copyright/
+!.idea/encodings.xml
+!.idea/fileTemplates/
+!.idea/inspectionProfiles/
+!.idea/runConfigurations
+!.idea/scopes/
+!.idea/vcs.xml
+
+# Helm
+**/*.tgz
+**/*.lock

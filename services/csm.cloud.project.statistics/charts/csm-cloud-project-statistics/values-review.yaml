@@ -1,0 +1,11 @@
+# Environment specific values for csm-cloud-project-statistics.
+# Declare variables to be passed into your templates.
+
+stage: review
+profiles: production, idp-bosch-dev, swagger
+
+# configuration for KV Flex volumes
+env: review
+subscription: qa
+subscriptionid: "cc9cf3a1-9bbc-4863-8d83-ad953737f26d"
+tenantid: "0ae51e19-07c8-4e4b-bb6d-648ee58410f4"

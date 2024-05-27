@@ -1,0 +1,14 @@
+[
+  {
+    "id": "message1",
+    "topicId": "topic1",
+    "content": "1. Kommentar",
+    "createWithUserId": "ali"
+  },
+  {
+    "id": "message2",
+    "topicId": "topic1",
+    "content": "2. Kommentar",
+    "createWithUserId": "daniel"
+  }
+]

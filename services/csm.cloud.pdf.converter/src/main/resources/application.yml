@@ -1,0 +1,22 @@
+info:
+  app:
+    name: ${spring.application.name}
+
+spring:
+  config:
+    import:
+      - classpath:actuator-common.yml
+      - classpath:apiversion.yml
+      - classpath:logging.yml
+      - classpath:metrics-common.yml
+      - classpath:profiles.yml
+      - classpath:server.yml
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+  jackson:
+    default-property-inclusion: non_null
+
+custom:
+  html-load-and-render-timeout: 120s

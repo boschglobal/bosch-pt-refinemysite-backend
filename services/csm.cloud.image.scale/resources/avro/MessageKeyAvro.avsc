@@ -1,0 +1,41 @@
+{
+  "fields": [
+    {
+      "name": "rootContextIdentifier",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "aggregateIdentifier",
+      "type": {
+        "fields": [
+          {
+            "name": "identifier",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "type": "long"
+          },
+          {
+            "name": "type",
+            "type": {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "name": "AggregateIdentifierAvro",
+        "type": "record"
+      }
+    }
+  ],
+  "name": "MessageKeyAvro",
+  "namespace": "com.bosch.pt.csm.cloud.common.messages",
+  "type": "record"
+}

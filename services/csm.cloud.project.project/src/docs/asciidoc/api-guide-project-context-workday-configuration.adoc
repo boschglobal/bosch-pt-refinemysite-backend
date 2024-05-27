@@ -1,0 +1,108 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[workday-configuration]]
+== Workday Configuration
+
+Workday configuration allows users to manage and configure elements within the Workday
+
+[[get-workday-configuration]]
+=== Get workday configuration
+
+Retrieves the workday configuration for the given project id.
+
+[[get-workday-configuration-latest]]
+==== Latest API Version
+
+[[get-workday-configuration-request-latest]]
+===== Request
+
+A `GET` request is used to get the workday configuration.
+
+====== Path parameters
+
+include::{snippets}/workday-configuration/document-get-workday-configuration/path-parameters.adoc[]
+
+====== Example request
+
+include::{snippets}/workday-configuration/document-get-workday-configuration/http-request.adoc[]
+include::{snippets}/workday-configuration/document-get-workday-configuration/curl-request.adoc[]
+
+===== Response
+
+The requested workday configuration is returned.
+
+====== Response headers
+
+include::{snippets}/workday-configuration/document-get-workday-configuration/response-headers.adoc[]
+
+====== Response fields
+
+include::{snippets}/workday-configuration/document-get-workday-configuration/response-fields.adoc[]
+
+====== Links
+
+include::{snippets}/workday-configuration/document-get-workday-configuration/links.adoc[]
+
+====== Example response
+
+include::{snippets}/workday-configuration/document-get-workday-configuration/http-response.adoc[]
+
+[[update-workday-configuration]]
+=== Update workday configuration
+
+Updates the workday configuration with the given project id and the given data.
+
+[[update-workday-configuration-latest]]
+==== Latest API Version
+
+[[update-workday-configuration-request-latest]]
+===== Request
+
+A `PUT` request is used to update a workday configuration.
+
+====== Request headers
+
+*Notice*: The request header field `If-Match` needs to be provided.
+It contains the value of the `ETag` response header field previously received when getting the workday configuration.
+
+include::{snippets}/workday-configuration/document-update-workday-configuration/request-headers.adoc[]
+
+====== Path parameters
+
+include::{snippets}/workday-configuration/document-update-workday-configuration/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/workday-configuration/document-update-workday-configuration/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/workday-configuration/document-update-workday-configuration/http-request.adoc[]
+include::{snippets}/workday-configuration/document-update-workday-configuration/curl-request.adoc[]
+
+[[update-workday-configuration-response-latest]]
+===== Response
+
+The updated workday configuration is returned.
+
+====== Response headers
+
+include::{snippets}/workday-configuration/document-update-workday-configuration/response-headers.adoc[]
+
+====== Response fields
+
+include::{snippets}/workday-configuration/document-update-workday-configuration/response-fields.adoc[]
+
+====== Links
+
+include::{snippets}/workday-configuration/document-update-workday-configuration/links.adoc[]
+
+====== Example response
+
+include::{snippets}/workday-configuration/document-update-workday-configuration/http-response.adoc[]

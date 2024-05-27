@@ -1,0 +1,101 @@
+logging:
+  level:
+    ROOT: warn
+    #com.zaxxer.hikari: debug
+    com.bosch.pt.csm.cloud.common:
+      config.AzureStorageBlobAutoConfiguration: info
+      security.CustomAuthenticationEntryPoint: info
+    com.bosch.pt.iot.smartsite:
+      ProjectApplicationKt: info
+      application:
+        config: info
+        lifecycle: info
+      attachment.facade.listener: info
+      common.facade.listener.AbstractRestoreDbEventListener: info
+      common.facade.rest.ErrorController: info
+      job.facade.listener: debug
+      project.importer.command.ProjectImportParameterLogger: info
+      project.project.boundary.ProjectDeleteService: info
+      project.participant.facade.job: info
+      project.exporter.command: info
+    net.javacrumbs.shedlock: debug
+    org:
+      #Configure logging for sql parameters
+      #hibernate:
+      #  SQL: DEBUG
+      #  orm.jdbc.bind: TRACE
+      apache.kafka.clients.consumer.internals.Fetcher: error
+      flywaydb.core.internal.command: info
+      hibernate.engine.jdbc.spi.SqlExceptionHelper: off
+      springframework:
+        boot:
+          context: info
+          web.embedded.tomcat.GracefulShutdown: info
+        cloud.config: debug
+        # Log mongo db queries
+        # data.mongodb.core.MongoTemplate: DEBUG
+        kafka.core.KafkaAdmin: info
+        retry: info
+        web.filter.CommonsRequestLoggingFilter: debug
+        web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: error
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: log-jpa
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        event: debug
+        persister:
+          collection: debug
+        internal:
+          util:
+            EntityPrinter: debug
+        type:
+          EnumType: trace
+          CollectionType: trace
+          descriptor:
+            sql: trace
+      springframework:
+        transaction:
+          support:
+            AbstractPlatformTransactionManager: debug
+        orm:
+          jpa:
+            JpaTransactionManager: debug
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local || test
+
+logging:
+  level:
+    com.bosch.pt.iot.smartsite:
+      company.facade.listener:
+        online: debug
+        restore: debug
+      craft.facade.listener:
+        online: debug
+        restore: debug
+      job.integration: debug
+      mail.integration: debug
+      project:
+        calendar.command.ExportCalendarCommandHandler: debug
+        participant.facade.listener.restore: debug
+        project.facade.listener:
+          online: debug
+          restore: debug
+        relation.boundary.RelationCriticalityService: debug
+      user.facade.listener: debug

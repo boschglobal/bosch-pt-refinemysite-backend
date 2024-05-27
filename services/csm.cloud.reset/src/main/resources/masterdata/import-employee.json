@@ -1,0 +1,218 @@
+[
+  {
+    "id": "ali",
+    "userId": "ali",
+    "companyId": "company-b1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "anne",
+    "userId": "anne",
+    "companyId": "company-b1",
+    "roles": [
+      "CSM"
+    ]
+  },
+  {
+    "id": "armin",
+    "userId": "armin",
+    "companyId": "company-b1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "bob",
+    "userId": "bob",
+    "companyId": "company-b1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "bruno",
+    "userId": "bruno",
+    "companyId": "company-b2",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "carlos",
+    "userId": "carlos",
+    "companyId": "company-b2",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "cesar",
+    "userId": "cesar",
+    "companyId": "company-b2",
+    "roles": [
+      "FM"
+    ]
+  },
+  {
+    "id": "cindy",
+    "userId": "cindy",
+    "companyId": "company-b2",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "daniel",
+    "userId": "daniel",
+    "companyId": "company-b3",
+    "roles": [
+      "CSM"
+    ]
+  },
+  {
+    "id": "eddie",
+    "userId": "eddie",
+    "companyId": "company-b3",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "frank",
+    "userId": "frank",
+    "companyId": "company-b3",
+    "roles": [
+      "CSM"
+    ]
+  },
+  {
+    "id": "groot",
+    "userId": "groot",
+    "companyId": "company-b3",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "gustav",
+    "userId": "gustav",
+    "companyId": "company-d1",
+    "roles": [
+      "FM"
+    ]
+  },
+  {
+    "id": "hannah",
+    "userId": "hannah",
+    "companyId": "company-d1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "ingo",
+    "userId": "ingo",
+    "companyId": "company-d1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "jenny",
+    "userId": "jenny",
+    "companyId": "company-d1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "jong",
+    "userId": "jong",
+    "companyId": "company-e1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "leal",
+    "userId": "leal",
+    "companyId": "company-e1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "leonardo",
+    "userId": "leonardo",
+    "companyId": "company-e1",
+    "roles": [
+      "CSM"
+    ]
+  },
+  {
+    "id": "maduro",
+    "userId": "maduro",
+    "companyId": "company-e1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "monica",
+    "userId": "monica",
+    "companyId": "company-f1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "pablo",
+    "userId": "pablo",
+    "companyId": "company-f1",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "pinto",
+    "userId": "pinto",
+    "companyId": "company-f1",
+    "roles": [
+      "CSM"
+    ]
+  },
+  {
+    "id": "roberto",
+    "userId": "roberto",
+    "companyId": "company-f1",
+    "roles": [
+      "CSM"
+    ]
+  },
+  {
+    "id": "sheila",
+    "userId": "sheila",
+    "companyId": "company-f2",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "vandelay",
+    "userId": "vandelay",
+    "companyId": "company-f2",
+    "roles": [
+      "CR"
+    ]
+  },
+  {
+    "id": "vieira",
+    "userId": "vieira",
+    "companyId": "company-f2",
+    "roles": [
+      "CR"
+    ]
+  }
+]

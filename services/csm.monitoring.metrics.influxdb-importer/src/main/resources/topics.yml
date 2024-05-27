@@ -1,0 +1,27 @@
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  kafka:
+    bim-model-topic: ${kafka-topic-bim-model}
+    company-topic: ${kafka-topic-company}
+    project-topic: ${kafka-topic-project}
+    user-topic: ${kafka-topic-user}
+    job-event-topic: ${kafka-topic-job-event}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+custom:
+  kafka:
+    bim-model-topic: "csm.local.bim.model"
+    company-topic: "csm.local.companymanagement.company"
+    project-topic: "csm.local.projectmanagement.project"
+    user-topic: "csm.local.usermanagement.user"
+    job-event-topic: "csm.local.job.event"
+

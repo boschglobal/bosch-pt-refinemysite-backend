@@ -1,0 +1,30 @@
+"""
+Task schedule (start and end date)
+"""
+type TaskSchedulePayloadV1 {
+
+    """
+    Unique identifier of the schedule
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    Start date of the task
+    """
+    start: Date,
+
+    """
+    End date of the task
+    """
+    end: Date,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}

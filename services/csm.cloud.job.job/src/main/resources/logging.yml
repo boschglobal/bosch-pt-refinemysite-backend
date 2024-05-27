@@ -1,0 +1,33 @@
+logging:
+  level:
+    ROOT: warn
+    com.bosch.pt.csm.cloud:
+      common.security.CustomAuthenticationEntryPoint: info
+      job:
+        JobApplicationKt: info
+        application:
+          config: info
+        common.facade.rest.ErrorController: info
+    org:
+      apache.kafka.clients.consumer.internals.Fetcher: error
+      springframework:
+        boot:
+          context: info
+          web.embedded.tomcat.GracefulShutdown: info
+        cloud.config: debug
+        kafka.core.KafkaAdmin: info
+        retry: info
+        web.filter.CommonsRequestLoggingFilter: debug
+        web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: error
+        # Log mongo db queries
+        # data.mongodb.core.MongoTemplate: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+logging:
+  level:
+    com.bosch.pt.csm.cloud.job: debug
+    org.mongodb.driver.protocol: info

@@ -1,0 +1,5 @@
+# Default values for csm-cloud-project-statistics.
+# Declare variables to be passed into your templates.
+
+maxStartUpTime: 400
+replicas: 2

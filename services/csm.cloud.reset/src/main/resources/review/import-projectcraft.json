@@ -1,0 +1,130 @@
+[
+  {
+    "id": "project_craft_1",
+    "projectId": "project1",
+    "name": "Project Craft 1",
+    "color": "#d9c200",
+    "etag": 0,
+    "createWithUserId": "leonardo"
+  },
+  {
+    "id": "project_craft_1_1",
+    "projectId": "project1",
+    "name": "Project Craft 1.1",
+    "color": "#f5a100",
+    "etag": 1,
+    "createWithUserId": "leonardo"
+  },
+  {
+    "id": "project_craft_1_2",
+    "projectId": "project1",
+    "name": "Project Craft 1.2",
+    "color": "#f87f0a",
+    "etag": 2,
+    "createWithUserId": "leonardo"
+  },
+  {
+    "id": "project_craft_1_3",
+    "projectId": "project1",
+    "name": "Project Craft 1.3",
+    "color": "#c96819",
+    "etag": 3,
+    "createWithUserId": "leonardo"
+  },
+  {
+    "id": "project_craft_2",
+    "projectId": "project2",
+    "name": "Project Craft 1",
+    "color": "#d9c200",
+    "etag": 0,
+    "createWithUserId": "pinto"
+  },
+  {
+    "id": "project_craft_2_1",
+    "projectId": "project2",
+    "name": "Project Craft 1.1",
+    "color": "#f5a100",
+    "etag": 1,
+    "createWithUserId": "pinto"
+  },
+  {
+    "id": "project_craft_2_2",
+    "projectId": "project2",
+    "name": "Project Craft 1.2",
+    "color": "#f87f0a",
+    "etag": 2,
+    "createWithUserId": "pinto"
+  },
+  {
+    "id": "project_craft_2_3",
+    "projectId": "project2",
+    "name": "Project Craft 1.3",
+    "color": "#c96819",
+    "etag": 3,
+    "createWithUserId": "pinto"
+  },
+  {
+    "id": "project_craft_3",
+    "projectId": "project3",
+    "name": "Project Craft 1",
+    "color": "#d9c200",
+    "etag": 0,
+    "createWithUserId": "roberto"
+  },
+  {
+    "id": "project_craft_3_1",
+    "projectId": "project3",
+    "name": "Project Craft 1.1",
+    "color": "#f5a100",
+    "etag": 1,
+    "createWithUserId": "roberto"
+  },
+  {
+    "id": "project_craft_3_2",
+    "projectId": "project3",
+    "name": "Project Craft 1.2",
+    "color": "#f87f0a",
+    "etag": 2,
+    "createWithUserId": "roberto"
+  },
+  {
+    "id": "project_craft_3_3",
+    "projectId": "project3",
+    "name": "Project Craft 1.3",
+    "color": "#c96819",
+    "etag": 3,
+    "createWithUserId": "roberto"
+  },
+  {
+    "id": "project_craft_4",
+    "projectId": "project4",
+    "name": "Project Craft 1",
+    "color": "#d9c200",
+    "etag": 0,
+    "createWithUserId": "frank"
+  },
+  {
+    "id": "project_craft_4_1",
+    "projectId": "project4",
+    "name": "Project Craft 1.1",
+    "color": "#f5a100",
+    "etag": 1,
+    "createWithUserId": "frank"
+  },
+  {
+    "id": "project_craft_4_2",
+    "projectId": "project4",
+    "name": "Project Craft 1.2",
+    "color": "#f87f0a",
+    "etag": 2,
+    "createWithUserId": "frank"
+  },
+  {
+    "id": "project_craft_4_3",
+    "projectId": "project4",
+    "name": "Project Craft 1.3",
+    "color": "#c96819",
+    "etag": 3,
+    "createWithUserId": "frank"
+  }
+]

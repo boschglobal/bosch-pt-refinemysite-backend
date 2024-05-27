@@ -1,0 +1,70 @@
+﻿[
+  {
+    "id": "project1",
+    "title": "Gewerbegebiet Vogelsang",
+    "client": "Krämer Projektbau GmbH",
+    "description": "Bau eines Firmengebäudes",
+    "end": 300,
+    "start": -300,
+    "projectNumber": "20170420_13",
+    "category": "OB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "18",
+      "street": "Heßbrühlstraße",
+      "zipCode": "70565"
+    },
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project2",
+    "title": "Industrial park Vogelsang",
+    "client": "Krämer Projektbau GmbH",
+    "description": "construction of a company building",
+    "end": 300,
+    "start": -300,
+    "projectNumber": "20170420_14",
+    "category": "OB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "18",
+      "street": "Heßbrühlstraße",
+      "zipCode": "70565"
+    },
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project3",
+    "title": "Gewerbegebiet Vaihingen",
+    "client": "Krämer Projektbau GmbH",
+    "description": "Bau einer Sprinkleranlage",
+    "end": 300,
+    "start": -300,
+    "projectNumber": "20170420_15",
+    "category": "OB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "40",
+      "street": "Friedrich-Kraut-Straße",
+      "zipCode": "71665"
+    },
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4",
+    "title": "Industrial park Vaihingen",
+    "client": "Krämer Projektbau GmbH",
+    "description": "construction of a sprinkler system",
+    "end": 300,
+    "start": -300,
+    "projectNumber": "20170420_16",
+    "category": "OB",
+    "address": {
+      "city": "Stuttgart",
+      "houseNumber": "40",
+      "street": "Friedrich-Kraut-Straße",
+      "zipCode": "71665"
+    },
+    "createWithUserId": "anne"
+  }
+]

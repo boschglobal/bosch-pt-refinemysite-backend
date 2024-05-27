@@ -1,0 +1,38 @@
+spring:
+  kafka:
+    clientId: "reset-service"
+    properties:
+      auto.register.schemas: false
+      key.subject.name.strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+      reconnect.backoff.max.ms: 15000
+      reconnect.backoff.ms: 2000
+      retry.backoff.ms: 5000
+      value.subject.name.strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  kafka:
+    bootstrap-servers: ${kafka-broker-urls}
+    properties:
+      schema.registry.url: ${kafka-schemaregistry-urls}
+      schema.registry.basic.auth.user.info: ${kafka-schemaregistry-api-key}:${kafka-schemaregistry-api-secret}
+      basic.auth.credentials.source: 'USER_INFO'
+      request.timeout.ms: 20000
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${csm-cloud-reset-kafka-broker-api-key}" password="${csm-cloud-reset-kafka-broker-api-secret}";
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_SSL
+      ssl.endpoint.identification.algorithm: https
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      schema.registry.url: http://localhost:8081

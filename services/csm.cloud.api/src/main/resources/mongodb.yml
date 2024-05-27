@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  data:
+    mongodb:
+      uri: ${csm-cloud-api-mongodbatlas-connection-string}
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/csm-cloud-api

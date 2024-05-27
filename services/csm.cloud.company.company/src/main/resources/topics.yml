@@ -1,0 +1,71 @@
+smartsite:
+  kafka:
+    bindings:
+      company:
+        configuration:
+          properties:
+            retention.ms: -1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  kafka:
+    bindings:
+      company:
+        kafkaTopic: ${kafka-topic-company}
+      user:
+        kafkaTopic: ${kafka-topic-user}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: staging
+
+custom:
+  kafka:
+    bindings:
+      company:
+        configuration:
+          partitions: 2
+          properties:
+            min.insync.replicas: 2
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+
+custom:
+  kafka:
+    bindings:
+      company:
+        configuration:
+          partitions: 6
+          properties:
+            min.insync.replicas: 2
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local || test
+
+custom:
+  kafka:
+    bindings:
+      company:
+        kafkaTopic: "csm.local.companymanagement.company"
+        configuration:
+          partitions: 2
+          # The local kafka cluster has only one broker node at the moment.
+          replication: 1
+          properties:
+            min.insync.replicas: 1
+      user:
+        kafkaTopic: "csm.local.usermanagement.user"

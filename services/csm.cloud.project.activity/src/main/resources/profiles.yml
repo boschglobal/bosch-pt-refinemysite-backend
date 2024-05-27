@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    group:
+      local:
+        - idp-bosch-dev
+        - init-topics
+        - splunk-local
+        - swagger
+      staging:
+        - docs
+        - idp-bosch-dev
+        - init-topics
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes
+        - swagger
+      production:
+        # - idp-bosch-prod (controlled by helm chart since production profile is used on review, too
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes
+      kafka-listener-disabled:
+        - kafka-company-listener-disabled
+        - kafka-project-listener-disabled
+        - kafka-user-listener-disabled

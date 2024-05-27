@@ -1,0 +1,66 @@
+spring:
+  config:
+    activate:
+      on-profile: swagger
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /swagger/apis/api-definition
+  swagger-ui:
+    query-config-enabled: false
+    oauth:
+      use-pkce-with-authorization-code-grant: true
+    path: /swagger-ui
+  webjars:
+    prefix: /swagger
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: refinemysite-swagger-prod
+      client-secret:
+    urls:
+      - name: Timeline API
+        url: /swagger/timeline/api-definition
+    urls-primary-name: Timeline API
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "!production"
+
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: refinemysite-swagger-dev
+      client-secret:
+    urls:
+      - name: Activity API
+        url: /swagger/activities/api-definition
+      - name: Company API
+        url: /swagger/companies/api-definition
+      - name: Feature Toggle API
+        url: /swagger/features/api-definition
+      - name: Job API
+        url: /swagger/jobs/api-definition
+      - name: News API
+        url: /swagger/news/api-definition
+      - name: Notification API
+        url: /swagger/notifications/api-definition
+      - name: Project API
+        url: /swagger/projects/api-definition
+      - name: Statistics API
+        url: /swagger/statistics/api-definition
+      - name: Timeline API
+        url: /swagger/timeline/api-definition
+      - name: User API
+        url: /swagger/users/api-definition
+    urls-primary-name: Project API

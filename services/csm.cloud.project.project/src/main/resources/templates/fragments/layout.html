@@ -1,0 +1,39 @@
+<!--
+  ~ *************************************************************************
+  ~
+  ~  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+  ~
+  ~ *************************************************************************
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<table>
+    <!--/*@thymesVar id="calendarRow" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.layout.CalendarRow"*/-->
+    <tr th:fragment="layout (calendarRow, includeDayCards)" th:each="calendarRow : ${calendarRow.cells}">
+        <th:block th:each="calendarCell : ${calendarRow}" th:if="${calendarCell.render}">
+
+            <!-- render milestone header if this is a milestone header calendarCell -->
+            <th th:replace="${calendarCell.type.isMilestoneHeader()} ? ~{fragments/milestone-header :: milestone-header-cell (${calendarCell})} : ~{}"></th>
+
+            <!-- render work area if this is a work area calendarCell -->
+            <th th:replace="${calendarCell.type.isWorkAreaHeader()} ? ~{fragments/workarea-header :: workarea-header-cell (${calendarCell})} : ~{}"></th>
+
+            <!-- render milestone if this is a milestone calendarCell -->
+            <td th:replace="${calendarCell.type.isMilestone()} ? ~{fragments/milestone :: milestone-cell (${calendarCell})} : ~{}"></td>
+
+            <!-- render task if this is a task calendarCell -->
+            <td th:replace="${calendarCell.type.isTask()} ? ~{fragments/task :: task-cell (${calendarCell}, ${includeDayCards})} : ~{}"></td>
+
+            <!-- render task if this is an empty or a merge calendarCell -->
+            <td th:replace="${calendarCell.type.isEmpty() or calendarCell.type.isMerge()} ?
+                ~{fragments/blank :: blank-cell (${calendarCell})} : ~{}"></td>
+        </th:block>
+    </tr>
+</table>
+
+</body>
+</html>

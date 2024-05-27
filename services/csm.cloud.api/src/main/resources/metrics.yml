@@ -1,0 +1,5 @@
+management:
+  statsd:
+    metrics:
+      export:
+        enabled: false

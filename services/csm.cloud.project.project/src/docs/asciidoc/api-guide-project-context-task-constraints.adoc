@@ -1,0 +1,107 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[task-constraint-selection]]
+== Task Constraints (former need-for-actions)
+Constraints can be selected as reasons for delay of a task.
+
+
+[[get-task-constraint-selection]]
+=== Get selected constraints of a task
+This endpoint can be used to get the list of selected/assigned constraints of a task.
+
+
+[[get-task-constraint-selection-latest]]
+==== Latest API Version
+
+[[get-task-constraint-selection-request-latest]]
+===== Request
+A `GET` request is used to retrieve the selection of constraints for a specific task.
+
+====== Path parameters
+include::{snippets}/task-constraints/document-get-constraint-selection-of-a-task/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/task-constraints/document-get-constraint-selection-of-a-task/http-request.adoc[]
+include::{snippets}/task-constraints/document-get-constraint-selection-of-a-task/curl-request.adoc[]
+
+[[get-task-constraint-selection-response-latest]]
+===== Response
+The task constraint selection resource is returned.
+
+====== Response fields
+include::{snippets}/task-constraints/document-get-constraint-selection-of-a-task/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-constraints/document-get-constraint-selection-of-a-task/links.adoc[]
+
+====== Example response
+include::{snippets}/task-constraints/document-get-constraint-selection-of-a-task/http-response.adoc[]
+
+
+
+[[get-task-constraint-selections-of-tasks]]
+=== Get selected actions of multiple tasks
+This endpoint can be used to get the list of selected/assigned constraints of multiple task.
+
+
+[[get-task-constraint-selections-of-tasks-latest]]
+==== Latest API Version
+
+[[get-task-constraint-selections-request-latest]]
+===== Request
+A `POST` request is used to retrieve the selections of constraints for multiple tasks.
+
+====== Request parameters
+include::{snippets}/task-constraints/document-get-constraint-selections-of-tasks/query-parameters.adoc[]
+
+====== Example request
+operation::task-constraints/document-get-constraint-selections-of-tasks[snippets='http-request,curl-request']
+
+[[get-task-constraint-selections-of-tasks-response-latest]]
+===== Response
+A list of task constraint selection resources is returned.
+
+====== Response fields
+include::{snippets}/task-constraints/document-get-constraint-selections-of-tasks/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/task-constraints/document-get-constraint-selections-of-tasks/http-response.adoc[]
+
+
+
+[[update-task-constraint-selection]]
+=== Update a selection of constraints of a task
+This endpoint can be used to update the list of constraints (add/remove).
+
+[[update-task-constraint-selection-latest]]
+==== Latest API Version
+
+[[update-task-constraint-selection-request-latest]]
+===== Request
+A `PUT` request is used to update a selection of actions of a specific task.
+
+====== Path parameters
+include::{snippets}/task-constraints/document-update-selection-of-task/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/task-constraints/document-update-selection-of-task/http-request.adoc[]
+include::{snippets}/task-constraints/document-update-selection-of-task/curl-request.adoc[]
+
+[[update-task-constraint-selection-response-latest]]
+===== Response
+The updated task constraint selection is returned.
+
+====== Response fields
+include::{snippets}/task-constraints/document-update-selection-of-task/response-fields.adoc[]
+
+====== Links
+include::{snippets}/task-constraints/document-update-selection-of-task/links.adoc[]
+
+====== Example response
+include::{snippets}/task-constraints/document-update-selection-of-task/http-response.adoc[]

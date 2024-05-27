@@ -1,0 +1,26 @@
+<!--
+  ~ *************************************************************************
+  ~
+  ~  Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2021
+  ~
+  ~ *************************************************************************
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<!--/*@thymesVar id="calendarCell" type="com.bosch.pt.iot.smartsite.project.calendar.boundary.model.layout.CalendarCell"*/-->
+<td th:fragment="workarea-header-cell (calendarCell)" class="workarea-header"
+    th:colspan="${calendarCell.width} * 2"
+    th:rowspan="${calendarCell.height}">
+
+    <div class="workarea-header-name">
+        <span th:if="${calendarCell.content.type.isWorkArea()}"
+              th:text="${(calendarCell.content.position + 1) + '.'}"></span>
+        <span th:text="${calendarCell.content.name}"></span>
+    </div>
+</td>
+
+</body>

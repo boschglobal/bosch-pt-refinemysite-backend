@@ -1,0 +1,69 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2022
+*
+**************************************************************************
+//////////////////////////////////////////
+
+= RefinemySite Jobs API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+== Jobs
+A Job is triggered by a User and is executed asynchronously in the backend.  It represents the state of the execution and its results.  Independent of the state, a Job is deleted when it remains unchanged for several days.
+
+The Job API enables browsing and updating Jobs of an authenticated User.
+
+
+=== List All Jobs
+
+Sending a `GET` request to the Job list resource will return all Jobs of the current user.  The list is paged and can be sorted by `lastModifiedDate` (default) and `status`.
+
+.Example Request
+include::{snippets}/jobs/list/http-request.adoc[]
+
+.Example Response Body
+include::{snippets}/jobs/list/response-body.adoc[]
+
+.Response Fields
+include::{snippets}/jobs/list/response-fields.adoc[]
+
+
+=== Update Job List Last-Seen Timestamp
+
+This sets the `lastSeen` timestamp of the list of Jobs for the current User.  The timestamp is used to determine whether the list was updated while the User was not looking at it.
+
+To update the timestamp, `POST` it to the Job list resource.
+
+.Example Request
+include::{snippets}/jobs/update-last-seen/http-request.adoc[]
+
+.Request Body Fields
+include::{snippets}/jobs/update-last-seen/request-fields.adoc[]
+
+The response is HTTP status `202 - ACCEPTED` with no body. The timestamp of the list resource is updated to match the one in the request body.
+
+
+=== Mark Job Result as Read
+
+Updates the `read` flag of a single Job.  This is used to signal to a User that they already looked at or downloaded the result of this Job.
+
+To update, `POST` an empty request to the Job resource.
+
+.Request Path Parameters
+include::{snippets}/jobs/mark-as-read/path-parameters.adoc[]
+
+.Example Request
+include::{snippets}/jobs/mark-as-read/http-request.adoc[]
+
+The response is HTTP status `202 - ACCEPTED` with no body.  The `read` flag of the Job is set to `true`.

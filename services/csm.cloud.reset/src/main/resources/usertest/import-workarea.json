@@ -1,0 +1,72 @@
+[
+    {
+        "id": "work_area_1_1",
+        "projectId": "project1",
+        "name": "B\u00fcrobereich 1.OG",
+        "etag": 0,
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "work_area_1_2",
+        "projectId": "project1",
+        "name": "B\u00fcrobereich EG",
+        "etag": 1,
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "work_area_1_3",
+        "projectId": "project1",
+        "name": "Tiefgarage UG",
+        "etag": 2,
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "work_area_2_1",
+        "projectId": "project2",
+        "name": "office area 02",
+        "etag": 0,
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "work_area_2_2",
+        "projectId": "project2",
+        "name": "office area 01",
+        "etag": 1,
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "work_area_2_3",
+        "projectId": "project2",
+        "name": "basement -01",
+        "etag": 2,
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "work_area_3_1",
+        "projectId": "project3",
+        "name": "Sprinkler Deckeninstallation",
+        "etag": 0,
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "work_area_3_2",
+        "projectId": "project3",
+        "name": "Sprinklerzentrale",
+        "etag": 1,
+        "createWithUserId": "daniel"
+    },
+    {
+        "id": "work_area_4_1",
+        "projectId": "project4",
+        "name": "sprinkler ceiling installation",
+        "etag": 0,
+        "createWithUserId": "anne"
+    },
+    {
+        "id": "work_area_4_2",
+        "projectId": "project4",
+        "name": "sprinkler control center",
+        "etag": 1,
+        "createWithUserId": "anne"
+    }
+]

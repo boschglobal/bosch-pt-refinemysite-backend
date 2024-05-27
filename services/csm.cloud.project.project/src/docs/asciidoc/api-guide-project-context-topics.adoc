@@ -1,0 +1,282 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[topics]]
+== Topics
+Topics are used to signal problems encountered with a task at any time - independent of the task status.
+
+
+
+[[create-topic]]
+=== Create topic
+This endpoint can be used to create a topic for a task. The criticality can be specified -
+possible values are "CRITICAL" and "UNCRITICAL".
+
+[[create-topic-latest]]
+==== Latest API Version
+
+[[create-topic-request-latest]]
+===== Request
+A `POST` request is used to create a topic for a task.
+
+====== Path parameters
+include::{snippets}/topics/document-create-topic/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/topics/document-create-topic/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/topics/document-create-topic/http-request.adoc[]
+include::{snippets}/topics/document-create-topic/curl-request.adoc[]
+
+[[create-topic-response-latest]]
+===== Response
+The created topic is returned.
+
+====== Response fields
+include::{snippets}/topics/document-create-topic/response-fields.adoc[]
+
+====== Links
+include::{snippets}/topics/document-create-topic/links.adoc[]
+
+====== Example response
+include::{snippets}/topics/document-create-topic/http-response.adoc[]
+
+
+
+[[create-topic-with-identifier]]
+=== Create a topic with identifier
+Same as the previous request, but choose the topic identifier client-side.
+
+[[create-topic-with-identifier-latest]]
+==== Latest API Version
+
+[[create-topic-with-identifier-request-latest]]
+===== Request
+A `POST` request is used to create a topic for a task.
+
+====== Path parameters
+include::{snippets}/topics/document-create-topic-with-identifier/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/topics/document-create-topic-with-identifier/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/topics/document-create-topic-with-identifier/http-request.adoc[]
+include::{snippets}/topics/document-create-topic-with-identifier/curl-request.adoc[]
+
+[[create-topic-with-identifier-response-latest]]
+===== Response
+The created topic is returned.
+
+====== Response fields
+include::{snippets}/topics/document-create-topic-with-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/topics/document-create-topic-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/topics/document-create-topic-with-identifier/http-response.adoc[]
+
+
+
+[[list-topics]]
+=== List all topics
+Get a list of topics. Topics may have embedded attachment resources with links to the attachments
+to display.
+
+[[list-topics-latest]]
+==== Latest API Version
+
+[[list-topics-request-latest]]
+===== Request
+A `GET` request is used to get a page of topics. Older topics can be retrieved by following
+the "prev" link.
+
+====== Path parameters
+include::{snippets}/topics/document-find-all-topics/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/topics/document-find-all-topics/http-request.adoc[]
+include::{snippets}/topics/document-find-all-topics/curl-request.adoc[]
+
+[[list-topics-response-latest]]
+===== Response
+A page of topics is returned.
+
+====== Response fields
+include::{snippets}/topics/document-find-all-topics/response-fields.adoc[]
+
+====== Links
+include::{snippets}/topics/document-find-all-topics/links.adoc[]
+
+====== Example response
+include::{snippets}/topics/document-find-all-topics/http-response.adoc[]
+
+
+
+[[list-topics-of-tasks]]
+=== List all topics of multiple tasks
+Retrieve a batch of topics for a set of task identifiers sent in the request.
+If for one task there is no permission, the request fails.
+
+[[list-topics-of-tasks-latest]]
+==== Latest API Version
+
+[[list-topics-of-tasks-request-latest]]
+===== Request
+A `POST` request is used to get the topics for the task identifiers sent.
+
+====== Request parameters
+include::{snippets}/topics/document-find-all-topics-for-task-identifiers/query-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/topics/document-find-all-topics-for-task-identifiers/request-fields.adoc[]
+
+====== Example request
+operation::topics/document-find-all-topics-for-task-identifiers[snippets='http-request,curl-request']
+
+[[list-topics-of-tasks-response-latest]]
+===== Response
+A page of topics is returned.
+
+====== Response fields
+include::{snippets}/topics/document-find-all-topics-for-task-identifiers/response-fields.adoc[]
+
+====== Links
+include::{snippets}/topics/document-find-all-topics-for-task-identifiers/links.adoc[]
+
+====== Example response
+include::{snippets}/topics/document-find-all-topics-for-task-identifiers/http-response.adoc[]
+
+
+
+[[get-topic]]
+=== Get topic
+This endpoint can be used to get a single topic by an identifier.
+
+[[get-topic-latest]]
+==== Latest API Version
+
+[[get-topic-request-latest]]
+===== Request
+A `GET` request is used to get a topic for a given topic id.
+
+====== Path parameters
+include::{snippets}/topics/document-find-topic/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/topics/document-find-topic/http-request.adoc[]
+include::{snippets}/topics/document-find-topic/curl-request.adoc[]
+
+[[get-topic-response-latest]]
+===== Response
+A topic resource is returned.
+
+====== Response fields
+include::{snippets}/topics/document-find-topic/response-fields.adoc[]
+
+====== Links
+include::{snippets}/topics/document-find-topic/links.adoc[]
+
+====== Example response
+include::{snippets}/topics/document-find-topic/http-response.adoc[]
+
+
+
+[[escalate-topic]]
+=== Escalate topic
+This endpoint can be used to mark a topic as 'CRITICAL'.
+
+[[escalate-topic-latest]]
+==== Latest API Version
+
+[[escalate-topic-request-latest]]
+===== Request
+A `POST` request is used to change the criticality of a topic to 'CRITICAL'.
+
+====== Path parameters
+include::{snippets}/topics/document-escalate-topic/path-parameters.adoc[]
+
+====== Request example
+include::{snippets}/topics/document-escalate-topic/http-request.adoc[]
+include::{snippets}/topics/document-escalate-topic/curl-request.adoc[]
+
+[[escalate-topic-response-latest]]
+===== Response
+The updated topic resource is returned.
+
+====== Response fields
+include::{snippets}/topics/document-escalate-topic/response-fields.adoc[]
+
+====== Links
+include::{snippets}/topics/document-escalate-topic/links.adoc[]
+
+====== Example response
+include::{snippets}/topics/document-escalate-topic/http-response.adoc[]
+
+
+
+[[deescalate-topic]]
+=== De-escalate topic
+This endpoint can be used to mark a topic as 'UNCRITICAL'.
+
+[[deescalate-topic-latest]]
+==== Latest API Version
+
+[[deescalate-topic-request-latest]]
+===== Request
+A `POST` request is used to change the criticality of a topic to 'UNCRITICAL'.
+
+====== Path parameters
+include::{snippets}/topics/document-deescalate-topic/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/topics/document-deescalate-topic/http-request.adoc[]
+include::{snippets}/topics/document-deescalate-topic/curl-request.adoc[]
+
+[[deescalate-topic-response-latest]]
+===== Response
+The updated topic resource is returned.
+
+====== Response fields
+include::{snippets}/topics/document-deescalate-topic/response-fields.adoc[]
+
+====== Links
+include::{snippets}/topics/document-deescalate-topic/links.adoc[]
+
+====== Example response
+include::{snippets}/topics/document-deescalate-topic/http-response.adoc[]
+
+
+
+[[delete-topic]]
+=== Delete topic
+A topic can be deleted by calling this endpoint with an identifier and HTTP-Method `DELETE`.
+All nested resources are automatically deleted prior the deletion of the topic itself.
+This is an asynchronous operation, therefore news, etc. might be processed with a slight delay.
+
+[[delete-topic-latest]]
+==== Latest API Version
+
+[[delete-topic-request-latest]]
+===== Request
+A `DELETE` request is used to delete a topic.
+
+====== Path parameters
+include::{snippets}/topics/document-delete-topic-with-identifier/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/topics/document-delete-topic-with-identifier/http-request.adoc[]
+include::{snippets}/topics/document-delete-topic-with-identifier/curl-request.adoc[]
+
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/topics/document-delete-topic-with-identifier/http-response.adoc[]

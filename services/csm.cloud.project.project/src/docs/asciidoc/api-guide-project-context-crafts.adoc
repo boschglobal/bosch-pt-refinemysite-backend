@@ -1,0 +1,214 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2023
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[project-crafts]]
+== Project Crafts
+
+Project crafts can be defined for a project to group tasks logically.
+In the task search tasks can be filtered by crafts.
+
+[[create-project-craft]]
+=== Create project craft
+
+This endpoint can be used to create a project craft.
+
+[[create-project-craft-latest]]
+==== Latest API Version
+
+[[create-project-craft-request-latest]]
+===== Request
+
+A `POST` request is used to create a new project craft.
+
+====== Request headers
+
+*Notice*: The request header field `If-Match` needs to be provided for the project craft list.
+It contains the value of the `ETag` response header field previously received when creating the projectcraft.
+
+include::{snippets}/project-crafts/document-create-project-craft/request-headers.adoc[]
+
+====== Path parameters
+
+include::{snippets}/project-crafts/document-create-project-craft/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/project-crafts/document-create-project-craft/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/project-crafts/document-create-project-craft/http-request.adoc[]
+include::{snippets}/project-crafts/document-create-project-craft/curl-request.adoc[]
+
+[[create-project-craft-response-latest]]
+===== Response
+
+The project craft list is returned with the created project craft.
+
+====== Response fields
+
+include::{snippets}/project-crafts/document-create-project-craft/response-fields.adoc[]
+
+====== Links
+
+include::{snippets}/project-crafts/document-create-project-craft/links.adoc[]
+
+====== Example response
+
+include::{snippets}/project-crafts/document-create-project-craft/http-response.adoc[]
+
+[[get-project-craft]]
+=== Get project craft
+
+Retrieves the project craft information for the given id.
+
+[[get-project-craft-latest]]
+==== Latest API Version
+
+[[get-project-craft-request-latest]]
+===== Request
+
+A `GET` request is used to get the project craft.
+
+====== Path parameters
+
+include::{snippets}/project-crafts/document-get-project-craft/path-parameters.adoc[]
+
+====== Example request
+
+include::{snippets}/project-crafts/document-get-project-craft/http-request.adoc[]
+include::{snippets}/project-crafts/document-get-project-craft/curl-request.adoc[]
+
+===== Response
+
+The requested project craft is returned.
+
+====== Response fields
+
+include::{snippets}/project-crafts/document-get-project-craft/response-fields.adoc[]
+
+====== Links
+
+include::{snippets}/project-crafts/document-get-project-craft/links.adoc[]
+
+====== Example response
+
+include::{snippets}/project-crafts/document-get-project-craft/http-response.adoc[]
+
+[[list-project-crafts]]
+=== List all project crafts
+
+Get a list of projects crafts for a specific project.
+
+[[list-project-crafts-latest]]
+==== Latest API Version
+
+[[list-project-crafts-request-latest]]
+===== Request
+
+A `GET` request is used to get the projects crafts of a specific project.
+
+====== Path parameters
+
+include::{snippets}/project-crafts/document-get-project-crafts/path-parameters.adoc[]
+
+====== Example request
+
+include::{snippets}/project-crafts/document-get-project-crafts/http-request.adoc[]
+include::{snippets}/project-crafts/document-get-project-crafts/curl-request.adoc[]
+
+[[list-project-crafts-response-latest]]
+===== Response
+
+The requested collection is returned.
+
+====== Response fields
+
+include::{snippets}/project-crafts/document-get-project-crafts/response-fields.adoc[]
+
+====== Links
+
+include::{snippets}/project-crafts/document-get-project-crafts/links.adoc[]
+
+====== Example response
+
+include::{snippets}/project-crafts/document-get-project-crafts/http-response.adoc[]
+
+[[update-project-craft]]
+=== Update project craft
+
+Updates the project craft with the given id and the given data.
+
+[[update-project-craft-latest]]
+==== Latest API Version
+
+[[update-project-craft-request-latest]]
+===== Request
+
+A `PUT` request is used to update a project craft.
+
+====== Path parameters
+
+include::{snippets}/project-crafts/document-update-project-craft/path-parameters.adoc[]
+
+====== Request fields
+
+include::{snippets}/project-crafts/document-update-project-craft/request-fields.adoc[]
+
+====== Example request
+
+include::{snippets}/project-crafts/document-update-project-craft/http-request.adoc[]
+include::{snippets}/project-crafts/document-update-project-craft/curl-request.adoc[]
+
+[[update-project-craft-response-latest]]
+===== Response
+
+The updated project craft is returned.
+
+====== Response fields
+
+include::{snippets}/project-crafts/document-update-project-craft/response-fields.adoc[]
+
+====== Links
+
+include::{snippets}/project-crafts/document-update-project-craft/links.adoc[]
+
+====== Example response
+
+include::{snippets}/project-crafts/document-update-project-craft/http-response.adoc[]
+
+[[delete-project-craft]]
+=== Delete project craft
+
+A project craft can be deleted by calling the project craft endpoint with its identifier and HTTP-Method `DELETE`.
+
+[[delete-project-craft-latest]]
+==== Latest API Version
+
+[[delete-project-craft-request-latest]]
+===== Request
+
+A `DELETE` request is used to delete a project craft.
+
+====== Path parameters
+
+include::{snippets}/project-crafts/document-delete-project-craft/path-parameters.adoc[]
+
+====== Example request
+
+include::{snippets}/project-crafts/document-delete-project-craft/http-request.adoc[]
+include::{snippets}/project-crafts/document-delete-project-craft/curl-request.adoc[]
+
+[[delete-project-craft-response-latest]]
+===== Response
+
+The project craft list is returned with the deleted project craft.
+
+====== Example response
+
+include::{snippets}/project-crafts/document-delete-project-craft/http-response.adoc[]

@@ -1,0 +1,130 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2019
+*
+**************************************************************************
+//////////////////////////////////////////
+
+See link:/internal/docs/projects/api-guide-project-context.html#_project_notifications[Project Documentation]
+
+== Notifications
+
+RefinemySite keeps track of events that are changing an object (e.g project, task, topic, etc.) and it provides
+user-specific notifications if something is "new" and relevant for the user (e.g. CSM is informed about day card status
+changes).
+
+Beside a proactive live-update message that is sent for a notification when a user is currently connected, the
+notifications are stored and can be retrieved via REST (for a limited time).
+
+Notifications can be loaded, and marked as seen (global and on message level).
+
+
+
+[[get-notifications]]
+=== Get notifications
+
+[[get-notifications-latest]]
+==== Latest API version
+
+[[get-notifications-request-latest]]
+===== Request
+
+A `GET` request is used to find notifications for the current user. If nothing is specified, you get the 50 most recent
+notifications. If you specify a date using the "after" or "before" query parameter, the next chunk is loaded from
+that date on, either older ones (parameter "before") or newer ones (parameter "after").
+
+====== Path parameters
+include::{snippets}/get-notifications/request-parameters.adoc[]
+
+====== Example request
+include::{snippets}/get-notifications/http-request.adoc[]
+include::{snippets}/get-notifications/curl-request.adoc[]
+
+[[get-notifications-response-latest]]
+===== Response
+
+====== Response fields
+include::{snippets}/get-notifications/response-fields.adoc[]
+
+====== Links
+include::{snippets}/get-notifications/links.adoc[]
+
+====== Example response
+include::{snippets}/get-notifications/http-response.adoc[]
+
+
+
+[[mark-a-notification-as-read]]
+=== Mark a notification as read
+
+[[mark-a-notification-as-read-latest]]
+==== Latest API version
+
+[[mark-a-notification-as-read-request-latest]]
+===== Request
+A single notification can be marked as read with a `POST` request.
+
+====== Path parameters
+include::{snippets}/mark-a-notification-as-read/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/mark-a-notification-as-read/http-request.adoc[]
+include::{snippets}/mark-a-notification-as-read/curl-request.adoc[]
+
+[[mark-a-notification-as-read-response-latest]]
+===== Response
+
+====== Example response
+include::{snippets}/mark-a-notification-as-read/http-response.adoc[]
+
+
+
+[[get-last-seen-notification-date]]
+=== Get last seen notification date
+
+[[get-last-seen-notification-date-latest]]
+==== Latest API version
+
+[[get-last-seen-notification-date-request-latest]]
+===== Request
+The date when the current user has marked the notification list as seen the last time can be requested with a `GET`
+request.
+
+====== Example request
+include::{snippets}/get-last-seen-notification-date/http-request.adoc[]
+include::{snippets}/get-last-seen-notification-date/curl-request.adoc[]
+
+[[get-last-seen-notification-date-response-latest]]
+===== Response
+
+====== Response fields
+include::{snippets}/get-last-seen-notification-date/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/get-last-seen-notification-date/http-response.adoc[]
+
+
+
+[[set-last-seen-notification-date]]
+=== Set last seen notification date
+
+[[set-last-seen-notification-date-latest]]
+==== Latest API version
+
+[[set-last-seen-notification-date-request-latest]]
+==== Request
+The user can mark the list of notifications as seen with a `POST` request.
+
+===== Request fields
+include::{snippets}/set-last-seen-notification-date/request-fields.adoc[]
+
+===== Example Request
+include::{snippets}/set-last-seen-notification-date/http-request.adoc[]
+include::{snippets}/set-last-seen-notification-date/curl-request.adoc[]
+
+[[set-last-seen-notification-date-response-latest]]
+==== Response
+
+===== Example response
+include::{snippets}/set-last-seen-notification-date/http-response.adoc[]

@@ -1,0 +1,240 @@
+[
+  {
+    "id": "project1-participant-ali",
+    "projectId": "project1",
+    "email": "smartsiteapp+ali@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-carlos",
+    "projectId": "project1",
+    "email": "smartsiteapp+carlos@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-eddie",
+    "projectId": "project1",
+    "email": "smartsiteapp+eddie@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-frank",
+    "projectId": "project1",
+    "email": "smartsiteapp+frank@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-gustav",
+    "projectId": "project1",
+    "email": "smartsiteapp+gustav@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-hannah",
+    "projectId": "project1",
+    "email": "smartsiteapp+hannah@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-ingo",
+    "projectId": "project1",
+    "email": "smartsiteapp+ingo@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-cindy",
+    "projectId": "project1",
+    "email": "smartsiteapp+cindy@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-armin",
+    "projectId": "project1",
+    "email": "smartsiteapp+armin@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project1-participant-jenny",
+    "projectId": "project1",
+    "email": "smartsiteapp+jenny@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project2-participant-ali",
+    "projectId": "project2",
+    "email": "smartsiteapp+ali@gmail.com",
+    "role": "CR",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project2-participant-carlos",
+    "projectId": "project2",
+    "email": "smartsiteapp+carlos@gmail.com",
+    "role": "CR",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project2-participant-eddie",
+    "projectId": "project2",
+    "email": "smartsiteapp+eddie@gmail.com",
+    "role": "CR",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project2-participant-frank",
+    "projectId": "project2",
+    "email": "smartsiteapp+frank@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project2-participant-gustav",
+    "projectId": "project2",
+    "email": "smartsiteapp+gustav@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project2-participant-hannah",
+    "projectId": "project2",
+    "email": "smartsiteapp+hannah@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project2-participant-ingo",
+    "projectId": "project2",
+    "email": "smartsiteapp+ingo@gmail.com",
+    "role": "CR",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project2-participant-cindy",
+    "projectId": "project2",
+    "email": "smartsiteapp+cindy@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project2-participant-armin",
+    "projectId": "project2",
+    "email": "smartsiteapp+armin@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project2-participant-jenny",
+    "projectId": "project2",
+    "email": "smartsiteapp+jenny@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project3-participant-eddie",
+    "projectId": "project3",
+    "email": "smartsiteapp+eddie@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project3-participant-gustav",
+    "projectId": "project3",
+    "email": "smartsiteapp+gustav@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project3-participant-frank",
+    "projectId": "project3",
+    "email": "smartsiteapp+frank@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project3-participant-jenny",
+    "projectId": "project3",
+    "email": "smartsiteapp+jenny@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project3-participant-ali",
+    "projectId": "project3",
+    "email": "smartsiteapp+ali@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project3-participant-hannah",
+    "projectId": "project3",
+    "email": "smartsiteapp+hannah@gmail.com",
+    "role": "FM",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project3-participant-ingo",
+    "projectId": "project3",
+    "email": "smartsiteapp+ingo@gmail.com",
+    "role": "CR",
+    "createWithUserId": "daniel"
+  },
+  {
+    "id": "project4-participant-eddie",
+    "projectId": "project4",
+    "email": "smartsiteapp+eddie@gmail.com",
+    "role": "CR",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project4-participant-gustav",
+    "projectId": "project4",
+    "email": "smartsiteapp+gustav@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project4-participant-frank",
+    "projectId": "project4",
+    "email": "smartsiteapp+frank@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project4-participant-jenny",
+    "projectId": "project4",
+    "email": "smartsiteapp+jenny@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project4-participant-ali",
+    "projectId": "project4",
+    "email": "smartsiteapp+ali@gmail.com",
+    "role": "CR",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project4-participant-hannah",
+    "projectId": "project4",
+    "email": "smartsiteapp+hannah@gmail.com",
+    "role": "FM",
+    "createWithUserId": "anne"
+  },
+  {
+    "id": "project4-participant-ingo",
+    "projectId": "project4",
+    "email": "smartsiteapp+ingo@gmail.com",
+    "role": "CR",
+    "createWithUserId": "anne"
+  }
+]

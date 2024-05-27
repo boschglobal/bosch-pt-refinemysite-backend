@@ -1,0 +1,13 @@
+logging:
+  level:
+    com.bosch.pt.csm.cloud.common.test.event.EventStreamGenerator: debug
+    org:
+      springframework:
+        test:
+          context:
+            # change to debug to get infos about testcontext caching and reusing
+            # cache: debug
+            transaction:
+              # to log the @Transactional lifecycle (start / rollback) change the following line
+              TransactionContext: warn
+

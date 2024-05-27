@@ -1,0 +1,30 @@
+logging:
+  level:
+    ROOT: warn
+    com.bosch.pt.csm.cloud.common.security.CustomAuthenticationEntryPoint: info
+    com.bosch.pt.csm.cloud.projectmanagement:
+      ProjectNewsApplication: info
+      ProjectNewsApplicationKt: info
+      application:
+        config: info
+        security.SmartsiteWebResponseExceptionTranslator: info
+      common.facade.rest.ErrorController: info
+    org:
+      apache.kafka.clients.consumer.internals.Fetcher: error
+      flywaydb.core.internal.command: info
+      springframework:
+        boot:
+          context: info
+          web.embedded.tomcat.GracefulShutdown: info
+        web.filter.CommonsRequestLoggingFilter: debug
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  level:
+    com.bosch.pt.csm.cloud.projectmanagement:
+      news.facade.listener: debug

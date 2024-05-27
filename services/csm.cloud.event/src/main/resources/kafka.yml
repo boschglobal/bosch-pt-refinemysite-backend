@@ -1,0 +1,51 @@
+spring:
+  kafka:
+    clientId: "csm-cloud-event"
+    listener:
+      concurrency: 3
+    consumer:
+      keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
+      valueDeserializer: io.confluent.kafka.serializers.KafkaJsonDeserializer
+      enableAutoCommit: false
+      group-id: csm-event-${stage}
+      properties:
+        auto.offset.reset: earliest
+        request.timeout.ms: 20000
+        session.timeout.ms: 30000
+        max.poll.records: 50
+    properties:
+      reconnect.backoff.ms: 2000
+      reconnect.backoff.max.ms: 15000
+      retry.backoff.ms: 5000
+
+custom:
+  kafka:
+    consumer:
+      retry-back-off-policy:
+        initial-delay-ms: 1000
+        max-delay-ms: 60000
+        multiplier: 2
+        retries-max: 5
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  kafka:
+    bootstrap-servers: ${kafka-broker-urls}
+    properties:
+      request.timeout.ms: 20000
+      retry.backoff.ms: 500
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${csm-cloud-event-kafka-broker-api-key}" password="${csm-cloud-event-kafka-broker-api-secret}";
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_SSL
+      ssl.endpoint.identification.algorithm: https
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  kafka:
+    bootstrap-servers: localhost:9092

@@ -1,0 +1,249 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[milestones]]
+== Milestones
+Milestones represent a major target in a construction project. They can be defined on different levels being
+PROJECT, INVESTOR or CRAFT. Project milestones represent targets for the entire construction project across
+all crafts. Investor milestones are similar but defined from the perspective of the investor and relevant for
+them (could be for financial / contractual purposes). Craft milestone, as the name says, are relevant for a
+specific craft involved in the project.
+
+
+[[create-milestone]]
+=== Create milestones
+This endpoint can be used to create a milestone. Craft milestones require a craft to be referenced. Other milestone
+types are not using the craft reference. If a milestone is a header milestone, the work area reference is not used.
+Otherwise, a work area can be referenced by any milestone (optional).
+
+[[create-milestone-latest]]
+==== Latest API Version
+
+[[create-milestone-request-latest]]
+===== Request
+A new milestone is created with a `POST` request.
+
+====== Request fields
+include::{snippets}/milestones/document-create-milestone/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/milestones/document-create-milestone/http-request.adoc[]
+include::{snippets}/milestones/document-create-milestone/curl-request.adoc[]
+
+[[create-milestone-response-latest]]
+===== Response
+The created milestone is returned.
+
+====== Response fields
+include::{snippets}/milestones/document-create-milestone/response-fields.adoc[]
+
+====== Links
+include::{snippets}/milestones/document-create-milestone/links.adoc[]
+
+====== Example response
+include::{snippets}/milestones/document-create-milestone/http-response.adoc[]
+
+
+
+[[create-milestone-with-identifier]]
+=== Create milestone with identifier
+Same as the previous request, but choose the milestone identifier client-side.
+
+[[create-milestone-with-identifier-latest]]
+==== Latest API Version
+
+[[create-milestone-with-identifier-request-latest]]
+===== Request
+A new milestone is created with a `POST` request.
+
+====== Path parameters
+include::{snippets}/milestones/document-create-milestone-with-identifier/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/milestones/document-create-milestone-with-identifier/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/milestones/document-create-milestone-with-identifier/http-request.adoc[]
+include::{snippets}/milestones/document-create-milestone-with-identifier/curl-request.adoc[]
+
+===== Response
+The created milestone is returned.
+
+====== Response fields
+include::{snippets}/milestones/document-create-milestone-with-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/milestones/document-create-milestone-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/milestones/document-create-milestone-with-identifier/http-response.adoc[]
+
+
+
+[[update-milestone]]
+=== Update milestone
+Updates the milestone with the given id and the given data. The same rules apply as specified for
+creation of a milestone further above.
+
+[[update-milestone-latest]]
+==== Latest API Version
+
+[[update-milestone-request-latest]]
+===== Request
+A milestone is updated with a `PUT` request.
+
+====== Path parameters
+include::{snippets}/milestones/document-update-milestone/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/milestones/document-update-milestone/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/milestones/document-update-milestone/http-request.adoc[]
+include::{snippets}/milestones/document-update-milestone/curl-request.adoc[]
+
+[[update-milestone-response-latest]]
+===== Response
+The updated milestone is returned.
+
+====== Response fields
+include::{snippets}/milestones/document-update-milestone/response-fields.adoc[]
+
+====== Links
+include::{snippets}/milestones/document-update-milestone/links.adoc[]
+
+====== Example response
+include::{snippets}/milestones/document-update-milestone/http-response.adoc[]
+
+
+
+[[get-milestone]]
+=== Get milestones
+Retrieves the milestone for the given id.
+
+[[get-milestone-latest]]
+==== Latest API Version
+
+[[get-milestone-request-latest]]
+===== Request
+A `GET` request is used to retrieve a milestone.
+
+====== Path parameters
+include::{snippets}/milestones/document-get-milestone/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/milestones/document-get-milestone/http-request.adoc[]
+include::{snippets}/milestones/document-get-milestone/curl-request.adoc[]
+
+===== Response
+The requested milestone is returned.
+
+====== Response fields
+include::{snippets}/milestones/document-get-milestone/response-fields.adoc[]
+
+====== Links
+include::{snippets}/milestones/document-get-milestone/links.adoc[]
+
+====== Example response
+include::{snippets}/milestones/document-get-milestone/http-response.adoc[]
+
+
+
+[[batch-find-milestones]]
+=== Get multiple milestones (Batch)
+Retrieves multiple milestones for the given ids.
+
+[[batch-find-milestones-latest]]
+==== Latest API Version
+
+[[batch-find-milestones-request-latest]]
+===== Request
+A `POST` request is used to retrieve multiple milestones.
+
+====== Path parameters
+include::{snippets}/milestones/document-batch-find-milestones/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/milestones/document-batch-find-milestones/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/milestones/document-batch-find-milestones/http-request.adoc[]
+include::{snippets}/milestones/document-batch-find-milestones/curl-request.adoc[]
+
+===== Response
+The requested milestones are returned.
+
+====== Response fields
+include::{snippets}/milestones/document-batch-find-milestones/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/milestones/document-batch-find-milestones/http-response.adoc[]
+
+
+
+[[delete-milestone]]
+=== Delete milestone
+Deletes the milestone with the given id.
+
+[[delete-milestone-latest]]
+==== Latest API Version
+
+[[delete-milestone-request-latest]]
+===== Request
+A milestone is deleted with a `DELETE` request.
+
+====== Path parameters
+include::{snippets}/milestones/document-delete-milestone/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/milestones/document-delete-milestone/http-request.adoc[]
+include::{snippets}/milestones/document-delete-milestone/curl-request.adoc[]
+
+[[delete-milestone-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/milestones/document-delete-milestone/http-response.adoc[]
+
+
+
+[[search-milestones]]
+=== Search milestones
+Get a list of milestones for a specific project.
+
+[[search-milestones-latest]]
+==== Latest API Version
+
+[[search-milestones-request-latest]]
+===== Request
+Use a `POST` request to get a page of milestones of a specific project. You can specify a set of (optional) filters
+to only retrieve a subset of milestones for the project.
+
+====== Path parameters
+include::{snippets}/milestones/document-search-milestones/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/milestones/document-search-milestones/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/milestones/document-search-milestones/http-request.adoc[]
+include::{snippets}/milestones/document-search-milestones/curl-request.adoc[]
+
+[[list-milestones-response-latest]]
+===== Response
+The requested page is returned.
+
+====== Response fields
+include::{snippets}/milestones/document-search-milestones/response-fields.adoc[]
+
+====== Links
+include::{snippets}/milestones/document-search-milestones/links.adoc[]
+
+====== Example response
+include::{snippets}/milestones/document-search-milestones/http-response.adoc[]

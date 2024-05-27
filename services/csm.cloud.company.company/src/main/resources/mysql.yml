@@ -1,0 +1,46 @@
+spring:
+  config:
+    activate:
+      on-profile: local || kubernetes
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    hikari:
+      minimum-idle: 15
+      maximum-pool-size: 45
+      idle-timeout: 120000
+      max-lifetime: 840000
+      connectionInitSql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+  flyway:
+    locations: classpath:db/migration/mysql
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes && !restore-db
+  datasource:
+    url: ${csm-cloud-company-mysql-flexible-url}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes && restore-db
+  datasource:
+    url: ${csm-cloud-company-restore-mysql-flexible-url}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local && !restore-db
+  datasource:
+    url: jdbc:mysql://localhost:3306/csm-company?user=smartsite&password=smartsite&useSSL=false&log=true&permitMysqlScheme&allowPublicKeyRetrieval
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local && restore-db
+  datasource:
+    url: jdbc:mysql://localhost:3306/csm-company-restore?user=smartsite&password=smartsite&useSSL=false&permitMysqlScheme&allowPublicKeyRetrieval

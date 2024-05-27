@@ -1,0 +1,57 @@
+custom:
+  blob-storage:
+    container-name: csm
+    image:
+      folder:
+        original: image/original
+        fullhd: image/fullhd
+        medium: image/medium
+        small: image/small
+    scaling-listener:
+      poll:
+        number-of-messages: 32
+        poll-interval-ms: 3000
+
+        # claim messages for a timeframe long enough to allow for the maximum number of retry attempts before the
+        # message will be released to the queue again (when not deleted).
+        # Calculated on the basis of the retry configuration: 5000*2^0 + 5000*2^1 + ... + 5000*2^4 + some headroom
+        visibility-timeout-sec: 180
+      retry:
+        initial-backoff-ms: 5000
+        delta-backoff-ms: 5000
+        max-backoff-ms: 90000
+        max-attempts: 5 # using Azure Storage Client retry: initial try doesn't count here => 5 retries
+    scaling-processor:
+      retry:
+        initial-backoff-ms: 5000
+        multiplier: 2
+        max-backoff-ms: 90000
+        max-attempts: 6 # using Spring retry: initial try plus 5 retries
+    shared-access-expiry-time: 60
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  blob-storage:
+    connection-string: ${csm-cloud-user-storage-account-connection-string}
+  quarantine-storage:
+    connection-string: ${csm-cloud-quarantine-storage-account-connection-string}
+    directory: images
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+custom:
+  blob-storage:
+    connection-string: "DefaultEndpointsProtocol=http;AccountName=userimagesaccount;AccountKey=dXNlcmltYWdlc2tleQ==;BlobEndpoint=http://127.0.0.1:10000/userimagesaccount;QueueEndpoint=http://127.0.0.1:10001/userimagesaccount;"
+  quarantine-storage:
+    container-name: "csm-quarantine-container"
+    connection-string: "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1"
+    directory: images

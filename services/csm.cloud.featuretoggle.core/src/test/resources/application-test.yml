@@ -1,0 +1,15 @@
+spring:
+  config:
+    import:
+      - classpath:application-idp-bosch-dev.yml
+      - classpath:test-flyway.yml
+      - classpath:test-db.yml
+      - classpath:test-kafka.yml
+      - classpath:test-logging.yml
+  cache:
+    type: none
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://jwtcreator.example.com

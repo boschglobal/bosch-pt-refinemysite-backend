@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    group:
+      local:
+        - idp-bosch-dev
+        - init-topics
+        - swagger
+      staging:
+        - docs
+        - idp-bosch-dev
+        - kubernetes
+        - log-json
+        - swagger
+      production:
+        # - idp-bosch-prod (controlled by helm chart since production profile is used on review, too
+        - kubernetes
+        - log-json
+      kafka-listener-disabled:
+        - kafka-user-projector-listener-disabled
+        - featuretoggle-context-restore-snapshots-event-listener-disabled
+      # disables all kafka listeners listening to user topic
+      kafka-user-listener-disabled:
+        - kafka-user-projector-listener-disabled
+      kafka-featuretoggle-listener-disabled:
+        - featuretoggle-context-restore-snapshots-event-listener-disabled

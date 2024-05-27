@@ -1,0 +1,889 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[tasks]]
+== Tasks
+A task represents a piece of work that must be completed by a user of the system within a
+specified time.
+
+
+
+[[create-task]]
+=== Create task
+This endpoint can be used to create a task.
+
+
+[[create-task-latest]]
+==== Latest API Version
+
+[[create-task-request-latest]]
+===== Request
+A `POST` request is used to create a new task.
+
+====== Request fields
+include::{snippets}/tasks/document-create-task/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-create-task/http-request.adoc[]
+include::{snippets}/tasks/document-create-task/curl-request.adoc[]
+
+[[create-task-response-latest]]
+===== Response
+The created task is returned.
+
+====== Response headers
+include::{snippets}/tasks/document-create-task/response-headers.adoc[]
+
+====== Response fields
+include::{snippets}/tasks/document-create-task/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-create-task/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-create-task/http-response.adoc[]
+
+
+
+[[create-task-with-identifier]]
+=== Create a task with identifier
+Same as the previous request, but choose the task identifier client-side.
+
+
+[[create-task-with-identifier-latest]]
+==== Latest API Version
+
+[[create-task-with-identifier-request-latest]]
+===== Request
+A `POST` request is used to create a new task.
+
+====== Path parameters
+include::{snippets}/tasks/document-create-task-with-identifier/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/tasks/document-create-task-with-identifier/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-create-task-with-identifier/http-request.adoc[]
+include::{snippets}/tasks/document-create-task-with-identifier/curl-request.adoc[]
+
+[[create-task-with-identifier-response-latest]]
+===== Response
+The created task is returned.
+
+====== Response headers
+include::{snippets}/tasks/document-create-task-with-identifier/response-headers.adoc[]
+
+====== Response fields
+include::{snippets}/tasks/document-create-task-with-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-create-task-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-create-task-with-identifier/http-response.adoc[]
+
+
+
+[[create-multiple-tasks]]
+=== Create Multiple Tasks (Batch)
+Create multiple tasks at once.
+This operation is executed as a batch in a single, atomic transaction,
+i.e. either all created successfully or none at all.
+
+
+[[create-multiple-tasks-latest]]
+==== Latest API Version
+
+[[create-multiple-tasks-request-latest]]
+===== Request
+A `POST` request is used to create multiple tasks.
+
+====== Request fields
+include::{snippets}/tasks/document-create-multiple-tasks/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-create-multiple-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-create-multiple-tasks/curl-request.adoc[]
+
+[[create-multiple-tasks-response-latest]]
+===== Response
+The list of created tasks is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-create-multiple-tasks/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-create-multiple-tasks/http-response.adoc[]
+
+
+
+[[update-task]]
+=== Update task
+This endpoint can be used to change the details of a task, except for assignment and task status,
+which are handled by dedicated methods.
+
+
+[[update-task-latest]]
+==== Latest API Version
+
+[[update-task-request-latest]]
+===== Request
+A `PUT` request is used to change the task details.
+
+====== Path parameters
+include::{snippets}/tasks/document-update-task/path-parameters.adoc[]
+
+====== Request headers
+*Notice*: The request header field `If-Match` needs to be provided.
+It contains the value of the `ETag` response header field previously received when getting the task.
+include::{snippets}/tasks/document-update-task/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/tasks/document-update-task/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-update-task/http-request.adoc[]
+include::{snippets}/tasks/document-update-task/curl-request.adoc[]
+
+[[update-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response headers
+include::{snippets}/tasks/document-update-task/response-headers.adoc[]
+
+====== Response fields
+include::{snippets}/tasks/document-update-task/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-update-task/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-update-task/http-response.adoc[]
+
+
+
+[[update-multiple-tasks]]
+=== Update Multiple Tasks (Batch)
+Update multiple tasks at once.
+This operation is executed as a batch in a single, atomic transaction, i.e. either all update
+successfully or none at all.
+
+
+[[update-multiple-tasks-latest]]
+==== Latest API Version
+
+[[update-multiple-tasks-request-latest]]
+===== Request
+A `PUT` request is used to change the status of multiple tasks.
+
+====== Request fields
+include::{snippets}/tasks/document-update-multiple-tasks/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-update-multiple-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-update-multiple-tasks/curl-request.adoc[]
+
+[[update-multiple-tasks-response-latest]]
+===== Response
+A list with the updated tasks is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-update-multiple-tasks/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-update-multiple-tasks/http-response.adoc[]
+
+
+
+[[list-tasks]]
+=== List tasks
+This endpoint can be used to get a list of task for the current user.
+
+
+[[list-tasks-latest]]
+==== Latest API Version
+
+[[list-tasks-request-latest]]
+===== Request
+A `GET` request is used to get a page of tasks of a project.
+
+====== Request parameters
+include::{snippets}/tasks/document-list-tasks/query-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-list-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-list-tasks/curl-request.adoc[]
+
+[[list-tasks-response-latest]]
+===== Response
+A page of tasks is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-list-tasks/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-list-tasks/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-list-tasks/http-response.adoc[]
+
+
+
+[[search-tasks]]
+=== Search tasks
+The search endpoint can be used to find task filtered by search criteria.
+
+
+[[search-tasks-latest]]
+==== Latest API Version
+
+[[search-tasks-request-latest]]
+===== Request
+A `POST` request is used search for tasks due to the filter possibilities which this method
+supports. Using query parameters would exceed the URL length limit.
+
+The filter parameters are passed as a JSON object ("{}") in the body.
+They can be used in any arbitrary combination.
+
+NOTE: At least either a projectId must be given.
+An empty request body is not allowed and returns a 400 error!
+
+====== Request parameters
+include::{snippets}/tasks/document-get-tasks/query-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/tasks/document-get-tasks/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-get-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-get-tasks/curl-request.adoc[]
+
+[[search-tasks-response-latest]]
+===== Response
+A page of found tasks is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-get-tasks/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-get-tasks/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-get-tasks/http-response.adoc[]
+
+
+
+[[get-task]]
+=== Get task
+This endpoint can be used to get a single task.
+
+
+[[get-task-latest]]
+==== Latest API Version
+
+[[get-task-request-latest]]
+===== Request
+A `GET` request is used to get a single task.
+
+====== Path parameters
+include::{snippets}/tasks/document-get-task-with-id/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-get-task-with-id/http-request.adoc[]
+include::{snippets}/tasks/document-get-task-with-id/curl-request.adoc[]
+
+[[get-task-response-latest]]
+===== Response
+The task resource is returned.
+
+====== Response headers
+include::{snippets}/tasks/document-get-task-with-id/response-headers.adoc[]
+
+====== Response fields
+include::{snippets}/tasks/document-get-task-with-id/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-get-task-with-id/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-get-task-with-id/http-response.adoc[]
+
+
+
+[[batch-find-tasks]]
+=== Get multiple tasks (Batch)
+Retrieves multiple tasks for the given ids.
+
+[[batch-find-tasks-latest]]
+==== Latest API Version
+
+[[batch-find-tasks-request-latest]]
+===== Request
+A `POST` request is used to retrieve multiple tasks.
+
+====== Path parameters
+include::{snippets}/tasks/document-batch-find-tasks/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/tasks/document-batch-find-tasks/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-batch-find-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-batch-find-tasks/curl-request.adoc[]
+
+===== Response
+The requested tasks are returned.
+
+====== Response fields
+include::{snippets}/tasks/document-batch-find-tasks/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-batch-find-tasks/http-response.adoc[]
+
+
+
+[[assign-participant-to-tasks-by-ids]]
+=== Assign list of tasks
+Changes the assigned project participant for a list of tasks (specified by task ids).
+
+
+[[assign-participant-to-tasks-by-ids-latest]]
+==== Latest API Version
+
+[[assign-participant-to-tasks-by-ids-request-latest]]
+===== Request
+A `POST` request is used to change the assigned project participant for tasks by ids
+
+====== Request fields
+include::{snippets}/tasks/document-assign-tasks-to-project-participant/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-assign-tasks-to-project-participant/http-request.adoc[]
+include::{snippets}/tasks/document-assign-tasks-to-project-participant/curl-request.adoc[]
+
+===== Response
+A list with the updated tasks is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-assign-tasks-to-project-participant/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-assign-tasks-to-project-participant/http-response.adoc[]
+
+
+
+[[assign-participant-to-task]]
+=== Assign single task
+Changes the assigned project participant for a single tasks (specified by task id).
+
+
+[[assign-participant-to-task-latest]]
+==== Latest API Version
+
+[[assign-participant-to-task-request-latest]]
+===== Request
+A `POST` request is used to change the assigned project participant for a task by id.
+
+====== Path parameters
+include::{snippets}/tasks/document-assign-task-to-project-participant/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/tasks/document-assign-task-to-project-participant/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-assign-task-to-project-participant/http-request.adoc[]
+include::{snippets}/tasks/document-assign-task-to-project-participant/curl-request.adoc[]
+
+[[assign-participant-to-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-assign-task-to-project-participant/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-assign-task-to-project-participant/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-assign-task-to-project-participant/http-response.adoc[]
+
+
+
+[[unassign-participant-from-task]]
+=== Unassign single task
+Unassign project participant from a single tasks (specified by task id).
+
+
+[[unassign-participant-from-task-latest]]
+==== Latest API Version
+
+[[unassign-participant-from-task-request-latest]]
+===== Request
+A `POST` request is used to unassign the project participant from a task by id.
+
+====== Path parameters
+include::{snippets}/tasks/document-unassign-task-from-project-participant/path-parameters.adoc[]
+
+
+====== Example request
+include::{snippets}/tasks/document-unassign-task-from-project-participant/http-request.adoc[]
+include::{snippets}/tasks/document-unassign-task-from-project-participant/curl-request.adoc[]
+
+[[unassign-participant-from-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-unassign-task-from-project-participant/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-unassign-task-from-project-participant/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-unassign-task-from-project-participant/http-response.adoc[]
+
+
+
+[[unassign-participant-from-tasks-by-ids]]
+=== Unassign list of tasks
+Unassign the project participant from a list of tasks (specified by task ids).
+
+
+[[unassign-participant-from-tasks-by-ids-latest]]
+==== Latest API Version
+
+[[unassign-participant-from-tasks-by-ids-request-latest]]
+===== Request
+A `POST` request is used to unassign the project participant from tasks by ids
+
+====== Request fields
+include::{snippets}/tasks/document-unassign-tasks-from-project-participant/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-unassign-tasks-from-project-participant/http-request.adoc[]
+include::{snippets}/tasks/document-unassign-tasks-from-project-participant/curl-request.adoc[]
+
+===== Response
+A list with the updated tasks is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-unassign-tasks-from-project-participant/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-unassign-tasks-from-project-participant/http-response.adoc[]
+
+
+
+[[batch-send-tasks]]
+=== Send multiple tasks
+Changes the status of a list of tasks to "open" (specified by task ids).
+This is called "send" because the project participant to whom the task is assigned only sees the task in his task list, once it is in status "open".
+
+
+[[batch-send-tasks-latest]]
+==== Latest API Version
+
+[[batch-send-tasks-request-latest]]
+===== Request
+A `POST` request is used to "send" a list of tasks by ids.
+
+====== Request fields
+include::{snippets}/tasks/document-batch-send-tasks/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-batch-send-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-batch-send-tasks/curl-request.adoc[]
+
+[[batch-send-tasks-response-latest]]
+===== Response
+A list with the updated tasks is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-batch-send-tasks/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-batch-send-tasks/http-response.adoc[]
+
+
+
+[[send-task]]
+=== Send single task
+Changes the status of a single task to "open" (specified by task id).
+This is called "send" because the project participant to whom the task is assigned only sees
+the task in his task list, once it is in status "open".
+
+
+[[send-task-latest]]
+==== Latest API Version
+
+[[send-task-request-latest]]
+===== Request
+A `POST` request is used to "send" a task.
+
+====== Path parameters
+include::{snippets}/tasks/document-send-task/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-send-task/http-request.adoc[]
+include::{snippets}/tasks/document-send-task/curl-request.adoc[]
+
+[[send-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-send-task/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-send-task/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-send-task/http-response.adoc[]
+
+
+
+[[start-task]]
+=== Start task
+This endpoint can be used to start a task, which means that the task's status is changed to 'STARTED'.
+
+
+[[start-task-latest]]
+==== Latest API Version
+
+[[start-task-request-latest]]
+===== Request
+A `POST` request is used to change the status of a task to 'STARTED'.
+
+====== Path parameters
+include::{snippets}/tasks/document-start-task/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-start-task/http-request.adoc[]
+include::{snippets}/tasks/document-start-task/curl-request.adoc[]
+
+[[start-task-response-latest]]
+===== Response
+The updated task is returned.
+
+===== Response fields
+include::{snippets}/tasks/document-start-task/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-start-task/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-start-task/http-response.adoc[]
+
+====== Error response
+Starting a task is only possible until a task is not already started or closed.
+If this condition is violated then the following response is returned.
+
+include::{snippets}/tasks/document-start-task-invalid-transition/http-response.adoc[]
+
+
+
+[[batch-start-tasks]]
+=== Start multiple tasks
+This endpoint can be used to close multiple tasks, which means that the statuses of the tasks are changed to 'STARTED'.
+
+
+[[batch-start-tasks-latest]]
+==== Latest API Version
+
+[[batch-start-tasks-request-latest]]
+===== Request
+A `POST` request is used to change the status of the multiple tasks to 'STARTED'.
+
+====== Path parameters
+include::{snippets}/tasks/document-batch-start-tasks/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-batch-start-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-batch-start-tasks/curl-request.adoc[]
+
+[[batch-start-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-batch-start-tasks/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-batch-start-tasks/http-response.adoc[]
+
+
+
+[[close-task]]
+=== Close task
+This endpoint can be used to close a task, which means that the task's status is changed to 'CLOSED'.
+
+
+[[close-task-latest]]
+==== Latest API Version
+
+[[close-task-request-latest]]
+===== Request
+A `POST` request is used to change the status of a task to 'CLOSED'.
+
+====== Path parameters
+include::{snippets}/tasks/document-close-task/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-close-task/http-request.adoc[]
+include::{snippets}/tasks/document-close-task/curl-request.adoc[]
+
+[[close-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-close-task/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-close-task/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-close-task/http-response.adoc[]
+
+====== Error response
+Closing a task is only possible when a task is in started status.
+If this condition is violated then the following response is returned.
+
+include::{snippets}/tasks/document-close-task-invalid-transition/http-response.adoc[]
+
+
+
+[[batch-close-tasks]]
+=== Close multiple tasks
+This endpoint can be used to close multiple tasks, which means that the statuses of the tasks are changed to 'CLOSED'.
+
+
+[[batch-close-tasks-latest]]
+==== Latest API Version
+
+[[batch-close-tasks-request-latest]]
+===== Request
+A `POST` request is used to change the status of the multiple tasks to 'CLOSED'.
+
+====== Path parameters
+include::{snippets}/tasks/document-batch-close-tasks/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-batch-close-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-batch-close-tasks/curl-request.adoc[]
+
+[[batch-close-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-batch-close-tasks/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-batch-close-tasks/http-response.adoc[]
+
+
+
+[[accept-task]]
+=== Accept task
+This endpoint can be used to accept a task, which means that the task's status is changed to 'ACCEPTED'.
+
+
+[[accept-task-latest]]
+==== Latest API Version
+
+[[accept-task-request-latest]]
+===== Request
+A `POST` request is used to change the status of a task to 'ACCEPTED'.
+
+====== Path parameters
+include::{snippets}/tasks/document-accept-task/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-accept-task/http-request.adoc[]
+include::{snippets}/tasks/document-accept-task/curl-request.adoc[]
+
+[[accept-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-accept-task/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-accept-task/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-accept-task/http-response.adoc[]
+
+====== Error response
+Accepting a task is only possible when a task is not already accepted.
+If this condition is violated then the following response is returned.
+
+include::{snippets}/tasks/document-accept-task-invalid-transition/http-response.adoc[]
+
+
+
+[[batch-accept-tasks]]
+=== Accept multiple tasks
+This endpoint can be used to accept multiple tasks, which means that the statuses of the tasks are changed to 'ACCEPTED'.
+
+
+[[batch-accept-tasks-latest]]
+==== Latest API Version
+
+[[batch-accept-tasks-request-latest]]
+===== Request
+A `POST` request is used to change the status of the multiple tasks to 'ACCEPTED'.
+
+====== Path parameters
+include::{snippets}/tasks/document-batch-accept-tasks/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-batch-accept-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-batch-accept-tasks/curl-request.adoc[]
+
+[[batch-accept-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-batch-accept-tasks/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-batch-accept-tasks/http-response.adoc[]
+
+
+
+[[reset-task]]
+=== Reset task
+This endpoint can be used to reset a task, which means that the task's status is changed back to 'OPEN'.
+
+
+[[reset-task-latest]]
+==== Latest API Version
+
+[[reset-task-request-latest]]
+===== Request
+A `POST` request is used to change the status of a task back to 'OPEN'.
+
+====== Path parameters
+include::{snippets}/tasks/document-reset-task/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-reset-task/http-request.adoc[]
+include::{snippets}/tasks/document-reset-task/curl-request.adoc[]
+
+[[reset-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-reset-task/response-fields.adoc[]
+
+====== Links
+include::{snippets}/tasks/document-reset-task/links.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-reset-task/http-response.adoc[]
+
+====== Error response
+Reset a task is only possible when a task is in a forward status from OPEN.
+If this condition is violated then the following response is returned.
+
+include::{snippets}/tasks/document-reset-task-invalid-transition/http-response.adoc[]
+
+
+
+[[batch-reset-tasks]]
+=== Reset multiple tasks
+This endpoint can be used to close multiple tasks, which means that the statuses of the tasks are changed to 'OPEN'.
+
+
+[[batch-reset-tasks-latest]]
+==== Latest API Version
+
+[[batch-reset-tasks-request-latest]]
+===== Request
+A `POST` request is used to change the status of the multiple tasks to 'OPEN'.
+
+====== Path parameters
+include::{snippets}/tasks/document-batch-reset-tasks/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-batch-reset-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-batch-reset-tasks/curl-request.adoc[]
+
+[[batch-reset-task-response-latest]]
+===== Response
+The updated task is returned.
+
+====== Response fields
+include::{snippets}/tasks/document-batch-reset-tasks/response-fields.adoc[]
+
+====== Example response
+include::{snippets}/tasks/document-batch-reset-tasks/http-response.adoc[]
+
+
+
+[[delete-task]]
+=== Delete task
+A task can be deleted by calling this endpoint with an identifier and HTTP-Method `DELETE`.
+All nested resources are automatically deleted prior the deletion of the task itself.
+This is an asynchronous operation, therefore news, statistics, etc. might be processed with a slight delay.
+
+
+[[delete-task-latest]]
+==== Latest API Version
+
+[[delete-task-request-latest]]
+===== Request
+A `DELETE` request is used to delete a task.
+
+====== Path parameters:
+include::{snippets}/tasks/document-delete-task-with-identifier/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/tasks/document-delete-task-with-identifier/http-request.adoc[]
+include::{snippets}/tasks/document-delete-task-with-identifier/curl-request.adoc[]
+
+[[delete-task-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+==== Example response
+include::{snippets}/tasks/document-delete-task-with-identifier/http-response.adoc[]
+
+
+
+[[delete-list-of-tasks]]
+=== Delete list of tasks
+Multiple tasks can be deleted by calling this endpoint and HTTP-Method `DELETE`.
+All nested resources are automatically deleted prior the deletion of the task itself.
+This is an asynchronous operation, therefore news, statistics, etc. might be processed with a slight delay.
+
+
+[[delete-list-of-tasks-latest]]
+==== Latest API Version
+
+[[delete-list-of-tasks-request-latest]]
+===== Request
+A `DELETE` request is used to delete multiple tasks.
+
+====== Example request
+include::{snippets}/tasks/document-delete-tasks/http-request.adoc[]
+include::{snippets}/tasks/document-delete-tasks/curl-request.adoc[]
+
+[[delete-tasks-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+==== Example response
+include::{snippets}/tasks/document-delete-tasks/http-response.adoc[]

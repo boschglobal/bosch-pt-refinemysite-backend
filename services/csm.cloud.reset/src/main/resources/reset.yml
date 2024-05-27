@@ -1,0 +1,75 @@
+service:
+  project:
+    azure-queues:
+      - "csm-imagescaling"
+    blob-containers:
+      - "csm"
+    blob-containers-downloads:
+      - "downloads"
+  user:
+    azure-queues:
+      - "csm-imagescaling"
+    blob-containers:
+      - "csm"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+service:
+  user:
+    insert-statement:
+      "insert into user_entity(
+                  id,
+                  created_date,
+                  identifier,
+                  last_modified_date,
+                  version,
+                  admin,
+                  email,
+                  first_name,
+                  gender,
+                  last_name,
+                  registered,
+                  user_id,
+                  created_by,
+                  last_modified_by,
+                  locale,
+                  country) values (
+                  %d, TIMESTAMP('1970-01-01 00:00:00.000000'), '%s', TIMESTAMP('1970-01-01 00:00:00.000000'),
+                  0, %d, '%s', '%s', 'FEMALE', '%s', 1, '%s', '%s', '%s', '%s', '%s')"
+    insert-message-statement:
+      "insert into user_kafka_event (event_key, event, partition_number, trace_header_key, trace_header_value)
+                  values(?, ?, ?, 'b3', '1508770259102045177-1508770259102045178-1-1508770259102045179')"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+service:
+  user:
+    insert-statement:
+      "insert into user_entity(
+                 id,
+                 created_date,
+                 identifier,
+                 last_modified_date,
+                 version,
+                 admin,
+                 email,
+                 first_name,
+                 gender,
+                 last_name,
+                 registered,
+                 user_id,
+                 created_by,
+                 last_modified_by) values (
+                 %d, TIMESTAMP('1970-01-01 00:00:00.000000'), '%s', TIMESTAMP('1970-01-01 00:00:00.000000'),
+                 0, %d, '%s', '%s', 'FEMALE', '%s', 1, '%s', '%s', '%s')"
+    insert-message-statement:
+      "insert into user_kafka_event (event_key, event, partition_number, trace_header_key, trace_header_value)
+                 values(?, ?, ?, 'b3', '1508770259102045177-1508770259102045178-1-1508770259102045179')"

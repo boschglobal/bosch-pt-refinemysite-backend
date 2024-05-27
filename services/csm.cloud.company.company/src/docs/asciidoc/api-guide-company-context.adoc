@@ -1,0 +1,576 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+= RefinemySite Company API Guide (Version 2)
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:sectnumlevels: 4
+:numbered: ''
+:docinfo: shared
+
+Refer to link:/internal/docs/index.html[RefinemySite API Guide Overview] for general API information.
+
+== Companies
+Users in the system must be linked to a company to be used in projects.
+In the following sections the APIs how to manage companies are described.
+The APIs to manage employee relations are described <<#employees, here>>.
+
+
+
+[[create-company]]
+=== Create company
+A company can be created without or with a client-side predefined identifier.
+The following section contains information about how to create a company without
+a predefined identifier.
+
+[[create-company-latest]]
+==== Latest API version
+
+[[create-company-request-latest]]
+===== Request
+A `POST` request to create a new company.
+
+====== Request fields
+include::{snippets}/companies/document-create-company/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-create-company/http-request.adoc[]
+include::{snippets}/companies/document-create-company/curl-request.adoc[]
+
+[[create-company-response-latest]]
+===== Response
+Returns the created company.
+
+====== Response fields
+include::{snippets}/companies/document-create-company/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-create-company/links.adoc[]
+
+====== Example response
+include::{snippets}/companies/document-create-company/http-response.adoc[]
+
+
+
+[[create-company-with-identifier]]
+=== Create company with identifier
+A company can be created without or with a client-side predefined identifier.
+The following section contains information about how to create a company with
+a predefined identifier.
+
+[[create-company-with-identifier-latest]]
+==== Latest API version
+
+[[create-company-with-identifier-request-latest]]
+===== Request
+A `POST` request to create a new company.
+
+====== Path parameters:
+include::{snippets}/companies/document-create-company-with-identifier/path-parameters.adoc[]
+
+====== Request fields:
+include::{snippets}/companies/document-create-company-with-identifier/request-fields.adoc[]
+
+====== Example request:
+include::{snippets}/companies/document-create-company-with-identifier/http-request.adoc[]
+include::{snippets}/companies/document-create-company-with-identifier/curl-request.adoc[]
+
+[[create-company-with-identifier-response-latest]]
+===== Response
+Returns the created company.
+
+====== Response fields
+include::{snippets}/companies/document-create-company-with-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-create-company-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/companies/document-create-company-with-identifier/http-response.adoc[]
+
+
+
+[[update-company]]
+=== Update Company
+A company can be updated by its Identifier. If there is a difference between the existing, and the given addresses,
+they will be overwritten even if the new addresses have null values. If neither a postbox address nor a street address
+is given, an error (status code 400) is returned. The following section contains information about how
+to update a company.
+
+[[update-company-latest]]
+==== Latest API version
+
+[[update-company-request-latest]]
+===== Request
+A `PUT` request to update a new company.
+
+====== Path parameters
+include::{snippets}/companies/document-update-company/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/companies/document-update-company/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/companies/document-update-company/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-update-company/http-request.adoc[]
+include::{snippets}/companies/document-update-company/curl-request.adoc[]
+
+[[update-company-response-latest]]
+===== Response
+Returns the updated company.
+
+====== Response fields
+include::{snippets}/companies/document-update-company/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-update-company/links.adoc[]
+
+====== Example response
+include::{snippets}/companies/document-update-company/http-response.adoc[]
+
+
+
+[[search-companies]]
+=== Search companies
+The search endpoint can be used to find available companies registered in the system.
+Optionally a name can be provided to filter companies.
+
+[[search-companies-latest]]
+==== Latest API version
+
+[[search-companies-request-latest]]
+===== Request
+A `POST` request to search for companies.
+
+====== Request parameters
+include::{snippets}/companies/document-search-companies/request-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/companies/document-search-companies/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-search-companies/http-request.adoc[]
+include::{snippets}/companies/document-search-companies/curl-request.adoc[]
+
+[[search-companies-response-latest]]
+===== Response
+Returns a page of companies.
+
+====== Response fields
+include::{snippets}/companies/document-search-companies/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-search-companies/links.adoc[]
+
+====== Example response
+include::{snippets}/companies/document-search-companies/http-response.adoc[]
+
+
+
+[[suggest-companies]]
+=== Suggest companies
+
+The suggestion endpoint can be used to get a list of companies based on the provided search term. Applies a "contains"
+logic against the company names.
+
+[[suggest-companies-latest]]
+==== Latest API Version
+
+[[suggest-companies-request-latest]]
+===== Request
+
+A `POST` request to search for company suggestions.
+
+====== Request parameters
+include::{snippets}/companies/document-suggest-companies/request-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/companies/document-suggest-companies/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-suggest-companies/http-request.adoc[]
+include::{snippets}/companies/document-suggest-companies/curl-request.adoc[]
+
+[[suggest-companies-response-latest]]
+===== Response
+
+A page of company references.
+
+==== Response fields
+include::{snippets}/companies/document-suggest-companies/response-fields.adoc[]
+
+==== Links
+include::{snippets}/companies/document-suggest-companies/links.adoc[]
+
+==== Example response
+include::{snippets}/companies/document-suggest-companies/http-response.adoc[]
+
+
+
+[[list-companies]]
+=== List all companies
+The list endpoint can be used to get a list of all available companies registered in the system.
+
+[[list-companies-latest]]
+==== Latest API Version
+
+[[list-companies-request-latest]]
+===== Request
+A `GET` request to get a list of companies.
+
+====== Request parameters:
+include::{snippets}/companies/document-get-companies/request-parameters.adoc[]
+
+====== Example request:
+include::{snippets}/companies/document-get-companies/http-request.adoc[]
+include::{snippets}/companies/document-get-companies/curl-request.adoc[]
+
+[[list-companies-response-latest]]
+===== Response
+Returns a page of companies.
+
+====== Response fields
+include::{snippets}/companies/document-get-companies/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-get-companies/links.adoc[]
+
+====== Example response
+include::{snippets}/companies/document-get-companies/http-response.adoc[]
+
+
+
+[[get-company]]
+=== Get company
+A single company can be retrieved by its identifier.
+
+[[get-company-latest]]
+==== Latest API Version
+
+[[get-company-request-latest]]
+===== Request
+A `GET` request to get a single company.
+
+====== Path parameters
+include::{snippets}/companies/document-get-company/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-get-company/http-request.adoc[]
+include::{snippets}/companies/document-get-company/curl-request.adoc[]
+
+[[get-company-response-latest]]
+===== Response
+Returns a single company.
+
+====== Response fields
+include::{snippets}/companies/document-get-company/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-get-company/links.adoc[]
+
+====== Example response
+include::{snippets}/companies/document-get-company/http-response.adoc[]
+
+
+
+[[delete-company]]
+=== Delete company
+A company can be deleted when there are no employees linked to it anymore.
+
+[[delete-company-latest]]
+==== Latest API Version
+
+[[delete-company-request-latest]]
+===== Request
+A `DELETE` request to delete the company.
+
+====== Path parameters
+include::{snippets}/companies/document-delete-company/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-delete-company/http-request.adoc[]
+include::{snippets}/companies/document-delete-company/curl-request.adoc[]
+
+[[delete-company-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/companies/document-delete-company/http-response.adoc[]
+
+
+
+
+[[employees]]
+== Employees
+Users in the system must be linked to a company to be used in projects.
+In the following sections the APIs how to manage employees are described.
+
+
+
+[[create-employee]]
+=== Create employee
+An employee can be created by providing a user-reference, a company-reference and roles.
+It can be created either with or without a client-side predefined identifier.
+In the following section it's described how to create an employee without a client-side
+predefined identifier.
+
+[[create-employee-latest]]
+==== Latest API Version
+
+[[create-employee-request-latest]]
+===== Request
+A `POST` request to create a new employee with a user-reference, a company-reference and roles.
+
+====== Path parameters
+include::{snippets}/companies/document-create-company-employee/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/companies/document-create-company-employee/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-create-company-employee/http-request.adoc[]
+include::{snippets}/companies/document-create-company-employee/curl-request.adoc[]
+
+[[create-employee-response-latest]]
+===== Response
+Returns the created employee.
+
+====== Response fields
+include::{snippets}/companies/document-create-company-employee/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-create-company-employee/links.adoc[]
+
+==== Example response
+include::{snippets}/companies/document-create-company-employee/http-response.adoc[]
+
+
+
+[[create-employee-with-identifier]]
+=== Create employee with identifier
+An employee can be created by providing a user-reference, a company-reference and roles.
+It can be created either with or without a client-side predefined identifier.
+In the following section it's described how to create an employee with a client-side
+predefined identifier.
+
+[[create-employee-with-identifier-latest]]
+==== Latest API Version
+
+[[create-employee-with-identifier-request-latest]]
+===== Request
+A `POST` request to create a new employee with a user-reference, a company-reference and roles.
+
+====== Path parameters
+include::{snippets}/companies/document-create-company-employee-with-identifier/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/companies/document-create-company-employee-with-identifier/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-create-company-employee-with-identifier/http-request.adoc[]
+include::{snippets}/companies/document-create-company-employee-with-identifier/curl-request.adoc[]
+
+[[create-employee-with-identifier-response-latest]]
+===== Response
+Returns the created employee.
+
+====== Response fields
+include::{snippets}/companies/document-create-company-employee-with-identifier/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-create-company-employee-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/companies/document-create-company-employee-with-identifier/http-response.adoc[]
+
+
+
+[[update-employee]]
+=== Update employee
+The update employee provides the entry point into the employee resource service.
+
+[[update-employee-latest]]
+==== Latest API Version
+
+[[update-employee-request-latest]]
+===== Request
+A `PUT` request to update an existent employee.
+
+====== Path parameters
+include::{snippets}/companies/document-update-employee/path-parameters.adoc[]
+
+====== Request headers
+include::{snippets}/companies/document-update-employee/request-headers.adoc[]
+
+====== Request fields
+include::{snippets}/companies/document-update-employee/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-update-employee/http-request.adoc[]
+include::{snippets}/companies/document-update-employee/curl-request.adoc[]
+
+[[update-employee-response-latest]]
+===== Response
+Returns the updated employee.
+
+====== Response fields
+include::{snippets}/companies/document-update-employee/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-update-employee/links.adoc[]
+
+====== Example response
+include::{snippets}/companies/document-update-employee/http-response.adoc[]
+
+
+
+[[list-employees]]
+=== List all employees
+The list endpoint can be used to get a list of all employees of a company in the system.
+This endpoint also allows certain filter criteria.
+
+[[list-employees-request-latest]]
+==== Latest API Version
+
+===== Request
+A `GET` request to get a list of employees.
+
+====== Path parameters
+include::{snippets}/companies/document-get-company-employees/path-parameters.adoc[]
+
+====== Request parameters
+include::{snippets}/companies/document-get-company-employees/request-parameters.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-get-company-employees/http-request.adoc[]
+include::{snippets}/companies/document-get-company-employees/curl-request.adoc[]
+
+[[list-employees-response-latest]]
+===== Response
+Returns a page of employees.
+
+==== Response fields
+include::{snippets}/companies/document-get-company-employees/response-fields.adoc[]
+
+==== Links
+include::{snippets}/companies/document-get-company-employees/links.adoc[]
+
+==== Example response
+include::{snippets}/companies/document-get-company-employees/http-response.adoc[]
+
+
+
+[[search-employees]]
+=== Search employees (and assignable users)
+
+Ths search endpoint can be used to get a (filtered) list of all employees and those users not yet assigned to a
+company (being kind of "employable" or "assignable" user). The items that this resource consists of are a projection
+of the user and the employee and company (if the user is assigned). The employee and company related attributes can
+therefore be empty.
+
+The specified filter criteria need to match all for a user / employee to be in the result list.
+
+[[search-employees-latest]]
+==== Latest API Version
+
+[[search-employees-request-latest]]
+===== Request
+
+A `POST` request to search for employees (and assignable users).
+
+====== Request parameters
+include::{snippets}/companies/document-search-company-employees/request-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/companies/document-search-company-employees/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-search-company-employees/http-request.adoc[]
+include::{snippets}/companies/document-search-company-employees/curl-request.adoc[]
+
+[[search-employees-response-latest]]
+===== Response
+
+Returns a page of employees and assignable users.
+
+==== Response fields
+include::{snippets}/companies/document-search-company-employees/response-fields.adoc[]
+
+==== Links
+include::{snippets}/companies/document-search-company-employees/links.adoc[]
+
+==== Example response
+include::{snippets}/companies/document-search-company-employees/http-response.adoc[]
+
+
+
+[[get-employee]]
+=== Get employee
+A single employee can be retrieved by its identifier.
+
+[[get-employee-latest]]
+==== Latest API Version
+
+[[get-employee-request-latest]]
+===== Request
+A `GET` request is used to get the employee.
+
+====== Path parameters
+include::{snippets}/companies/document-get-employee/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-get-employee/http-request.adoc[]
+include::{snippets}/companies/document-get-employee/curl-request.adoc[]
+
+[[get-employee-response-latest]]
+===== Response
+Returns a single employee.
+
+====== Response fields
+include::{snippets}/companies/document-get-employee/response-fields.adoc[]
+
+====== Links
+include::{snippets}/companies/document-get-employee/links.adoc[]
+
+====== Example response
+include::{snippets}/companies/document-get-employee/http-response.adoc[]
+
+
+
+[[delete-employee]]
+=== Delete Employee
+An employee can be deleted at any time. If the employee is linked to a project participant,
+then the participant is automatically deactivated.
+
+[[delete-employee-latest]]
+==== Latest API Version
+
+[[delete-employee-request-latest]]
+===== Request
+A `DELETE` request to delete the employee.
+
+====== Path parameters
+include::{snippets}/companies/document-delete-employee/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/companies/document-delete-employee/http-request.adoc[]
+include::{snippets}/companies/document-delete-employee/curl-request.adoc[]
+
+[[delete-employee-response-latest]]
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/companies/document-delete-employee/http-response.adoc[]

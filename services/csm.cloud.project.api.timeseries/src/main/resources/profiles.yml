@@ -1,0 +1,59 @@
+spring:
+  profiles:
+    group:
+      local:
+        - idp-bosch-dev
+      staging:
+        - docs
+        - idp-bosch-dev
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes
+      production:
+        # - idp-bosch-prod (controlled by helm chart since production profile is used on review, too
+        - kubernetes
+        - log-json
+        - zipkin-kubernetes
+      kafka-listener-disabled:
+        - kafka-company-projector-listener-disabled
+        - kafka-day-card-projector-listener-disabled
+        - kafka-milestone-projector-listener-disabled
+        - kafka-participant-projector-listener-disabled
+        - kafka-pat-projector-listener-disabled
+        - kafka-project-projector-listener-disabled
+        - kafka-project-craft-projector-listener-disabled
+        - kafka-relation-projector-listener-disabled
+        - kafka-rfv-projector-listener-disabled
+        - kafka-task-constraint-projector-listener-disabled
+        - kafka-task-constraint-selection-projector-listener-disabled
+        - kafka-task-projector-listener-disabled
+        - kafka-topic-projector-listener-disabled
+        - kafka-user-projector-listener-disabled
+        - kafka-work-area-list-projector-listener-disabled
+        - kafka-work-area-projector-listener-disabled
+        - kafka-work-day-config-projector-listener-disabled
+      # disables all kafka listeners listening to company topic
+      kafka-company-listener-disabled:
+        - kafka-company-projector-listener-disabled
+      # disables all kafka listeners listening to pat topic
+      kafka-pat-listener-disabled:
+        - kafka-pat-projector-listener-disabled
+      # disables all kafka listeners listening to project topic
+      kafka-project-listener-disabled:
+        - kafka-day-card-projector-listener-disabled
+        - kafka-milestone-projector-listener-disabled
+        - kafka-participant-projector-listener-disabled
+        - kafka-project-projector-listener-disabled
+        - kafka-project-craft-projector-listener-disabled
+        - kafka-relation-projector-listener-disabled
+        - kafka-rfv-projector-listener-disabled
+        - kafka-task-constraint-projector-listener-disabled
+        - kafka-task-constraint-selection-projector-listener-disabled
+        - kafka-task-projector-listener-disabled
+        - kafka-topic-projector-listener-disabled
+        - kafka-work-area-list-projector-listener-disabled
+        - kafka-work-area-projector-listener-disabled
+        - kafka-work-day-config-projector-listener-disabled
+      # disables all kafka listeners listening to user topic
+      kafka-user-listener-disabled:
+        - kafka-user-projector-listener-disabled

@@ -1,0 +1,69 @@
+spring:
+  kafka:
+    clientId: "csm-cloud-job"
+    consumer:
+      keyDeserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      valueDeserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      enableAutoCommit: false
+      group-id: "csm-job-${stage}"
+      properties:
+        auto.offset.reset: earliest
+        isolation.level: read_committed
+        max.poll.records: 50
+        request.timeout.ms: 20000
+        session.timeout.ms: 30000
+        specific.avro.reader: true
+    producer: # common properties used for both avro and json producers
+      acks: all
+      properties:
+        max.in.flight.requests.per.connection: 1
+        enable.idempotence: true
+        # Azure closes idle tcp connections after 4 minutes by default
+        connections.max.idle.ms: 180000
+    avro-producer:
+      keySerializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      valueSerializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      # Each instance of the service requires a producers with its own transaction id
+      # For the producer that is used when a web request is processed, the transactional id
+      # prefix as specified here is not further extended, therefore, we need this random value.
+      # Transactional IDs for producers created for a consumer that runs in a kafka transaction
+      # get an automatic extension being the partition number.
+      transactionIdPrefix: "csm-cloud-job-${stage}-event-${UUID.random()}-"
+      client-id: "csm-cloud-job-${stage}-event"
+    json-producer:
+      client-id: "csm-cloud-job-${stage}-notification"
+    properties:
+      auto.register.schemas: false
+      key.subject.name.strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+      value.subject.name.strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+      reconnect.backoff.max.ms: 15000
+      reconnect.backoff.ms: 2000
+      retry.backoff.ms: 5000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  kafka:
+    bootstrap-servers: ${kafka-broker-urls}
+    properties:
+      schema.registry.url: ${kafka-schemaregistry-urls}
+      basic.auth.user.info: ${kafka-schemaregistry-api-key}:${kafka-schemaregistry-api-secret}
+      basic.auth.credentials.source: 'USER_INFO'
+      request.timeout.ms: 20000
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${csm-cloud-job-kafka-broker-api-key}" password="${csm-cloud-job-kafka-broker-api-secret}";
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_SSL
+      ssl.endpoint.identification.algorithm: https
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      schema.registry.url: http://localhost:8081
+

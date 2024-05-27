@@ -1,0 +1,11 @@
+# Environment specific values.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+stage: test1
+
+# configuration for KV Flex volumes
+env: test1
+subscription: qa
+subscriptionid: "cc9cf3a1-9bbc-4863-8d83-ad953737f26d"
+tenantid: "0ae51e19-07c8-4e4b-bb6d-648ee58410f4"

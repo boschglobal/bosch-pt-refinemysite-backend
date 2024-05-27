@@ -1,0 +1,8 @@
+# Default values for csm-cloud-image-scale.
+# Declare variables to be passed into your templates.
+
+maxStartUpTime: 15
+# As we only have one kafka partition to read from (storage event core),
+# it doesn't make sense to have more than one instance running at the same time.
+replicas: 1
+logLevel: info

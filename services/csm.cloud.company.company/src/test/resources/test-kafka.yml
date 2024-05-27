@@ -1,0 +1,5 @@
+spring:
+  kafka:
+    properties:
+      auto.register.schemas: true
+      schema.registry.url: mock://localhost:8081

@@ -1,0 +1,208 @@
+//////////////////////////////////////////
+**************************************************************************
+*
+* Copyright:       Robert Bosch Power Tools GmbH, 2018 - 2020
+*
+**************************************************************************
+//////////////////////////////////////////
+
+[[messages]]
+== Messages
+Messages are used to add information regarding a specific topic at any time.
+
+
+
+[[create-message]]
+=== Create message
+This endpoint can be used to add a messages to a topic.
+
+[[create-message-latest]]
+==== Latest API version
+
+[[create-message-request-latest]]
+===== Request
+A `POST` request is used to create a message for a topic.
+
+====== Path parameters
+include::{snippets}/messages/document-create-message/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/messages/document-create-message/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/messages/document-create-message/http-request.adoc[]
+include::{snippets}/messages/document-create-message/curl-request.adoc[]
+
+[[create-company-response-latest]]
+===== Response
+Returns the created message.
+
+====== Response headers
+include::{snippets}/messages/document-create-message/response-headers.adoc[]
+
+====== Links
+include::{snippets}/messages/document-create-message/links.adoc[]
+
+====== Example response
+include::{snippets}/messages/document-create-message/http-response.adoc[]
+
+
+
+[[create-message-with-identifier]]
+=== Create a message with identifier
+Same as the previous request, but choose the message identifier client-side.
+
+[[create-message-with-identifier-latest]]
+==== Latest API version
+
+[[create-message-with-identifier-request-latest]]
+===== Request
+A `POST` request is used to create a message for a topic.
+
+====== Path parameters
+include::{snippets}/messages/document-create-message-with-identifier/path-parameters.adoc[]
+
+====== Request fields
+include::{snippets}/messages/document-create-message-with-identifier/request-fields.adoc[]
+
+====== Example request
+include::{snippets}/messages/document-create-message-with-identifier/http-request.adoc[]
+include::{snippets}/messages/document-create-message-with-identifier/curl-request.adoc[]
+
+[[create-message-with-identifier-response-latest]]
+===== Response
+Returns the created message.
+
+====== Response headers
+include::{snippets}/messages/document-create-message-with-identifier/response-headers.adoc[]
+
+====== Links
+include::{snippets}/messages/document-create-message-with-identifier/links.adoc[]
+
+====== Example response
+include::{snippets}/messages/document-create-message-with-identifier/http-response.adoc[]
+
+
+
+[[list-messages]]
+=== List all messages
+This endpoint can be used to get a list of all messages related to a topic.
+
+[[list-messages-latest]]
+==== Latest API version
+
+[[list-messages-request-latest]]
+===== Request
+A `GET` request is used to get a page of messages.
+
+====== Path parameters
+include::{snippets}/messages/document-find-all-messages/path-parameters.adoc[]
+
+====== Example request
+operation::messages/document-find-all-messages[snippets='http-request,curl-request']
+
+[[list-messages-response-latest]]
+===== Response
+A page of messages is returned.
+
+====== Response fields
+include::{snippets}/messages/document-find-all-messages/response-fields.adoc[]
+
+====== Links
+include::{snippets}/messages/document-find-all-messages/links.adoc[]
+
+====== Example response
+include::{snippets}/messages/document-find-all-messages/http-response.adoc[]
+
+
+
+[[list-messages-by-task-identifiers]]
+=== List all messages of multiple tasks
+Retrieve as a batch all the messages for the task identifiers sent in the request.
+If for one task there is no permission, the request fails.
+
+[[list-messages-by-task-identifiers-latest]]
+==== Latest API Version
+
+[[list-messages-by-task-identifiers-request-latest]]
+===== Request
+A `POST` request is used to get the messages for the provided task identifiers.
+
+====== Request parameters
+include::{snippets}/messages/document-find-all-messages-for-task-identifiers/query-parameters.adoc[]
+
+====== Example request
+operation::messages/document-find-all-messages-for-task-identifiers[snippets='http-request,curl-request']
+
+[[list-messages-by-task-identifiers-response-latest]]
+===== Response
+A page of messages is returned.
+
+====== Response fields
+include::{snippets}/messages/document-find-all-messages-for-task-identifiers/response-fields.adoc[]
+
+====== Links
+include::{snippets}/messages/document-find-all-messages-for-task-identifiers/links.adoc[]
+
+====== Example response
+include::{snippets}/messages/document-find-all-messages-for-task-identifiers/http-response.adoc[]
+
+
+
+[[get-message]]
+=== Get message
+This endpoint can be used to get a single message.
+
+[[get-message-latest]]
+==== Latest API Version
+
+[[get-message-request-latest]]
+===== Request
+A `GET` request is used to get a message for a given message id.
+
+====== Path parameters
+include::{snippets}/messages/document-find-message/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/messages/document-find-message/http-request.adoc[]
+include::{snippets}/messages/document-find-message/curl-request.adoc[]
+
+[[get-message-response-latest]]
+===== Response
+The message resource is returned.
+
+====== Response fields
+include::{snippets}/messages/document-find-message/response-fields.adoc[]
+
+====== Links
+include::{snippets}/messages/document-find-message/links.adoc[]
+
+====== Example response
+include::{snippets}/messages/document-find-message/http-response.adoc[]
+
+
+
+[[delete-message]]
+=== Delete message
+A single message can be deleted by calling this endpoint with a message identifier
+using HTTP-Method `DELETE`.
+
+[[delete-message-latest]]
+==== Latest API Version
+
+[[delete-message-request-latest]]
+===== Request
+A `DELETE` request is used to delete a message.
+
+====== Path parameters
+include::{snippets}/messages/document-delete-message-with-identifier/path-parameters.adoc[]
+
+====== Example request
+include::{snippets}/messages/document-delete-message-with-identifier/http-request.adoc[]
+include::{snippets}/messages/document-delete-message-with-identifier/curl-request.adoc[]
+
+===== Response
+Returns HTTP-Status 204 (No Content).
+
+====== Example response
+include::{snippets}/messages/document-delete-message-with-identifier/http-response.adoc[]

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FindBugsFilter xmlns="http://findbugs.sourceforge.net/filter/3.0.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://findbugs.sourceforge.net/filter/3.0.0 https://findbugs.googlecode.com/git/findbugs/etc/findbugsfilter.xsd">
+
+    <Match>
+        <Class name="com.bosch.pt.csm.cloud.event.application.config.WebSecurityConfiguration"/>
+        <Bug code="SECSPRCSRFPD"/>
+    </Match>
+
+    <Match>
+        <Class name="com.bosch.pt.csm.cloud.event.application.security.CustomTrustedIssuerJwtReactiveAuthenticationManagerResolver"/>
+    </Match>
+
+    <Match>
+        <Class name="com.bosch.pt.csm.cloud.event.application.config.KafkaConsumerConfiguration"/>
+        <Bug code="NP"/>
+    </Match>
+
+    <Match>
+        <Package name="~com.bosch.pt.csm.cloud.event.*"/>
+        <Bug code="EI"/>
+    </Match>
+
+    <Match>
+        <Package name="~com.bosch.pt.csm.cloud.event.*"/>
+        <Bug code="EI2"/>
+    </Match>
+
+</FindBugsFilter>

@@ -1,0 +1,37 @@
+trigger: none
+
+schedules:
+  - cron: "0 4 * * Mon"
+    displayName: "Check library versions"
+    always: true
+    branches:
+      include:
+        - master
+
+resources:
+  repositories:
+    - repository: csm_templates
+      type: git
+      name: csm.azuredevops.pipelines
+      ref: refs/heads/master
+
+variables:
+  - template: /templates/variables/pipelines.yaml@csm_templates
+
+stages:
+  - stage: check
+    displayName: Check
+    pool:
+      vmImage: ${{ variables.ubuntuImage }}
+    variables:
+      - group: Build Pipelines
+    jobs:
+      - job: check_library_versions
+        displayName: Check library versions
+        steps:
+          - task: Gradle@2
+            displayName: Check library versions
+            inputs:
+              jdkVersionOption: "1.21"
+              tasks: checkLibVersions
+              options: --no-daemon

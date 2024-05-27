@@ -1,0 +1,23 @@
+server:
+  servlet:
+    context-path:
+  shutdown: graceful
+  tomcat:
+    threads:
+      max: 45
+    mbeanregistry:
+      enabled: true # enable the mbean registry to get tomcat metrics via micrometer
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+custom:
+  shutdown:
+    timeout-seconds: 0
+
+server:
+  port: 8030
+  shutdown: immediate

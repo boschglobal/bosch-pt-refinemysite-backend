@@ -1,0 +1,22 @@
+[
+  {
+    "id": "065bfc8b-ff76-434e-842d-3a23adbfe921",
+    "name": "CALENDAR_CUSTOM_SORT"
+  },
+  {
+    "id": "d49659a9-42ff-4aa2-aba2-32470c45836d",
+    "name": "PROJECT_COPY"
+  },
+  {
+    "id": "8b807236-7b60-4c80-bdfd-4c2bcf27ccc6",
+    "name": "PROJECT_EXPORT"
+  },
+  {
+    "id": "a644e353-c581-40d0-ab63-c336a3103aea",
+    "name": "PROJECT_EXPORT_ZIP"
+  },
+  {
+    "id": "3ed1d117-1761-454e-b846-aa00d929c215",
+    "name": "PROJECT_IMPORT"
+  }
+]

@@ -1,0 +1,72 @@
+custom:
+  kafka:
+    listener:
+      query:
+        company-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-company-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-company-projector"
+          concurrency: 2
+        daycard-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-daycard-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-daycard-projector"
+          concurrency: 2
+        milestone-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-milestone-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-milestone-projector"
+          concurrency: 2
+        participant-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-participant-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-participant-projector"
+          concurrency: 2
+        pat-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-pat-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-pat-projector"
+          concurrency: 2
+        project-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-project-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-project-projector"
+          concurrency: 2
+        project-craft-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-project-craft-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-project-craft-projector"
+          concurrency: 2
+        relation-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-relation-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-relation-projector"
+          concurrency: 2
+        rfv-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-rfv-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-rfv-projector"
+          concurrency: 2
+        task-constraint-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-task-constraint-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-task-constraint-projector"
+          concurrency: 2
+        task-constraint-selection-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-task-constraint-selection-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-task-constraint-selection-projector"
+          concurrency: 2
+        task-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-task-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-task-projector"
+          concurrency: 2
+        topic-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-topic-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-topic-projector"
+          concurrency: 2
+        user-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-user-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-user-projector"
+          concurrency: 2
+        workarealist-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-workarealist-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-workarealist-projector"
+          concurrency: 2
+        workarea-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-workarea-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-workarea-projector"
+          concurrency: 2
+        workday-config-projector:
+          groupId: "csm-pm-api-timeseries-${stage}-workday-config-projector"
+          clientIdPrefix: "csm-pm-api-timeseries-${stage}-workday-config-projector"
+          concurrency: 2

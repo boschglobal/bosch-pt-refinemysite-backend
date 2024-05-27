@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="csm.cloud.image.scale (local)" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="csm.cloud.image.scale" />
+    <working_directory value="$PROJECT_DIR$" />
+    <envs>
+      <env name="GO_PROFILES_ACTIVE" value="local" />
+      <env name="SERVICE_LOG_LEVEL" value="debug" />
+    </envs>
+    <kind value="PACKAGE" />
+    <package value="csm.cloud.image.scale" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$/main.go" />
+    <method v="2" />
+  </configuration>
+</component>

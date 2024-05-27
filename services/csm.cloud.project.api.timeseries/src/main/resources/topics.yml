@@ -1,0 +1,34 @@
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  kafka:
+    bindings:
+      company:
+        kafkaTopic: ${kafka-topic-company}
+      pat:
+        kafkaTopic: ${kafka-topic-pat}
+      project:
+        kafkaTopic: ${kafka-topic-project}
+      user:
+        kafkaTopic: ${kafka-topic-user}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local || test
+
+custom:
+  kafka:
+    bindings:
+      company:
+        kafkaTopic: "csm.local.companymanagement.company"
+      pat:
+        kafkaTopic: "csm.local.usermanagement.pat"
+      project:
+        kafkaTopic: "csm.local.projectmanagement.project"
+      user:
+        kafkaTopic: "csm.local.usermanagement.user"

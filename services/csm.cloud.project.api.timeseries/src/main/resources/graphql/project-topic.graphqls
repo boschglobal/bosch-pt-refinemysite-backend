@@ -1,0 +1,46 @@
+"""
+Topic
+"""
+type TopicPayloadV1 {
+
+    """
+    Unique identifier of the topic
+    """
+    id: UUID!,
+
+    """
+    Entity version (i.e. how often it was changed)
+    """
+    version: Long!,
+
+    """
+    The criticality of the topic
+    """
+    criticality: TopicCriticalityEnumPayloadV1!,
+
+    """
+    Optional description
+    """
+    description: String,
+
+    """
+    Date of the last modification
+    """
+    eventDate: DateTime!,
+}
+
+"""
+Topic criticality
+"""
+enum TopicCriticalityEnumPayloadV1 {
+
+    """
+    The topic is critical
+    """
+    CRITICAL,
+
+    """
+    The topic is uncritical
+    """
+    UNCRITICAL
+}

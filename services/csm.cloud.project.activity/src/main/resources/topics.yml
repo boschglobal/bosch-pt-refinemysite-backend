@@ -1,0 +1,81 @@
+custom:
+  kafka:
+    bindings:
+      craft:
+        configuration:
+          properties:
+            retention.ms: -1
+      user:
+        configuration:
+          properties:
+            retention.ms: -1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+
+custom:
+  kafka:
+    bindings:
+      company:
+        kafkaTopic: ${kafka-topic-company}
+      craft:
+        kafkaTopic: ${kafka-topic-craft}
+      project:
+        kafkaTopic: ${kafka-topic-project}
+      user:
+        kafkaTopic: ${kafka-topic-user}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: staging
+
+custom:
+  kafka:
+    bindings:
+      craft:
+        configuration:
+          partitions: 1
+
+      user:
+        configuration:
+          partitions: 2
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+
+custom:
+  kafka:
+    bindings:
+      craft:
+        configuration:
+          partitions: 1
+
+      user:
+        configuration:
+          partitions: 6
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+custom:
+  kafka:
+    bindings:
+      company:
+        kafkaTopic: "csm.local.companymanagement.company"
+      craft:
+        kafkaTopic: "csm.local.referencedata.craft"
+      project:
+        kafkaTopic: "csm.local.projectmanagement.project"
+      user:
+        kafkaTopic: "csm.local.usermanagement.user"

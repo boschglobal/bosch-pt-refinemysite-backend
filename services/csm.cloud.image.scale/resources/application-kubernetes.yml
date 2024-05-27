@@ -1,0 +1,17 @@
+kafka:
+  broker:
+    saslMechanism: PLAIN
+    securityProtocol: SASL_SSL
+  topic:
+    uploaded:
+      replicationFactor: 2
+    scaled:
+      replicationFactor: 2
+
+storage:
+  quarantine:
+    containerName: uploads
+  project:
+    containerName: csm
+  user:
+    containerName: csm
