@@ -1,4 +1,4 @@
-# Bosch RefinemySite
+# Bosch RefinemySite (Backend)
 
 Bosch RefinemySite is a cloud-based collaboration platform for the construction industry. 
 
@@ -17,6 +17,21 @@ The assigned work can be tracked within a continuous improvement workflow and al
 >
 > :warning: ___The sources are provided as is and are not actively maintained or supported in any way__._ :warning: 
 
+# Prerequisites
+
+For building and deploying the sources provided here, a few (major) preparatory adjustments are necessary:
+- Adjust repository references in _build.gradle_ and _settings.gradle_ files of all libraries and services to reflect your own packaging/artifacts solution like Azure Artifacts.
+- Build and publish the backend libraries to your own packaging/artifacts solution.
+- Adjust the dependency references for the libraries (name and version) as needed.
+- Set up your own Identity Provider (IdP) and configure OAuth settings: 
+  - in particular in csm.cloud.api configuration.
+  - in _csm.cloud.common.core/src/main/resources/application-idp-bosch-dev.yml_ and _csm.cloud.common.core/src/main/resources/application-idp-bosch-prod.yml_.
+- Implement your own notification endpoint integration (i.e. a web hook) in _csm.cloud.project.notifications/src/main/kotlin/com/bosch/pt/csm/cloud/projectmanagement/user/facade/listener/UserEventListenerImpl.kt_ 
+- In _csm.cloud.project.project_ and _csm.cloud.user.user_ services, supply test image sources as needed or adjust the tests implementations instead.
+- Adjust all _Dockerfile_ files to use your own container image library or a public one instead.
+- Adjust or replace all _azure-pipeline.yml_ to suit your own build and deployment needs.
+- In _csm.web.app_ supply your own icons as SVGs in _/src/assets/icons_ 
+- Set up a suitable infrastructure (with an AKS or other Kubernetes runtime and MySql and MongoDB databases as well as Azure Storage Accounts). The local deployment scripts in _utilities/csm.cloud.dev/docker_ will give you a deeper understanding of the runtime environment needed.
 
 # Project Structure
 
@@ -142,7 +157,7 @@ The Job Context covers support for (long-running) jobs.
 
 The job service handles (possibly) long-running asynchronous jobs.
 
-- [csm.cloud.job](https://github.com/boschglobal/bosch-pt-refinemysite-backend/tree/main/services/csm.cloud.job)
+- [csm.cloud.job.job](https://github.com/boschglobal/bosch-pt-refinemysite-backend/tree/main/services/csm.cloud.job.job)
 
 
 ### Storage Context
@@ -238,7 +253,7 @@ We use this in order to solve the __dual-write problem__ when updating a local d
 
 Since we need a deployment of this service for each primary service, we have multiple helm charts, one for each primary service.
 
-- [csm.cloud.kafka-connector](https://github.com/boschglobal/bosch-pt-refinemysite-backend/tree/main/services/csm.cloud.kafka-connector)
+- [csm.cloud.kafka.connector](https://github.com/boschglobal/bosch-pt-refinemysite-backend/tree/main/services/csm.cloud.kafka.connector)
 
 
 #### Operations Utilities
