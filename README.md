@@ -278,4 +278,4 @@ The sources in this repository are Open Source released under [Apache 2.0](LICEN
 
 # Authors & Contributors
 
-We are currently compiling a list of authors and contributors that will be placed here, soon!
+- [Christian Schaible](https://github.com/cschaible)
