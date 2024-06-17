@@ -279,7 +279,7 @@ The sources in this repository are Open Source released under [Apache 2.0](LICEN
 # Authors & Contributors
 
 - Axel Gauweiler
-- Axel Schüssler
+- [Axel Schüssler](https://github.com/bitterblue)
 - Benjamin Höhensteiger
 - [Christian Schaible](https://github.com/cschaible)
 - Corvin Schapöhler
