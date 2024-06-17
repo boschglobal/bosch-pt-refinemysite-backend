@@ -284,7 +284,7 @@ The sources in this repository are Open Source released under [Apache 2.0](LICEN
 - [Christian Schaible](https://github.com/cschaible)
 - Corvin Schapöhler
 - Katharina Kleiner
-- Lars Dülfer
+- [Lars Dülfer](https://github.com/larsduelfer)
 - Mareike Lowinski
 - Mert Yücel
 - Nicolas Steimmig
