@@ -278,4 +278,19 @@ The sources in this repository are Open Source released under [Apache 2.0](LICEN
 
 # Authors & Contributors
 
+- Axel Gauweiler
+- Axel Schüssler
+- Benjamin Höhensteiger
 - [Christian Schaible](https://github.com/cschaible)
+- Corvin Schapöhler
+- Katharina Kleiner
+- Lars Dülfer
+- Mareike Lowinski
+- Mert Yücel
+- Nicolas Steimmig
+- Rafael Franca
+- Renato Cruz
+- Sebastian Maximilian Jackisch
+- [Simon Hartmann](https://github.com/simsibimsiwimsi)
+
+_Missing yourself on this list?_ If you are a former contributor or code author of RefinemySite project you may reach out to the current maintenance team or simply create a pull request adding yourself to the list. As code-author you are entitled to be named as author of the software or to remain anonymous. If you add your name as an author of the given software, you agree that your name will be published with said software. You are fully aware that after a contribution your name cannot be removed from copies of the software in the OSS community.
