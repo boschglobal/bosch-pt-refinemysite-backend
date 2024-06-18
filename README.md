@@ -288,6 +288,7 @@ The sources in this repository are Open Source released under [Apache 2.0](LICEN
 - Mareike Lowinski
 - Mert Yücel
 - Nicolas Steimmig
+- Peter Kleimann
 - Rafael Franca
 - Renato Cruz
 - Sebastian Maximilian Jackisch
