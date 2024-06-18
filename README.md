@@ -286,7 +286,7 @@ The sources in this repository are Open Source released under [Apache 2.0](LICEN
 - Katharina Kleiner
 - [Lars Dülfer](https://github.com/larsduelfer)
 - Mareike Lowinski
-- Mert Yücel
+- [Mert Yücel](https://github.com/mertyuecel)
 - Nicolas Steimmig
 - Peter Kleimann
 - Rafael Franca
