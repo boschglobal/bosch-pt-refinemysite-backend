@@ -283,6 +283,8 @@ The sources in this repository are Open Source released under [Apache 2.0](LICEN
 - Benjamin Höhensteiger
 - [Christian Schaible](https://github.com/cschaible)
 - Corvin Schapöhler
+- Edgar Pires
+- Filipe Taborda
 - Katharina Kleiner
 - [Lars Dülfer](https://github.com/larsduelfer)
 - Mareike Lowinski
