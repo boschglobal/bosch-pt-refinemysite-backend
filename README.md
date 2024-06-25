@@ -285,6 +285,7 @@ The sources in this repository are Open Source released under [Apache 2.0](LICEN
 - Corvin Schapöhler
 - Edgar Pires
 - Filipe Taborda
+- Francisca Pimenta
 - Katharina Kleiner
 - [Lars Dülfer](https://github.com/larsduelfer)
 - Mareike Lowinski
